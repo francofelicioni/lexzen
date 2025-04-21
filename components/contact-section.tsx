@@ -57,45 +57,45 @@ export function ContactSection() {
               <div className="space-y-6">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3 group">
-                    <div className="rounded-full bg-teal-100 p-2 mt-1 group-hover:bg-teal-200 transition-colors">
-                      <MapPin className="h-5 w-5 text-teal-700" />
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4 group">
+                    <div className="rounded-full bg-teal-100 p-3 mt-1 group-hover:bg-teal-200 transition-colors">
+                      <MapPin className="h-6 w-6 text-teal-700" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Address</h4>
-                      <p className="text-gray-600">{t("footer.address")}</p>
+                      <h4 className="font-medium text-lg">Address</h4>
+                      <p className="text-gray-600 text-base">{t("footer.address")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 group">
-                    <div className="rounded-full bg-teal-100 p-2 mt-1 group-hover:bg-teal-200 transition-colors">
-                      <Phone className="h-5 w-5 text-teal-700" />
+                  <div className="flex items-start gap-4 group">
+                    <div className="rounded-full bg-teal-100 p-3 mt-1 group-hover:bg-teal-200 transition-colors">
+                      <Phone className="h-6 w-6 text-teal-700" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Phone</h4>
-                      <p className="text-gray-600">{t("footer.phone")}</p>
+                      <h4 className="font-medium text-lg">Phone</h4>
+                      <p className="text-gray-600 text-base">{t("footer.phone")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 group">
-                    <div className="rounded-full bg-teal-100 p-2 mt-1 group-hover:bg-teal-200 transition-colors">
-                      <Mail className="h-5 w-5 text-teal-700" />
+                  <div className="flex items-start gap-4 group">
+                    <div className="rounded-full bg-teal-100 p-3 mt-1 group-hover:bg-teal-200 transition-colors">
+                      <Mail className="h-6 w-6 text-teal-700" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Email</h4>
-                      <p className="text-gray-600">{t("footer.email")}</p>
+                      <h4 className="font-medium text-lg">Email</h4>
+                      <p className="text-gray-600 text-base">{t("footer.email")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 group">
-                    <div className="rounded-full bg-teal-100 p-2 mt-1 group-hover:bg-teal-200 transition-colors">
-                      <Clock className="h-5 w-5 text-teal-700" />
+                  <div className="flex items-start gap-4 group">
+                    <div className="rounded-full bg-teal-100 p-3 mt-1 group-hover:bg-teal-200 transition-colors">
+                      <Clock className="h-6 w-6 text-teal-700" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Business Hours</h4>
-                      <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p className="text-gray-600">Saturday - Sunday: Closed</p>
+                      <h4 className="font-medium text-lg">Business Hours</h4>
+                      <p className="text-gray-600 text-base">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                      <p className="text-gray-600 text-base">Saturday - Sunday: Closed</p>
                     </div>
                   </div>
                 </div>

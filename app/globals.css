@@ -242,3 +242,50 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Add these mobile-specific improvements to your global CSS */
+@media (max-width: 640px) {
+  /* Increase base font size for better readability */
+  html {
+    font-size: 16px;
+  }
+
+  /* Improve tap targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve form elements */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+
+  /* Improve spacing */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Improve scrolling */
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Improve focus states for accessibility */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Ensure buttons have proper hover states on touch devices */
+@media (hover: none) {
+  .hover\:bg-teal-700:hover {
+    background-color: hsl(var(--primary));
+  }
+}

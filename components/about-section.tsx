@@ -59,8 +59,8 @@ export function AboutSection() {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Founder 1 */}
-            <AnimatedSection direction="up" delay={300} className="flex flex-col items-center space-y-4">
-              <div className="relative h-36 w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
+            <AnimatedSection direction="up" delay={300} className="flex flex-col items-center space-y-5">
+              <div className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
                 <img
                   src="/placeholder.svg?height=400&width=400"
                   alt="Elena Martínez - Managing Partner & Legal Director specializing in online legal advisory and privacy and data protection"
@@ -69,11 +69,11 @@ export function AboutSection() {
                 />
               </div>
               <div className="text-center">
-                <h4 className="text-xl font-bold">{t("about.founder1Name")}</h4>
+                <h4 className="text-lg sm:text-xl font-bold">{t("about.founder1Name")}</h4>
                 <p className="text-teal-600 font-medium">{t("about.founder1Title")}</p>
-                <p className="mt-2 text-gray-500">{t("about.founder1Bio")}</p>
+                <p className="mt-2 text-sm sm:text-base text-gray-500 max-w-xs mx-auto">{t("about.founder1Bio")}</p>
                 <div className="mt-4 flex justify-center space-x-3">
-                  <div className="flex items-center text-sm">
+                  <div className="flex items-center text-xs sm:text-sm">
                     <BookOpen className="mr-1 h-4 w-4 text-teal-600" />
                     <span>{t("about.founder1Education")}</span>
                   </div>

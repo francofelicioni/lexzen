@@ -25,19 +25,19 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] sm:w-[350px]">
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-8">
             <span className="text-xl font-bold animate-fade-in">Lexzen</span>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setOpen(false)}
-              className="transition-transform duration-300 hover:rotate-90"
+              className="transition-transform duration-300 hover:rotate-90 p-2 h-10 w-10"
             >
               <X className="h-6 w-6" />
               <span className="sr-only">Close menu</span>
             </Button>
           </div>
-          <nav className="flex flex-col gap-6">
+          <nav className="flex flex-col gap-8">
             {[
               { href: "#services", label: t("nav.services"), delay: "animation-delay-100" },
               { href: "#about", label: t("nav.about"), delay: "animation-delay-200" },
@@ -47,7 +47,7 @@ export function MobileNav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-lg font-medium hover:text-teal-600 transition-colors animate-slide-right ${item.delay}`}
+                className={`text-lg font-medium hover:text-teal-600 transition-colors animate-slide-right ${item.delay} py-2`}
                 onClick={handleLinkClick}
               >
                 {item.label}

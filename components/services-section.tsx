@@ -19,6 +19,7 @@ interface PricingPackageProps {
   highlighted?: boolean
   buttonText?: string
   delay?: number
+  className?: string
 }
 
 function PricingPackage({
@@ -29,25 +30,26 @@ function PricingPackage({
   highlighted = false,
   buttonText = "Get Started",
   delay = 0,
+  className = "",
 }: PricingPackageProps) {
   return (
-    <AnimatedSection direction="up" delay={delay} className="flex flex-col h-full">
+    <AnimatedSection direction="up" delay={delay} className={`flex flex-col h-full ${className}`}>
       <Card
         className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-teal-500 shadow-md" : ""} hover:shadow-lg`}
       >
         <CardHeader className={highlighted ? "bg-teal-50" : ""}>
-          <CardTitle className="flex items-center justify-between">
+          <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
             {title}
             {highlighted && <Badge className="bg-teal-600">Popular</Badge>}
           </CardTitle>
-          <CardDescription>{description}</CardDescription>
+          <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
           <div className="mt-2">
-            <span className="text-3xl font-bold">{price}</span>
+            <span className="text-2xl sm:text-3xl font-bold">{price}</span>
             {price.includes("€") && <span className="text-sm text-muted-foreground">/month</span>}
           </div>
         </CardHeader>
         <CardContent className="flex-grow">
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-3 text-sm sm:text-base">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start gap-2">
                 <svg
@@ -68,7 +70,7 @@ function PricingPackage({
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-teal-600 hover:bg-teal-700 hover-lift">{buttonText}</Button>
+          <Button className="w-full bg-teal-600 hover:bg-teal-700 hover-lift py-5 text-base">{buttonText}</Button>
         </CardFooter>
       </Card>
     </AnimatedSection>
@@ -185,7 +187,7 @@ export function ServicesSection() {
                 <AnimatedSection direction="up" delay={300}>
                   <h3 className="text-2xl font-bold mb-6">{t("services.pricingPackages")}</h3>
                 </AnimatedSection>
-                <div className="grid gap-6 md:grid-cols-3">
+                <div className="grid gap-8 md:grid-cols-3">
                   <PricingPackage
                     title={t("services.express")}
                     price="€150"
@@ -198,6 +200,7 @@ export function ServicesSection() {
                       "1 contract draft or review",
                     ]}
                     delay={400}
+                    className="mb-4 md:mb-0"
                   />
                   <PricingPackage
                     title={t("services.medium")}
@@ -213,6 +216,7 @@ export function ServicesSection() {
                     ]}
                     highlighted={true}
                     delay={500}
+                    className="mb-4 md:mb-0"
                   />
                   <PricingPackage
                     title={t("services.full")}

@@ -87,13 +87,13 @@ export default function Home() {
                   </p>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={500}>
-                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                    <Button className="bg-teal-600 hover:bg-teal-700 hover-lift" asChild>
+                  <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
+                    <Button className="bg-teal-600 hover:bg-teal-700 hover-lift w-full sm:w-auto" asChild>
                       <a href="#booking">{t("hero.scheduleFree")}</a>
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-teal-600 text-teal-600 hover:bg-teal-50 hover-lift"
+                      className="border-teal-600 text-teal-600 hover:bg-teal-50 hover-lift w-full sm:w-auto"
                       asChild
                     >
                       <a href="#services">{t("hero.viewServices")}</a>

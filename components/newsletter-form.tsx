@@ -38,7 +38,7 @@ export function NewsletterForm() {
 
   return (
     <div className="space-y-4">
-      <form onSubmit={handleSubmit} className="space-y-2">
+      <form onSubmit={handleSubmit} className="space-y-3">
         <div className="relative">
           <Input
             type="email"
@@ -46,19 +46,19 @@ export function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="pr-24 transition-all duration-300 focus:border-teal-500 focus:ring-teal-500"
+            className="pr-24 transition-all duration-300 focus:border-teal-500 focus:ring-teal-500 h-12 text-base"
             disabled={status === "loading" || status === "success"}
           />
           <Button
             type="submit"
             size="sm"
-            className="absolute right-1 top-1 h-7 bg-teal-600 hover:bg-teal-700 transition-all duration-300 hover:scale-105"
+            className="absolute right-1 top-1 h-10 px-4 bg-teal-600 hover:bg-teal-700 transition-all duration-300 hover:scale-105 text-base"
             disabled={status === "loading" || status === "success"}
           >
             {status === "loading" ? (
               <span className="flex items-center gap-1">
                 <svg
-                  className="animate-spin h-4 w-4 text-white"
+                  className="animate-spin h-5 w-5 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ export function NewsletterForm() {
         )}
       </form>
 
-      <p className="text-xs text-gray-500">{t("footer.privacyConsent")}</p>
+      <p className="text-sm text-gray-500">{t("footer.privacyConsent")}</p>
     </div>
   )
 }

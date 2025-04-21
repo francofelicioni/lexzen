@@ -236,12 +236,12 @@ export function BookingCalendar() {
                   <div className="text-sm text-gray-500 mb-4">{t("booking.timeZoneNote")}</div>
 
                   {availableTimeSlots.length > 0 ? (
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                       {availableTimeSlots.map((slot, index) => (
                         <Button
                           key={index}
                           variant="outline"
-                          className={`flex items-center justify-center gap-2 ${
+                          className={`flex items-center justify-center gap-2 py-5 ${
                             timeSlot && timeSlot.getTime() === slot.getTime()
                               ? "border-teal-600 bg-teal-50 text-teal-700"
                               : ""
@@ -276,9 +276,11 @@ export function BookingCalendar() {
                     </div>
                   </div>
 
-                  <div className="space-y-4">
-                    <div className="grid gap-2">
-                      <Label htmlFor="name">{t("booking.fullName")}</Label>
+                  <div className="space-y-5">
+                    <div className="grid gap-3">
+                      <Label htmlFor="name" className="text-base">
+                        {t("booking.fullName")}
+                      </Label>
                       <Input
                         id="name"
                         name="name"
@@ -286,11 +288,14 @@ export function BookingCalendar() {
                         onChange={handleInputChange}
                         placeholder={t("booking.fullNamePlaceholder")}
                         required
+                        className="h-12 text-base"
                       />
                     </div>
 
-                    <div className="grid gap-2">
-                      <Label htmlFor="email">{t("booking.email")}</Label>
+                    <div className="grid gap-3">
+                      <Label htmlFor="email" className="text-base">
+                        {t("booking.email")}
+                      </Label>
                       <Input
                         id="email"
                         name="email"
@@ -299,11 +304,14 @@ export function BookingCalendar() {
                         onChange={handleInputChange}
                         placeholder={t("booking.emailPlaceholder")}
                         required
+                        className="h-12 text-base"
                       />
                     </div>
 
-                    <div className="grid gap-2">
-                      <Label htmlFor="phone">{t("booking.phone")}</Label>
+                    <div className="grid gap-3">
+                      <Label htmlFor="phone" className="text-base">
+                        {t("booking.phone")}
+                      </Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -311,18 +319,21 @@ export function BookingCalendar() {
                         onChange={handleInputChange}
                         placeholder={t("booking.phonePlaceholder")}
                         required
+                        className="h-12 text-base"
                       />
                     </div>
 
-                    <div className="grid gap-2">
-                      <Label htmlFor="topic">{t("booking.topic")}</Label>
+                    <div className="grid gap-3">
+                      <Label htmlFor="topic" className="text-base">
+                        {t("booking.topic")}
+                      </Label>
                       <Textarea
                         id="topic"
                         name="topic"
                         value={formData.topic}
                         onChange={handleInputChange}
                         placeholder={t("booking.topicPlaceholder")}
-                        className="min-h-[100px]"
+                        className="min-h-[120px] text-base p-4"
                       />
                     </div>
                   </div>

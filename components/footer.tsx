@@ -44,24 +44,24 @@ export function Footer() {
           {/* Company Links */}
           <AnimatedSection direction="up" delay={200} className="">
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.companyHeading")}</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
-                <Link href="#about" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#about" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
                   {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#services" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
                   {t("footer.services")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
                   {t("footer.careers")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
                   {t("footer.blog")}
                 </Link>
               </li>
@@ -96,8 +96,8 @@ export function Footer() {
           </AnimatedSection>
 
           {/* Newsletter */}
-          <AnimatedSection direction="left" delay={400} className="">
-            <h3 className="font-semibold text-gray-900 mb-2">{t("footer.newsletterHeading")}</h3>
+          <AnimatedSection direction="left" delay={400} className="px-2">
+            <h3 className="font-semibold text-gray-900 mb-3 text-lg">{t("footer.newsletterHeading")}</h3>
             <p className="text-gray-600 text-sm mb-4">{t("footer.newsletterSubheading")}</p>
             <NewsletterForm />
           </AnimatedSection>

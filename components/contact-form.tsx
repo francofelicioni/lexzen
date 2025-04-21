@@ -130,7 +130,7 @@ export function ContactForm() {
               value={formData.fullName}
               onChange={handleChange}
               placeholder={t("contactForm.fullNamePlaceholder")}
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-300 h-12 text-base ${
                 errors.fullName ? "border-red-500 focus-visible:ring-red-500" : ""
               }`}
               disabled={isSubmitting}
@@ -236,10 +236,14 @@ export function ContactForm() {
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={700}>
-          <Button type="submit" className="w-full bg-teal-600 hover:bg-teal-700 hover-lift" disabled={isSubmitting}>
+          <Button
+            type="submit"
+            className="w-full bg-teal-600 hover:bg-teal-700 hover-lift py-5 text-base"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? (
               <span className="flex items-center gap-2">
-                <Loader2 className="h-4 w-4 animate-spin" />
+                <Loader2 className="h-5 w-5 animate-spin" />
                 {t("contactForm.sending")}
               </span>
             ) : (
@@ -251,16 +255,19 @@ export function ContactForm() {
 
       {/* Success Dialog */}
       <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md p-6 max-w-[90vw] rounded-lg">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2 text-teal-600">
-              <CheckCircle className="h-5 w-5" />
+            <DialogTitle className="flex items-center gap-2 text-teal-600 text-xl">
+              <CheckCircle className="h-6 w-6" />
               {t("contactForm.success")}
             </DialogTitle>
-            <DialogDescription>{t("contactForm.successDetails")}</DialogDescription>
+            <DialogDescription className="text-base pt-2">{t("contactForm.successDetails")}</DialogDescription>
           </DialogHeader>
-          <DialogFooter>
-            <Button className="w-full bg-teal-600 hover:bg-teal-700" onClick={() => setShowSuccessDialog(false)}>
+          <DialogFooter className="mt-4">
+            <Button
+              className="w-full bg-teal-600 hover:bg-teal-700 py-5 text-base"
+              onClick={() => setShowSuccessDialog(false)}
+            >
               {t("contactForm.close")}
             </Button>
           </DialogFooter>
