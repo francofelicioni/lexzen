@@ -14,7 +14,7 @@ export function LanguageSelector() {
         <Button
           variant="ghost"
           size="sm"
-          className="h-10 rounded-full px-3 flex items-center gap-1 hover:bg-blue-gray/10 hover:text-blue-gray transition-colors"
+          className="h-10 rounded-full px-3 flex items-center gap-1 hover:bg-beige-light/10 hover:text-beige-light transition-colors"
         >
           <Globe className="h-5 w-5 mr-1" />
           <span className="font-medium">{language.toUpperCase()}</span>

@@ -218,7 +218,7 @@ export function ContactForm() {
 
         <Button
           type="submit"
-          className="w-full bg-blue-gray hover:bg-legal-accent-dark py-5 text-base"
+          className="w-full bg-beige-light hover:bg-legal-accent-dark py-5 text-base"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
@@ -244,7 +244,7 @@ export function ContactForm() {
           </DialogHeader>
           <DialogFooter className="mt-4">
             <Button
-              className="w-full bg-blue-gray hover:bg-legal-accent-dark py-5 text-base"
+              className="w-full bg-beige-light hover:bg-legal-accent-dark py-5 text-base"
               onClick={() => setShowSuccessDialog(false)}
             >
               {t("contactForm.close")}
@@ -265,7 +265,7 @@ export function ContactForm() {
           </DialogHeader>
           <DialogFooter>
             <Button
-              className="w-full bg-blue-gray hover:bg-legal-accent-dark"
+              className="w-full bg-beige-light hover:bg-legal-accent-dark"
               onClick={() => setShowErrorDialog(false)}
             >
               {t("contactForm.close")}

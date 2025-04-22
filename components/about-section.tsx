@@ -15,7 +15,7 @@ export function AboutSection() {
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
+              <div className="inline-block rounded-lg bg-beige-light/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.about")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("about.title")}</h2>
@@ -140,7 +140,7 @@ export function AboutSection() {
           {/* Remove animations from values cards */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
-              <div className="rounded-full bg-blue-gray/10 p-3">
+              <div className="rounded-full bg-beige-light/10 p-3">
                 <Scale className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.integrity")}</h4>
@@ -148,7 +148,7 @@ export function AboutSection() {
             </div>
 
             <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
-              <div className="rounded-full bg-blue-gray/10 p-3">
+              <div className="rounded-full bg-beige-light/10 p-3">
                 <Users className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.clientCentered")}</h4>
@@ -156,7 +156,7 @@ export function AboutSection() {
             </div>
 
             <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
-              <div className="rounded-full bg-blue-gray/10 p-3">
+              <div className="rounded-full bg-beige-light/10 p-3">
                 <Award className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.excellence")}</h4>
@@ -164,7 +164,7 @@ export function AboutSection() {
             </div>
 
             <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
-              <div className="rounded-full bg-blue-gray/10 p-3">
+              <div className="rounded-full bg-beige-light/10 p-3">
                 <BookOpen className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.innovation")}</h4>
@@ -176,7 +176,7 @@ export function AboutSection() {
         {/* CTA */}
         <AnimatedSection direction="up" delay={700} className="mt-16 text-center">
           <h3 className="text-xl font-bold mb-4">{t("about.readyToWork")}</h3>
-          <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
+          <Button className="bg-beige-light hover:bg-legal-accent-dark hover-lift" asChild>
             <a href="#booking">{t("hero.scheduleFree")}</a>
           </Button>
         </AnimatedSection>

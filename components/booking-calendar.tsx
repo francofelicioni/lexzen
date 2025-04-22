@@ -133,7 +133,7 @@ export function BookingCalendar() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <AnimatedSection direction="up" elementType="heading">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
+              <div className="inline-block rounded-lg bg-beige-light/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.bookCall")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("booking.title")}</h2>
@@ -153,7 +153,7 @@ export function BookingCalendar() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex gap-4">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-gray/10 text-blue-gray">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-beige-light/10 text-blue-gray">
                   1
                 </div>
                 <div>
@@ -162,7 +162,7 @@ export function BookingCalendar() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-gray/10 text-blue-gray">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-beige-light/10 text-blue-gray">
                   2
                 </div>
                 <div>
@@ -171,7 +171,7 @@ export function BookingCalendar() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-gray/10 text-blue-gray">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-beige-light/10 text-blue-gray">
                   3
                 </div>
                 <div>
@@ -179,7 +179,7 @@ export function BookingCalendar() {
                   <p className="text-sm text-gray-500">{t("booking.step3Desc")}</p>
                 </div>
               </div>
-              <div className="mt-6 rounded-lg bg-blue-gray/10 p-4 text-sm">
+              <div className="mt-6 rounded-lg bg-beige-light/10 p-4 text-sm">
                 <p className="font-medium text-blue-gray">{t("booking.consultationIncludes")}</p>
                 <ul className="mt-2 space-y-1 text-gray-600">
                   <li className="flex items-start gap-2">
@@ -276,7 +276,7 @@ export function BookingCalendar() {
 
               {step === 3 && date && timeSlot && (
                 <form onSubmit={handleSubmit}>
-                  <div className="flex items-center gap-2 mb-6 p-3 bg-blue-gray/10 rounded-md">
+                  <div className="flex items-center gap-2 mb-6 p-3 bg-beige-light/10 rounded-md">
                     <CalendarIcon className="h-5 w-5 text-blue-gray shrink-0" />
                     <div>
                       <div className="font-medium">{format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}</div>
@@ -360,7 +360,7 @@ export function BookingCalendar() {
               {step === 1 && (
                 <Button
                   disabled={!date}
-                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
+                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-beige-light hover:bg-legal-accent-dark`}
                   onClick={() => date && setStep(2)}
                 >
                   {t("booking.continue")}
@@ -370,7 +370,7 @@ export function BookingCalendar() {
               {step === 2 && (
                 <Button
                   disabled={!timeSlot}
-                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
+                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-beige-light hover:bg-legal-accent-dark`}
                   onClick={() => timeSlot && setStep(3)}
                 >
                   {t("booking.continue")}
@@ -380,7 +380,7 @@ export function BookingCalendar() {
               {step === 3 && (
                 <Button
                   type="submit"
-                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
+                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-beige-light hover:bg-legal-accent-dark`}
                   onClick={handleSubmit}
                   disabled={!formData.name || !formData.email || !formData.phone}
                 >
@@ -401,7 +401,7 @@ export function BookingCalendar() {
           </DialogHeader>
 
           {date && timeSlot && (
-            <div className="p-4 bg-blue-gray/10 rounded-md space-y-3">
+            <div className="p-4 bg-beige-light/10 rounded-md space-y-3">
               <div className="flex items-center gap-2">
                 <CalendarIcon className="h-5 w-5 text-blue-gray shrink-0" />
                 <div className="font-medium">{format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}</div>
@@ -423,7 +423,7 @@ export function BookingCalendar() {
           </div>
 
           <DialogFooter>
-            <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark" onClick={handleConfirmationClose}>
+            <Button className="w-full bg-beige-light hover:bg-legal-accent-dark" onClick={handleConfirmationClose}>
               {t("booking.done")}
             </Button>
           </DialogFooter>

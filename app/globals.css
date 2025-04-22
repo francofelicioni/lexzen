@@ -115,25 +115,25 @@
 }
 
 @layer components {
-  /* New utility classes for the blue-gray color scheme */
+  /* New utility classes for the beige-light color scheme */
   .btn-primary {
-    @apply bg-blue-gray hover:bg-legal-accent-dark text-white transition-colors;
+    @apply bg-beige-light hover:bg-legal-accent-dark text-white transition-colors;
   }
 
   .btn-outline {
-    @apply border-blue-gray text-blue-gray hover:bg-blue-gray/10 transition-colors;
+    @apply border-beige-light text-beige-light hover:bg-beige-light/10 transition-colors;
   }
 
   .accent-text {
-    @apply text-blue-gray;
+    @apply text-beige-light;
   }
 
   .accent-bg {
-    @apply bg-blue-gray/10 text-blue-gray;
+    @apply bg-beige-light/10 text-beige-light;
   }
 
   .accent-border {
-    @apply border-blue-gray;
+    @apply border-beige-light;
   }
 
   /* Font utility classes */

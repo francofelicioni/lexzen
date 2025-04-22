@@ -55,7 +55,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-2">
             <LanguageSelector />
-            <Button className="bg-blue-gray hover:bg-legal-accent-dark hidden sm:inline-flex">
+            <Button className="bg-beige-light hover:bg-legal-accent-dark hidden sm:inline-flex">
               {t("nav.getStarted")}
             </Button>
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
                   {t("hero.subtitle")}
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
-                  <Button className="bg-blue-gray hover:bg-legal-accent-dark w-full sm:w-auto" asChild>
+                  <Button className="bg-beige-light hover:bg-legal-accent-dark w-full sm:w-auto" asChild>
                     <a href="#booking">{t("hero.scheduleFree")}</a>
                   </Button>
                   <Button
@@ -117,7 +117,7 @@ export default function Home() {
             <AnimatedSection direction="up" elementType="heading">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
+                  <div className="inline-block rounded-lg bg-beige-light/10 px-3 py-1 text-sm text-blue-gray">
                     {t("testimonials.title")}
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("testimonials.title")}</h2>
@@ -153,10 +153,10 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-gray relative overflow-hidden">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-beige-light relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-blue-gray/10 rounded-full opacity-20"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-gray/10 rounded-full opacity-20"></div>
+            <div className="absolute top-10 left-10 w-64 h-64 bg-beige-light/10 rounded-full opacity-20"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-beige-light/10 rounded-full opacity-20"></div>
           </div>
 
           <div className="container px-4 md:px-6 relative z-10">
