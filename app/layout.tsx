@@ -4,6 +4,7 @@ import { Inter, Merriweather } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
+import { SafeHydratedThemeProvider } from "@/components/theme-provider-safe"
 
 // Load Inter font with multiple weights
 const inter = Inter({
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -69,9 +70,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${merriweather.variable} font-body`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <LanguageProvider>{children}</LanguageProvider>
-        </ThemeProvider>
+        <SafeHydratedThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </SafeHydratedThemeProvider>
       </body>
     </html>
   )

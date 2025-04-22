@@ -78,7 +78,7 @@ export default function Home() {
                   </Button>
                   <Button
                     variant="outline"
-                    className="border-blue-gray text-blue-gray hover:bg-blue-gray/10 w-full sm:w-auto"
+                    className="border-blue-gray text-blue-gray hover:text-legal-accent hover:bg-blue-gray/10 w-full sm:w-auto"
                     asChild
                   >
                     <a href="#services">{t("hero.viewServices")}</a>
@@ -169,10 +169,10 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button className="bg-white text-blue-gray hover:bg-blue-gray/10" asChild>
+                  <Button className="bg-white text-blue-gray hover:bg-legal-accent-dark hover:text-white" asChild>
                     <a href="#booking">{t("cta.scheduleConsultation")}</a>
                   </Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-legal-accent-dark" asChild>
+                  <Button className="border-white text-white hover:bg-legal-accent-dark border bg-white/10" asChild>
                     <a href="#contact">{t("cta.contactUs")}</a>
                   </Button>
                 </div>
