@@ -18,7 +18,6 @@ interface PricingPackageProps {
   features: string[]
   highlighted?: boolean
   buttonText?: string
-  delay?: number
   className?: string
 }
 
@@ -29,14 +28,11 @@ function PricingPackage({
   features,
   highlighted = false,
   buttonText = "Get Started",
-  delay = 0,
   className = "",
 }: PricingPackageProps) {
   return (
-    <AnimatedSection direction="up" delay={delay} className={`flex flex-col h-full ${className}`}>
-      <Card
-        className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-blue-gray shadow-md" : ""} hover:shadow-lg`}
-      >
+    <div className={`flex flex-col h-full ${className}`}>
+      <Card className={`flex flex-col h-full ${highlighted ? "border-blue-gray shadow-md" : ""}`}>
         <CardHeader className={highlighted ? "bg-blue-gray/10" : ""}>
           <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
             {title}
@@ -70,12 +66,10 @@ function PricingPackage({
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base">
-            {buttonText}
-          </Button>
+          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark py-5 text-base">{buttonText}</Button>
         </CardFooter>
       </Card>
-    </AnimatedSection>
+    </div>
   )
 }
 
@@ -83,18 +77,17 @@ interface ServiceItemProps {
   icon: React.ReactNode
   title: string
   description: string
-  delay?: number
 }
 
-function ServiceItem({ icon, title, description, delay = 0 }: ServiceItemProps) {
+function ServiceItem({ icon, title, description }: ServiceItemProps) {
   return (
-    <AnimatedSection direction="up" delay={delay} className="flex gap-4 items-start">
+    <div className="flex gap-4 items-start">
       <div className="rounded-full bg-blue-gray/10 p-2 mt-1 shrink-0">{icon}</div>
       <div>
         <h4 className="font-medium">{title}</h4>
         <p className="text-sm text-gray-500">{description}</p>
       </div>
-    </AnimatedSection>
+    </div>
   )
 }
 
@@ -106,6 +99,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
       <div className="container px-4 md:px-6">
+        {/* Only animate the section heading */}
         <AnimatedSection direction="up">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
@@ -113,36 +107,35 @@ export function ServicesSection() {
                 {t("nav.services")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("services.title")}</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {t("services.subtitle")}
-              </p>
             </div>
           </div>
         </AnimatedSection>
 
+        {/* No animation for subtitle */}
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="space-y-2">
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              {t("services.subtitle")}
+            </p>
+          </div>
+        </div>
+
         <Tabs defaultValue="startups" className="w-full" onValueChange={setActiveTab}>
-          <AnimatedSection direction="up" delay={200}>
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger
-                value="startups"
-                className={`${isMobile ? "text-sm py-2" : "text-base"} transition-all duration-300`}
-              >
-                {t("services.tabStartups")}
-              </TabsTrigger>
-              <TabsTrigger
-                value="residency"
-                className={`${isMobile ? "text-sm py-2" : "text-base"} transition-all duration-300`}
-              >
-                {t("services.tabResidency")}
-              </TabsTrigger>
-            </TabsList>
-          </AnimatedSection>
+          <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsTrigger value="startups" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
+              {t("services.tabStartups")}
+            </TabsTrigger>
+            <TabsTrigger value="residency" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
+              {t("services.tabResidency")}
+            </TabsTrigger>
+          </TabsList>
 
           {/* For Startups & Online Businesses */}
           <TabsContent value="startups" className="transition-all duration-500">
             <div className="grid gap-8">
               <div className="grid gap-6">
-                <AnimatedSection direction="up" delay={300}>
+                {/* Animate only the section heading */}
+                <AnimatedSection direction="up">
                   <h3 className="text-2xl font-bold">{t("services.legalServices")}</h3>
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-2">
@@ -150,43 +143,38 @@ export function ServicesSection() {
                     icon={<FileText className="h-5 w-5 text-blue-gray" />}
                     title={t("services.personalizedLegal")}
                     description={t("services.personalizedLegalDesc")}
-                    delay={400}
                   />
                   <ServiceItem
                     icon={<FileCheck className="h-5 w-5 text-blue-gray" />}
                     title={t("services.documentPrep")}
                     description={t("services.documentPrepDesc")}
-                    delay={500}
                   />
                   <ServiceItem
                     icon={<FileContract className="h-5 w-5 text-blue-gray" />}
                     title={t("services.contractDrafting")}
                     description={t("services.contractDraftingDesc")}
-                    delay={600}
                   />
                   <ServiceItem
                     icon={<ShieldCheck className="h-5 w-5 text-blue-gray" />}
                     title={t("services.websitePolicies")}
                     description={t("services.websitePoliciesDesc")}
-                    delay={700}
                   />
                   <ServiceItem
                     icon={<ShoppingCart className="h-5 w-5 text-blue-gray" />}
                     title={t("services.ecommerceCompliance")}
                     description={t("services.ecommerceComplianceDesc")}
-                    delay={800}
                   />
                   <ServiceItem
                     icon={<Handshake className="h-5 w-5 text-blue-gray" />}
                     title={t("services.ndaAgreements")}
                     description={t("services.ndaAgreementsDesc")}
-                    delay={900}
                   />
                 </div>
               </div>
 
               <div>
-                <AnimatedSection direction="up" delay={300}>
+                {/* Animate only the section heading */}
+                <AnimatedSection direction="up">
                   <h3 className="text-2xl font-bold mb-6">{t("services.pricingPackages")}</h3>
                 </AnimatedSection>
                 <div className="grid gap-8 md:grid-cols-3">
@@ -201,7 +189,6 @@ export function ServicesSection() {
                       "Email support",
                       "1 contract draft or review",
                     ]}
-                    delay={400}
                     className="mb-4 md:mb-0"
                   />
                   <PricingPackage
@@ -217,7 +204,6 @@ export function ServicesSection() {
                       "Website legal policies review",
                     ]}
                     highlighted={true}
-                    delay={500}
                     className="mb-4 md:mb-0"
                   />
                   <PricingPackage
@@ -233,14 +219,11 @@ export function ServicesSection() {
                       "Complete website legal compliance",
                       "E-commerce compliance audit",
                     ]}
-                    delay={600}
                   />
                 </div>
-                <AnimatedSection direction="up" delay={700}>
-                  <div className="mt-6 text-center text-sm text-gray-500">
-                    <p>{t("services.discounts")}</p>
-                  </div>
-                </AnimatedSection>
+                <div className="mt-6 text-center text-sm text-gray-500">
+                  <p>{t("services.discounts")}</p>
+                </div>
               </div>
             </div>
           </TabsContent>
@@ -249,7 +232,8 @@ export function ServicesSection() {
           <TabsContent value="residency" className="transition-all duration-500">
             <div className="grid gap-8">
               <div>
-                <AnimatedSection direction="up" delay={300}>
+                {/* Animate only the section heading */}
+                <AnimatedSection direction="up">
                   <h3 className="text-2xl font-bold mb-6">{t("services.residencyTitle")}</h3>
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-3">
@@ -259,7 +243,6 @@ export function ServicesSection() {
                     description={t("services.silverDesc")}
                     features={["Document review", "Personalized advice", "Application checklist", "Email support"]}
                     buttonText={t("services.chooseSilver")}
-                    delay={400}
                   />
                   <PricingPackage
                     title={t("services.gold")}
@@ -273,7 +256,6 @@ export function ServicesSection() {
                       "Follow-up assistance",
                     ]}
                     buttonText={t("services.chooseGold")}
-                    delay={500}
                   />
                   <PricingPackage
                     title={t("services.platinum")}
@@ -289,194 +271,23 @@ export function ServicesSection() {
                     ]}
                     highlighted={true}
                     buttonText={t("services.choosePlatinum")}
-                    delay={600}
                   />
                 </div>
               </div>
 
               <div>
-                <AnimatedSection direction="up" delay={300}>
+                {/* Animate only the section heading */}
+                <AnimatedSection direction="up">
                   <h3 className="text-2xl font-bold mb-6">{t("services.familyTitle")}</h3>
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-2">
-                  <AnimatedSection direction="right" delay={400}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
-                      <CardHeader>
-                        <CardTitle>{t("services.forResidents")}</CardTitle>
-                        <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
-                        <div className="mt-2">
-                          <span className="text-3xl font-bold">€100</span>
-                          <span className="text-sm text-muted-foreground"> one-time fee</span>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2 text-sm">
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>Full documentation support</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>Digital certificate assistance</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>TIE appointment booking</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>Application follow-up</span>
-                          </li>
-                        </ul>
-                      </CardContent>
-                      <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                          {t("services.selectPackage")}
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  </AnimatedSection>
-
-                  <AnimatedSection direction="left" delay={500}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
-                      <CardHeader>
-                        <CardTitle>{t("services.forNonResidents")}</CardTitle>
-                        <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
-                        <div className="mt-2">
-                          <span className="text-3xl font-bold">€150</span>
-                          <span className="text-sm text-muted-foreground"> for 2 people</span>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2 text-sm">
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>Full package for residency registration</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>Family reunification documentation</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>All necessary appointments</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>€50 for each additional person</span>
-                          </li>
-                        </ul>
-                      </CardContent>
-                      <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                          {t("services.selectPackage")}
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  </AnimatedSection>
-                </div>
-              </div>
-
-              <div>
-                <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold mb-6">{t("services.specializedTitle")}</h3>
-                </AnimatedSection>
-                <AnimatedSection direction="up" delay={400}>
-                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
+                  <Card className="transition-all duration-300">
                     <CardHeader>
-                      <CardTitle>{t("services.consultationTitle")}</CardTitle>
-                      <CardDescription>{t("services.consultationDesc")}</CardDescription>
+                      <CardTitle>{t("services.forResidents")}</CardTitle>
+                      <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
                       <div className="mt-2">
-                        <span className="text-3xl font-bold">€50</span>
-                        <span className="text-sm text-muted-foreground"> minimum (2 hours)</span>
+                        <span className="text-3xl font-bold">€100</span>
+                        <span className="text-sm text-muted-foreground"> one-time fee</span>
                       </div>
                     </CardHeader>
                     <CardContent>
@@ -494,7 +305,7 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Personalized analysis of your situation</span>
+                          <span>Full documentation support</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <svg
@@ -509,7 +320,7 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Guidance on suitable residency permits</span>
+                          <span>Digital certificate assistance</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <svg
@@ -524,7 +335,7 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Detailed documentation checklist</span>
+                          <span>TIE appointment booking</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <svg
@@ -539,17 +350,183 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Additional hours at €30/hour</span>
+                          <span>Application follow-up</span>
                         </li>
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                        {t("services.bookConsultation")}
+                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark">
+                        {t("services.selectPackage")}
                       </Button>
                     </CardFooter>
                   </Card>
+
+                  <Card className="transition-all duration-300">
+                    <CardHeader>
+                      <CardTitle>{t("services.forNonResidents")}</CardTitle>
+                      <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
+                      <div className="mt-2">
+                        <span className="text-3xl font-bold">€150</span>
+                        <span className="text-sm text-muted-foreground"> for 2 people</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>Full package for residency registration</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>Family reunification documentation</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>All necessary appointments</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>€50 for each additional person</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark">
+                        {t("services.selectPackage")}
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+              </div>
+
+              <div>
+                {/* Animate only the section heading */}
+                <AnimatedSection direction="up">
+                  <h3 className="text-2xl font-bold mb-6">{t("services.specializedTitle")}</h3>
                 </AnimatedSection>
+                <Card className="transition-all duration-300">
+                  <CardHeader>
+                    <CardTitle>{t("services.consultationTitle")}</CardTitle>
+                    <CardDescription>{t("services.consultationDesc")}</CardDescription>
+                    <div className="mt-2">
+                      <span className="text-3xl font-bold">€50</span>
+                      <span className="text-sm text-muted-foreground"> minimum (2 hours)</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Personalized analysis of your situation</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Guidance on suitable residency permits</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Detailed documentation checklist</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Additional hours at €30/hour</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark">
+                      {t("services.bookConsultation")}
+                    </Button>
+                  </CardFooter>
+                </Card>
               </div>
             </div>
           </TabsContent>

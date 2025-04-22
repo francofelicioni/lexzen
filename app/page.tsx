@@ -34,38 +34,30 @@ export default function Home() {
       {/* Scroll to Top Button */}
       <ScrollToTop />
 
-      {/* Header */}
+      {/* Header - NO ANIMATIONS */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <MobileNav />
-            <Scale className={`h-6 w-6 text-blue-gray ${isLoaded ? "animate-fade-in" : "opacity-0"}`} />
-            <span className={`text-xl font-bold ${isLoaded ? "animate-fade-in animation-delay-100" : "opacity-0"}`}>
-              Lexzen
-            </span>
+            <Scale className="h-6 w-6 text-blue-gray" />
+            <span className="text-xl font-bold">Lexzen</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            {["services", "about", "bookCall", "contact"].map((item, index) => (
+            {["services", "about", "bookCall", "contact"].map((item) => (
               <Link
                 key={item}
                 href={`#${item === "bookCall" ? "booking" : item}`}
-                className={`text-sm font-medium hover:text-blue-gray transition-colors ${
-                  isLoaded ? `animate-fade-in animation-delay-${(index + 1) * 100}` : "opacity-0"
-                }`}
+                className="text-sm font-medium hover:text-blue-gray"
               >
                 {t(`nav.${item}`)}
               </Link>
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <div className={isLoaded ? "animate-fade-in animation-delay-500" : "opacity-0"}>
+            <div>
               <LanguageSelector />
             </div>
-            <Button
-              className={`bg-blue-gray hover:bg-legal-accent-dark hidden sm:inline-flex hover-lift ${
-                isLoaded ? "animate-fade-in animation-delay-700" : "opacity-0"
-              }`}
-            >
+            <Button className="bg-blue-gray hover:bg-legal-accent-dark hidden sm:inline-flex">
               {t("nav.getStarted")}
             </Button>
           </div>
@@ -73,44 +65,38 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section - NO ANIMATIONS */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
-                <AnimatedSection direction="up" delay={100}>
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("hero.title")}</h1>
-                </AnimatedSection>
-                <AnimatedSection direction="up" delay={300}>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    {t("hero.subtitle")}
-                  </p>
-                </AnimatedSection>
-                <AnimatedSection direction="up" delay={500}>
-                  <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
-                    <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift w-full sm:w-auto" asChild>
-                      <a href="#booking">{t("hero.scheduleFree")}</a>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="border-blue-gray text-blue-gray hover:bg-blue-gray/10 hover-lift w-full sm:w-auto"
-                      asChild
-                    >
-                      <a href="#services">{t("hero.viewServices")}</a>
-                    </Button>
-                  </div>
-                </AnimatedSection>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("hero.title")}</h1>
+                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  {t("hero.subtitle")}
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
+                  <Button className="bg-blue-gray hover:bg-legal-accent-dark w-full sm:w-auto" asChild>
+                    <a href="#booking">{t("hero.scheduleFree")}</a>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-blue-gray text-blue-gray hover:bg-blue-gray/10 w-full sm:w-auto"
+                    asChild
+                  >
+                    <a href="#services">{t("hero.viewServices")}</a>
+                  </Button>
+                </div>
               </div>
-              <AnimatedSection direction="left" delay={300} className="mx-auto lg:ml-auto">
-                <div className="aspect-video overflow-hidden rounded-xl bg-gray-100 object-cover animate-float">
+              <div className="mx-auto lg:ml-auto">
+                <div className="aspect-video overflow-hidden rounded-xl bg-gray-100 object-cover">
                   <img
                     src="/placeholder.svg?height=720&width=1280"
                     alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
-              </AnimatedSection>
+              </div>
             </div>
           </div>
         </section>
@@ -121,15 +107,16 @@ export default function Home() {
         {/* About Section */}
         <AboutSection />
 
-        {/* Booking Calendar */}
+        {/* Booking Calendar - NO ANIMATIONS */}
         <BookingCalendar />
 
-        {/* Contact Section - New! */}
+        {/* Contact Section */}
         <ContactSection />
 
         {/* Testimonials Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
           <div className="container px-4 md:px-6">
+            {/* Only animate the heading */}
             <AnimatedSection direction="up">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -137,47 +124,41 @@ export default function Home() {
                     {t("testimonials.title")}
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("testimonials.title")}</h2>
-                  <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    {t("testimonials.subtitle")}
-                  </p>
                 </div>
               </div>
             </AnimatedSection>
+
+            {/* No animations for testimonial content */}
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:gap-12 mt-12">
-              <AnimatedSection direction="right" delay={200}>
-                <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6 shadow-sm hover-lift">
-                  <p className="text-gray-500 italic">{t("testimonials.testimonial1")}</p>
-                  <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-gray-100 h-12 w-12" aria-hidden="true"></div>
-                    <div>
-                      <p className="font-medium">{t("testimonials.client1Name")}</p>
-                      <p className="text-sm text-gray-500">{t("testimonials.client1Title")}</p>
-                    </div>
+              <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6 shadow-sm">
+                <p className="text-gray-500 italic">{t("testimonials.testimonial1")}</p>
+                <div className="flex items-center gap-4">
+                  <div className="rounded-full bg-gray-100 h-12 w-12" aria-hidden="true"></div>
+                  <div>
+                    <p className="font-medium">{t("testimonials.client1Name")}</p>
+                    <p className="text-sm text-gray-500">{t("testimonials.client1Title")}</p>
                   </div>
                 </div>
-              </AnimatedSection>
-              <AnimatedSection direction="left" delay={400}>
-                <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6 shadow-sm hover-lift">
-                  <p className="text-gray-500 italic">{t("testimonials.testimonial2")}</p>
-                  <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-gray-100 h-12 w-12" aria-hidden="true"></div>
-                    <div>
-                      <p className="font-medium">{t("testimonials.client2Name")}</p>
-                      <p className="text-sm text-gray-500">{t("testimonials.client2Title")}</p>
-                    </div>
+              </div>
+              <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6 shadow-sm">
+                <p className="text-gray-500 italic">{t("testimonials.testimonial2")}</p>
+                <div className="flex items-center gap-4">
+                  <div className="rounded-full bg-gray-100 h-12 w-12" aria-hidden="true"></div>
+                  <div>
+                    <p className="font-medium">{t("testimonials.client2Name")}</p>
+                    <p className="text-sm text-gray-500">{t("testimonials.client2Title")}</p>
                   </div>
                 </div>
-              </AnimatedSection>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - Only animate the heading */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-gray relative overflow-hidden">
-          {/* Background animation elements */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-blue-gray/10 rounded-full opacity-20 animate-float"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-gray/10 rounded-full opacity-20 animate-float animation-delay-1000"></div>
+            <div className="absolute top-10 left-10 w-64 h-64 bg-blue-gray/10 rounded-full opacity-20"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-gray/10 rounded-full opacity-20"></div>
           </div>
 
           <div className="container px-4 md:px-6 relative z-10">
@@ -185,29 +166,31 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">{t("cta.title")}</h2>
-                  <p className="max-w-[900px] text-teal-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    {t("cta.subtitle")}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button className="bg-white text-blue-gray hover:bg-blue-gray/10 hover-lift" asChild>
-                    <a href="#booking">{t("cta.scheduleConsultation")}</a>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-legal-accent-dark hover-lift"
-                    asChild
-                  >
-                    <a href="#contact">{t("cta.contactUs")}</a>
-                  </Button>
                 </div>
               </div>
             </AnimatedSection>
+
+            {/* No animations for CTA content */}
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <p className="max-w-[900px] text-teal-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  {t("cta.subtitle")}
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Button className="bg-white text-blue-gray hover:bg-blue-gray/10" asChild>
+                  <a href="#booking">{t("cta.scheduleConsultation")}</a>
+                </Button>
+                <Button variant="outline" className="border-white text-white hover:bg-legal-accent-dark" asChild>
+                  <a href="#contact">{t("cta.contactUs")}</a>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
+      {/* Footer - NO ANIMATIONS */}
       <Footer />
     </div>
   )

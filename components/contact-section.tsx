@@ -12,6 +12,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
+        {/* Only animate the section heading */}
         <AnimatedSection direction="up">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
@@ -19,25 +20,31 @@ export function ContactSection() {
                 {t("nav.contact")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("contactForm.title")}</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {t("contactForm.subtitle")}
-              </p>
             </div>
           </div>
         </AnimatedSection>
 
+        {/* No animation for subtitle */}
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="space-y-2">
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              {t("contactForm.subtitle")}
+            </p>
+          </div>
+        </div>
+
         <div className="grid gap-8 lg:grid-cols-2">
-          {/* Contact Form */}
-          <AnimatedSection direction="right" delay={200} className="order-2 lg:order-1">
+          {/* Contact Form - No animations */}
+          <div className="order-2 lg:order-1">
             <Card>
               <CardContent className="p-6">
                 <ContactForm />
               </CardContent>
             </Card>
-          </AnimatedSection>
+          </div>
 
-          {/* Contact Information */}
-          <AnimatedSection direction="left" delay={300} className="order-1 lg:order-2">
+          {/* Contact Information - No animations */}
+          <div className="order-1 lg:order-2">
             <div className="space-y-8">
               {/* Map or Office Image */}
               <div className="relative h-[300px] overflow-hidden rounded-xl bg-gray-100">
@@ -59,7 +66,7 @@ export function ContactSection() {
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1">
                       <MapPin className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
@@ -69,7 +76,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1">
                       <Phone className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
@@ -79,7 +86,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1">
                       <Mail className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
@@ -89,7 +96,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1">
                       <Clock className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
@@ -101,7 +108,7 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </div>
     </section>
