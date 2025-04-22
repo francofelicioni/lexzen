@@ -117,11 +117,11 @@
 @layer components {
   /* New utility classes for the blue-gray color scheme */
   .btn-primary {
-    @apply bg-blue-gray hover:bg-legal-accent-dark text-white;
+    @apply bg-blue-gray hover:bg-legal-accent-dark text-white transition-colors;
   }
 
   .btn-outline {
-    @apply border-blue-gray text-blue-gray hover:bg-blue-gray/10;
+    @apply border-blue-gray text-blue-gray hover:bg-blue-gray/10 transition-colors;
   }
 
   .accent-text {
@@ -170,7 +170,9 @@
   }
 }
 
-/* Animations - Only for headings */
+/* Modify the animation utilities to be more selective */
+/* Only keep essential animations and make them more subtle */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -182,7 +184,7 @@
 
 @keyframes slideUp {
   from {
-    transform: translateY(20px);
+    transform: translateY(15px);
     opacity: 0;
   }
   to {
@@ -193,7 +195,7 @@
 
 @keyframes slideDown {
   from {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
     opacity: 0;
   }
   to {
@@ -204,7 +206,7 @@
 
 @keyframes slideLeft {
   from {
-    transform: translateX(20px);
+    transform: translateX(15px);
     opacity: 0;
   }
   to {
@@ -215,7 +217,7 @@
 
 @keyframes slideRight {
   from {
-    transform: translateX(-20px);
+    transform: translateX(-15px);
     opacity: 0;
   }
   to {
@@ -224,28 +226,30 @@
   }
 }
 
-/* Animation Utilities - Only for headings */
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+/* Remove float and pulse animations as they can be distracting */
+
+/* Animation Utilities - only apply to headings */
+.heading-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
-.animate-slide-up {
-  animation: slideUp 0.6s ease-out forwards;
+.heading-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
 }
 
-.animate-slide-down {
-  animation: slideDown 0.6s ease-out forwards;
+.heading-slide-down {
+  animation: slideDown 0.5s ease-out forwards;
 }
 
-.animate-slide-left {
-  animation: slideLeft 0.6s ease-out forwards;
+.heading-slide-left {
+  animation: slideLeft 0.5s ease-out forwards;
 }
 
-.animate-slide-right {
-  animation: slideRight 0.6s ease-out forwards;
+.heading-slide-right {
+  animation: slideRight 0.5s ease-out forwards;
 }
 
-/* Animation Delays */
+/* Animation Delays - keep shorter delays */
 .animation-delay-100 {
   animation-delay: 100ms;
 }
@@ -258,6 +262,15 @@
   animation-delay: 300ms;
 }
 
+/* Hover Animations - keep subtle hover effects for interactive elements */
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
 /* Respect user preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -267,6 +280,10 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .hover-lift:hover {
+    transform: none;
   }
 }
 
@@ -308,4 +325,11 @@
 :focus-visible {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
+}
+
+/* Ensure buttons have proper hover states on touch devices */
+@media (hover: none) {
+  .hover\:bg-teal-700:hover {
+    background-color: hsl(var(--primary));
+  }
 }

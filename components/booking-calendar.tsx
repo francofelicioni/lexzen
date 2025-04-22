@@ -22,6 +22,7 @@ import { format, addDays, isWeekend, isBefore, addMinutes } from "date-fns"
 import { es } from "date-fns/locale"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
+import { AnimatedSection } from "@/components/animated-section"
 
 // Available time slots (9:00 AM to 5:00 PM, 20-minute intervals)
 const generateTimeSlots = (date: Date) => {
@@ -128,16 +129,19 @@ export function BookingCalendar() {
   return (
     <section id="booking" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
+        {/* Update section title to use elementType="heading" */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
-              {t("nav.bookCall")}
+          <AnimatedSection direction="up" elementType="heading">
+            <div className="space-y-2">
+              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
+                {t("nav.bookCall")}
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("booking.title")}</h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                {t("booking.subtitle")}
+              </p>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("booking.title")}</h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t("booking.subtitle")}
-            </p>
-          </div>
+          </AnimatedSection>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">

@@ -12,6 +12,7 @@ interface AnimatedSectionProps {
   threshold?: number
   rootMargin?: string
   once?: boolean
+  elementType?: "heading" | "any"
 }
 
 export function AnimatedSection({
@@ -22,6 +23,7 @@ export function AnimatedSection({
   threshold = 0.1,
   rootMargin = "0px",
   once = true,
+  elementType = "any",
 }: AnimatedSectionProps) {
   const { ref, animationClasses, transitionClasses } = useScrollAnimation({
     direction,
@@ -29,6 +31,7 @@ export function AnimatedSection({
     threshold,
     rootMargin,
     once,
+    elementType,
   })
 
   return (

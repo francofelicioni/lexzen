@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
-import { AnimatedSection } from "@/components/animated-section"
 import {
   Dialog,
   DialogContent,
@@ -119,138 +118,118 @@ export function ContactForm() {
   return (
     <>
       <form onSubmit={handleSubmit} className="space-y-6">
-        <AnimatedSection direction="up" delay={100}>
-          <div className="space-y-2">
-            <Label htmlFor="fullName" className="text-base">
-              {t("contactForm.fullName")} <span className="text-red-500">*</span>
-            </Label>
-            <Input
-              id="fullName"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              placeholder={t("contactForm.fullNamePlaceholder")}
-              className={`transition-all duration-300 h-12 text-base ${
-                errors.fullName ? "border-red-500 focus-visible:ring-red-500" : ""
-              }`}
-              disabled={isSubmitting}
-            />
-            {errors.fullName && (
-              <p className="text-sm text-red-500 flex items-center gap-1 mt-1 animate-fade-in">
-                <AlertCircle className="h-4 w-4" />
-                {errors.fullName}
-              </p>
-            )}
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection direction="up" delay={200}>
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-base">
-              {t("contactForm.email")} <span className="text-red-500">*</span>
-            </Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder={t("contactForm.emailPlaceholder")}
-              className={`transition-all duration-300 ${
-                errors.email ? "border-red-500 focus-visible:ring-red-500" : ""
-              }`}
-              disabled={isSubmitting}
-            />
-            {errors.email && (
-              <p className="text-sm text-red-500 flex items-center gap-1 mt-1 animate-fade-in">
-                <AlertCircle className="h-4 w-4" />
-                {errors.email}
-              </p>
-            )}
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection direction="up" delay={300}>
-          <div className="space-y-2">
-            <Label htmlFor="subject" className="text-base">
-              {t("contactForm.subject")}
-            </Label>
-            <Input
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              placeholder={t("contactForm.subjectPlaceholder")}
-              disabled={isSubmitting}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection direction="up" delay={400}>
-          <div className="space-y-2">
-            <Label htmlFor="message" className="text-base">
-              {t("contactForm.message")} <span className="text-red-500">*</span>
-            </Label>
-            <Textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder={t("contactForm.messagePlaceholder")}
-              className={`min-h-[150px] transition-all duration-300 ${
-                errors.message ? "border-red-500 focus-visible:ring-red-500" : ""
-              }`}
-              disabled={isSubmitting}
-            />
-            {errors.message && (
-              <p className="text-sm text-red-500 flex items-center gap-1 mt-1 animate-fade-in">
-                <AlertCircle className="h-4 w-4" />
-                {errors.message}
-              </p>
-            )}
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection direction="up" delay={500}>
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              id="subscribe"
-              checked={formData.subscribe}
-              onCheckedChange={handleCheckboxChange}
-              disabled={isSubmitting}
-            />
-            <Label
-              htmlFor="subscribe"
-              className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
-              {t("contactForm.subscribe")}
-            </Label>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection direction="up" delay={600}>
-          {/* reCAPTCHA placeholder */}
-          <div className="border border-dashed border-gray-300 rounded-md p-4 bg-gray-50 text-center text-sm text-gray-500">
-            reCAPTCHA protection would be integrated here
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection direction="up" delay={700}>
-          <Button
-            type="submit"
-            className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base"
+        <div className="space-y-2">
+          <Label htmlFor="fullName" className="text-base">
+            {t("contactForm.fullName")} <span className="text-red-500">*</span>
+          </Label>
+          <Input
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            placeholder={t("contactForm.fullNamePlaceholder")}
+            className={`h-12 text-base ${errors.fullName ? "border-red-500 focus-visible:ring-red-500" : ""}`}
             disabled={isSubmitting}
+          />
+          {errors.fullName && (
+            <p className="text-sm text-red-500 flex items-center gap-1 mt-1">
+              <AlertCircle className="h-4 w-4" />
+              {errors.fullName}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="email" className="text-base">
+            {t("contactForm.email")} <span className="text-red-500">*</span>
+          </Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder={t("contactForm.emailPlaceholder")}
+            className={`${errors.email ? "border-red-500 focus-visible:ring-red-500" : ""}`}
+            disabled={isSubmitting}
+          />
+          {errors.email && (
+            <p className="text-sm text-red-500 flex items-center gap-1 mt-1">
+              <AlertCircle className="h-4 w-4" />
+              {errors.email}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="subject" className="text-base">
+            {t("contactForm.subject")}
+          </Label>
+          <Input
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            placeholder={t("contactForm.subjectPlaceholder")}
+            disabled={isSubmitting}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="message" className="text-base">
+            {t("contactForm.message")} <span className="text-red-500">*</span>
+          </Label>
+          <Textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder={t("contactForm.messagePlaceholder")}
+            className={`min-h-[150px] ${errors.message ? "border-red-500 focus-visible:ring-red-500" : ""}`}
+            disabled={isSubmitting}
+          />
+          {errors.message && (
+            <p className="text-sm text-red-500 flex items-center gap-1 mt-1">
+              <AlertCircle className="h-4 w-4" />
+              {errors.message}
+            </p>
+          )}
+        </div>
+
+        <div className="flex items-center space-x-2">
+          <Checkbox
+            id="subscribe"
+            checked={formData.subscribe}
+            onCheckedChange={handleCheckboxChange}
+            disabled={isSubmitting}
+          />
+          <Label
+            htmlFor="subscribe"
+            className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            {isSubmitting ? (
-              <span className="flex items-center gap-2">
-                <Loader2 className="h-5 w-5 animate-spin" />
-                {t("contactForm.sending")}
-              </span>
-            ) : (
-              t("contactForm.submit")
-            )}
-          </Button>
-        </AnimatedSection>
+            {t("contactForm.subscribe")}
+          </Label>
+        </div>
+
+        {/* reCAPTCHA placeholder */}
+        <div className="border border-dashed border-gray-300 rounded-md p-4 bg-gray-50 text-center text-sm text-gray-500">
+          reCAPTCHA protection would be integrated here
+        </div>
+
+        <Button
+          type="submit"
+          className="w-full bg-blue-gray hover:bg-legal-accent-dark py-5 text-base"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <span className="flex items-center gap-2">
+              <Loader2 className="h-5 w-5 animate-spin" />
+              {t("contactForm.sending")}
+            </span>
+          ) : (
+            t("contactForm.submit")
+          )}
+        </Button>
       </form>
 
       {/* Success Dialog */}

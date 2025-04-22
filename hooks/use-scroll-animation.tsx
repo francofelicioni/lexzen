@@ -18,7 +18,8 @@ export function useScrollAnimation({
   delay = 0,
   rootMargin = "0px",
   once = true,
-}: ScrollAnimationOptions = {}) {
+  elementType = "any", // Add this parameter to control what elements get animated
+}: ScrollAnimationOptions & { elementType?: "heading" | "any" } = {}) {
   const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -35,6 +36,21 @@ export function useScrollAnimation({
 
     const currentRef = ref.current
     if (!currentRef) return
+
+    // If elementType is "heading", check if the element is a heading
+    if (elementType === "heading") {
+      const isHeading =
+        currentRef.tagName === "H1" ||
+        currentRef.tagName === "H2" ||
+        currentRef.tagName === "H3" ||
+        currentRef.querySelector("h1, h2, h3") !== null
+
+      // If it's not a heading, make it visible immediately without animation
+      if (!isHeading) {
+        setIsVisible(true)
+        return
+      }
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -71,7 +87,7 @@ export function useScrollAnimation({
         observer.unobserve(currentRef)
       }
     }
-  }, [threshold, delay, rootMargin, once])
+  }, [threshold, delay, rootMargin, once, elementType])
 
   // Generate the appropriate animation classes based on direction
   const getAnimationClasses = () => {

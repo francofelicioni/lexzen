@@ -11,32 +11,25 @@ export function AboutSection() {
   return (
     <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
       <div className="container px-4 md:px-6">
-        {/* Only animate the section heading */}
-        <AnimatedSection direction="up">
+        {/* Update section title to use elementType="heading" */}
+        <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.about")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("about.title")}</h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                {t("about.subtitle")}
+              </p>
             </div>
           </div>
         </AnimatedSection>
 
-        {/* No animation for subtitle */}
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t("about.subtitle")}
-            </p>
-          </div>
-        </div>
-
         {/* Our Story */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center mb-16">
-          {/* Only animate the heading */}
           <div className="space-y-4">
-            <AnimatedSection direction="right">
+            <AnimatedSection direction="right" delay={200} elementType="heading">
               <h3 className="text-2xl font-bold">{t("about.ourStory")}</h3>
             </AnimatedSection>
             <p className="text-gray-500">{t("about.storyContent1")}</p>
@@ -59,19 +52,20 @@ export function AboutSection() {
 
         {/* Founders */}
         <div className="space-y-8">
-          {/* Only animate the heading */}
-          <AnimatedSection direction="up">
+          {/* Update "Our Founders" heading to use elementType="heading" */}
+          <AnimatedSection direction="up" delay={200} elementType="heading">
             <h3 className="text-2xl font-bold text-center">{t("about.ourFounders")}</h3>
           </AnimatedSection>
 
+          {/* Remove animations from founder cards */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Founder 1 - No animations */}
+            {/* Founder 1 */}
             <div className="flex flex-col items-center space-y-5">
               <div className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
                 <img
                   src="/placeholder.svg?height=400&width=400"
                   alt="Elena Martínez - Managing Partner & Legal Director specializing in online legal advisory and privacy and data protection"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   loading="lazy"
                 />
               </div>
@@ -88,13 +82,13 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Founder 2 - No animations */}
+            {/* Founder 2 */}
             <div className="flex flex-col items-center space-y-4">
               <div className="relative h-36 w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
                 <img
                   src="/placeholder.svg?height=400&width=400"
                   alt="Carlos Rodríguez - Technology & Compliance Director with expertise in legal digitalization and GDPR compliance"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   loading="lazy"
                 />
               </div>
@@ -111,13 +105,13 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Founder 3 - No animations */}
+            {/* Founder 3 */}
             <div className="flex flex-col items-center space-y-4">
               <div className="relative h-36 w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
                 <img
                   src="/placeholder.svg?height=400&width=400"
                   alt="Sofia Navarro - Immigration & Residency Specialist providing online legal advisory for EU residency applications"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   loading="lazy"
                 />
               </div>
@@ -138,14 +132,14 @@ export function AboutSection() {
 
         {/* Our Values */}
         <div className="mt-20">
-          {/* Only animate the heading */}
-          <AnimatedSection direction="up">
+          {/* Update "Our Values" heading to use elementType="heading" */}
+          <AnimatedSection direction="up" delay={200} elementType="heading">
             <h3 className="text-2xl font-bold text-center mb-10">{t("about.ourValues")}</h3>
           </AnimatedSection>
 
+          {/* Remove animations from values cards */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Value cards - No animations */}
-            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white">
+            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
               <div className="rounded-full bg-blue-gray/10 p-3">
                 <Scale className="h-6 w-6 text-blue-gray" />
               </div>
@@ -153,7 +147,7 @@ export function AboutSection() {
               <p className="text-gray-500">{t("about.integrityDesc")}</p>
             </div>
 
-            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white">
+            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
               <div className="rounded-full bg-blue-gray/10 p-3">
                 <Users className="h-6 w-6 text-blue-gray" />
               </div>
@@ -161,7 +155,7 @@ export function AboutSection() {
               <p className="text-gray-500">{t("about.clientCenteredDesc")}</p>
             </div>
 
-            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white">
+            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
               <div className="rounded-full bg-blue-gray/10 p-3">
                 <Award className="h-6 w-6 text-blue-gray" />
               </div>
@@ -169,7 +163,7 @@ export function AboutSection() {
               <p className="text-gray-500">{t("about.excellenceDesc")}</p>
             </div>
 
-            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white">
+            <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift">
               <div className="rounded-full bg-blue-gray/10 p-3">
                 <BookOpen className="h-6 w-6 text-blue-gray" />
               </div>
@@ -179,13 +173,13 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* CTA - No animations */}
-        <div className="mt-16 text-center">
+        {/* CTA */}
+        <AnimatedSection direction="up" delay={700} className="mt-16 text-center">
           <h3 className="text-xl font-bold mb-4">{t("about.readyToWork")}</h3>
-          <Button className="bg-blue-gray hover:bg-legal-accent-dark" asChild>
+          <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
             <a href="#booking">{t("hero.scheduleFree")}</a>
           </Button>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   )

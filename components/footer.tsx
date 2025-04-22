@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="bg-gray-50 border-t">
       <div className="container px-4 md:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">
-          {/* Company Info - No animations */}
+          {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Scale className="h-6 w-6 text-blue-gray" />
@@ -40,7 +40,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Company Links - No animations */}
+          {/* Company Links */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.companyHeading")}</h3>
             <ul className="space-y-4">
@@ -67,7 +67,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal Links - No animations */}
+          {/* Legal Links */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.legalHeading")}</h3>
             <ul className="space-y-3">
@@ -94,7 +94,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter - No animations */}
+          {/* Newsletter */}
           <div className="px-2">
             <h3 className="font-semibold text-gray-900 mb-3 text-lg">{t("footer.newsletterHeading")}</h3>
             <p className="text-gray-600 text-sm mb-4">{t("footer.newsletterSubheading")}</p>
@@ -102,7 +102,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Social Media & Copyright - No animations */}
+        {/* Social Media & Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-between"} items-center gap-4`}>
             <div className="text-sm text-gray-500">{t("footer.rights")}</div>
