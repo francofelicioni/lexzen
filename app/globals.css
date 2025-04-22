@@ -91,10 +91,26 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
   }
   html {
     scroll-behavior: smooth;
+  }
+  /* Apply font styles to headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title;
+  }
+  /* Apply font styles to buttons and navigation */
+  button,
+  a,
+  nav,
+  .nav-item {
+    @apply font-nav font-semibold;
   }
 }
 
@@ -118,6 +134,39 @@
 
   .accent-border {
     @apply border-blue-gray;
+  }
+
+  /* Font utility classes */
+  .title-large {
+    @apply font-title text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  .title-medium {
+    @apply font-title text-2xl md:text-3xl font-bold;
+  }
+
+  .title-small {
+    @apply font-title text-xl md:text-2xl font-bold;
+  }
+
+  .body-large {
+    @apply font-body text-lg;
+  }
+
+  .body-medium {
+    @apply font-body text-base;
+  }
+
+  .body-small {
+    @apply font-body text-sm;
+  }
+
+  .nav-text {
+    @apply font-nav text-base font-semibold;
+  }
+
+  .button-text {
+    @apply font-nav text-sm md:text-base font-semibold;
   }
 }
 
