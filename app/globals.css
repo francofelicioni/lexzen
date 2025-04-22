@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 203 21% 55%; /* Changed to blue-gray */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -22,17 +22,27 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 203 21% 55%; /* Changed to blue-gray */
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 203 21% 55%; /* Changed to blue-gray */
 
     --radius: 0.5rem;
+
+    /* Legal theme colors */
+    --legal-background: 33 46% 91%; /* beige-light */
+    --legal-accent: 203 21% 55%; /* blue-gray */
+    --legal-surface: 48 100% 98%; /* bone-white */
+    --legal-secondary: 39 46% 83%; /* beige-dark */
+    --legal-text: 0 0% 25%; /* dark-gray */
+    --legal-text-light: 0 0% 42%; /* lighter version for secondary text */
+    --legal-accent-light: 203 21% 67%; /* lighter blue-gray */
+    --legal-accent-dark: 203 21% 45%; /* darker blue-gray */
   }
 
   .dark {
@@ -45,8 +55,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 203 21% 45%; /* Darker blue-gray for dark mode */
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -54,7 +64,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 203 21% 45%; /* Darker blue-gray for dark mode */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -62,7 +72,17 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 203 21% 45%; /* Darker blue-gray for dark mode */
+
+    /* Dark mode legal theme colors - adjusted for dark mode */
+    --legal-background: 33 30% 20%;
+    --legal-accent: 203 21% 40%;
+    --legal-surface: 48 15% 15%;
+    --legal-secondary: 39 30% 25%;
+    --legal-text: 0 0% 90%;
+    --legal-text-light: 0 0% 75%;
+    --legal-accent-light: 203 21% 50%;
+    --legal-accent-dark: 203 21% 30%;
   }
 }
 
@@ -78,6 +98,30 @@
   }
 }
 
+@layer components {
+  /* New utility classes for the blue-gray color scheme */
+  .btn-primary {
+    @apply bg-blue-gray hover:bg-legal-accent-dark text-white transition-colors;
+  }
+
+  .btn-outline {
+    @apply border-blue-gray text-blue-gray hover:bg-blue-gray/10 transition-colors;
+  }
+
+  .accent-text {
+    @apply text-blue-gray;
+  }
+
+  .accent-bg {
+    @apply bg-blue-gray/10 text-blue-gray;
+  }
+
+  .accent-border {
+    @apply border-blue-gray;
+  }
+}
+
+/* Rest of your CSS remains the same */
 /* Animations */
 @keyframes fadeIn {
   from {

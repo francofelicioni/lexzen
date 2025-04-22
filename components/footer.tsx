@@ -18,7 +18,7 @@ export function Footer() {
           {/* Company Info */}
           <AnimatedSection direction="right" delay={100} className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Scale className="h-6 w-6 text-teal-600" />
+              <Scale className="h-6 w-6 text-blue-gray" />
               <span className="text-xl font-bold">Lexzen</span>
             </div>
             <p className="text-gray-500 mb-6 max-w-md">
@@ -26,16 +26,16 @@ export function Footer() {
               needs.
             </p>
             <div className="space-y-3">
-              <div className="flex items-start gap-2 transition-all duration-300 hover:text-teal-600">
-                <MapPin className="h-5 w-5 text-teal-600 mt-0.5 shrink-0" />
+              <div className="flex items-start gap-2 transition-all duration-300 hover:text-blue-gray">
+                <MapPin className="h-5 w-5 text-blue-gray mt-0.5 shrink-0" />
                 <span className="text-gray-600">{t("footer.address")}</span>
               </div>
-              <div className="flex items-center gap-2 transition-all duration-300 hover:text-teal-600">
-                <Phone className="h-5 w-5 text-teal-600 shrink-0" />
+              <div className="flex items-center gap-2 transition-all duration-300 hover:text-blue-gray">
+                <Phone className="h-5 w-5 text-blue-gray shrink-0" />
                 <span className="text-gray-600">{t("footer.phone")}</span>
               </div>
-              <div className="flex items-center gap-2 transition-all duration-300 hover:text-teal-600">
-                <Mail className="h-5 w-5 text-teal-600 shrink-0" />
+              <div className="flex items-center gap-2 transition-all duration-300 hover:text-blue-gray">
+                <Mail className="h-5 w-5 text-blue-gray shrink-0" />
                 <span className="text-gray-600">{t("footer.email")}</span>
               </div>
             </div>
@@ -46,22 +46,22 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.companyHeading")}</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="#about" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
+                <Link href="#about" className="text-gray-600 hover:text-blue-gray transition-colors block py-1">
                   {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
+                <Link href="#services" className="text-gray-600 hover:text-blue-gray transition-colors block py-1">
                   {t("footer.services")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
+                <Link href="#" className="text-gray-600 hover:text-blue-gray transition-colors block py-1">
                   {t("footer.careers")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors block py-1">
+                <Link href="#" className="text-gray-600 hover:text-blue-gray transition-colors block py-1">
                   {t("footer.blog")}
                 </Link>
               </li>
@@ -73,22 +73,22 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.legalHeading")}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#" className="text-gray-600 hover:text-blue-gray transition-colors">
                   {t("footer.privacyPolicy")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#" className="text-gray-600 hover:text-blue-gray transition-colors">
                   {t("footer.termsOfService")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#" className="text-gray-600 hover:text-blue-gray transition-colors">
                   {t("footer.legalNotice")}
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-gray-600 hover:text-teal-600 transition-colors">
+                <Link href="#contact" className="text-gray-600 hover:text-blue-gray transition-colors">
                   {t("footer.contact")}
                 </Link>
               </li>
@@ -112,19 +112,19 @@ export function Footer() {
 
             <AnimatedSection direction="up" delay={600} className="flex items-center gap-4">
               <h3 className="text-sm font-medium text-gray-700 mr-2">{t("footer.socialHeading")}</h3>
-              <Link href="#" className="text-gray-500 hover:text-teal-600 transition-colors transform hover:scale-110">
+              <Link href="#" className="text-gray-500 hover:text-blue-gray transition-colors transform hover:scale-110">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-gray-500 hover:text-teal-600 transition-colors transform hover:scale-110">
+              <Link href="#" className="text-gray-500 hover:text-blue-gray transition-colors transform hover:scale-110">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-gray-500 hover:text-teal-600 transition-colors transform hover:scale-110">
+              <Link href="#" className="text-gray-500 hover:text-blue-gray transition-colors transform hover:scale-110">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-gray-500 hover:text-teal-600 transition-colors transform hover:scale-110">
+              <Link href="#" className="text-gray-500 hover:text-blue-gray transition-colors transform hover:scale-110">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>

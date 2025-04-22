@@ -130,7 +130,7 @@ export function BookingCalendar() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-teal-100 px-3 py-1 text-sm text-teal-700">
+            <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
               {t("nav.bookCall")}
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("booking.title")}</h2>
@@ -149,43 +149,49 @@ export function BookingCalendar() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex gap-4">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-100 text-teal-700">1</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-gray/10 text-blue-gray">
+                  1
+                </div>
                 <div>
                   <h3 className="font-medium">{t("booking.step1")}</h3>
                   <p className="text-sm text-gray-500">{t("booking.step1Desc")}</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-100 text-teal-700">2</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-gray/10 text-blue-gray">
+                  2
+                </div>
                 <div>
                   <h3 className="font-medium">{t("booking.step2")}</h3>
                   <p className="text-sm text-gray-500">{t("booking.step2Desc")}</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-100 text-teal-700">3</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-gray/10 text-blue-gray">
+                  3
+                </div>
                 <div>
                   <h3 className="font-medium">{t("booking.step3")}</h3>
                   <p className="text-sm text-gray-500">{t("booking.step3Desc")}</p>
                 </div>
               </div>
-              <div className="mt-6 rounded-lg bg-teal-50 p-4 text-sm">
-                <p className="font-medium text-teal-700">{t("booking.consultationIncludes")}</p>
+              <div className="mt-6 rounded-lg bg-blue-gray/10 p-4 text-sm">
+                <p className="font-medium text-blue-gray">{t("booking.consultationIncludes")}</p>
                 <ul className="mt-2 space-y-1 text-gray-600">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-teal-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-blue-gray mt-0.5 shrink-0" />
                     <span>{t("booking.consultationItem1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-teal-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-blue-gray mt-0.5 shrink-0" />
                     <span>{t("booking.consultationItem2")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-teal-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-blue-gray mt-0.5 shrink-0" />
                     <span>{t("booking.consultationItem3")}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-teal-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-blue-gray mt-0.5 shrink-0" />
                     <span>{t("booking.consultationItem4")}</span>
                   </li>
                 </ul>
@@ -229,7 +235,7 @@ export function BookingCalendar() {
               {step === 2 && date && (
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <CalendarIcon className="h-5 w-5 text-teal-600 shrink-0" />
+                    <CalendarIcon className="h-5 w-5 text-blue-gray shrink-0" />
                     <span className="font-medium">{format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}</span>
                   </div>
 
@@ -266,8 +272,8 @@ export function BookingCalendar() {
 
               {step === 3 && date && timeSlot && (
                 <form onSubmit={handleSubmit}>
-                  <div className="flex items-center gap-2 mb-6 p-3 bg-teal-50 rounded-md">
-                    <CalendarIcon className="h-5 w-5 text-teal-600 shrink-0" />
+                  <div className="flex items-center gap-2 mb-6 p-3 bg-blue-gray/10 rounded-md">
+                    <CalendarIcon className="h-5 w-5 text-blue-gray shrink-0" />
                     <div>
                       <div className="font-medium">{format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}</div>
                       <div className="text-sm text-gray-600">
@@ -350,7 +356,7 @@ export function BookingCalendar() {
               {step === 1 && (
                 <Button
                   disabled={!date}
-                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-teal-600 hover:bg-teal-700`}
+                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
                   onClick={() => date && setStep(2)}
                 >
                   {t("booking.continue")}
@@ -360,7 +366,7 @@ export function BookingCalendar() {
               {step === 2 && (
                 <Button
                   disabled={!timeSlot}
-                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-teal-600 hover:bg-teal-700`}
+                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
                   onClick={() => timeSlot && setStep(3)}
                 >
                   {t("booking.continue")}
@@ -370,7 +376,7 @@ export function BookingCalendar() {
               {step === 3 && (
                 <Button
                   type="submit"
-                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-teal-600 hover:bg-teal-700`}
+                  className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
                   onClick={handleSubmit}
                   disabled={!formData.name || !formData.email || !formData.phone}
                 >
@@ -391,13 +397,13 @@ export function BookingCalendar() {
           </DialogHeader>
 
           {date && timeSlot && (
-            <div className="p-4 bg-teal-50 rounded-md space-y-3">
+            <div className="p-4 bg-blue-gray/10 rounded-md space-y-3">
               <div className="flex items-center gap-2">
-                <CalendarIcon className="h-5 w-5 text-teal-600 shrink-0" />
+                <CalendarIcon className="h-5 w-5 text-blue-gray shrink-0" />
                 <div className="font-medium">{format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}</div>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-teal-600 shrink-0" />
+                <Clock className="h-5 w-5 text-blue-gray shrink-0" />
                 <div className="font-medium">
                   {format(timeSlot, "HH:mm")} - {format(addMinutes(timeSlot, 20), "HH:mm")} (CET/CEST)
                 </div>
@@ -413,7 +419,7 @@ export function BookingCalendar() {
           </div>
 
           <DialogFooter>
-            <Button className="w-full bg-teal-600 hover:bg-teal-700" onClick={handleConfirmationClose}>
+            <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark" onClick={handleConfirmationClose}>
               {t("booking.done")}
             </Button>
           </DialogFooter>

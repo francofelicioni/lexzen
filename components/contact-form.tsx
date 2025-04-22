@@ -238,7 +238,7 @@ export function ContactForm() {
         <AnimatedSection direction="up" delay={700}>
           <Button
             type="submit"
-            className="w-full bg-teal-600 hover:bg-teal-700 hover-lift py-5 text-base"
+            className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -257,7 +257,7 @@ export function ContactForm() {
       <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <DialogContent className="sm:max-w-md p-6 max-w-[90vw] rounded-lg">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2 text-teal-600 text-xl">
+            <DialogTitle className="flex items-center gap-2 text-blue-gray text-xl">
               <CheckCircle className="h-6 w-6" />
               {t("contactForm.success")}
             </DialogTitle>
@@ -265,7 +265,7 @@ export function ContactForm() {
           </DialogHeader>
           <DialogFooter className="mt-4">
             <Button
-              className="w-full bg-teal-600 hover:bg-teal-700 py-5 text-base"
+              className="w-full bg-blue-gray hover:bg-legal-accent-dark py-5 text-base"
               onClick={() => setShowSuccessDialog(false)}
             >
               {t("contactForm.close")}
@@ -285,7 +285,10 @@ export function ContactForm() {
             <DialogDescription>{t("contactForm.errorDetails")}</DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button className="w-full bg-teal-600 hover:bg-teal-700" onClick={() => setShowErrorDialog(false)}>
+            <Button
+              className="w-full bg-blue-gray hover:bg-legal-accent-dark"
+              onClick={() => setShowErrorDialog(false)}
+            >
               {t("contactForm.close")}
             </Button>
           </DialogFooter>

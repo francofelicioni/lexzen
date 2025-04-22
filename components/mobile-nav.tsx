@@ -18,7 +18,7 @@ export function MobileNav() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden hover:bg-teal-50 transition-colors duration-300">
+        <Button variant="ghost" size="icon" className="md:hidden hover:bg-blue-gray/10 transition-colors duration-300">
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
@@ -47,7 +47,7 @@ export function MobileNav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-lg font-medium hover:text-teal-600 transition-colors animate-slide-right ${item.delay} py-2`}
+                className={`text-lg font-medium hover:text-blue-gray transition-colors animate-slide-right ${item.delay} py-2`}
                 onClick={handleLinkClick}
               >
                 {item.label}
@@ -56,7 +56,7 @@ export function MobileNav() {
           </nav>
           <div className="mt-auto pt-6 animate-slide-up animation-delay-500">
             <Button
-              className="w-full bg-teal-600 hover:bg-teal-700 transition-transform duration-300 hover:scale-105"
+              className="w-full bg-blue-gray hover:bg-legal-accent-dark transition-transform duration-300 hover:scale-105"
               onClick={handleLinkClick}
             >
               {t("nav.getStarted")}

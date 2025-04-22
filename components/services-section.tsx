@@ -35,12 +35,12 @@ function PricingPackage({
   return (
     <AnimatedSection direction="up" delay={delay} className={`flex flex-col h-full ${className}`}>
       <Card
-        className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-teal-500 shadow-md" : ""} hover:shadow-lg`}
+        className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-blue-gray shadow-md" : ""} hover:shadow-lg`}
       >
-        <CardHeader className={highlighted ? "bg-teal-50" : ""}>
+        <CardHeader className={highlighted ? "bg-blue-gray/10" : ""}>
           <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
             {title}
-            {highlighted && <Badge className="bg-teal-600">Popular</Badge>}
+            {highlighted && <Badge className="bg-blue-gray">Popular</Badge>}
           </CardTitle>
           <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
           <div className="mt-2">
@@ -60,7 +60,7 @@ function PricingPackage({
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                  className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
@@ -70,7 +70,9 @@ function PricingPackage({
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-teal-600 hover:bg-teal-700 hover-lift py-5 text-base">{buttonText}</Button>
+          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base">
+            {buttonText}
+          </Button>
         </CardFooter>
       </Card>
     </AnimatedSection>
@@ -87,7 +89,7 @@ interface ServiceItemProps {
 function ServiceItem({ icon, title, description, delay = 0 }: ServiceItemProps) {
   return (
     <AnimatedSection direction="up" delay={delay} className="flex gap-4 items-start">
-      <div className="rounded-full bg-teal-100 p-2 mt-1 shrink-0">{icon}</div>
+      <div className="rounded-full bg-blue-gray/10 p-2 mt-1 shrink-0">{icon}</div>
       <div>
         <h4 className="font-medium">{title}</h4>
         <p className="text-sm text-gray-500">{description}</p>
@@ -107,7 +109,7 @@ export function ServicesSection() {
         <AnimatedSection direction="up">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-teal-100 px-3 py-1 text-sm text-teal-700">
+              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.services")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("services.title")}</h2>
@@ -145,37 +147,37 @@ export function ServicesSection() {
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-2">
                   <ServiceItem
-                    icon={<FileText className="h-5 w-5 text-teal-700" />}
+                    icon={<FileText className="h-5 w-5 text-blue-gray" />}
                     title={t("services.personalizedLegal")}
                     description={t("services.personalizedLegalDesc")}
                     delay={400}
                   />
                   <ServiceItem
-                    icon={<FileCheck className="h-5 w-5 text-teal-700" />}
+                    icon={<FileCheck className="h-5 w-5 text-blue-gray" />}
                     title={t("services.documentPrep")}
                     description={t("services.documentPrepDesc")}
                     delay={500}
                   />
                   <ServiceItem
-                    icon={<FileContract className="h-5 w-5 text-teal-700" />}
+                    icon={<FileContract className="h-5 w-5 text-blue-gray" />}
                     title={t("services.contractDrafting")}
                     description={t("services.contractDraftingDesc")}
                     delay={600}
                   />
                   <ServiceItem
-                    icon={<ShieldCheck className="h-5 w-5 text-teal-700" />}
+                    icon={<ShieldCheck className="h-5 w-5 text-blue-gray" />}
                     title={t("services.websitePolicies")}
                     description={t("services.websitePoliciesDesc")}
                     delay={700}
                   />
                   <ServiceItem
-                    icon={<ShoppingCart className="h-5 w-5 text-teal-700" />}
+                    icon={<ShoppingCart className="h-5 w-5 text-blue-gray" />}
                     title={t("services.ecommerceCompliance")}
                     description={t("services.ecommerceComplianceDesc")}
                     delay={800}
                   />
                   <ServiceItem
-                    icon={<Handshake className="h-5 w-5 text-teal-700" />}
+                    icon={<Handshake className="h-5 w-5 text-blue-gray" />}
                     title={t("services.ndaAgreements")}
                     description={t("services.ndaAgreementsDesc")}
                     delay={900}
@@ -318,7 +320,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -333,7 +335,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -348,7 +350,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -363,7 +365,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -372,7 +374,7 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-teal-600 hover:bg-teal-700 hover-lift">
+                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
                           {t("services.selectPackage")}
                         </Button>
                       </CardFooter>
@@ -400,7 +402,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -415,7 +417,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -430,7 +432,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -445,7 +447,7 @@ export function ServicesSection() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
@@ -454,7 +456,7 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-teal-600 hover:bg-teal-700 hover-lift">
+                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
                           {t("services.selectPackage")}
                         </Button>
                       </CardFooter>
@@ -488,7 +490,7 @@ export function ServicesSection() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
@@ -503,7 +505,7 @@ export function ServicesSection() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
@@ -518,7 +520,7 @@ export function ServicesSection() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
@@ -533,7 +535,7 @@ export function ServicesSection() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="h-4 w-4 text-teal-600 mt-0.5 shrink-0"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
@@ -542,7 +544,7 @@ export function ServicesSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button className="w-full bg-teal-600 hover:bg-teal-700 hover-lift">
+                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
                         {t("services.bookConsultation")}
                       </Button>
                     </CardFooter>

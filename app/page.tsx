@@ -39,7 +39,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <MobileNav />
-            <Scale className={`h-6 w-6 text-teal-600 ${isLoaded ? "animate-fade-in" : "opacity-0"}`} />
+            <Scale className={`h-6 w-6 text-blue-gray ${isLoaded ? "animate-fade-in" : "opacity-0"}`} />
             <span className={`text-xl font-bold ${isLoaded ? "animate-fade-in animation-delay-100" : "opacity-0"}`}>
               Lexzen
             </span>
@@ -49,7 +49,7 @@ export default function Home() {
               <Link
                 key={item}
                 href={`#${item === "bookCall" ? "booking" : item}`}
-                className={`text-sm font-medium hover:text-teal-600 transition-colors ${
+                className={`text-sm font-medium hover:text-blue-gray transition-colors ${
                   isLoaded ? `animate-fade-in animation-delay-${(index + 1) * 100}` : "opacity-0"
                 }`}
               >
@@ -62,7 +62,7 @@ export default function Home() {
               <LanguageSelector />
             </div>
             <Button
-              className={`bg-teal-600 hover:bg-teal-700 hidden sm:inline-flex hover-lift ${
+              className={`bg-blue-gray hover:bg-legal-accent-dark hidden sm:inline-flex hover-lift ${
                 isLoaded ? "animate-fade-in animation-delay-700" : "opacity-0"
               }`}
             >
@@ -88,12 +88,12 @@ export default function Home() {
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={500}>
                   <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
-                    <Button className="bg-teal-600 hover:bg-teal-700 hover-lift w-full sm:w-auto" asChild>
+                    <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift w-full sm:w-auto" asChild>
                       <a href="#booking">{t("hero.scheduleFree")}</a>
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-teal-600 text-teal-600 hover:bg-teal-50 hover-lift w-full sm:w-auto"
+                      className="border-blue-gray text-blue-gray hover:bg-blue-gray/10 hover-lift w-full sm:w-auto"
                       asChild
                     >
                       <a href="#services">{t("hero.viewServices")}</a>
@@ -133,7 +133,7 @@ export default function Home() {
             <AnimatedSection direction="up">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-teal-100 px-3 py-1 text-sm text-teal-700">
+                  <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                     {t("testimonials.title")}
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("testimonials.title")}</h2>
@@ -173,11 +173,11 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-teal-600 relative overflow-hidden">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-gray relative overflow-hidden">
           {/* Background animation elements */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-teal-500 rounded-full opacity-20 animate-float"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500 rounded-full opacity-20 animate-float animation-delay-1000"></div>
+            <div className="absolute top-10 left-10 w-64 h-64 bg-blue-gray/10 rounded-full opacity-20 animate-float"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-gray/10 rounded-full opacity-20 animate-float animation-delay-1000"></div>
           </div>
 
           <div className="container px-4 md:px-6 relative z-10">
@@ -190,10 +190,14 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button className="bg-white text-teal-600 hover:bg-teal-50 hover-lift" asChild>
+                  <Button className="bg-white text-blue-gray hover:bg-blue-gray/10 hover-lift" asChild>
                     <a href="#booking">{t("cta.scheduleConsultation")}</a>
                   </Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-teal-700 hover-lift" asChild>
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-legal-accent-dark hover-lift"
+                    asChild
+                  >
                     <a href="#contact">{t("cta.contactUs")}</a>
                   </Button>
                 </div>

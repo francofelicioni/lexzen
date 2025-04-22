@@ -65,6 +65,24 @@ const config = {
           900: "#134e4a",
           950: "#042f2e",
         },
+        // Direct color names
+        "beige-light": "#F3E9DC",
+        "blue-gray": "#7393A7",
+        "bone-white": "#FFFDF7",
+        "beige-dark": "#E8D9C2",
+        "dark-gray": "#3F3F3F",
+
+        // Semantic color naming
+        legal: {
+          background: "#F3E9DC", // beige-light
+          accent: "#7393A7", // blue-gray
+          surface: "#FFFDF7", // bone-white
+          secondary: "#E8D9C2", // beige-dark
+          text: "#3F3F3F", // dark-gray
+          "text-light": "#6B6B6B", // lighter version of dark-gray for secondary text
+          "accent-light": "#94B0C1", // lighter version of blue-gray
+          "accent-dark": "#5A7A8E", // darker version of blue-gray for hover states
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

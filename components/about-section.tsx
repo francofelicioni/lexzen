@@ -14,7 +14,7 @@ export function AboutSection() {
         <AnimatedSection direction="up">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-teal-100 px-3 py-1 text-sm text-teal-700">
+              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.about")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("about.title")}</h2>
@@ -70,11 +70,11 @@ export function AboutSection() {
               </div>
               <div className="text-center">
                 <h4 className="text-lg sm:text-xl font-bold">{t("about.founder1Name")}</h4>
-                <p className="text-teal-600 font-medium">{t("about.founder1Title")}</p>
+                <p className="text-blue-gray font-medium">{t("about.founder1Title")}</p>
                 <p className="mt-2 text-sm sm:text-base text-gray-500 max-w-xs mx-auto">{t("about.founder1Bio")}</p>
                 <div className="mt-4 flex justify-center space-x-3">
                   <div className="flex items-center text-xs sm:text-sm">
-                    <BookOpen className="mr-1 h-4 w-4 text-teal-600" />
+                    <BookOpen className="mr-1 h-4 w-4 text-blue-gray" />
                     <span>{t("about.founder1Education")}</span>
                   </div>
                 </div>
@@ -93,11 +93,11 @@ export function AboutSection() {
               </div>
               <div className="text-center">
                 <h4 className="text-xl font-bold">{t("about.founder2Name")}</h4>
-                <p className="text-teal-600 font-medium">{t("about.founder2Title")}</p>
+                <p className="text-blue-gray font-medium">{t("about.founder2Title")}</p>
                 <p className="mt-2 text-gray-500">{t("about.founder2Bio")}</p>
                 <div className="mt-4 flex justify-center space-x-3">
                   <div className="flex items-center text-sm">
-                    <BookOpen className="mr-1 h-4 w-4 text-teal-600" />
+                    <BookOpen className="mr-1 h-4 w-4 text-blue-gray" />
                     <span>{t("about.founder2Education")}</span>
                   </div>
                 </div>
@@ -116,11 +116,11 @@ export function AboutSection() {
               </div>
               <div className="text-center">
                 <h4 className="text-xl font-bold">{t("about.founder3Name")}</h4>
-                <p className="text-teal-600 font-medium">{t("about.founder3Title")}</p>
+                <p className="text-blue-gray font-medium">{t("about.founder3Title")}</p>
                 <p className="mt-2 text-gray-500">{t("about.founder3Bio")}</p>
                 <div className="mt-4 flex justify-center space-x-3">
                   <div className="flex items-center text-sm">
-                    <BookOpen className="mr-1 h-4 w-4 text-teal-600" />
+                    <BookOpen className="mr-1 h-4 w-4 text-blue-gray" />
                     <span>{t("about.founder3Education")}</span>
                   </div>
                 </div>
@@ -141,8 +141,8 @@ export function AboutSection() {
               delay={300}
               className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift"
             >
-              <div className="rounded-full bg-teal-100 p-3">
-                <Scale className="h-6 w-6 text-teal-700" />
+              <div className="rounded-full bg-blue-gray/10 p-3">
+                <Scale className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.integrity")}</h4>
               <p className="text-gray-500">{t("about.integrityDesc")}</p>
@@ -153,8 +153,8 @@ export function AboutSection() {
               delay={400}
               className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift"
             >
-              <div className="rounded-full bg-teal-100 p-3">
-                <Users className="h-6 w-6 text-teal-700" />
+              <div className="rounded-full bg-blue-gray/10 p-3">
+                <Users className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.clientCentered")}</h4>
               <p className="text-gray-500">{t("about.clientCenteredDesc")}</p>
@@ -165,8 +165,8 @@ export function AboutSection() {
               delay={500}
               className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift"
             >
-              <div className="rounded-full bg-teal-100 p-3">
-                <Award className="h-6 w-6 text-teal-700" />
+              <div className="rounded-full bg-blue-gray/10 p-3">
+                <Award className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.excellence")}</h4>
               <p className="text-gray-500">{t("about.excellenceDesc")}</p>
@@ -177,8 +177,8 @@ export function AboutSection() {
               delay={600}
               className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg border bg-white hover-lift"
             >
-              <div className="rounded-full bg-teal-100 p-3">
-                <BookOpen className="h-6 w-6 text-teal-700" />
+              <div className="rounded-full bg-blue-gray/10 p-3">
+                <BookOpen className="h-6 w-6 text-blue-gray" />
               </div>
               <h4 className="text-lg font-bold">{t("about.innovation")}</h4>
               <p className="text-gray-500">{t("about.innovationDesc")}</p>
@@ -189,7 +189,7 @@ export function AboutSection() {
         {/* CTA */}
         <AnimatedSection direction="up" delay={700} className="mt-16 text-center">
           <h3 className="text-xl font-bold mb-4">{t("about.readyToWork")}</h3>
-          <Button className="bg-teal-600 hover:bg-teal-700 hover-lift" asChild>
+          <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
             <a href="#booking">{t("hero.scheduleFree")}</a>
           </Button>
         </AnimatedSection>
