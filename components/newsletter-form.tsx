@@ -46,13 +46,13 @@ export function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="pr-24 transition-all duration-300 focus:border-beige-light focus:ring-beige-light h-12 text-base"
+            className="pr-24 transition-all duration-300 focus:border-blue-gray focus:ring-blue-gray h-12 text-base"
             disabled={status === "loading" || status === "success"}
           />
           <Button
             type="submit"
             size="sm"
-            className="absolute right-1 top-1 h-10 px-4 bg-beige-light hover:bg-legal-accent-dark transition-all duration-300 hover:scale-105 text-base"
+            className="absolute right-1 top-1 h-10 px-4 bg-blue-gray hover:bg-legal-accent-dark transition-all duration-300 hover:scale-105 text-base"
             disabled={status === "loading" || status === "success"}
           >
             {status === "loading" ? (

@@ -37,7 +37,7 @@ function PricingPackage({
       <Card
         className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-blue-gray shadow-md" : ""} hover:shadow-lg`}
       >
-        <CardHeader className={highlighted ? "bg-beige-light/10" : ""}>
+        <CardHeader className={highlighted ? "bg-blue-gray/10" : ""}>
           <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
             {title}
             {highlighted && <Badge className="bg-blue-gray">Popular</Badge>}
@@ -70,7 +70,7 @@ function PricingPackage({
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-beige-light hover:bg-legal-accent-dark hover-lift py-5 text-base">
+          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base">
             {buttonText}
           </Button>
         </CardFooter>
@@ -89,7 +89,7 @@ interface ServiceItemProps {
 function ServiceItem({ icon, title, description, delay = 0 }: ServiceItemProps) {
   return (
     <AnimatedSection direction="up" delay={delay} className="flex gap-4 items-start">
-      <div className="rounded-full bg-beige-light/10 p-2 mt-1 shrink-0">{icon}</div>
+      <div className="rounded-full bg-blue-gray/10 p-2 mt-1 shrink-0">{icon}</div>
       <div>
         <h4 className="font-medium">{title}</h4>
         <p className="text-sm text-gray-500">{description}</p>
@@ -109,7 +109,7 @@ export function ServicesSection() {
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-beige-light/10 px-3 py-1 text-sm text-blue-gray">
+              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.services")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("services.title")}</h2>
@@ -366,7 +366,7 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-beige-light hover:bg-legal-accent-dark hover-lift">
+                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
                           {t("services.selectPackage")}
                         </Button>
                       </CardFooter>
@@ -448,7 +448,7 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-beige-light hover:bg-legal-accent-dark hover-lift">
+                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
                           {t("services.selectPackage")}
                         </Button>
                       </CardFooter>
@@ -536,7 +536,7 @@ export function ServicesSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button className="w-full bg-beige-light hover:bg-legal-accent-dark hover-lift">
+                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
                         {t("services.bookConsultation")}
                       </Button>
                     </CardFooter>

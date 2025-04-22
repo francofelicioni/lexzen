@@ -15,7 +15,7 @@ export function ContactSection() {
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-beige-light/10 px-3 py-1 text-sm text-blue-gray">
+              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.contact")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("contactForm.title")}</h2>
@@ -59,7 +59,7 @@ export function ContactSection() {
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-beige-light/10 p-3 mt-1 group-hover:bg-beige-light/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
                       <MapPin className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
@@ -69,7 +69,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-beige-light/10 p-3 mt-1 group-hover:bg-beige-light/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
                       <Phone className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
@@ -79,7 +79,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-beige-light/10 p-3 mt-1 group-hover:bg-beige-light/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
                       <Mail className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
@@ -89,7 +89,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-beige-light/10 p-3 mt-1 group-hover:bg-beige-light/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
                       <Clock className="h-6 w-6 text-blue-gray" />
                     </div>
                     <div>
