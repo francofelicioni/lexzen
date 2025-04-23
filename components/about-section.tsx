@@ -51,15 +51,12 @@ export function AboutSection() {
         </div>
 
         {/* Founders */}
-        <div className="space-y-8">
-          {/* Update "Our Founders" heading to use elementType="heading" */}
+        {/* <div className="space-y-8">
           <AnimatedSection direction="up" delay={200} elementType="heading">
             <h3 className="text-2xl font-bold text-center">{t("about.ourFounders")}</h3>
           </AnimatedSection>
 
-          {/* Remove animations from founder cards */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Founder 1 */}
             <div className="flex flex-col items-center space-y-5">
               <div className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
                 <img
@@ -82,7 +79,6 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Founder 2 */}
             <div className="flex flex-col items-center space-y-4">
               <div className="relative h-36 w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
                 <img
@@ -105,7 +101,6 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Founder 3 */}
             <div className="flex flex-col items-center space-y-4">
               <div className="relative h-36 w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
                 <img
@@ -128,7 +123,7 @@ export function AboutSection() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Our Values */}
         <div className="mt-20">

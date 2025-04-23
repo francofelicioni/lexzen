@@ -74,6 +74,7 @@ const config = {
         // Direct color names
         "beige-light": "#F3E9DC",
         "blue-gray": "#7393A7",
+        "state-gray": "#5a7a8e",
         "bone-white": "#FFFDF7",
         "beige-dark": "#E8D9C2",
         "dark-gray": "#3F3F3F",
