@@ -23,6 +23,7 @@ import { es } from "date-fns/locale"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
 import { AnimatedSection } from "@/components/animated-section"
+import { appointmentService } from '@/services/appointments'
 
 // Available time slots (9:00 AM to 5:00 PM, 20-minute intervals)
 const generateTimeSlots = (date: Date) => {
@@ -100,10 +101,29 @@ export function BookingCalendar() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, this would send the booking data to a server
-    setShowConfirmation(true)
+    console.log('Submitting form...')
+    if (!date || !timeSlot) {
+      console.log('date or timeSlot is undefined');
+      return
+    }
+
+    try {
+      console.log('Creating appointment...')
+      await appointmentService.createAppointment({
+        full_name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        topic: formData.topic,
+        appointment_date: date.toISOString().split('T')[0],
+        appointment_time: timeSlot.toISOString(),
+      })
+
+      setShowConfirmation(true)
+    } catch (error) {
+      console.error("Error creating appointment:", error)
+    }
   }
 
   const handleConfirmationClose = () => {
@@ -251,11 +271,10 @@ export function BookingCalendar() {
                         <Button
                           key={index}
                           variant="outline"
-                          className={`flex items-center justify-center gap-2 py-5 ${
-                            timeSlot && timeSlot.getTime() === slot.getTime()
+                          className={`flex items-center justify-center gap-2 py-5 ${timeSlot && timeSlot.getTime() === slot.getTime()
                               ? "border-teal-600 bg-teal-50 text-teal-700"
                               : ""
-                          }`}
+                            }`}
                           onClick={() => handleTimeSelect(slot)}
                         >
                           <Clock className="h-4 w-4 shrink-0" />
@@ -380,9 +399,9 @@ export function BookingCalendar() {
               {step === 3 && (
                 <Button
                   type="submit"
+                  disabled={!formData.name || !formData.email || !formData.phone}
                   className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
                   onClick={handleSubmit}
-                  disabled={!formData.name || !formData.email || !formData.phone}
                 >
                   {t("booking.bookConsultation")}
                 </Button>
