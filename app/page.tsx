@@ -64,12 +64,12 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-state-gray">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("hero.title")}</h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl text-white">{t("hero.title")}</h1>
+                <p className="max-w-[600px] text-gray-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   {t("hero.subtitle")}
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
@@ -164,7 +164,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">{t("cta.title")}</h2>
-                  <p className="max-w-[900px] text-teal-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  <p className="max-w-[900px] text-gray-100 py-2 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     {t("cta.subtitle")}
                   </p>
                 </div>

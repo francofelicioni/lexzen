@@ -1,92 +1,28 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { getAppointments } from "@/services/appointments"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar } from "@/components/ui/calendar"
+import { StatusBadge } from "@/components/ui/status-badge"
 import { format, isWithinInterval, startOfDay, endOfDay, addDays } from "date-fns"
 import { Download, CalendarIcon, Filter, User, Mail, Clock } from "lucide-react"
-
-// Mock data for confirmed bookings
-const confirmedBookings = [
-  {
-    id: "101",
-    name: "Emma Wilson",
-    email: "emma.wilson@example.com",
-    date: new Date(2025, 4, 15, 9, 0),
-    status: "upcoming",
-    topic: "GDPR compliance for e-commerce website",
-  },
-  {
-    id: "102",
-    name: "Michael Brown",
-    email: "michael.brown@example.com",
-    date: new Date(2025, 4, 15, 11, 30),
-    status: "upcoming",
-    topic: "Contract review for software development agreement",
-  },
-  {
-    id: "103",
-    name: "Sophia Chen",
-    email: "sophia.chen@example.com",
-    date: new Date(2025, 4, 16, 14, 0),
-    status: "upcoming",
-    topic: "EU residency application for family members",
-  },
-  {
-    id: "104",
-    name: "James Taylor",
-    email: "james.taylor@example.com",
-    date: new Date(2025, 4, 17, 10, 15),
-    status: "upcoming",
-    topic: "Legal structure for new digital business",
-  },
-  {
-    id: "105",
-    name: "Isabella Martinez",
-    email: "isabella.martinez@example.com",
-    date: new Date(2025, 4, 18, 15, 45),
-    status: "upcoming",
-    topic: "Privacy policy review for mobile application",
-  },
-  {
-    id: "106",
-    name: "Lucas Johnson",
-    email: "lucas.johnson@example.com",
-    date: new Date(2025, 4, 19, 13, 30),
-    status: "upcoming",
-    topic: "Intellectual property protection for digital content",
-  },
-  {
-    id: "107",
-    name: "Olivia Davis",
-    email: "olivia.davis@example.com",
-    date: new Date(2025, 4, 22, 9, 45),
-    status: "upcoming",
-    topic: "Terms of service for SaaS platform",
-  },
-  {
-    id: "108",
-    name: "Noah Garcia",
-    email: "noah.garcia@example.com",
-    date: new Date(2025, 4, 23, 16, 0),
-    status: "upcoming",
-    topic: "Data processing agreement review",
-  },
-]
 
 type Booking = {
   id: string
   name: string
   email: string
   date: Date
-  status: "upcoming" | "completed" | "cancelled"
+  status: "pending" | "accepted" | "rejected"
   topic: string
 }
 
 export function BookingOverviewPanel() {
+  const [confirmedBookings, setConfirmedBookings] = useState<Booking[]>([])
+
   const [dateRange, setDateRange] = useState<{
     from: Date | undefined
     to: Date | undefined
@@ -94,6 +30,20 @@ export function BookingOverviewPanel() {
     from: new Date(),
     to: addDays(new Date(), 30),
   })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getAppointments()
+        setConfirmedBookings(data)
+      } catch (error) {
+        console.error("Error loading bookings:", error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
 
   // Filter bookings based on date range
   const filteredBookings = confirmedBookings.filter((booking) => {
@@ -248,21 +198,7 @@ export function BookingOverviewPanel() {
                         {booking.topic}
                       </TableCell>
                       <TableCell>
-                        {booking.status === "upcoming" && (
-                          <Badge variant="outline" className="bg-blue-50 text-blue-700">
-                            Upcoming
-                          </Badge>
-                        )}
-                        {booking.status === "completed" && (
-                          <Badge variant="outline" className="bg-green-50 text-green-700">
-                            Completed
-                          </Badge>
-                        )}
-                        {booking.status === "cancelled" && (
-                          <Badge variant="outline" className="bg-red-50 text-red-700">
-                            Cancelled
-                          </Badge>
-                        )}
+                        <StatusBadge status={booking.status} />
                       </TableCell>
                     </TableRow>
                   ))
