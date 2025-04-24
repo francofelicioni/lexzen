@@ -16,8 +16,9 @@ export interface Database {
           email: string | null
           phone: string | null
           topic: string | null
-          appointment_date: string | null
-          appointment_time: string | null
+          date: string | null
+          time: string | null
+          status: "pending" | "accepted" | "rejected"
           created_at: string
         }
         Insert: {
@@ -26,8 +27,9 @@ export interface Database {
           email?: string | null
           phone?: string | null
           topic?: string | null
-          appointment_date?: string | null
-          appointment_time?: string | null
+          date?: string | null
+          time?: string | null
+          status?: "pending" | "accepted" | "rejected"
           created_at?: string
         }
         Update: {
@@ -36,8 +38,9 @@ export interface Database {
           email?: string | null
           phone?: string | null
           topic?: string | null
-          appointment_date?: string | null
-          appointment_time?: string | null
+          date?: string | null
+          time?: string | null
+          status?: "pending" | "accepted" | "rejected"
           created_at?: string
         }
       }

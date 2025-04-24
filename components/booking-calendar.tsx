@@ -116,8 +116,8 @@ export function BookingCalendar() {
         email: formData.email,
         phone: formData.phone,
         topic: formData.topic,
-        appointment_date: date.toISOString().split('T')[0],
-        appointment_time: timeSlot.toISOString(),
+        date: date.toISOString().split('T')[0],
+        time: timeSlot.toISOString(),
       })
 
       setShowConfirmation(true)
