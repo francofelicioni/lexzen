@@ -1,3 +1,5 @@
+import exp from "constants"
+
 export type Language = "en" | "es"
 
 export const translations = {
@@ -246,6 +248,10 @@ export const translations = {
     },
   },
   es: {
+    general: {
+      month: "mes",
+    },
+
     // Navigation
     nav: {
       services: "Servicios",
@@ -256,9 +262,9 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: "Asesoría Legal Online Especializada para la Era Digital",
+      title: "Soluciones legales prácticas para startups y nuevos residentes en Europa",
       subtitle:
-        "Servicios de asesoría legal online accesibles y especializados para empresas digitales con enfoque en protección de datos y privacidad.",
+        "Asesoramiento accesible y claro para quienes emprenden, se relocalizan o enfrentan los primeros desafíos legales a la hora de desarrollar su negocio. Desde contratos hasta trámites de residencia, con mirada estratégica y experiencia internacional.",
       scheduleFree: "Programar Consulta Legal Gratuita",
       viewServices: "Ver Servicios Legales",
     },
@@ -269,6 +275,17 @@ export const translations = {
       tabStartups: "Para Negocios Digitales y Startups",
       tabResidency: "Para Residencia de Ciudadanos UE (España)",
       legalServices: "Servicios Legales Online para Negocios Digitales",
+      legalServicesDesc1: "Asesoramos a quienes emprenden, lanzan o hacen crecer su proyecto en el mundo digital.",
+      legalServicesDesc2: "Cada paso en el desarrollo de un negocio —desde validar una idea hasta lanzar una web o firmar el primer contrato— implica decisiones legales importantes.",
+      legalServicesDesc3: "Ofrecemos una asesoría clara, cercana y 100% online, pensada para ayudar a construir con solidez, proteger el emprendimiento y tomar decisiones informadas desde el inicio.",
+      legalServicesDesc4: "Nos enfocamos en startups y negocios digitales en etapas tempranas que necesitan orientación legal práctica y accesible, sin complicaciones.",
+      howWeHelpTitle:" ¿En qué podemos ayudarte?",
+      howWeHelpP1:"Acompañamiento legal personalizado para proyectos digitales.",
+      howWeHelpP2:"Revisión y elaboración de documentación clave para tu negocio.",
+      howWeHelpP3:"Contratos claros y adaptados para colaboradores, proveedores o servicios.",
+      howWeHelpP4:"Textos legales para tu web (Política de Privacidad, Cookies, Términos y Condiciones).",
+      howWeHelpP5:"Recomendaciones básicas para cumplimiento legal en e-commerce y protección de datos.",
+    
       pricingPackages: "Paquetes de Asesoría Legal",
       discounts:
         "Descuentos disponibles para contratos de asesoría legal a largo plazo (5%-15%). Contáctenos para más detalles.",
@@ -291,14 +308,35 @@ export const translations = {
       ndaAgreements: "NDAs y Acuerdos de Colaboración Digital",
       ndaAgreementsDesc:
         "Proteja los intereses de su empresa digital con acuerdos redactados profesionalmente y experiencia en digitalización legal.",
-      // Pricing
-      express: "Asesoría Legal Express",
-      expressDesc: "Soporte legal online básico para pequeñas empresas digitales",
-      medium: "Asesoría Legal Integral",
-      mediumDesc:
-        "Soporte legal completo para empresas digitales en crecimiento con enfoque en privacidad y protección de datos",
-      full: "Asesoría Legal Premium",
-      fullDesc: "Cobertura completa de digitalización legal y cumplimiento para empresas digitales establecidas",
+      // Initial Consultation
+      initial: "Asesoría Inicial",
+      initialDesc: "Soporte esencial para emprendedores digitales en fase inicial, desde:",
+      initialItem1: "Hasta 5 horas de asesoría legal cada mes",
+      initialItem2: "Revisión de documentos clave y asesoramiento en su interpretación",
+      initialItem3: "Consultas legales puntuales por correo electrónico",
+      initialItem4: "Redacción y/o revisión de contratos",
+      initialItem5: "Asesoramiento sobre la estructura legal del negocio y su formalización",
+      chooseInitial: "Elegir Asesoría Inicial",
+      // Advanced Advisory
+      advanced: "Asesoría Avanzada",
+      advancedDesc:
+        "Ideal para empresas digitales en expansión con necesidades más complejas, desde:",
+      advancedItem1: "Hasta 10 horas de asesoría legal cada mes",
+      advancedItem2: "Revisión prioritaria de documentos y contratos",
+      advancedItem3: "Consultas ampliadas por correo electrónico y teléfono",
+      advancedItem4: "Redacción y/o revisión de contratos",
+      advancedItem5: "Revisión de políticas legales del sitio web, adaptadas a la normativa aplicable",
+      chooseAdvanced: "Elegir Asesoría Avanzada",
+      // Premium Advisory
+      premium: "Asesoría Premium",
+      premiumDesc: "Cobertura total en digitalización legal y cumplimiento normativo para empresas consolidadas, desde:",
+      premiumItem1: "Hasta 20 horas de asesoría legal cada mes",
+      premiumItem2: "Gestión prioritaria de los aspectos legales del negocio",
+      premiumItem3: "Consultas ilimitadas por correo electrónico y teléfono",
+      premiumItem4: "Redacción y/o revisión de contratos y documentos clave",
+      premiumItem5: "Revisión integral del cumplimiento legal del sitio web, incluyendo protección de datos y políticas de privacidad",
+      choosePremium: "Elegir Asesoría Premium",
+      
       // Residency
       residencyTitle: 'Servicios de Registro de Residencia UE ("NIE Verde")',
       silver: "Plata",

@@ -45,7 +45,7 @@ function PricingPackage({
           <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
           <div className="mt-2">
             <span className="text-2xl sm:text-3xl font-bold">{price}</span>
-            {price.includes("€") && <span className="text-sm text-muted-foreground">/month</span>}
+            {price.includes("€") && <span className="text-sm text-muted-foreground">/{("general.month")}</span>}
           </div>
         </CardHeader>
         <CardContent className="flex-grow">
@@ -137,7 +137,33 @@ export function ServicesSection() {
                 <AnimatedSection direction="up" delay={300} elementType="heading">
                   <h3 className="text-2xl font-bold">{t("services.legalServices")}</h3>
                 </AnimatedSection>
-                <div className="grid gap-6 md:grid-cols-2">
+                <AnimatedSection direction="up" delay={400}>
+                  <div className="space-y-4">
+                    <p className="flex items-start gap-2 text-gray-500 font-">
+                      {t("services.legalServicesDesc1")}
+                    </p>
+                    <p className="flex items-start gap-2 text-gray-500">
+                      {t("services.legalServicesDesc2")}
+                    </p>
+                    <p className="flex items-start gap-2 text-gray-500">
+                      {t("services.legalServicesDesc3")}
+                    </p>
+                    <p className="flex items-start gap-2 text-gray-500">
+                      {t("services.legalServicesDesc4")}
+                    </p>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection direction="up" delay={500}>
+                  <div className="flex flex-col items-start gap-2 text-gray-500">
+                    <h4 className="font-bold text-lg">{t("services.howWeHelpTitle")}</h4>
+                    <p>{t("services.howWeHelpP1")}</p>
+                    <p>{t("services.howWeHelpP2")}</p>
+                    <p>{t("services.howWeHelpP3")}</p>
+                    <p>{t("services.howWeHelpP4")}</p>
+                    <p>{t("services.howWeHelpP5")}</p>
+                  </div>
+                </AnimatedSection>
+                {/* <div className="grid gap-6 md:grid-cols-2">
                   <ServiceItem
                     icon={<FileText className="h-5 w-5 text-blue-gray" />}
                     title={t("services.personalizedLegal")}
@@ -174,7 +200,7 @@ export function ServicesSection() {
                     description={t("services.ndaAgreementsDesc")}
                     delay={900}
                   />
-                </div>
+                </div> */}
               </div>
 
               <div>
@@ -183,48 +209,48 @@ export function ServicesSection() {
                 </AnimatedSection>
                 <div className="grid gap-8 md:grid-cols-3">
                   <PricingPackage
-                    title={t("services.express")}
+                    title={t("services.initial")}
                     price="€150"
-                    description={t("services.expressDesc")}
+                    description={t("services.initialDesc")}
                     features={[
-                      "5 hours of legal assistance per month",
-                      "Document review",
-                      "Basic legal consultation",
-                      "Email support",
-                      "1 contract draft or review",
+                      t("services.initialItem1"),
+                      t("services.initialItem2"),
+                      t("services.initialItem3"),
+                      t("services.initialItem4"),
+                      t("services.initialItem5"),
                     ]}
+                    buttonText={t("services.chooseInitial")}
                     delay={400}
                     className="mb-4 md:mb-0"
                   />
                   <PricingPackage
-                    title={t("services.medium")}
+                    title={t("services.advanced")}
                     price="€250"
-                    description={t("services.mediumDesc")}
+                    description={t("services.advancedDesc")}
                     features={[
-                      "10 hours of legal assistance per month",
-                      "Priority document review",
-                      "Comprehensive legal consultation",
-                      "Email and phone support",
-                      "2 contract drafts or reviews",
-                      "Website legal policies review",
+                      t("services.advancedItem1"),
+                      t("services.advancedItem2"),
+                      t("services.advancedItem3"),
+                      t("services.advancedItem4"),
+                      t("services.advancedItem5"),
                     ]}
                     highlighted={true}
+                    buttonText={t("services.chooseAdvanced")}
                     delay={500}
                     className="mb-4 md:mb-0"
                   />
                   <PricingPackage
-                    title={t("services.full")}
+                    title={t("services.premium")}
                     price="€400"
-                    description={t("services.fullDesc")}
+                    description={t("services.premiumDesc")}
                     features={[
-                      "20 hours of legal assistance per month",
-                      "Priority document handling",
-                      "Unlimited legal consultation",
-                      "24/7 email and phone support",
-                      "4 contract drafts or reviews",
-                      "Complete website legal compliance",
-                      "E-commerce compliance audit",
+                      t("services.premiumItem1"),
+                      t("services.premiumItem2"),
+                      t("services.premiumItem3"),
+                      t("services.premiumItem4"),
+                      t("services.premiumItem5"),
                     ]}
+                    buttonText={t("services.choosePremium")}
                     delay={600}
                   />
                 </div>
