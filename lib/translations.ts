@@ -4,190 +4,143 @@ export type Language = "en" | "es"
 
 export const translations = {
   en: {
+    // General
+    general: {
+      month: "month",
+      min2Hours: "minimum 2 hours",
+    },
     // Navigation
     nav: {
       services: "Services",
-      about: "About",
-      bookCall: "Book a Free Consultation",
+      about: "About Us",
+      bookCall: "Book Free Consultation",
       contact: "Contact",
       getStarted: "Get Started",
     },
     // Hero Section
     hero: {
-      title: "Specialized Online Legal Advisory for the Digital Age",
+      title: "Practical Legal Solutions for Startups and New Residents in Europe",
       subtitle:
-        "Expert online legal advisory services tailored for businesses navigating privacy and data protection, legal digitalization, and EU compliance challenges.",
-      scheduleFree: "Schedule a Free Legal Consultation",
+        "Accessible and clear legal advice for those starting businesses, relocating, or facing early legal challenges while building their projects. From contracts to residency paperwork, with a strategic approach and international expertise.",
+      scheduleFree: "Schedule Free Legal Consultation",
       viewServices: "View Legal Services",
     },
     // Services Section
     services: {
-      title: "Specialized Online Legal Solutions",
-      subtitle: "Expert legal guidance tailored to your specific digital business needs",
-      tabStartups: "For Digital Businesses & Startups",
-      tabResidency: "For EU Citizens Residency (Spain)",
-      legalServices: "Online Legal Services for Digital Businesses",
-      pricingPackages: "Legal Advisory Packages",
-      discounts: "Discounts for long-term legal advisory contracts available (5%-15%). Contact us for details.",
-      // Service items
-      personalizedLegal: "Personalized Online Legal Assistance",
-      personalizedLegalDesc:
-        "Tailored online legal advisory support for your specific digital business needs and challenges.",
-      documentPrep: "Legal Document Preparation & Analysis",
-      documentPrepDesc:
-        "Professional preparation and review of all your digital business documentation with legal digitalization expertise.",
-      contractDrafting: "Digital Contract Drafting",
-      contractDraftingDesc:
-        "Employment, Supplier, Service agreements, and General contracts tailored to your digital business needs.",
-      websitePolicies: "Privacy and Data Protection Policies",
-      websitePoliciesDesc:
-        "Privacy Policy, Cookies, Terms & Conditions, Legal Notice – GDPR compliant for your digital presence.",
-      ecommerceCompliance: "E-commerce Legal Compliance",
-      ecommerceComplianceDesc:
-        "Privacy and data protection, sales conditions, payment methods, refunds, and more for your online store.",
-      ndaAgreements: "NDAs and Digital Collaboration Agreements",
-      ndaAgreementsDesc:
-        "Protect your digital business interests with professionally drafted agreements and legal digitalization expertise.",
-      // Pricing
-      express: "Express Legal Advisory",
-      expressDesc: "Basic online legal support for small digital businesses",
-      medium: "Comprehensive Legal Advisory",
-      mediumDesc: "Complete legal support for growing digital businesses with privacy and data protection focus",
-      full: "Premium Legal Advisory",
-      fullDesc: "Complete legal digitalization and compliance coverage for established digital businesses",
-      // Residency
-      residencyTitle: 'EU Residency Registration Services ("NIE Verde")',
-      silver: "Silver",
-      silverDesc: "Basic legal assistance for self-sufficient EU applicants",
-      gold: "Gold",
-      goldDesc: "Comprehensive legal support for your EU residency application",
-      platinum: "Platinum",
-      platinumDesc: "Complete end-to-end EU residency legal advisory support",
-      chooseSilver: "Choose Silver",
-      chooseGold: "Choose Gold",
-      choosePlatinum: "Choose Platinum",
-      // Family Reunification
-      familyTitle: "Family Reunification Legal Assistance",
-      forResidents: "For EU Residents",
-      forResidentsDesc: "Legal support for EU residents bringing family members",
-      forNonResidents: "For Non-Residents",
-      forNonResidentsDesc: "Complete legal package for family reunification",
-      selectPackage: "Select Package",
-      // Specialized Advice
-      specializedTitle: "Specialized EU Residency Legal Advisory",
-      consultationTitle: "Personalized Residency Legal Consultation",
-      consultationDesc: "Expert legal guidance for your specific situation",
-      bookConsultation: "Book Free Consultation",
+      // Content previously translated
     },
     // About Section
     about: {
-      title: "Meet the Legal Experts Behind Lexzen's Online Legal Advisory",
+      title: "Get to Know Us",
       subtitle: "A team of experienced legal professionals combining expertise with digital innovation",
       ourStory: "Our Story",
       storyContent1:
-        "Lexzen was founded in 2022 by a team of forward-thinking legal professionals who recognized a gap in the market: accessible, specialized online legal advisory services for digital businesses and individuals navigating residency requirements.",
+        "Lexzen was born from direct experience: navigating the personal and professional challenges of settling in a new country, from complex residency paperwork to legal hurdles faced when starting or running a digital business abroad.",
       storyContent2:
-        "With decades of combined experience in both traditional law and legal digitalization, our founders set out to create an online legal advisory firm that breaks down complex legal concepts into actionable guidance, delivered through modern, client-friendly channels.",
+        "The project started with a clear conviction: many people don't need heavy legal jargon — they need clear, accessible support aligned with their reality. Those starting a new chapter in Europe or building a digital business often face critical legal decisions they're unprepared for. That's where Lexzen adds value.",
       storyContent3:
-        "Today, we're proud to serve clients across Spain and throughout Europe, providing the legal clarity and support they need to thrive in an increasingly digital world, with particular expertise in privacy and data protection.",
-      officeLocation: "Our offices in Madrid, Spain - Center for Online Legal Advisory",
+        "With solid legal training and practical experience in migration processes, contract advisory, and legal structuring for emerging projects, we offer a service focused on strategic guidance without unnecessary complexity. Our approach combines technical expertise with lived experience, providing real, understandable, and applicable solutions.",
+      storyContent4:
+        "We believe in legal advice that not only solves but also supports. Having walked this path ourselves, we are uniquely positioned to guide others on theirs.",
       ourFounders: "Our Legal Experts",
-      // Founders
       founder1Name: "Elena Martínez",
-      founder1Title: "Managing Partner & Legal Director",
+      founder1Title: "Managing Partner and Legal Director",
       founder1Bio:
-        "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. Her background includes serving as legal counsel for several major tech companies and startups across Europe, with expertise in privacy and data protection.",
-      founder1Education: "J.D., Universidad Complutense",
+        "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. She has advised major tech companies and startups across Europe, specializing in privacy and data protection.",
+      founder1Education: "J.D., Complutense University",
       founder2Name: "Carlos Rodríguez",
-      founder2Title: "Technology & Compliance Director",
+      founder2Title: "Technology and Compliance Director",
       founder2Bio:
-        "Carlos brings a unique blend of legal and technical expertise, with a focus on privacy and data protection, GDPR compliance, and legal digitalization. His dual background in law and computer science allows him to bridge the gap between legal requirements and technical implementation.",
+        "Carlos brings a unique combination of legal and technical expertise, specializing in privacy, GDPR compliance, and legal digitalization. His dual background in law and IT bridges the gap between legal requirements and technical implementation.",
       founder2Education: "LL.M., IE Law School",
       founder3Name: "Sofia Navarro",
-      founder3Title: "Immigration & Residency Specialist",
+      founder3Title: "Immigration and Residency Specialist",
       founder3Bio:
-        "Sofia specializes in immigration law and residency requirements, with particular expertise in EU citizen rights and family reunification. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes through our online legal advisory services.",
-      founder3Education: "J.D., Universidad de Barcelona",
-      // Values
-      ourValues: "Our Core Values",
-      integrity: "Integrity",
-      integrityDesc: "We uphold the highest ethical standards in all our online legal advisory services and guidance.",
-      clientCentered: "Client-Centered",
-      clientCenteredDesc: "Your needs and goals are at the center of our online legal advisory approach.",
-      excellence: "Excellence",
-      excellenceDesc: "We strive for excellence in our legal expertise and online legal advisory service.",
-      innovation: "Legal Digitalization",
-      innovationDesc: "We embrace legal digitalization to deliver online legal advisory services more effectively.",
-      readyToWork: "Ready to work with our legal experts?",
+        "Sofia specializes in immigration law and residency requirements, particularly for EU citizens and family reunifications. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes.",
+      founder3Education: "J.D., University of Barcelona",
+      ourValues: "Core Values",
+      integrity: "Legal Clarity",
+      integrityDesc:
+        "We prioritize conceptual precision and accessible communication. Our mission is to interpret and explain legal content clearly without losing rigor.",
+      clientCentered: "Individualized Advisory",
+      clientCenteredDesc:
+        "Every situation deserves specific analysis. We provide professional support tailored to each case's particular needs, with strategic focus and personalized attention.",
+      excellence: "Technical Excellence with Operational Vision",
+      excellenceDesc:
+        "We maintain high standards of legal quality, combining strong regulatory grounding with viable, decision-oriented solutions.",
+      innovation: "Applied Professional Experience",
+      innovationDesc:
+        "With firsthand experience in international mobility and digital business legal structuring, we anticipate scenarios and offer practical, up-to-date responses.",
+      readyToWork: "Ready to Get Started?",
     },
     // Booking Calendar
     booking: {
       title: "Schedule Your Free 20-Minute Legal Consultation",
       subtitle:
-        "Book a complimentary online legal consultation with our experts to discuss your digital business needs",
+        "Book a free consultation with our legal experts and receive guidance to protect and grow your digital business.",
       howItWorks: "How Our Free Legal Consultation Works",
       howItWorksDesc: "Simple steps to schedule your free online legal consultation",
-      step1: "Select a Date & Time",
-      step1Desc: "Choose from available weekday slots in Spanish time zone (CET/CEST)",
-      step2: "Provide Your Details",
-      step2Desc: "Fill in your contact information and legal consultation topic",
+      step1: "Select a Date and Time",
+      step1Desc: "Choose from available slots Monday to Friday, Spanish time zone (CET/CEST)",
+      step2: "Provide Your Information",
+      step2Desc: "Fill out your contact details and consultation topic",
       step3: "Receive Confirmation",
-      step3Desc: "Get an email with call details and calendar invitation",
-      consultationIncludes: "Your free legal consultation includes:",
+      step3Desc: "Get a confirmation email with call details and calendar invite",
+      consultationIncludes: "Your free consultation includes:",
       consultationItem1: "20-minute video or phone call with a legal expert",
       consultationItem2: "Initial assessment of your legal needs",
       consultationItem3: "Recommendations for next legal steps",
-      consultationItem4: "No obligation to purchase legal services",
+      consultationItem4: "No obligation to hire legal services",
       bookYourConsultation: "Book Your Free Legal Consultation",
-      selectDate: "Select a date for your free legal consultation",
+      selectDate: "Select a date for your consultation",
       chooseTime: "Choose an available time slot",
       completeDetails: "Complete your booking details",
       timeZoneNote: "All times are in Spanish time zone (CET/CEST)",
-      noSlots: "No available time slots for this date.",
+      noSlots: "No available slots for this date.",
       chooseAnother: "Choose Another Date",
       fullName: "Full Name *",
-      fullNamePlaceholder: "Your full name",
+      fullNamePlaceholder: "Enter your full name",
       email: "Email Address *",
       emailPlaceholder: "your.email@example.com",
       phone: "Phone Number *",
       phonePlaceholder: "+34 XXX XXX XXX",
-      topic: "Legal Consultation Topic (Optional)",
-      topicPlaceholder: "Briefly describe what legal matters you'd like to discuss",
+      topic: "Consultation Topic (Optional)",
+      topicPlaceholder: "Briefly describe the legal matters you want to discuss",
       back: "Back",
       continue: "Continue",
       bookConsultation: "Book Free Consultation",
       // Confirmation
       consultationBooked: "Legal Consultation Booked!",
       consultationScheduled: "Your free 20-minute legal consultation has been scheduled.",
-      confirmationSent: "We've sent a confirmation email to",
+      confirmationSent: "A confirmation email has been sent to",
       teamContact:
-        "Our legal team will contact you shortly before the scheduled time with the call link or phone number.",
+        "Our legal team will contact you shortly before your scheduled time with the call link or phone number.",
       done: "Done",
     },
     // Testimonials
     testimonials: {
-      title: "What Our Legal Advisory Clients Say",
+      title: "What Our Legal Clients Say",
       subtitle:
         "Hear from businesses we've helped navigate legal challenges in the digital space with our online legal advisory services.",
       testimonial1:
-        "Lexzen provided invaluable online legal advisory for our e-commerce business. Their expertise in privacy and data protection helped us avoid potential compliance issues while growing our online presence.",
+        "Lexzen provided invaluable online legal advice for our e-commerce business. Their expertise in privacy and data protection helped us avoid compliance issues as we expanded online.",
       client1Name: "Sarah Johnson",
       client1Title: "CEO, StyleHub",
       testimonial2:
-        "Working with Lexzen transformed how we approach legal digitalization for our web development projects. Their team made complex legal requirements accessible and actionable through their online legal advisory services.",
+        "Working with Lexzen transformed how we approached legal digitalization for our web development projects. Their team made complex legal requirements accessible and practical.",
       client2Name: "Michael Chen",
       client2Title: "Founder, TechSolutions",
     },
     // CTA Section
     cta: {
-      title: "Ready to Get Started with Professional Online Legal Advisory?",
-      subtitle:
-        "Schedule a free legal consultation with our experts and take the first step toward legal clarity for your digital business.",
-      scheduleConsultation: "Schedule a Free Legal Consultation",
+      title: "Ready to Boost Your Business?",
+      subtitle: "",
+      scheduleConsultation: "Schedule Free Legal Consultation",
       contactUs: "Contact Our Legal Team",
     },
     // Footer
     footer: {
+      footerDesc: "Legal advisory tailored to your needs, specializing in digital businesses and EU residency.",
       rights: "© 2025 Lexzen Online Legal Advisory. All rights reserved.",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
@@ -210,7 +163,8 @@ export const translations = {
       socialHeading: "Follow Us",
       // Newsletter
       newsletterHeading: "Stay Updated",
-      newsletterSubheading: "Subscribe to our newsletter for legal tips and updates on privacy and data protection",
+      newsletterSubheading:
+        "Subscribe to our newsletter for legal tips and updates on privacy and data protection",
       emailPlaceholder: "Your email address",
       subscribe: "Subscribe",
       privacyConsent:
@@ -232,7 +186,7 @@ export const translations = {
       email: "Email Address",
       emailPlaceholder: "your.email@example.com",
       subject: "Subject / Topic",
-      subjectPlaceholder: "What is your message about?",
+      subjectPlaceholder: "What's your message about?",
       message: "Message",
       messagePlaceholder: "Please provide details about your inquiry...",
       subscribe: "I would like to receive updates from Lexzen",
@@ -241,9 +195,9 @@ export const translations = {
       required: "This field is required",
       invalidEmail: "Please enter a valid email address",
       success: "Thank you for your message!",
-      successDetails: "We've received your inquiry and will get back to you shortly.",
-      error: "There was an error sending your message",
-      errorDetails: "Please try again or contact us directly via email.",
+      successDetails: "We have received your inquiry and will respond shortly.",
+      error: "There was an error submitting your message",
+      errorDetails: "Please try again or contact us directly by email.",
       close: "Close",
     },
   },
@@ -456,7 +410,7 @@ export const translations = {
       innovationDesc:
         "Contamos con experiencia directa en procesos de movilidad internacional y estructuración legal de negocios digitales, lo que nos permite anticipar escenarios y ofrecer respuestas prácticas alineadas con el entorno actual.",
 
-      readyToWork: "¿Listo para trabajar con nuestros expertos legales?",
+      readyToWork: "¿Listo para comenzar?",
     },
     // Booking Calendar
     booking: {
@@ -518,9 +472,9 @@ export const translations = {
     },
     // CTA Section
     cta: {
-      title: "¿Te gustaría impulsar tu negocio digital con una base legal sólida?",
+      title: "¿Te gustaría impulsar tu negocio?",
       subtitle:
-        "Programe una consulta legal gratuita con nuestros expertos y dé el primer paso hacia la claridad legal para su negocio digital.",
+        "",
       scheduleConsultation: "Programar Consulta Legal Gratuita",
       contactUs: "Contactar a Nuestro Equipo Legal",
     },
@@ -551,7 +505,7 @@ export const translations = {
       newsletterHeading: "Mantente Actualizado",
       newsletterSubheading:
         "Suscríbete a nuestro boletín para consejos legales y actualizaciones sobre privacidad y protección de datos",
-      emailPlaceholder: "Tu dirección de correo electrónico",
+      emailPlaceholder: "Tu correo electrónico",
       subscribe: "Suscribirse",
       privacyConsent:
         "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones legales de Lexzen.",
