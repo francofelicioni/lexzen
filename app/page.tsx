@@ -108,7 +108,7 @@ export default function Home() {
         {/* Booking Calendar */}
         <BookingCalendar />
 
-        {/* Contact Section - New! */}
+        {/* Contact Section  */}
         <ContactSection />
 
         {/* Testimonials Section */}

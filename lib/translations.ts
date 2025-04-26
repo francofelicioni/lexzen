@@ -248,10 +248,11 @@ export const translations = {
     },
   },
   es: {
+    // General
     general: {
       month: "mes",
+      min2Hours: "mínimo 2 horas",
     },
-
     // Navigation
     nav: {
       services: "Servicios",
@@ -279,13 +280,13 @@ export const translations = {
       legalServicesDesc2: "Cada paso en el desarrollo de un negocio —desde validar una idea hasta lanzar una web o firmar el primer contrato— implica decisiones legales importantes.",
       legalServicesDesc3: "Ofrecemos una asesoría clara, cercana y 100% online, pensada para ayudar a construir con solidez, proteger el emprendimiento y tomar decisiones informadas desde el inicio.",
       legalServicesDesc4: "Nos enfocamos en startups y negocios digitales en etapas tempranas que necesitan orientación legal práctica y accesible, sin complicaciones.",
-      howWeHelpTitle:" ¿En qué podemos ayudarte?",
-      howWeHelpP1:"Acompañamiento legal personalizado para proyectos digitales.",
-      howWeHelpP2:"Revisión y elaboración de documentación clave para tu negocio.",
-      howWeHelpP3:"Contratos claros y adaptados para colaboradores, proveedores o servicios.",
-      howWeHelpP4:"Textos legales para tu web (Política de Privacidad, Cookies, Términos y Condiciones).",
-      howWeHelpP5:"Recomendaciones básicas para cumplimiento legal en e-commerce y protección de datos.",
-    
+      howWeHelpTitle: " ¿En qué podemos ayudarte?",
+      howWeHelpP1: "Acompañamiento legal personalizado para proyectos digitales.",
+      howWeHelpP2: "Revisión y elaboración de documentación clave para tu negocio.",
+      howWeHelpP3: "Contratos claros y adaptados para colaboradores, proveedores o servicios.",
+      howWeHelpP4: "Textos legales para tu web (Política de Privacidad, Cookies, Términos y Condiciones).",
+      howWeHelpP5: "Recomendaciones básicas para cumplimiento legal en e-commerce y protección de datos.",
+
       pricingPackages: "Paquetes de Asesoría Legal",
       discounts:
         "Descuentos disponibles para contratos de asesoría legal a largo plazo (5%-15%). Contáctenos para más detalles.",
@@ -336,43 +337,89 @@ export const translations = {
       premiumItem4: "Redacción y/o revisión de contratos y documentos clave",
       premiumItem5: "Revisión integral del cumplimiento legal del sitio web, incluyendo protección de datos y políticas de privacidad",
       choosePremium: "Elegir Asesoría Premium",
-      
+
       // Residency
-      residencyTitle: 'Servicios de Registro de Residencia UE ("NIE Verde")',
+      residencyTitle: "Asistencia legal práctica y personalizada para procesos de residencia en España.",
+      residencyDesc1: "Instalarse en un nuevo país implica gestionar trámites que pueden ser complejos. Nuestro servicio está orientado a brindar apoyo en cada etapa del proceso de residencia, de manera clara, accesible y adaptada a las necesidades de cada caso.",
+      residencyDesc2: "Se ofrecen paquetes flexibles para solicitudes de residencia, reunificación familiar y consultas legales específicas, siempre de forma online y con acompañamiento profesional.",
+
+      residencySubTitle: 'Servicios de Registro de Residencia UE ("NIE Verde")',
+      residencySubTitleDesc: 'Tres niveles de asistencia para adaptar el servicio a cada necesidad:',
+
+      // Silver
       silver: "Plata",
       silverDesc: "Asistencia legal básica para solicitantes autosuficientes de la UE",
+      silverItem1: "Revisión de documentación",
+      silverItem2: "Asesoramiento personalizado",
+      silverItem3: "Checklist de documentación necesaria y verificación",
+      silverItem4: "Soporte por correo electrónico",
+
+
+      // Gold
       gold: "Oro",
-      goldDesc: "Soporte legal integral para su solicitud de residencia UE",
+      goldDesc: "Asistencia legal integral para solicitudes de residencia UE",
+      goldItem1: "Preparación y revisión de documentos",
+      goldItem2: "Gestión de citas",
+      goldItem3: "Revisión, gestión y seguimiento de solicitud",
+      goldItem4: "Soporte por correo electrónico y telefónico",
+      goldItem5: "Seguimiento posterior a la presentación",
+
+
+      // Platinum
       platinum: "Platino",
-      platinumDesc: "Soporte completo de asesoría legal para el registro de residencia UE",
+      platinumDesc: "Soporte completo para la gestión del registro de residencia UE",
+      platinumItem1: "Preparación total de documentación",
+      platinumItem2: "Asistencia y gestionamiento en obtención de seguro médico",
+      platinumItem3: "Coordinación total de citas",
+      platinumItem4: "Gestión prioritaria de trámites",
+
+      // CTA buttons
       chooseSilver: "Elegir Plata",
       chooseGold: "Elegir Oro",
       choosePlatinum: "Elegir Platino",
+
       // Family Reunification
       familyTitle: "Asistencia Legal para Reunificación Familiar",
+      familySubTitle: "Apoyo en el proceso de reunificación familiar, adaptado según el tipo de residencia:",
       forResidents: "Para Residentes UE",
       forResidentsDesc: "Apoyo legal para residentes de la UE que traen a miembros de su familia",
+      forResidentsItem1: "Asistencia integral en preparación de documentación",
+      forResidentsItem2: "Soporte en la obtención de certificados digitales",
+      forResidentsItem3: "Gestión de citas para NIE",
+      forResidentsItem4: "Seguimiento del proceso de solicitud",
+
       forNonResidents: "Para No Residentes",
       forNonResidentsDesc: "Paquete legal completo para reunificación familiar",
+      forNonResidentsItem1: "Preparación y revisión de documentación",
+      forNonResidentsItem2: "Gestión de citas para NIE",
+      forNonResidentsItem3: "Seguimiento del proceso de solicitud",
+      forNonResidentsItem4: "Asesoramiento legal integral",
+
       selectPackage: "Seleccionar Paquete",
       // Specialized Advice
       specializedTitle: "Asesoría Legal Especializada en Residencia UE",
-      consultationTitle: "Consulta Legal Personalizada de Residencia",
-      consultationDesc: "Orientación legal experta para su situación específica",
-      bookConsultation: "Reservar Consulta Gratuita",
+      consultationTitle: "Orientación legal específica para trámites de residencia:",
+      consultationDesc: "Consulta Legal Personalizada de Residencia",
+      bookConsultation: "(+ €50 por cada persona adicional)",
+      consultationItem1: "Análisis detallado de la situación individual",
+      consultationItem2: "Recomendación de los permisos de residencia adecuados",
+      consultationItem3: "Lista de verificación de documentación requerida",
+      consultationItem4: "Horas adicionales disponibles a €30/hora",
     },
     // About Section
     about: {
-      title: "Conozca a los Expertos Legales Detrás de la Asesoría Legal Online de Lexzen",
+      title: "Conozca quienes somos",
       subtitle: "Un equipo de profesionales legales experimentados que combinan experiencia con innovación digital",
       ourStory: "Nuestra Historia",
       storyContent1:
-        "Lexzen fue fundada en 2022 por un equipo de profesionales legales visionarios que identificaron una brecha en el mercado: servicios de asesoría legal online accesibles y especializados para empresas digitales y personas que navegan por los requisitos de residencia.",
+        "Lexzen surge a partir de una experiencia directa: atravesar, paso a paso, los desafíos personales y profesionales que implica establecerse en un nuevo país. Desde la complejidad de los trámites de residencia hasta los obstáculos legales que enfrentan quienes emprenden o desarrollan un negocio digital desde el extranjero.",
       storyContent2:
-        "Con décadas de experiencia combinada tanto en derecho tradicional como en digitalización legal, nuestros fundadores se propusieron crear una firma de asesoría legal online que simplifica conceptos legales complejos en orientación práctica, entregada a través de canales modernos y amigables para el cliente.",
+        "El proyecto nació con una convicción clara: muchas personas no necesitan grandes discursos jurídicos, sino acompañamiento claro, accesible y alineado con las particularidades de su realidad. Quienes están iniciando una nueva etapa en Europa, o construyendo una empresa en el entorno digital, suelen enfrentarse a decisiones legales clave para las cuales no siempre están preparados. Ahí es donde Lexzen aporta valor.",
       storyContent3:
-        "Hoy, nos enorgullece servir a clientes en toda España y Europa, proporcionando la claridad legal y el apoyo que necesitan para prosperar en un mundo cada vez más digital, con experiencia particular en privacidad y protección de datos.",
-      officeLocation: "Nuestras oficinas en Madrid, España - Centro de Asesoría Legal Online",
+        "Con una sólida formación jurídica y experiencia práctica en procesos de migración, asesoría contractual y estructura legal para proyectos emergentes, ofrecemos un servicio centrado en la orientación estratégica, sin complejidad innecesaria. Nuestro enfoque combina el conocimiento técnico con la experiencia vivida, para brindar soluciones reales, comprensibles y aplicables.",
+      storyContent4:
+        "Creemos en una asesoría legal que no solo resuelve, sino que también acompaña. Porque haber transitado este camino nos permite comprenderlo, y poner ese conocimiento al servicio de quienes lo inician hoy.",
+ 
       ourFounders: "Nuestros Expertos Legales",
       // Founders
       founder1Name: "Elena Martínez",
@@ -390,26 +437,32 @@ export const translations = {
       founder3Bio:
         "Sofia se especializa en derecho de inmigración y requisitos de residencia, con particular experiencia en derechos de ciudadanos de la UE y reunificación familiar. Su enfoque compasivo y atención al detalle han ayudado a cientos de clientes a navegar con éxito por complejos procesos de residencia a través de nuestros servicios de asesoría legal online.",
       founder3Education: "J.D., Universidad de Barcelona",
+
       // Values
-      ourValues: "Nuestros Valores Fundamentales",
-      integrity: "Integridad",
+      ourValues: "Valores Fundamentales",
+
+      integrity: "Claridad jurídica",
       integrityDesc:
-        "Mantenemos los más altos estándares éticos en todos nuestros servicios de asesoría legal online y consejos.",
-      clientCentered: "Centrado en el Cliente",
-      clientCenteredDesc: "Sus necesidades y objetivos están en el centro de nuestro enfoque de asesoría legal online.",
-      excellence: "Excelencia",
+        "Priorizamos la precisión conceptual y la comunicación accesible. Nuestra labor consiste en interpretar y transmitir el contenido legal de forma comprensible, sin perder rigor ni profundidad.",
+
+      clientCentered: "Asesoramiento individualizado",
+      clientCenteredDesc: "Cada situación requiere un análisis específico. Ofrecemos un acompañamiento profesional adaptado a las particularidades de cada caso, con enfoque estratégico y atención personalizada.",
+
+      excellence: "Rigor técnico con visión operativa",
       excellenceDesc:
-        "Nos esforzamos por la excelencia en nuestra experiencia legal y servicio de asesoría legal online.",
-      innovation: "Digitalización Legal",
+        "Sostenemos altos estándares de calidad jurídica, articulando solidez normativa con soluciones viables y orientadas a la toma de decisiones concretas.",
+
+      innovation: "Experiencia profesional aplicada",
       innovationDesc:
-        "Adoptamos la digitalización legal para prestar servicios de asesoría legal online de manera más efectiva.",
+        "Contamos con experiencia directa en procesos de movilidad internacional y estructuración legal de negocios digitales, lo que nos permite anticipar escenarios y ofrecer respuestas prácticas alineadas con el entorno actual.",
+
       readyToWork: "¿Listo para trabajar con nuestros expertos legales?",
     },
     // Booking Calendar
     booking: {
       title: "Programe Su Consulta Legal Gratuita de 20 Minutos",
       subtitle:
-        "Reserve una consulta legal online gratuita con nuestros expertos para discutir las necesidades de su negocio digital",
+        "Agende una consulta gratuita con nuestros expertos y obtenga la orientación legal necesaria para proteger y expandir su empresa de manera sólida en el mundo digital.",
       howItWorks: "Cómo Funciona Nuestra Consulta Legal Gratuita",
       howItWorksDesc: "Pasos simples para programar su consulta legal online gratuita",
       step1: "Seleccione una Fecha y Hora",
@@ -465,7 +518,7 @@ export const translations = {
     },
     // CTA Section
     cta: {
-      title: "¿Listo para Comenzar con Asesoría Legal Online Profesional?",
+      title: "¿Te gustaría impulsar tu negocio digital con una base legal sólida?",
       subtitle:
         "Programe una consulta legal gratuita con nuestros expertos y dé el primer paso hacia la claridad legal para su negocio digital.",
       scheduleConsultation: "Programar Consulta Legal Gratuita",
@@ -473,6 +526,7 @@ export const translations = {
     },
     // Footer
     footer: {
+      footerDesc:"Asesoría legal adaptado a sus necesidades, especializada para empresas digitales y residencia en la UE.",
       rights: "© 2025 Lexzen Asesoría Legal Online. Todos los derechos reservados.",
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",

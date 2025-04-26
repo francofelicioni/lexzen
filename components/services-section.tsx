@@ -155,12 +155,12 @@ export function ServicesSection() {
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={500}>
                   <div className="flex flex-col items-start gap-2 text-gray-500">
-                    <h4 className="font-bold text-lg">{t("services.howWeHelpTitle")}</h4>
-                    <p>{t("services.howWeHelpP1")}</p>
-                    <p>{t("services.howWeHelpP2")}</p>
-                    <p>{t("services.howWeHelpP3")}</p>
-                    <p>{t("services.howWeHelpP4")}</p>
-                    <p>{t("services.howWeHelpP5")}</p>
+                    <h4 className="font-bold text-xl">{t("services.howWeHelpTitle")}</h4>
+                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP1")}</p>
+                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP2")}</p>
+                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP3")}</p>
+                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP4")}</p>
+                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP5")}</p>
                   </div>
                 </AnimatedSection>
                 {/* <div className="grid gap-6 md:grid-cols-2">
@@ -266,16 +266,29 @@ export function ServicesSection() {
           {/* For EU Citizens Residency */}
           <TabsContent value="residency" className="transition-all duration-500">
             <div className="grid gap-8">
-              <div>
+              <div className="grid gap-6">
                 <AnimatedSection direction="up" delay={300}>
                   <h3 className="text-2xl font-bold mb-6">{t("services.residencyTitle")}</h3>
+                  <p className="my-2">{t("services.residencyDesc1")}</p>
+                  <p>{t("services.residencyDesc2")}</p>
+                </AnimatedSection>
+                <AnimatedSection direction="up" delay={300}>
+                  <h3 className="text-2xl font-bold mb-6">{t("services.residencySubTitle")}</h3>
+                  <p className="my-2">{t("services.residencySubTitleDesc")}</p>
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-3">
                   <PricingPackage
                     title={t("services.silver")}
                     price="€40"
                     description={t("services.silverDesc")}
-                    features={["Document review", "Personalized advice", "Application checklist", "Email support"]}
+                    features={
+                      [
+                        t("services.silverItem1"),
+                        t("services.silverItem2"),
+                        t("services.silverItem3"),
+                        t("services.silverItem4"),
+                      ]
+                    }
                     buttonText={t("services.chooseSilver")}
                     delay={400}
                   />
@@ -283,13 +296,15 @@ export function ServicesSection() {
                     title={t("services.gold")}
                     price="€50"
                     description={t("services.goldDesc")}
-                    features={[
-                      "Documentation preparation",
-                      "Appointment booking",
-                      "Application review",
-                      "Email and phone support",
-                      "Follow-up assistance",
-                    ]}
+                    features={
+                      [
+                        t("services.goldItem1"),
+                        t("services.goldItem2"),
+                        t("services.goldItem3"),
+                        t("services.goldItem4"),
+                        t("services.goldItem5"),
+                      ]
+                    }
                     buttonText={t("services.chooseGold")}
                     delay={500}
                   />
@@ -298,12 +313,10 @@ export function ServicesSection() {
                     price="€75"
                     description={t("services.platinumDesc")}
                     features={[
-                      "Complete preparation",
-                      "Medical insurance assistance",
-                      "Appointment coordination",
-                      "In-person support",
-                      "Document translation assistance",
-                      "Priority handling",
+                      t("services.platinumItem1"),
+                      t("services.platinumItem2"),
+                      t("services.platinumItem3"),
+                      t("services.platinumItem4"),
                     ]}
                     highlighted={true}
                     buttonText={t("services.choosePlatinum")}
@@ -315,6 +328,7 @@ export function ServicesSection() {
               <div>
                 <AnimatedSection direction="up" delay={300}>
                   <h3 className="text-2xl font-bold mb-6">{t("services.familyTitle")}</h3>
+                  <p className="my-2">{t("services.familySubTitle")}</p>
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-2">
                   <AnimatedSection direction="right" delay={400}>
@@ -342,7 +356,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>Full documentation support</span>
+                            <span>{t("services.forResidentsItem1")}</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <svg
@@ -357,7 +371,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>Digital certificate assistance</span>
+                            <span>{t("services.forResidentsItem2")}</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <svg
@@ -372,7 +386,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>TIE appointment booking</span>
+                            <span>{t("services.forResidentsItem3")}</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <svg
@@ -387,7 +401,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>Application follow-up</span>
+                            <span>{t("services.forResidentsItem4")}</span>
                           </li>
                         </ul>
                       </CardContent>
@@ -424,7 +438,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>Full package for residency registration</span>
+                            <span>{t("services.forNonResidentsItem1")}</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <svg
@@ -439,7 +453,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>Family reunification documentation</span>
+                            <span>{t("services.forNonResidentsItem2")}</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <svg
@@ -454,7 +468,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>All necessary appointments</span>
+                            <span>{t("services.forNonResidentsItem3")}</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <svg
@@ -469,7 +483,7 @@ export function ServicesSection() {
                             >
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            <span>€50 for each additional person</span>
+                            <span>{t("services.forNonResidentsItem4")}</span>
                           </li>
                         </ul>
                       </CardContent>
@@ -494,7 +508,7 @@ export function ServicesSection() {
                       <CardDescription>{t("services.consultationDesc")}</CardDescription>
                       <div className="mt-2">
                         <span className="text-3xl font-bold">€50</span>
-                        <span className="text-sm text-muted-foreground"> minimum (2 hours)</span>
+                        <span className="text-sm text-muted-foreground ml-1">({t("general.min2Hours")})</span>
                       </div>
                     </CardHeader>
                     <CardContent>
@@ -512,7 +526,7 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Personalized analysis of your situation</span>
+                          <span>{t("services.consultationItem1")}</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <svg
@@ -527,7 +541,7 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Guidance on suitable residency permits</span>
+                          <span>{t("services.consultationItem2")}</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <svg
@@ -542,7 +556,7 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Detailed documentation checklist</span>
+                          <span>{t("services.consultationItem3")}</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <svg
@@ -557,13 +571,13 @@ export function ServicesSection() {
                           >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
-                          <span>Additional hours at €30/hour</span>
+                          <span>{t("services.consultationItem4")}</span>
                         </li>
                       </ul>
                     </CardContent>
                     <CardFooter>
                       <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                        {t("services.bookConsultation")}
+                        {t("services.selectPackage")}
                       </Button>
                     </CardFooter>
                   </Card>

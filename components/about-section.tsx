@@ -35,6 +35,7 @@ export function AboutSection() {
             <p className="text-gray-500">{t("about.storyContent1")}</p>
             <p className="text-gray-500">{t("about.storyContent2")}</p>
             <p className="text-gray-500">{t("about.storyContent3")}</p>
+            <p className="text-gray-500">{t("about.storyContent4")}</p>
           </div>
           <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-xl bg-gray-100">
             <img
