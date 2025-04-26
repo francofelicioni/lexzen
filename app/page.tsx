@@ -168,7 +168,7 @@ export default function Home() {
                     {t("cta.subtitle")}
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <div className="flex flex-col gap-2 md:min-[400px]:flex-row">
                   <Button className="bg-white text-blue-gray hover:bg-legal-accent-dark hover:text-white" asChild>
                     <a href="#booking">{t("cta.scheduleConsultation")}</a>
                   </Button>

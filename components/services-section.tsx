@@ -107,7 +107,7 @@ export function ServicesSection() {
     <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
       <div className="container px-4 md:px-6">
         <AnimatedSection direction="up" elementType="heading">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-6">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.services")}
@@ -121,7 +121,7 @@ export function ServicesSection() {
         </AnimatedSection>
 
         <Tabs defaultValue="startups" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-2 mb-8">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 mb-20 md:mb-0">
             <TabsTrigger value="startups" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
               {t("services.tabStartups")}
             </TabsTrigger>

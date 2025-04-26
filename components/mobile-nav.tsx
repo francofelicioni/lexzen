@@ -23,7 +23,7 @@ export function MobileNav() {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] sm:w-[350px]">
+      <SheetContent side="left" className="w-full sm:w-[350px]">
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between mb-8">
             <span className="text-xl font-bold animate-fade-in">Lexzen</span>
@@ -33,7 +33,6 @@ export function MobileNav() {
               onClick={() => setOpen(false)}
               className="transition-transform duration-300 hover:rotate-90 p-2 h-10 w-10"
             >
-              <X className="h-6 w-6" />
               <span className="sr-only">Close menu</span>
             </Button>
           </div>
