@@ -606,8 +606,8 @@ export const translations = {
       title: "¿Te gustaría impulsar tu negocio?",
       subtitle:
         "",
-      scheduleConsultation: "Programar Consulta Legal Gratuita",
-      contactUs: "Contactar a Nuestro Equipo Legal",
+      scheduleConsultation: "Programar consulta gratuita",
+      contactUs: "Contactar a Nuestro Equipo",
     },
     // Footer
     footer: {
