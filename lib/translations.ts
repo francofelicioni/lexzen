@@ -27,7 +27,138 @@ export const translations = {
     },
     // Services Section
     services: {
-      // Content previously translated
+      title: "Specialized Online Legal Solutions",
+      subtitle: "Expert legal advice tailored to the specific needs of your digital business",
+      tabStartups: "For Digital Businesses and Startups",
+      tabResidency: "For EU Citizenship Residency (Spain)",
+      legalServices: "Online Legal Services for Digital Businesses",
+      legalServicesDesc1: "We advise those launching, growing, or developing their digital projects.",
+      legalServicesDesc2: "Each step in building a business — from validating an idea to launching a website or signing the first contract — involves important legal decisions.",
+      legalServicesDesc3: "We offer clear, approachable, 100% online advice designed to help you build solid foundations, protect your project, and make informed decisions from day one.",
+      legalServicesDesc4: "We focus on early-stage startups and digital businesses that need practical and accessible legal guidance, without complications.",
+      howWeHelpTitle: "How Can We Help You?",
+      howWeHelpP1: "Personalized legal support for digital projects.",
+      howWeHelpP2: "Review and preparation of key business documents.",
+      howWeHelpP3: "Clear and tailored contracts for collaborators, providers, or services.",
+      howWeHelpP4: "Legal texts for your website (Privacy Policy, Cookies Policy, Terms and Conditions).",
+      howWeHelpP5: "Basic compliance recommendations for e-commerce and data protection.",
+
+      pricingPackages: "Legal Advisory Packages",
+      discounts:
+        "Discounts available for long-term legal advisory contracts (5%-15%). Contact us for more details.",
+      // Service items
+      personalizedLegal: "Personalized Online Legal Assistance",
+      personalizedLegalDesc:
+        "Online legal support tailored to the specific needs and challenges of your digital business.",
+      documentPrep: "Legal Document Preparation and Review",
+      documentPrepDesc:
+        "Professional preparation and review of all your business documentation with expertise in legal digitalization.",
+      contractDrafting: "Drafting of Digital Contracts",
+      contractDraftingDesc:
+        "Employment, provider, service, and general contracts adapted to your digital business needs.",
+      websitePolicies: "Privacy and Data Protection Policies",
+      websitePoliciesDesc:
+        "Privacy Policy, Cookies Policy, Terms and Conditions, Legal Notice — GDPR-compliant for your digital presence.",
+      ecommerceCompliance: "E-commerce Legal Compliance",
+      ecommerceComplianceDesc:
+        "Data protection and privacy, sales conditions, payment methods, returns, and more for your online store.",
+      ndaAgreements: "NDAs and Digital Collaboration Agreements",
+      ndaAgreementsDesc:
+        "Protect your digital business interests with professionally drafted agreements and expertise in legal digitalization.",
+      // Initial Consultation
+      initial: "Initial Advisory",
+      initialDesc: "Essential legal support for early-stage digital entrepreneurs, including:",
+      initialItem1: "Up to 5 hours of legal advice each month",
+      initialItem2: "Review of key documents and advice on interpretation",
+      initialItem3: "One-off legal consultations via email",
+      initialItem4: "Drafting and/or review of contracts",
+      initialItem5: "Advice on business legal structure and formalization",
+      chooseInitial: "Choose Initial Advisory",
+      // Advanced Advisory
+      advanced: "Advanced Advisory",
+      advancedDesc:
+        "Ideal for growing digital businesses with more complex legal needs, including:",
+      advancedItem1: "Up to 10 hours of legal advice each month",
+      advancedItem2: "Priority document and contract review",
+      advancedItem3: "Extended consultations via email and phone",
+      advancedItem4: "Drafting and/or review of contracts",
+      advancedItem5: "Review of website legal policies aligned with applicable regulations",
+      chooseAdvanced: "Choose Advanced Advisory",
+      // Premium Advisory
+      premium: "Premium Advisory",
+      premiumDesc: "Comprehensive coverage in legal digitalization and regulatory compliance for established businesses, including:",
+      premiumItem1: "Up to 20 hours of legal advice each month",
+      premiumItem2: "Priority management of all legal business matters",
+      premiumItem3: "Unlimited consultations via email and phone",
+      premiumItem4: "Drafting and/or review of contracts and key documents",
+      premiumItem5: "Full review of website legal compliance, including data protection and privacy policies",
+      choosePremium: "Choose Premium Advisory",
+
+      // Residency
+      residencyTitle: "Practical and Personalized Legal Assistance for Residency Processes in Spain.",
+      residencyDesc1: "Relocating to a new country requires handling complex paperwork. Our service is designed to provide clear, accessible support throughout each step of the residency process, tailored to individual needs.",
+      residencyDesc2: "Flexible packages are available for residency applications, family reunification, and specific legal consultations, all online and with professional support.",
+
+      residencySubTitle: 'EU Residency Registration Services ("Green NIE")',
+      residencySubTitleDesc: 'Three levels of support to match your needs:',
+
+      // Silver
+      silver: "Silver",
+      silverDesc: "Basic legal support for self-sufficient EU applicants",
+      silverItem1: "Document review",
+      silverItem2: "Personalized legal advice",
+      silverItem3: "Checklist and document verification",
+      silverItem4: "Email support",
+
+      // Gold
+      gold: "Gold",
+      goldDesc: "Comprehensive legal support for EU residency applications",
+      goldItem1: "Document preparation and review",
+      goldItem2: "Appointment management",
+      goldItem3: "Application management and follow-up",
+      goldItem4: "Email and phone support",
+      goldItem5: "Post-submission tracking",
+
+      // Platinum
+      platinum: "Platinum",
+      platinumDesc: "Full support for EU residency registration management",
+      platinumItem1: "Complete document preparation",
+      platinumItem2: "Assistance in obtaining health insurance",
+      platinumItem3: "Full appointment coordination",
+      platinumItem4: "Priority management of procedures",
+
+      // CTA buttons
+      chooseSilver: "Choose Silver",
+      chooseGold: "Choose Gold",
+      choosePlatinum: "Choose Platinum",
+
+      // Family Reunification
+      familyTitle: "Family Reunification Legal Assistance",
+      familySubTitle: "Support for family reunification processes, tailored to the type of residency:",
+      forResidents: "For EU Residents",
+      forResidentsDesc: "Legal support for EU residents bringing family members",
+      forResidentsItem1: "Comprehensive assistance in document preparation",
+      forResidentsItem2: "Support in obtaining digital certificates",
+      forResidentsItem3: "Appointment management for NIE",
+      forResidentsItem4: "Application process follow-up",
+
+      forNonResidents: "For Non-Residents",
+      forNonResidentsDesc: "Complete legal package for family reunification",
+      forNonResidentsItem1: "Document preparation and review",
+      forNonResidentsItem2: "Appointment management for NIE",
+      forNonResidentsItem3: "Application process follow-up",
+      forNonResidentsItem4: "Comprehensive legal advice",
+
+      selectPackage: "Select Package",
+      // Specialized Advice
+      specializedTitle: "Specialized Legal Advisory for EU Residency",
+      consultationTitle: "Specific legal guidance for residency paperwork:",
+      consultationDesc: "Personalized Residency Legal Consultation",
+      bookConsultation: "(+ €50 per additional person)",
+      consultationItem1: "Detailed analysis of individual situation",
+      consultationItem2: "Recommendation of suitable residency permits",
+      consultationItem3: "Checklist of required documents",
+      consultationItem4: "Additional hours available at €30/hour",
     },
     // About Section
     about: {
@@ -373,7 +504,7 @@ export const translations = {
         "Con una sólida formación jurídica y experiencia práctica en procesos de migración, asesoría contractual y estructura legal para proyectos emergentes, ofrecemos un servicio centrado en la orientación estratégica, sin complejidad innecesaria. Nuestro enfoque combina el conocimiento técnico con la experiencia vivida, para brindar soluciones reales, comprensibles y aplicables.",
       storyContent4:
         "Creemos en una asesoría legal que no solo resuelve, sino que también acompaña. Porque haber transitado este camino nos permite comprenderlo, y poner ese conocimiento al servicio de quienes lo inician hoy.",
- 
+
       ourFounders: "Nuestros Expertos Legales",
       // Founders
       founder1Name: "Elena Martínez",
@@ -480,7 +611,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      footerDesc:"Asesoría legal adaptado a sus necesidades, especializada para empresas digitales y residencia en la UE.",
+      footerDesc: "Asesoría legal adaptado a sus necesidades, especializada para empresas digitales y residencia en la UE.",
       rights: "© 2025 Lexzen Asesoría Legal Online. Todos los derechos reservados.",
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
