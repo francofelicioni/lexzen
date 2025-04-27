@@ -35,12 +35,12 @@ function PricingPackage({
   return (
     <AnimatedSection direction="up" delay={delay} className={`flex flex-col h-full ${className}`}>
       <Card
-        className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-blue-gray shadow-md" : ""} hover:shadow-lg`}
+        className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-blue-200 shadow-md" : ""} hover:shadow-lg`}
       >
-        <CardHeader className={highlighted ? "bg-blue-gray/10" : ""}>
-          <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
+        <CardHeader className={`flex flex-grow justify-center items-start mb-4 ${highlighted ? "bg-blue-gray/10 " : "bg-gray-100"}`} >
+          <CardTitle className="flex items-center justify-between text-lg text-xl w-full">
             {title}
-            {highlighted && <Badge className="bg-blue-gray">Popular</Badge>}
+            {highlighted && <Badge className="bg-blue-gray py-2 px-4 mb-4 text-sm mr-2">Popular</Badge>}
           </CardTitle>
           <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
           <div className="mt-2">
@@ -48,7 +48,7 @@ function PricingPackage({
             {price.includes("€") && <span className="text-sm text-muted-foreground">/{("general.month")}</span>}
           </div>
         </CardHeader>
-        <CardContent className="flex-grow">
+        <CardContent className="flex-grow flex justify-center items-center">
           <ul className="space-y-3 text-sm sm:text-base">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start gap-2">
@@ -101,10 +101,10 @@ function ServiceItem({ icon, title, description, delay = 0 }: ServiceItemProps) 
 export function ServicesSection() {
   const { t } = useLanguage()
   const isMobile = useMobile()
-  const [activeTab, setActiveTab] = useState("startups")
+  const [activeTab, setActiveTab] = useState("residency")
 
   return (
-    <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
+    <section id="services" className="w-full py-8 md:py-24 lg:py-32 bg-neutral-50">
       <div className="container px-4 md:px-6">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-6">
@@ -120,13 +120,13 @@ export function ServicesSection() {
           </div>
         </AnimatedSection>
 
-        <Tabs defaultValue="startups" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 mb-20 md:mb-0">
-            <TabsTrigger value="startups" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
-              {t("services.tabStartups")}
-            </TabsTrigger>
+        <Tabs defaultValue="residency" className="w-full" onValueChange={setActiveTab}>
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 mb-12 md:mb-0 h-full border border-muted bg-muted ">
             <TabsTrigger value="residency" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
               {t("services.tabResidency")}
+            </TabsTrigger>
+            <TabsTrigger value="startups" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
+              {t("services.tabStartups")}
             </TabsTrigger>
           </TabsList>
 
@@ -208,6 +208,7 @@ export function ServicesSection() {
                   <h3 className="text-2xl font-bold mb-6">{t("services.pricingPackages")}</h3>
                 </AnimatedSection>
                 <div className="grid gap-8 md:grid-cols-3">
+                  {/* Pricing Packages */}
                   <PricingPackage
                     title={t("services.initial")}
                     price="€150"
