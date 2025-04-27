@@ -147,7 +147,7 @@ export function BookingCalendar() {
   const dateLocale = language === "es" ? es : undefined
 
   return (
-    <section id="booking" className="w-full py-12 md:py-24 lg:py-32">
+    <section id="booking" className="w-full py-8 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         {/* Update section title to use elementType="heading" */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -223,7 +223,7 @@ export function BookingCalendar() {
             </CardContent>
           </Card>
 
-          <Card className={`${isMobile && step > 1 ? "col-span-full" : ""}`}>
+          <Card className={`${isMobile && step > 1 ? "col-span-full" : ""}`} id="bookingCalendar">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle>{t("booking.bookYourConsultation")}</CardTitle>

@@ -64,7 +64,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-state-gray">
+        <section className="w-full py-8 md:py-24 lg:py-32 bg-state-gray">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-4">
@@ -78,7 +78,7 @@ export default function Home() {
                   </Button>
                   <Button
                     variant="outline"
-                    className="border-blue-gray text-blue-gray hover:text-legal-accent hover:bg-blue-gray/10 w-full sm:w-auto"
+                    className="border-blue-gray text-blue-gray hover:text-legal-accent hover:bg-blue-gray/10 hover:border-white hover:text-white w-full sm:w-auto"
                     asChild
                   >
                     <a href="#services">{t("hero.viewServices")}</a>
@@ -112,7 +112,7 @@ export default function Home() {
         <ContactSection />
 
         {/* Testimonials Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
+        <section className="w-full py-8 md:py-24 lg:py-32 bg-neutral-50">
           <div className="container px-4 md:px-6">
             <AnimatedSection direction="up" elementType="heading">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -153,7 +153,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-gray relative overflow-hidden">
+        <section className="w-full py-8 md:py-24 lg:py-32 bg-blue-gray relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute top-10 left-10 w-64 h-64 bg-blue-gray/10 rounded-full opacity-20"></div>
             <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-gray/10 rounded-full opacity-20"></div>

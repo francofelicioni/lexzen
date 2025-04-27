@@ -11,7 +11,7 @@ export function ContactSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+    <section id="contact" className="w-full py-8 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -138,11 +138,11 @@ export function ContactSection() {
               </div>
 
               {/* Newsletter */}
-              <div className="px-4 py-4 bg-gray-50 rounded-lg shadow-sm">
+              {/* <div className="px-4 py-4 bg-gray-50 rounded-lg shadow-sm">
                 <h3 className="font-semibold text-gray-900 mb-3 text-lg">{t("footer.newsletterHeading")}</h3>
                 <p className="text-gray-600 text-sm mb-4">{t("footer.newsletterSubheading")}</p>
                 <NewsletterForm />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

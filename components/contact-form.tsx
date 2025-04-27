@@ -199,6 +199,7 @@ export function ContactForm() {
         <div className="flex items-center space-x-2">
           <Checkbox
             id="subscribe"
+            className="min-h-2 min-w-2"
             checked={formData.subscribe}
             onCheckedChange={handleCheckboxChange}
             disabled={isSubmitting}

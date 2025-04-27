@@ -9,7 +9,7 @@ export function AboutSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50">
+    <section id="about" className="w-full py-8 md:py-24 lg:py-32 bg-neutral-50">
       <div className="container px-4 md:px-6">
         {/* Update section title to use elementType="heading" */}
         <AnimatedSection direction="up" elementType="heading">
@@ -173,7 +173,7 @@ export function AboutSection() {
         <AnimatedSection direction="up" delay={700} className="mt-16 text-center">
           <h3 className="text-xl font-bold mb-4">{t("about.readyToWork")}</h3>
           <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
-            <a href="#booking">{t("hero.scheduleFree")}</a>
+            <a href="#bookingCalendar">{t("hero.scheduleFree")}</a>
           </Button>
         </AnimatedSection>
       </div>

@@ -218,7 +218,7 @@ export const translations = {
       step3: "Receive Confirmation",
       step3Desc: "Get a confirmation email with call details and calendar invite",
       consultationIncludes: "Your free consultation includes:",
-      consultationItem1: "20-minute video or phone call with a legal expert",
+      consultationItem1: "15-minute video or phone call with a legal expert",
       consultationItem2: "Initial assessment of your legal needs",
       consultationItem3: "Recommendations for next legal steps",
       consultationItem4: "No obligation to hire legal services",
@@ -242,7 +242,7 @@ export const translations = {
       bookConsultation: "Book Free Consultation",
       // Confirmation
       consultationBooked: "Legal Consultation Booked!",
-      consultationScheduled: "Your free 20-minute legal consultation has been scheduled.",
+      consultationScheduled: "Your free 15-minute legal consultation has been scheduled.",
       confirmationSent: "A confirmation email has been sent to",
       teamContact:
         "Our legal team will contact you shortly before your scheduled time with the call link or phone number.",
@@ -351,7 +351,7 @@ export const translations = {
       title: "Soluciones legales prácticas para startups y nuevos residentes en Europa",
       subtitle:
         "Asesoramiento accesible y claro para quienes emprenden, se relocalizan o enfrentan los primeros desafíos legales a la hora de desarrollar su negocio. Desde contratos hasta trámites de residencia, con mirada estratégica y experiencia internacional.",
-      scheduleFree: "Programar Consulta Legal Gratuita",
+      scheduleFree: "Programar Consulta Gratuita",
       viewServices: "Ver Servicios Legales",
     },
     // Services Section
@@ -545,7 +545,7 @@ export const translations = {
     },
     // Booking Calendar
     booking: {
-      title: "Programe Su Consulta Legal Gratuita de 20 Minutos",
+      title: "Programe Su Consulta Legal Gratuita de 15 Minutos",
       subtitle:
         "Agende una consulta gratuita con nuestros expertos y obtenga la orientación legal necesaria para proteger y expandir su empresa de manera sólida en el mundo digital.",
       howItWorks: "Cómo Funciona Nuestra Consulta Legal Gratuita",
@@ -557,7 +557,7 @@ export const translations = {
       step3: "Reciba Confirmación",
       step3Desc: "Obtenga un correo electrónico con los detalles de la llamada e invitación al calendario",
       consultationIncludes: "Su consulta legal gratuita incluye:",
-      consultationItem1: "Videollamada o llamada telefónica de 20 minutos con un experto legal",
+      consultationItem1: "Videollamada o llamada telefónica de 15 minutos con un experto legal",
       consultationItem2: "Evaluación inicial de sus necesidades legales",
       consultationItem3: "Recomendaciones para los siguientes pasos legales",
       consultationItem4: "Sin obligación de contratar servicios legales",
@@ -581,7 +581,7 @@ export const translations = {
       bookConsultation: "Reservar Consulta Gratuita",
       // Confirmation
       consultationBooked: "¡Consulta Legal Reservada!",
-      consultationScheduled: "Su consulta legal gratuita de 20 minutos ha sido programada.",
+      consultationScheduled: "Su consulta legal gratuita de 15 minutos ha sido programada.",
       confirmationSent: "Hemos enviado un correo electrónico de confirmación a",
       teamContact:
         "Nuestro equipo legal se pondrá en contacto con usted poco antes de la hora programada con el enlace de llamada o número de teléfono.",

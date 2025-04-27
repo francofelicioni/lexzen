@@ -20,19 +20,19 @@ export function Footer() {
               <span className="text-xl font-bold">Lexzen</span>
             </div>
             <p className="text-gray-500 mb-6 max-w-md">
-            {t("footer.footerDesc")}
+              {t("footer.footerDesc")}
             </p>
             <div className="space-y-3">
               {/* <div className="flex items-start gap-2">
-                <MapPin className="h-5 w-5 text-blue-gray mt-0.5 shrink-0" />
+                <MapPin className="size-5 text-blue-gray mt-0.5 shrink-0" />
                 <span className="text-gray-400">{t("footer.address")}</span>
               </div> */}
               <div className="flex items-center gap-2">
-                <Phone className="h-5 w-5 text-blue-gray shrink-0" />
+                <Phone className="size-5 text-blue-gray shrink-0" />
                 <span className="text-gray-400">{t("footer.phone")}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-5 w-5 text-blue-gray shrink-0" />
+                <Mail className="size-5 text-blue-gray shrink-0" />
                 <span className="text-gray-400">{t("footer.email")}</span>
               </div>
             </div>
@@ -91,32 +91,36 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
+          {/*  Social Links */}
+          <div className="flex items-center md:gap-4" >
+            {/* <h3 className="text-sm font-medium text-gray-700 mr-2 hidden md:block">{t("footer.socialHeading")}</h3> */}
+            {/* <Link href="#" className="text-gray-500 hover:text-blue-gray">
+                <Facebook className="size-5" />
+                <span className="sr-only">Facebook</span>
+              </Link> */}
+            {/* <Link href="#" className="text-gray-500 hover:text-blue-gray">
+                <Twitter className="size-5" />
+                <span className="sr-only">Twitter</span>
+              </Link> */}
+            <Link href="#" className="text-gray-500 hover:text-blue-gray">
+              <Instagram className="size-5" />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link href="#" className="text-gray-500 hover:text-blue-gray">
+              <Linkedin className="size-5" />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+          </div>
         </div>
 
-        {/* Social Media & Copyright */}
+
+        {/*  Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-between"} items-center gap-4`}>
             <div className="text-sm text-gray-500">{t("footer.rights")}</div>
 
-            <div className="flex items-center gap-4">
-              <h3 className="text-sm font-medium text-gray-700 mr-2">{t("footer.socialHeading")}</h3>
-              {/* <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link> */}
-              {/* <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link> */}
-              <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-            </div>
+
           </div>
         </div>
       </div>
