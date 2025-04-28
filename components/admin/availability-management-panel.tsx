@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { getAvailability, updateAvailability as saveAvailability } from '@/services/availability'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -8,6 +9,9 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { addDays, format, isSameDay, startOfWeek, addWeeks, subWeeks, isWeekend } from "date-fns"
 import { ChevronLeft, ChevronRight, Plus, Trash2, Save, Clock } from "lucide-react"
+import { formatDateToYYYYMMDD } from "@/utils/date"
+import { supabase } from "@/lib/supabase"
+
 
 // Generate time slots for a day (9:00 AM to 6:00 PM in 15-minute intervals)
 const generateTimeSlots = () => {
@@ -65,13 +69,83 @@ type AvailabilitySlot = {
 
 export function AvailabilityManagementPanel() {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date())
-  const [availability, setAvailability] = useState<AvailabilitySlot[]>(generateInitialAvailability())
+  const [availability, setAvailability] = useState<AvailabilitySlot[]>([])
   const [weekStart, setWeekStart] = useState<Date>(startOfWeek(new Date(), { weekStartsOn: 1 }))
   const [selectedTimeSlots, setSelectedTimeSlots] = useState<string[]>([])
   const [bulkEditMode, setBulkEditMode] = useState(false)
   const [bulkSelectedDays, setBulkSelectedDays] = useState<number[]>([])
 
   const timeSlots = generateTimeSlots()
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadAvailability() {
+      const start = startOfWeek(new Date(), { weekStartsOn: 1 })
+      const end = addWeeks(start, 4)
+
+      try {
+        const { data, error } = await supabase
+          .from('availability')
+          .select('*')
+          .gte('date', start.toISOString())
+          .lte('date', end.toISOString())
+
+        if (error) {
+          console.error('Failed to load availability:', error)
+          return
+        }
+
+        const mapped = data.map((item: any) => ({
+          date: new Date(item.date),
+          slots: Array.isArray(item.slots)
+            ? item.slots
+            : typeof item.slots === "string"
+              ? JSON.parse(item.slots)
+              : [],
+        }))        
+
+        setAvailability(mapped)
+      } catch (error) {
+        console.error('Failed to load availability:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadAvailability()
+  }, [])
+
+  const [appointmentsForSelectedDate, setAppointmentsForSelectedDate] = useState<string[]>([])
+
+  useEffect(() => {
+    async function loadAppointmentsForDate() {
+      if (!selectedDate) return
+
+      const formattedDate = format(selectedDate, "yyyy-MM-dd")
+      try {
+        const { data, error } = await supabase
+          .from("appointments")
+          .select("time")
+          .eq("date", formattedDate)
+
+        if (error) {
+          console.error("Error fetching appointments:", error)
+          setAppointmentsForSelectedDate([])
+        } else {
+          const bookedTimes = data.map((appt) => {
+            const [hour, minute] = new Date(appt.time).toISOString().split('T')[1].split(':')
+            return `${hour}:${minute}`
+          })
+          setAppointmentsForSelectedDate(bookedTimes)
+        }
+      } catch (err) {
+        console.error(err)
+      }
+    }
+
+    loadAppointmentsForDate()
+  }, [selectedDate])
+
 
   // Get availability for the selected date
   const getDateAvailability = (date: Date) => {
@@ -98,19 +172,27 @@ export function AvailabilityManagementPanel() {
     }
   }
 
+  // slotsDisponibles = slotsEnAvailability - slotsReservados
+  const realAvailableSlots = getDateAvailability(selectedDate)?.filter((slot) => !appointmentsForSelectedDate.includes(slot)) || []
+
   // Update availability for a specific date
   const updateAvailability = (date: Date, slots: string[]) => {
     const existingIndex = availability.findIndex((a) => isSameDay(a.date, date))
 
+    const newAvailability = [...availability]
     if (existingIndex >= 0) {
-      // Update existing entry
-      const newAvailability = [...availability]
       newAvailability[existingIndex] = { date, slots }
-      setAvailability(newAvailability)
     } else {
-      // Add new entry
-      setAvailability([...availability, { date, slots }])
+      newAvailability.push({ date, slots })
     }
+    setAvailability(newAvailability)
+
+    const formattedDate = formatDateToYYYYMMDD(date)
+
+    // Save to Supabase
+    saveAvailability(date, slots).catch((error) => {
+      console.error('Failed to save availability:', error)
+    })
   }
 
   // Handle bulk selection of time slots
@@ -280,21 +362,20 @@ export function AvailabilityManagementPanel() {
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-medium">{format(selectedDate, "EEEE, MMMM d, yyyy")}</h3>
                   <div className="text-sm text-gray-500">
-                    {getDateAvailability(selectedDate).length} time slots available
+                    {realAvailableSlots.length} time slots available
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                   {timeSlots.map((time) => {
-                    const isAvailable = getDateAvailability(selectedDate).includes(time)
+                    const isAvailable = getDateAvailability(selectedDate).includes(time) && !appointmentsForSelectedDate.includes(time)
                     return (
                       <div
                         key={time}
-                        className={`flex items-center justify-center rounded-md border p-2 cursor-pointer transition-colors ${
-                          isAvailable
-                            ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100"
-                            : "bg-gray-50 border-gray-200 text-gray-500 hover:bg-gray-100"
-                        }`}
+                        className={`flex items-center justify-center rounded-md border p-2 cursor-pointer transition-colors ${isAvailable
+                          ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100"
+                          : "bg-gray-50 border-gray-200 text-gray-500 hover:bg-gray-100"
+                          }`}
                         onClick={() => toggleTimeSlot(time)}
                       >
                         {time}
@@ -326,13 +407,12 @@ export function AvailabilityManagementPanel() {
                 {weekDays.map((day, index) => (
                   <div
                     key={index}
-                    className={`rounded-md border p-2 text-center ${
-                      isWeekend(day)
-                        ? "bg-gray-100 text-gray-400"
-                        : isSameDay(day, selectedDate)
-                          ? "bg-teal-50 border-teal-200"
-                          : ""
-                    }`}
+                    className={`rounded-md border p-2 text-center ${isWeekend(day)
+                      ? "bg-gray-100 text-gray-400"
+                      : isSameDay(day, selectedDate)
+                        ? "bg-teal-50 border-teal-200"
+                        : ""
+                      }`}
                     onClick={() => !isWeekend(day) && setSelectedDate(day)}
                   >
                     <div className="font-medium">{format(day, "EEE")}</div>
