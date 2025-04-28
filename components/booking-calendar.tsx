@@ -1,22 +1,13 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Calendar } from "@/components/ui/calendar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Clock, CalendarIcon, CheckCircle, ChevronLeft } from "lucide-react"
 import { format, addDays, isWeekend, isBefore, addMinutes } from "date-fns"
 import { es } from "date-fns/locale"
@@ -24,71 +15,42 @@ import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
 import { AnimatedSection } from "@/components/animated-section"
 import { appointmentService } from '@/services/appointments'
-
-// Available time slots (9:00 AM to 5:00 PM, 20-minute intervals)
-const generateTimeSlots = (date: Date) => {
-  const slots = []
-  const startHour = 9
-  const endHour = 17
-  const intervalMinutes = 20
-
-  for (let hour = startHour; hour < endHour; hour++) {
-    for (let minute = 0; minute < 60; minute += intervalMinutes) {
-      if (hour === endHour - 1 && minute > 40) continue // Don't go past end time
-
-      const slotTime = new Date(date)
-      slotTime.setHours(hour, minute, 0, 0)
-
-      // Skip slots in the past for today
-      if (isBefore(slotTime, new Date()) && date.toDateString() === new Date().toDateString()) {
-        continue
-      }
-
-      slots.push(slotTime)
-    }
-  }
-
-  return slots
-}
-
-// Simulate some slots being unavailable (in a real app, this would come from an API)
-const isSlotAvailable = (slot: Date) => {
-  // Make some random slots unavailable for demo purposes
-  const hourMinute = slot.getHours() * 100 + slot.getMinutes()
-  const dateNum = slot.getDate()
-
-  // Make specific times unavailable based on date to simulate a realistic calendar
-  return !(
-    (hourMinute === 900 && dateNum % 2 === 0) ||
-    (hourMinute === 1100 && dateNum % 3 === 0) ||
-    (hourMinute === 1400 && dateNum % 2 === 1) ||
-    (hourMinute === 1600 && dateNum % 4 === 0)
-  )
-}
+import { getAvailabilityForDate } from '@/services/availability'
 
 export function BookingCalendar() {
   const { t, language } = useLanguage()
   const isMobile = useMobile()
   const [date, setDate] = useState<Date | undefined>(undefined)
+  const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [timeSlot, setTimeSlot] = useState<Date | undefined>(undefined)
   const [step, setStep] = useState(1)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    topic: "",
-  })
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", topic: "" })
   const [showConfirmation, setShowConfirmation] = useState(false)
+  const [mounted, setMounted] = useState(false);
+  const [loadingSlots, setLoadingSlots] = useState(false)
 
-  // Filter out weekends and past dates
-  const disabledDays = (date: Date) => {
-    return isWeekend(date) || isBefore(date, new Date().setHours(0, 0, 0, 0))
-  }
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-  const handleDateSelect = (selectedDate: Date | undefined) => {
+  const disabledDays = (date: Date) => isWeekend(date) || isBefore(date, new Date().setHours(0, 0, 0, 0))
+
+  const handleDateSelect = async (selectedDate: Date | undefined) => {
     setDate(selectedDate)
-    setTimeSlot(undefined) // Reset time slot when date changes
-    if (selectedDate) setStep(2)
+    setTimeSlot(undefined)
+    if (selectedDate) {
+      setStep(2)
+      setLoadingSlots(true)
+      try {
+        const slots = await getAvailabilityForDate(selectedDate)
+        setAvailableSlots(slots)
+      } catch (error) {
+        console.error('Failed to fetch availability:', error)
+        setAvailableSlots([])
+      } finally {
+        setLoadingSlots(false)
+      }
+    }
   }
 
   const handleTimeSelect = (slot: Date) => {
@@ -103,23 +65,32 @@ export function BookingCalendar() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Submitting form...')
-    if (!date || !timeSlot) {
-      console.log('date or timeSlot is undefined');
-      return
-    }
+    if (!date || !timeSlot) return
 
     try {
-      console.log('Creating appointment...')
+      const appointmentDate = date.toISOString().split('T')[0]
+
+      const localHours = timeSlot.getHours().toString().padStart(2, '0')
+      const localMinutes = timeSlot.getMinutes().toString().padStart(2, '0')
+      const appointmentTime = `${localHours}:${localMinutes}`
+
+      // Check availability
+      const isAvailable = await appointmentService.checkAvailability(appointmentDate, appointmentTime)
+      if (!isAvailable) {
+        alert('Este horario ya fue reservado por otra persona. Por favor elige otro.')
+        setStep(2) // Back to time selection
+        return
+      }
+
+      // Create appointment
       await appointmentService.createAppointment({
         full_name: formData.name,
         email: formData.email,
         phone: formData.phone,
         topic: formData.topic,
-        date: date.toISOString().split('T')[0],
-        time: timeSlot.toISOString(),
+        date: appointmentDate,
+        time: appointmentTime,
       })
-
       setShowConfirmation(true)
     } catch (error) {
       console.error("Error creating appointment:", error)
@@ -127,29 +98,18 @@ export function BookingCalendar() {
   }
 
   const handleConfirmationClose = () => {
-    // Reset the form
     setShowConfirmation(false)
     setDate(undefined)
     setTimeSlot(undefined)
     setStep(1)
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      topic: "",
-    })
+    setFormData({ name: "", email: "", phone: "", topic: "" })
   }
 
-  const timeSlots = date ? generateTimeSlots(date) : []
-  const availableTimeSlots = timeSlots.filter(isSlotAvailable)
-
-  // Use the appropriate locale for date formatting based on selected language
   const dateLocale = language === "es" ? es : undefined
 
   return (
     <section id="booking" className="w-full py-8 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        {/* Update section title to use elementType="heading" */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <AnimatedSection direction="up" elementType="heading">
             <div className="space-y-2">
@@ -165,7 +125,7 @@ export function BookingCalendar() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          {/* How it works card - hide on mobile when on steps 2-3 to focus on booking process */}
+          {/* Calendar */}
           <Card className={`border-teal-100 ${isMobile && step > 1 ? "hidden" : ""}`}>
             <CardHeader>
               <CardTitle>{t("booking.howItWorks")}</CardTitle>
@@ -223,6 +183,7 @@ export function BookingCalendar() {
             </CardContent>
           </Card>
 
+          {/* Booking */}
           <Card className={`${isMobile && step > 1 ? "col-span-full" : ""}`} id="bookingCalendar">
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -240,19 +201,22 @@ export function BookingCalendar() {
                 {step === 3 && t("booking.completeDetails")}
               </CardDescription>
             </CardHeader>
+
             <CardContent>
               {step === 1 && (
                 <div className="flex justify-center">
-                  <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={handleDateSelect}
-                    disabled={disabledDays}
-                    locale={dateLocale}
-                    fromDate={new Date()}
-                    toDate={addDays(new Date(), 30)}
-                    className="rounded-md border"
-                  />
+                  {mounted && (
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={handleDateSelect}
+                      disabled={disabledDays}
+                      locale={dateLocale}
+                      fromDate={new Date()}
+                      toDate={addDays(new Date(), 30)}
+                      className="rounded-md border"
+                    />
+                  )}
                 </div>
               )}
 
@@ -265,22 +229,31 @@ export function BookingCalendar() {
 
                   <div className="text-sm text-gray-500 mb-4">{t("booking.timeZoneNote")}</div>
 
-                  {availableTimeSlots.length > 0 ? (
+                  {loadingSlots ? (
+                    <div className="text-center py-8">
+                      <p className="text-gray-500">{t("booking.loadingSlots")}</p>
+                    </div>
+                  ) : availableSlots.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                      {availableTimeSlots.map((slot, index) => (
-                        <Button
-                          key={index}
-                          variant="outline"
-                          className={`flex items-center justify-center gap-2 py-5 ${timeSlot && timeSlot.getTime() === slot.getTime()
+                      {availableSlots.map((timeString, index) => {
+                        const slotTime = new Date(date)
+                        const [hours, minutes] = timeString.split(":").map(Number)
+                        slotTime.setHours(hours, minutes, 0, 0)
+                        return (
+                          <Button
+                            key={index}
+                            variant="outline"
+                            className={`flex items-center justify-center gap-2 py-5 ${timeSlot && timeSlot.getTime() === slotTime.getTime()
                               ? "border-teal-600 bg-teal-50 text-teal-700"
                               : ""
-                            }`}
-                          onClick={() => handleTimeSelect(slot)}
-                        >
-                          <Clock className="h-4 w-4 shrink-0" />
-                          {format(slot, "HH:mm")}
-                        </Button>
-                      ))}
+                              }`}
+                            onClick={() => handleTimeSelect(slotTime)}
+                          >
+                            <Clock className="h-4 w-4 shrink-0" />
+                            {timeString}
+                          </Button>
+                        )
+                      })}
                     </div>
                   ) : (
                     <div className="text-center py-8">
@@ -307,9 +280,7 @@ export function BookingCalendar() {
 
                   <div className="space-y-5">
                     <div className="grid gap-3">
-                      <Label htmlFor="name" className="text-base">
-                        {t("booking.fullName")}
-                      </Label>
+                      <Label htmlFor="name" className="text-base">{t("booking.fullName")}</Label>
                       <Input
                         id="name"
                         name="name"
@@ -322,9 +293,7 @@ export function BookingCalendar() {
                     </div>
 
                     <div className="grid gap-3">
-                      <Label htmlFor="email" className="text-base">
-                        {t("booking.email")}
-                      </Label>
+                      <Label htmlFor="email" className="text-base">{t("booking.email")}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -338,9 +307,7 @@ export function BookingCalendar() {
                     </div>
 
                     <div className="grid gap-3">
-                      <Label htmlFor="phone" className="text-base">
-                        {t("booking.phone")}
-                      </Label>
+                      <Label htmlFor="phone" className="text-base">{t("booking.phone")}</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -353,9 +320,7 @@ export function BookingCalendar() {
                     </div>
 
                     <div className="grid gap-3">
-                      <Label htmlFor="topic" className="text-base">
-                        {t("booking.topic")}
-                      </Label>
+                      <Label htmlFor="topic" className="text-base">{t("booking.topic")}</Label>
                       <Textarea
                         id="topic"
                         name="topic"
@@ -369,6 +334,7 @@ export function BookingCalendar() {
                 </form>
               )}
             </CardContent>
+
             <CardFooter className="flex justify-between">
               {step > 1 && !isMobile && (
                 <Button variant="outline" onClick={() => setStep(step - 1)}>
