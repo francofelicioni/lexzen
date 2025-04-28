@@ -24,7 +24,6 @@ export const appointmentService = {
     const { error } = await supabase.from('appointments').insert({
       ...data,
       status: 'pending',
-      created_at: new Date().toISOString()
     })
 
     if (error) throw error
