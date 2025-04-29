@@ -95,14 +95,24 @@ export function AvailabilityManagementPanel() {
           return
         }
 
-        const mapped = data.map((item: any) => ({
-          date: new Date(item.date),
-          slots: Array.isArray(item.slots)
-            ? item.slots
-            : typeof item.slots === "string"
-              ? JSON.parse(item.slots)
-              : [],
-        }))        
+        const mapped = data.map((item: any) => {
+          const [year, month, day] = item.date.split('-').map(Number)
+          const parsedDate = new Date(Date.UTC(year, month - 1, day))
+          const localDate = new Date(parsedDate.getUTCFullYear(), parsedDate.getUTCMonth(), parsedDate.getUTCDate())
+
+          if (item.date.includes("T")) {
+            throw new Error(`Expected date format YYYY-MM-DD but got ${item.date}`)
+          }
+
+          return {
+            date: localDate,
+            slots: Array.isArray(item.slots)
+              ? item.slots
+              : typeof item.slots === 'string'
+                ? JSON.parse(item.slots)
+                : [],
+          }
+        })
 
         setAvailability(mapped)
       } catch (error) {
