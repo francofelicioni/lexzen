@@ -21,25 +21,37 @@ export interface AppointmentData {
 
 export const appointmentService = {
   async createAppointment(data: AppointmentData) {
+    const appointmentDate = data.date
+    const appointmentTime = data.time
+    const fullTimestamp = new Date(`${appointmentDate}T${appointmentTime}:00`).toISOString()
+
     const { error } = await supabase.from('appointments').insert({
-      ...data,
+      full_name: data.full_name,
+      email: data.email,
+      phone: data.phone,
+      topic: data.topic,
+      date: appointmentDate,
+      time: fullTimestamp,
       status: 'pending',
+      created_at: new Date().toISOString()
     })
 
     if (error) throw error
+    await removeSlotFromAvailability(appointmentDate, appointmentTime)
     return true
   },
-
   async checkAvailability(date: string, time: string) {
+    const fullTimestamp = new Date(`${date}T${time}:00`).toISOString()
+
     const { data, error } = await supabase
       .from('appointments')
       .select('id')
       .eq('date', date)
-      .eq('time', time)
+      .eq('time', fullTimestamp)
       .single()
 
-    if (error && error.code !== 'PGRST116') throw error // PGRST116 means no rows found
-    return !data // true if slot is available
+    if (error && error.code !== 'PGRST116') throw error
+    return !data
   }
 }
 
@@ -50,8 +62,6 @@ export const getAppointments = async () => {
     .order("time", { ascending: true })
 
   if (error) throw error
-
-  console.log("Appointments fetched:", data)
 
   return data.map((appt) => ({
     id: appt.id,
@@ -78,6 +88,27 @@ export const updateAppointmentStatus = async (
   if (error) throw error
 }
 
+export async function removeSlotFromAvailability(date: string, time: string) {
+  const { data: availabilityData, error } = await supabase
+    .from('availability')
+    .select('slots')
+    .eq('date', date)
+    .single()
+
+  if (error) throw error
+
+  const slots = availabilityData?.slots || []
+  const updatedSlots = Array.isArray(slots)
+    ? slots.filter((slot: string) => slot !== time)
+    : []
+
+  const { error: updateError } = await supabase
+    .from('availability')
+    .update({ slots: updatedSlots })
+    .eq('date', date)
+
+  if (updateError) throw updateError
+}
 
 export const forceStatusUpdate = async (): Promise<void> => {
   console.log("Force updating appointment status")
