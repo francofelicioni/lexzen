@@ -36,7 +36,7 @@ export async function updateAvailability(date: Date, slots: string[]) {
         .upsert([
             {
                 date: formattedDate,
-                slots,
+                slots: JSON.stringify(slots),
             },
         ], { onConflict: ['date'] })
 
@@ -45,26 +45,43 @@ export async function updateAvailability(date: Date, slots: string[]) {
 }
 
 export async function getAvailabilityForDate(date: Date): Promise<string[]> {
-    const { data, error } = await supabase
-      .from('availability')
-      .select('slots')
-      .eq('date', formatDateToYYYYMMDD(date))
-      .single()
-  
-    if (error) {
-      if (error.code === 'PGRST116') {
-        return []
-      }
-      throw error
-    }
-  
-    if (typeof data?.slots === 'string') {
-      return JSON.parse(data.slots)
+    const formattedDate = date.getFullYear() + '-' +
+        String(date.getMonth() + 1).padStart(2, '0') + '-' +
+        String(date.getDate()).padStart(2, '0')
+
+    // Get availability
+    const { data: availabilityData, error: availabilityError } = await supabase
+        .from('availability')
+        .select('slots')
+        .eq('date', formattedDate)
+        .single()
+
+    if (availabilityError) {
+        if (availabilityError.code === 'PGRST116') return []
+        throw availabilityError
     }
 
-    console.log('data', data)
-  
-    return Array.isArray(data?.slots) ? data.slots : []
-  }
-  
+    const slots: string[] = Array.isArray(availabilityData?.slots)
+        ? availabilityData.slots
+        : typeof availabilityData?.slots === 'string'
+            ? JSON.parse(availabilityData.slots)
+            : []
+
+    // Get booked appointments
+    const { data: appointmentsData, error: appointmentError } = await supabase
+        .from('appointments')
+        .select('time')
+        .eq('date', formattedDate)
+
+    if (appointmentError) throw appointmentError
+
+    const bookedTimes = appointmentsData.map((appt) => {
+        const [hour, minute] = new Date(appt.time).toISOString().split('T')[1].split(':')
+        return `${hour}:${minute}`
+    })
+
+    // Return available slots that are not already booked
+    return slots.filter((slot) => !bookedTimes.includes(slot))
+}
+
 
