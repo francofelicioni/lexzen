@@ -365,11 +365,16 @@ export function BookingCalendar() {
               {step === 3 && (
                 <Button
                   type="submit"
-                  disabled={!formData.name || !formData.email || !formData.phone}
+                  disabled={!formData.name || !formData.email || !formData.phone || loadingSlots}
                   className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
-                  onClick={handleSubmit}
+                  onClick={(e) => {
+                    if (!loadingSlots) {
+                      setLoadingSlots(true);
+                      handleSubmit(e).finally(() => setLoadingSlots(false));
+                    }
+                  }}
                 >
-                  {t("booking.bookConsultation")}
+                  {loadingSlots ? t("booking.submitting") : t("booking.bookConsultation")}
                 </Button>
               )}
             </CardFooter>
