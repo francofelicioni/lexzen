@@ -33,7 +33,6 @@ export function BookingRequestsPanel() {
     const fetchData = async () => {
       try {
         const data = await getAppointments()
-        console.log("Citas obtenidas:", data)
         setBookingRequests(data)
       } catch (error) {
         console.error("Error fetching appointments:", error)
@@ -46,7 +45,6 @@ export function BookingRequestsPanel() {
   }, [])
 
   const handleStatusChange = async (id: string, newStatus: BookingRequest["status"]) => {
-    console.log("Updating status for ID:", id, "to", newStatus)
     try {
       // await updateAppointmentStatus(id, newStatus)
 
