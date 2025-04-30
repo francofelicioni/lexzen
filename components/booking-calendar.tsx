@@ -74,26 +74,38 @@ export function BookingCalendar() {
       const localMinutes = timeSlot.getMinutes().toString().padStart(2, '0')
       const appointmentTime = `${localHours}:${localMinutes}`
 
-      // Check availability
-      const isAvailable = await appointmentService.checkAvailability(appointmentDate, appointmentTime)
-      if (!isAvailable) {
-        alert('Este horario ya fue reservado por otra persona. Por favor elige otro.')
-        setStep(2) // Back to time selection
-        return
+      // 🟡 Check availability
+      try {
+        const isAvailable = await appointmentService.checkAvailability(appointmentDate, appointmentTime)
+        if (!isAvailable) {
+          alert('Este horario ya fue reservado por otra persona. Por favor elige otro.')
+          setStep(2)
+          return
+        }
+      } catch (error) {
+        console.error("❌ Error al comprobar disponibilidad:", error)
+        throw error
       }
 
-      // Create appointment
-      await appointmentService.createAppointment({
-        full_name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        topic: formData.topic,
-        date: appointmentDate,
-        time: appointmentTime,
-      })
+      // 🟡 Create appointment
+      try {
+        await appointmentService.createAppointment({
+          full_name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          topic: formData.topic,
+          date: appointmentDate,
+          time: appointmentTime,
+        })
+      } catch (error) {
+        console.error("❌ Error in creating appointment:", error)
+        throw error
+      }
+
       setShowConfirmation(true)
-    } catch (error) {
-      console.error("Error creating appointment:", error)
+
+    } catch (finalError) {
+      console.error("❌ handleSubmit general error:", finalError)
     }
   }
 

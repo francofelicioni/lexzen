@@ -31,27 +31,29 @@ export const appointmentService = {
       phone: data.phone,
       topic: data.topic,
       date: appointmentDate,
-      time: fullTimestamp,
+      time: appointmentTime,
       status: 'pending',
       created_at: new Date().toISOString()
     })
-
+    
     if (error) throw error
+    
     await removeSlotFromAvailability(appointmentDate, appointmentTime)
+    
     return true
+    
   },
   async checkAvailability(date: string, time: string) {
-    const fullTimestamp = new Date(`${date}T${time}:00`).toISOString()
+    const formattedTime = time.length === 5 ? `${time}:00` : time
 
     const { data, error } = await supabase
       .from('appointments')
       .select('id')
       .eq('date', date)
-      .eq('time', fullTimestamp)
-      .single()
+      .eq('time', formattedTime)
 
     if (error && error.code !== 'PGRST116') throw error
-    return !data
+    return !data || data.length === 0
   }
 }
 
