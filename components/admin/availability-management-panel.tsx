@@ -1,17 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { getAvailability, updateAvailability as saveAvailability } from '@/services/availability'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { addDays, format, isSameDay, startOfWeek, addWeeks, subWeeks, isWeekend } from "date-fns"
-import { ChevronLeft, ChevronRight, Plus, Trash2, Save, Clock } from "lucide-react"
-import { formatDateToYYYYMMDD } from "@/utils/date"
 import { supabase } from "@/lib/supabase"
-import { toast } from "@/components/ui/use-toast"
+import { updateAvailability as saveAvailability } from '@/services/availability'
+import { addDays, addWeeks, format, isSameDay, isWeekend, startOfWeek, subWeeks } from "date-fns"
+import { ChevronLeft, ChevronRight, Clock, Plus, Save, Trash2 } from "lucide-react"
+import { useEffect, useState } from "react"
 
 
 // Generate time slots for a day (9:00 AM to 6:00 PM in 15-minute intervals)
@@ -199,12 +197,7 @@ export function AvailabilityManagementPanel() {
       const firstDay = addDays(weekStart, bulkSelectedDays[0])
       setSelectedDate(firstDay)
     }
-  
-    toast({
-      title: "Availability updated",
-      description: "Time slots were successfully applied to the selected days.",
-    })
-  
+
     setBulkEditMode(false)
     setBulkSelectedDays([])
     setSelectedTimeSlots([])
