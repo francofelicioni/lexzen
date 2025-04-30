@@ -19,11 +19,14 @@ export interface AppointmentData {
   time: string
 }
 
+function normalizeTimeString(t: string): string {
+  return t.length === 5 ? `${t}:00` : t
+}
+
 export const appointmentService = {
   async createAppointment(data: AppointmentData) {
     const appointmentDate = data.date
-    const appointmentTime = data.time
-    const fullTimestamp = new Date(`${appointmentDate}T${appointmentTime}:00`).toISOString()
+    const appointmentTime = normalizeTimeString(data.time)
 
     const { error } = await supabase.from('appointments').insert({
       full_name: data.full_name,
@@ -35,22 +38,25 @@ export const appointmentService = {
       status: 'pending',
       created_at: new Date().toISOString()
     })
-    
+
     if (error) throw error
-    
-    await removeSlotFromAvailability(appointmentDate, appointmentTime)
-    
+
+    // We log the error but don't prevent the booking from completing
+    await removeSlotFromAvailability(appointmentDate, appointmentTime).catch(err => {
+      console.error("❌ Error removing slot from availability (non-blocking):", err)
+    })
+
     return true
-    
   },
+
   async checkAvailability(date: string, time: string) {
-    const formattedTime = time.length === 5 ? `${time}:00` : time
+    const appointmentTime = normalizeTimeString(time)
 
     const { data, error } = await supabase
       .from('appointments')
       .select('id')
       .eq('date', date)
-      .eq('time', formattedTime)
+      .eq('time', appointmentTime)
 
     if (error && error.code !== 'PGRST116') throw error
     return !data || data.length === 0
@@ -99,6 +105,8 @@ export async function removeSlotFromAvailability(date: string, time: string) {
 
   if (error) throw error
 
+  if (!availabilityData) return
+  
   const slots = availabilityData?.slots || []
   const updatedSlots = Array.isArray(slots)
     ? slots.filter((slot: string) => slot !== time)

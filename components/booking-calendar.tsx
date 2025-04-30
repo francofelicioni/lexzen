@@ -67,45 +67,36 @@ export function BookingCalendar() {
     e.preventDefault()
     if (!date || !timeSlot) return
 
+    const appointmentDate = date.toISOString().split('T')[0]
+    const localHours = timeSlot.getHours().toString().padStart(2, '0')
+    const localMinutes = timeSlot.getMinutes().toString().padStart(2, '0')
+    const appointmentTime = `${localHours}:${localMinutes}`
+
     try {
-      const appointmentDate = date.toISOString().split('T')[0]
+      console.log("🟡 Checking availability...")
+      const isAvailable = await appointmentService.checkAvailability(appointmentDate, appointmentTime)
 
-      const localHours = timeSlot.getHours().toString().padStart(2, '0')
-      const localMinutes = timeSlot.getMinutes().toString().padStart(2, '0')
-      const appointmentTime = `${localHours}:${localMinutes}`
-
-      // 🟡 Check availability
-      try {
-        const isAvailable = await appointmentService.checkAvailability(appointmentDate, appointmentTime)
-        if (!isAvailable) {
-          alert('Este horario ya fue reservado por otra persona. Por favor elige otro.')
-          setStep(2)
-          return
-        }
-      } catch (error) {
-        console.error("❌ Error al comprobar disponibilidad:", error)
-        throw error
+      if (!isAvailable) {
+        alert('Este horario ya fue reservado por otra persona. Por favor elige otro.')
+        setStep(2)
+        return
       }
 
-      // 🟡 Create appointment
-      try {
-        await appointmentService.createAppointment({
-          full_name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          topic: formData.topic,
-          date: appointmentDate,
-          time: appointmentTime,
-        })
-      } catch (error) {
-        console.error("❌ Error in creating appointment:", error)
-        throw error
-      }
+      console.log("📤 Creating appointment...")
+      await appointmentService.createAppointment({
+        full_name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        topic: formData.topic,
+        date: appointmentDate,
+        time: appointmentTime,
+      })
 
+      console.log("✅ Appointment created")
       setShowConfirmation(true)
 
-    } catch (finalError) {
-      console.error("❌ handleSubmit general error:", finalError)
+    } catch (error) {
+      console.error("❌ Error al crear cita:", error)
     }
   }
 

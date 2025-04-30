@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { getAppointments } from "@/services/appointments"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
@@ -15,7 +15,8 @@ type Booking = {
   id: string
   name: string
   email: string
-  date: Date
+  date: string
+  time: string
   status: "pending" | "accepted" | "rejected"
   topic: string
 }
@@ -23,13 +24,18 @@ type Booking = {
 export function BookingOverviewPanel() {
   const [confirmedBookings, setConfirmedBookings] = useState<Booking[]>([])
 
-  const [dateRange, setDateRange] = useState<{
-    from: Date | undefined
-    to: Date | undefined
-  }>({
-    from: new Date(),
-    to: addDays(new Date(), 30),
+  const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
+    from: undefined,
+    to: undefined,
   })
+
+  useEffect(() => {
+    setDateRange({
+      from: new Date(),
+      to: addDays(new Date(), 30),
+    })
+  }, [])
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,11 +55,13 @@ export function BookingOverviewPanel() {
   const filteredBookings = confirmedBookings.filter((booking) => {
     if (!dateRange.from || !dateRange.to) return true
 
-    return isWithinInterval(booking.date, {
+    const bookingDateTime = new Date(`${booking.date}T${booking.time}`)
+    return isWithinInterval(bookingDateTime, {
       start: startOfDay(dateRange.from),
       end: endOfDay(dateRange.to),
     })
   })
+
 
   // Group bookings by date for the summary
   const bookingsByDate = filteredBookings.reduce(
@@ -81,8 +89,8 @@ export function BookingOverviewPanel() {
       booking.id,
       booking.name,
       booking.email,
-      format(booking.date, "yyyy-MM-dd"),
-      format(booking.date, "HH:mm"),
+      booking.date,
+      format(new Date(`${booking.date}T${booking.time}`), "HH:mm"),
       booking.status,
       booking.topic,
     ])
@@ -91,11 +99,13 @@ export function BookingOverviewPanel() {
     const csvContent = [headers.join(","), ...data.map((row) => row.join(","))].join("\n")
 
     // Create a blob and download
+    const now = useMemo(() => new Date(), [])
+    const fileName = `bookings-export-${format(now, "yyyy-MM-dd")}.csv`
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.setAttribute("href", url)
-    link.setAttribute("download", `bookings-export-${format(new Date(), "yyyy-MM-dd")}.csv`)
+    link.setAttribute("download", `bookings-export-${fileName}.csv`)
     link.style.visibility = "hidden"
     document.body.appendChild(link)
     link.click()
@@ -191,7 +201,7 @@ export function BookingOverviewPanel() {
                         </div>
                         <div className="flex items-center text-sm text-gray-500">
                           <Clock className="mr-1 h-3 w-3" />
-                          <span>{format(booking.date, "h:mm a")}</span>
+                          <span>{format(new Date(`${booking.date}T${booking.time}`), "h:mm a")}</span>
                         </div>
                       </TableCell>
                       <TableCell className="max-w-[300px] truncate" title={booking.topic}>
