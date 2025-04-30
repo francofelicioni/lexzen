@@ -11,56 +11,30 @@ import { addDays, format, isSameDay, startOfWeek, addWeeks, subWeeks, isWeekend 
 import { ChevronLeft, ChevronRight, Plus, Trash2, Save, Clock } from "lucide-react"
 import { formatDateToYYYYMMDD } from "@/utils/date"
 import { supabase } from "@/lib/supabase"
+import { toast } from "@/components/ui/use-toast"
 
 
 // Generate time slots for a day (9:00 AM to 6:00 PM in 15-minute intervals)
 const generateTimeSlots = () => {
-  const slots = []
-  const startHour = 9
-  const endHour = 18
+  const slots: string[] = []
 
-  for (let hour = startHour; hour < endHour; hour++) {
-    for (let minute = 0; minute < 60; minute += 15) {
-      const time = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`
-      slots.push(time)
+  const addRange = (startHour: number, endHour: number, interval: number) => {
+    for (let hour = startHour; hour < endHour; hour++) {
+      for (let minute = 0; minute < 60; minute += interval) {
+        slots.push(`${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`)
+      }
     }
   }
+
+  // Morning: 10:00 a 14:00
+  // addRange(10, 14, 30)
+
+  // Afternoon: 16:00 a 20:00
+  addRange(16, 20, 15)
 
   return slots
 }
 
-// Mock data for available time slots
-const generateInitialAvailability = () => {
-  const today = new Date()
-  const startDate = startOfWeek(today, { weekStartsOn: 1 }) // Start from Monday
-  const availability = []
-
-  // Generate availability for the next 4 weeks
-  for (let week = 0; week < 4; week++) {
-    for (let day = 0; day < 5; day++) {
-      // Monday to Friday
-      const date = addDays(addWeeks(startDate, week), day)
-
-      // Generate random availability for demo purposes
-      const daySlots = []
-      const allTimeSlots = generateTimeSlots()
-
-      // Randomly select ~70% of slots as available
-      allTimeSlots.forEach((time) => {
-        if (Math.random() > 0.3) {
-          daySlots.push(time)
-        }
-      })
-
-      availability.push({
-        date,
-        slots: daySlots,
-      })
-    }
-  }
-
-  return availability
-}
 
 type AvailabilitySlot = {
   date: Date
@@ -78,50 +52,44 @@ export function AvailabilityManagementPanel() {
   const timeSlots = generateTimeSlots()
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    async function loadAvailability() {
-      const start = startOfWeek(new Date(), { weekStartsOn: 1 })
-      const end = addWeeks(start, 4)
+  const loadAvailability = async () => {
+    const start = startOfWeek(new Date(), { weekStartsOn: 1 })
+    const end = addWeeks(start, 4)
 
-      try {
-        const { data, error } = await supabase
-          .from('availability')
-          .select('*')
-          .gte('date', start.toISOString())
-          .lte('date', end.toISOString())
+    try {
+      const { data, error } = await supabase
+        .from('availability')
+        .select('*')
+        .gte('date', start.toISOString())
+        .lte('date', end.toISOString())
 
-        if (error) {
-          console.error('Failed to load availability:', error)
-          return
-        }
-
-        const mapped = data.map((item: any) => {
-          const [year, month, day] = item.date.split('-').map(Number)
-          const parsedDate = new Date(Date.UTC(year, month - 1, day))
-          const localDate = new Date(parsedDate.getUTCFullYear(), parsedDate.getUTCMonth(), parsedDate.getUTCDate())
-
-          if (item.date.includes("T")) {
-            throw new Error(`Expected date format YYYY-MM-DD but got ${item.date}`)
-          }
-
-          return {
-            date: localDate,
-            slots: Array.isArray(item.slots)
-              ? item.slots
-              : typeof item.slots === 'string'
-                ? JSON.parse(item.slots)
-                : [],
-          }
-        })
-
-        setAvailability(mapped)
-      } catch (error) {
+      if (error) {
         console.error('Failed to load availability:', error)
-      } finally {
-        setLoading(false)
+        return
       }
-    }
 
+      const mapped = data.map((item: any) => {
+        const [year, month, day] = item.date.split('-').map(Number)
+        const parsedDate = new Date(Date.UTC(year, month - 1, day))
+        const localDate = new Date(parsedDate.getUTCFullYear(), parsedDate.getUTCMonth(), parsedDate.getUTCDate())
+
+        return {
+          date: localDate,
+          slots: Array.isArray(item.slots)
+            ? item.slots
+            : typeof item.slots === 'string'
+              ? JSON.parse(item.slots)
+              : [],
+        }
+      })
+
+      setAvailability(mapped)
+    } catch (error) {
+      console.error('Failed to load availability:', error)
+    }
+  }
+
+  useEffect(() => {
     loadAvailability()
   }, [])
 
@@ -142,10 +110,8 @@ export function AvailabilityManagementPanel() {
           console.error("Error fetching appointments:", error)
           setAppointmentsForSelectedDate([])
         } else {
-          const bookedTimes = data.map((appt) => {
-            const [hour, minute] = new Date(appt.time).toISOString().split('T')[1].split(':')
-            return `${hour}:${minute}`
-          })
+          const bookedTimes = data.map((appt) => appt.time)
+
           setAppointmentsForSelectedDate(bookedTimes)
         }
       } catch (err) {
@@ -186,7 +152,7 @@ export function AvailabilityManagementPanel() {
   const realAvailableSlots = getDateAvailability(selectedDate)?.filter((slot) => !appointmentsForSelectedDate.includes(slot)) || []
 
   // Update availability for a specific date
-  const updateAvailability = (date: Date, slots: string[]) => {
+  const updateAvailability = async (date: Date, slots: string[]) => {
     const existingIndex = availability.findIndex((a) => isSameDay(a.date, date))
 
     const newAvailability = [...availability]
@@ -197,12 +163,7 @@ export function AvailabilityManagementPanel() {
     }
     setAvailability(newAvailability)
 
-    const formattedDate = formatDateToYYYYMMDD(date)
-
-    // Save to Supabase
-    saveAvailability(date, slots).catch((error) => {
-      console.error('Failed to save availability:', error)
-    })
+    return saveAvailability(date, slots)
   }
 
   // Handle bulk selection of time slots
@@ -224,13 +185,26 @@ export function AvailabilityManagementPanel() {
   }
 
   // Apply bulk edit
-  const applyBulkEdit = () => {
-    bulkSelectedDays.forEach((dayIndex) => {
+  const applyBulkEdit = async () => {
+    const promises = bulkSelectedDays.map((dayIndex) => {
       const date = addDays(weekStart, dayIndex)
-      updateAvailability(date, [...selectedTimeSlots])
+      return updateAvailability(date, [...selectedTimeSlots])
     })
-
-    // Reset bulk edit mode
+  
+    await Promise.all(promises)
+  
+    await loadAvailability()
+  
+    if (bulkSelectedDays.length > 0) {
+      const firstDay = addDays(weekStart, bulkSelectedDays[0])
+      setSelectedDate(firstDay)
+    }
+  
+    toast({
+      title: "Availability updated",
+      description: "Time slots were successfully applied to the selected days.",
+    })
+  
     setBulkEditMode(false)
     setBulkSelectedDays([])
     setSelectedTimeSlots([])
