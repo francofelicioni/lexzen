@@ -41,9 +41,9 @@ export const appointmentService = {
 
     if (error) throw error
 
-    // We log the error but don't prevent the booking from completing
+    // Log the error but don't prevent the booking from completing
     await removeSlotFromAvailability(appointmentDate, appointmentTime).catch(err => {
-      console.error("❌ Error removing slot from availability (non-blocking):", err)
+      console.error(" Error removing slot from availability (non-blocking):", err)
     })
 
     return true
@@ -86,7 +86,6 @@ export const updateAppointmentStatus = async (
   id: string,
   status: "pending" | "accepted" | "rejected"
 ) => {
-  console.log("Updating appointment", id, "to status", status)
 
   const { error } = await supabase
     .from("appointments")
@@ -106,7 +105,7 @@ export async function removeSlotFromAvailability(date: string, time: string) {
   if (error) throw error
 
   if (!availabilityData) return
-  
+
   const slots = availabilityData?.slots || []
   const updatedSlots = Array.isArray(slots)
     ? slots.filter((slot: string) => slot !== time)
@@ -121,7 +120,6 @@ export async function removeSlotFromAvailability(date: string, time: string) {
 }
 
 export const forceStatusUpdate = async (): Promise<void> => {
-  console.log("Force updating appointment status")
   await updateAppointmentStatus("796cd8c5-daef-42b2-a463-4055468e3e96", "accepted");
 };
 
