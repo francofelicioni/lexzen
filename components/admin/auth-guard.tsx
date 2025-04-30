@@ -32,7 +32,7 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
     // In a real app, this would be a server-side check
     // For demo purposes, we're checking against the hardcoded password
     setTimeout(() => {
-      if (password === "franfe2025") {
+      if (password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
         sessionStorage.setItem("adminAuthenticated", "true")
         setIsAuthenticated(true)
       } else {
