@@ -1,6 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { appointmentService } from '@/services/appointments'
+import { getAvailabilityForDate } from '@/services/availability'
+import { bookingSchema, BookingFormData } from "@/schemas/booking"
 import { Calendar } from "@/components/ui/calendar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -14,26 +19,47 @@ import { es } from "date-fns/locale"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
 import { AnimatedSection } from "@/components/animated-section"
-import { appointmentService } from '@/services/appointments'
-import { getAvailabilityForDate } from '@/services/availability'
 
 export function BookingCalendar() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    topic: "",
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
   const { t, language } = useLanguage()
   const isMobile = useMobile()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [timeSlot, setTimeSlot] = useState<Date | undefined>(undefined)
   const [step, setStep] = useState(1)
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", topic: "" })
   const [showConfirmation, setShowConfirmation] = useState(false)
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false)
   const [loadingSlots, setLoadingSlots] = useState(false)
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const dateLocale = language === "es" ? es : undefined
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting, isValid },
+    reset,
+    watch,
+  } = useForm<BookingFormData>({
+    resolver: zodResolver(bookingSchema),
+    mode: "onChange",
+  })
+  
   const disabledDays = (date: Date) => isWeekend(date) || isBefore(date, new Date().setHours(0, 0, 0, 0))
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleDateSelect = async (selectedDate: Date | undefined) => {
     setDate(selectedDate)
@@ -58,13 +84,7 @@ export function BookingCalendar() {
     setStep(3)
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const onSubmit = async (data: BookingFormData) => {
     if (!date || !timeSlot) return
 
     const appointmentDate = date.toISOString().split('T')[0]
@@ -73,30 +93,26 @@ export function BookingCalendar() {
     const appointmentTime = `${localHours}:${localMinutes}`
 
     try {
-      console.log("🟡 Checking availability...")
       const isAvailable = await appointmentService.checkAvailability(appointmentDate, appointmentTime)
-
       if (!isAvailable) {
-        alert('Este horario ya fue reservado por otra persona. Por favor elige otro.')
+        alert(t("booking.slotTaken"))
         setStep(2)
         return
       }
 
-      console.log("📤 Creating appointment...")
       await appointmentService.createAppointment({
-        full_name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        topic: formData.topic,
+        full_name: data.name,
+        email: data.email,
+        phone: data.phone,
+        topic: data.topic ?? null,
         date: appointmentDate,
         time: appointmentTime,
       })
 
-      console.log("✅ Appointment created")
       setShowConfirmation(true)
-
+      reset()
     } catch (error) {
-      console.error("❌ Error al crear cita:", error)
+      console.error("Error creating appointment:", error)
     }
   }
 
@@ -105,10 +121,8 @@ export function BookingCalendar() {
     setDate(undefined)
     setTimeSlot(undefined)
     setStep(1)
-    setFormData({ name: "", email: "", phone: "", topic: "" })
+    reset()
   }
-
-  const dateLocale = language === "es" ? es : undefined
 
   return (
     <section id="booking" className="w-full py-8 md:py-24 lg:py-32">
@@ -246,7 +260,7 @@ export function BookingCalendar() {
                           <Button
                             key={index}
                             variant="outline"
-                            className={`flex items-center justify-center gap-2 py-5 ${timeSlot && timeSlot.getTime() === slotTime.getTime()
+                            className={`flex items-center justify-center gap-2 py-5 ${timeSlot && slotTime.toISOString() === timeSlot.toISOString()
                               ? "border-teal-600 bg-teal-50 text-teal-700"
                               : ""
                               }`}
@@ -270,11 +284,13 @@ export function BookingCalendar() {
               )}
 
               {step === 3 && date && timeSlot && (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="flex items-center gap-2 mb-6 p-3 bg-blue-gray/10 rounded-md">
                     <CalendarIcon className="h-5 w-5 text-blue-gray shrink-0" />
                     <div>
-                      <div className="font-medium">{format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}</div>
+                      <div className="font-medium">
+                        {format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}
+                      </div>
                       <div className="text-sm text-gray-600">
                         {format(timeSlot, "HH:mm")} - {format(addMinutes(timeSlot, 20), "HH:mm")} (CET/CEST)
                       </div>
@@ -283,59 +299,69 @@ export function BookingCalendar() {
 
                   <div className="space-y-5">
                     <div className="grid gap-3">
-                      <Label htmlFor="name" className="text-base">{t("booking.fullName")}</Label>
+                      <Label htmlFor="name" className="text-base">
+                        {t("booking.fullName")}
+                      </Label>
                       <Input
                         id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
+                        {...register("name")}
                         placeholder={t("booking.fullNamePlaceholder")}
-                        required
                         className="h-12 text-base"
                       />
+                      {errors.name && (
+                        <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>
+                      )}
                     </div>
 
                     <div className="grid gap-3">
-                      <Label htmlFor="email" className="text-base">{t("booking.email")}</Label>
+                      <Label htmlFor="email" className="text-base">
+                        {t("booking.email")}
+                      </Label>
                       <Input
                         id="email"
-                        name="email"
                         type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
+                        {...register("email")}
                         placeholder={t("booking.emailPlaceholder")}
-                        required
                         className="h-12 text-base"
                       />
+                      {errors.email && (
+                        <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
+                      )}
                     </div>
 
                     <div className="grid gap-3">
-                      <Label htmlFor="phone" className="text-base">{t("booking.phone")}</Label>
+                      <Label htmlFor="phone" className="text-base">
+                        {t("booking.phone")}
+                      </Label>
                       <Input
                         id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
+                        {...register("phone")}
                         placeholder={t("booking.phonePlaceholder")}
-                        required
                         className="h-12 text-base"
                       />
+                      {errors.phone && (
+                        <p className="text-sm text-red-500 mt-1">{errors.phone.message}</p>
+                      )}
                     </div>
 
                     <div className="grid gap-3">
-                      <Label htmlFor="topic" className="text-base">{t("booking.topic")}</Label>
+                      <Label htmlFor="topic" className="text-base">
+                        {t("booking.topic")}
+                      </Label>
                       <Textarea
                         id="topic"
-                        name="topic"
-                        value={formData.topic}
-                        onChange={handleInputChange}
+                        {...register("topic")}
                         placeholder={t("booking.topicPlaceholder")}
                         className="min-h-[120px] text-base p-4"
                       />
+                      {errors.topic && (
+                        <p className="text-sm text-red-500 mt-1">{errors.topic.message}</p>
+                      )}
                     </div>
                   </div>
                 </form>
               )}
+
             </CardContent>
 
             <CardFooter className="flex justify-between">
@@ -368,14 +394,9 @@ export function BookingCalendar() {
               {step === 3 && (
                 <Button
                   type="submit"
-                  disabled={!formData.name || !formData.email || !formData.phone || loadingSlots}
+                  disabled={!isValid || isSubmitting}
                   className={`${!isMobile ? "ml-auto" : "w-full"} bg-blue-gray hover:bg-legal-accent-dark`}
-                  onClick={(e) => {
-                    if (!loadingSlots) {
-                      setLoadingSlots(true);
-                      handleSubmit(e).finally(() => setLoadingSlots(false));
-                    }
-                  }}
+                  onClick={handleSubmit(onSubmit)}
                 >
                   {loadingSlots ? t("booking.submitting") : t("booking.bookConsultation")}
                 </Button>
