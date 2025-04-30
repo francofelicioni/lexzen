@@ -60,7 +60,7 @@ export function BookingRequestsPanel() {
       console.error("Error updating status:", err)
       alert("Failed to update status")
     }
-  }  
+  }
 
   const filteredRequests = bookingRequests.filter((request) => {
     const matchesSearch =
@@ -148,7 +148,7 @@ export function BookingRequestsPanel() {
                       </div>
                       <div className="flex items-center text-sm text-gray-500">
                         <Clock className="mr-1 h-3 w-3" />
-                        <span>{format(new Date(req.time), "h:mm a")}</span>
+                        <span>{format(new Date(`${req.date}T${req.time}`), "h:mm a")}</span>
                       </div>
                     </TableCell>
                     <TableCell className="max-w-[200px] truncate" title={req.topic}>
