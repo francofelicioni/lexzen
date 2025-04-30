@@ -10,6 +10,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { StatusBadge } from "@/components/ui/status-badge"
 import { format, isWithinInterval, startOfDay, endOfDay, addDays } from "date-fns"
 import { Download, CalendarIcon, Filter, User, Mail, Clock } from "lucide-react"
+import { parseDateTime } from "@/utils/date"
 
 type Booking = {
   id: string
@@ -38,30 +39,26 @@ export function BookingOverviewPanel() {
 
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getAppointments()
-        setConfirmedBookings(data)
-      } catch (error) {
-        console.error("Error loading bookings:", error)
-      }
+    let isMounted = true
+    async function fetchData() {
+      const data = await getAppointments()
+      if (isMounted) setConfirmedBookings(data)
     }
-
     fetchData()
+    return () => { isMounted = false }
   }, [])
 
 
   // Filter bookings based on date range
-  const filteredBookings = confirmedBookings.filter((booking) => {
-    if (!dateRange.from || !dateRange.to) return true
-
-    const bookingDateTime = new Date(`${booking.date}T${booking.time}`)
-    return isWithinInterval(bookingDateTime, {
-      start: startOfDay(dateRange.from),
-      end: endOfDay(dateRange.to),
-    })
-  })
-
+  const filteredBookings = useMemo(() => {
+    if (!dateRange.from || !dateRange.to) return confirmedBookings
+    return confirmedBookings.filter((booking) =>
+      isWithinInterval(parseDateTime(booking.date, booking.time), {
+        start: startOfDay(dateRange.from ?? new Date()),
+        end: endOfDay(dateRange.to ?? new Date()),
+      })
+    )
+  }, [confirmedBookings, dateRange])
 
   // Group bookings by date for the summary
   const bookingsByDate = filteredBookings.reduce(
@@ -99,7 +96,7 @@ export function BookingOverviewPanel() {
     const csvContent = [headers.join(","), ...data.map((row) => row.join(","))].join("\n")
 
     // Create a blob and download
-    const now = useMemo(() => new Date(), [])
+    const now = new Date()
     const fileName = `bookings-export-${format(now, "yyyy-MM-dd")}.csv`
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" })
     const url = URL.createObjectURL(blob)
@@ -152,14 +149,20 @@ export function BookingOverviewPanel() {
                         )
                       })
                     ) : (
-                      <div className="text-sm text-gray-500">No bookings in selected date range</div>
+                      <div role="status" className="text-sm text-gray-500">No bookings in selected date range</div>
                     )}
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            <Button variant="outline" className="w-full" onClick={exportCSV} disabled={filteredBookings.length === 0}>
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={exportCSV}
+              disabled={filteredBookings.length === 0}
+              aria-label="Export bookings as CSV"
+            >
               <Download className="mr-2 h-4 w-4" />
               Export as CSV
             </Button>
