@@ -19,6 +19,7 @@ import { es } from "date-fns/locale"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
 import { AnimatedSection } from "@/components/animated-section"
+import { toast } from "react-hot-toast"
 
 export function BookingCalendar() {
   const [formData, setFormData] = useState({
@@ -96,7 +97,7 @@ export function BookingCalendar() {
     try {
       const isAvailable = await appointmentService.checkAvailability(appointmentDate, appointmentTime)
       if (!isAvailable) {
-        alert(t("booking.slotTaken"))
+        toast.error(t("booking.slotTaken"))
         setStep(2)
         return
       }
@@ -447,7 +448,7 @@ export function BookingCalendar() {
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5 text-blue-gray shrink-0" />
                 <div className="font-medium">
-                  {format(timeSlot, "HH:mm")} - {format(addMinutes(timeSlot, 20), "HH:mm")} (CET/CEST)
+                  {format(timeSlot, "HH:mm")} - {format(addMinutes(timeSlot, 15), "HH:mm")} (CET/CEST)
                 </div>
               </div>
             </div>

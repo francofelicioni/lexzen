@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
 import { SafeHydratedThemeProvider } from "@/components/theme-provider-safe"
+import { Toaster } from "react-hot-toast"
 
 // Load Inter font with multiple weights
 const inter = Inter({
@@ -72,6 +73,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${merriweather.variable} font-body`}>
         <SafeHydratedThemeProvider>
           <LanguageProvider>
+            <Toaster position="top-right" />
             {children}
           </LanguageProvider>
         </SafeHydratedThemeProvider>

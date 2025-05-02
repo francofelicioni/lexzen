@@ -335,10 +335,10 @@ export const translations = {
       close: "Close",
     },
     confirmationEmail: {
-      subject: "Consultation Confirmation",
+      subject: "Appointment Confirmation",
       greeting: (name: string) => `Dear ${name},`,
       confirmation: (date: string, time: string) =>
-        `Your consultation has been scheduled for <strong>${date}</strong> at <strong>${time}</strong>.`,
+        `Your appointment has been scheduled for <strong>${date}</strong> at <strong>${time}</strong>.`,
       topic: (topic: string) => `<strong>Consultation Topic:</strong> ${topic}`,
       closing: "Thank you for choosing Lexzen. We're here if you need anything else.",
       farewell: "Sincerely,<br />The Lexzen Team",
@@ -687,10 +687,10 @@ export const translations = {
       close: "Cerrar",
     },
     confirmationEmail: {
-      subject: "Confirmación de Consulta",
+      subject: "Confirmación de Cita",
       greeting: (name: string) => `Estimado/a ${name},`,
       confirmation: (date: string, time: string) =>
-        `Le confirmamos que su consulta ha sido programada para el día <strong>${date}</strong> a las <strong>${time}</strong>.`,
+        `Le confirmamos que su cita ha sido programada para el día <strong>${date}</strong> a las <strong>${time}</strong>.`,
       topic: (topic: string) => `<strong>Tema de la consulta:</strong> ${topic}`,
       closing: "Agradecemos su confianza en Lexzen. Estamos a su disposición para cualquier consulta adicional.",
       farewell: "Atentamente,<br />El equipo de Lexzen",

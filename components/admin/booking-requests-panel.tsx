@@ -56,7 +56,6 @@ export function BookingRequestsPanel() {
       )
     } catch (err) {
       console.error("Error updating status:", err)
-      alert("Failed to update status")
     }
   }
 
