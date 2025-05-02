@@ -119,6 +119,7 @@ export function BookingCalendar() {
           topic: data.topic,
           date: appointmentDate,
           time: appointmentTime,
+          lang: language,
         }),
       })
 

@@ -1,35 +1,44 @@
 import { NextResponse } from "next/server"
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer"
+import { format } from "date-fns"
+import { es, enUS } from "date-fns/locale"
+import { translations } from "@/lib/translations"
 
 export async function POST(req: Request) {
-  const { name, email, date, time, topic } = await req.json()
+  const { name, email, date, time, topic, lang = "es" }: { name: string; email: string; date: string; time: string; topic?: string; lang?: "en" | "es" } = await req.json()
 
-  if (!email) {
-    return NextResponse.json({ error: "Missing email" }, { status: 400 })
+  if (!email || !name || !date || !time) {
+    return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
   }
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.MAIL_HOST,
-    port: Number(process.env.MAIL_PORT),
-    secure: process.env.MAIL_ENCRYPTION === "ssl",
-    auth: {
-      user: process.env.MAIL_USERNAME,
-      pass: process.env.MAIL_PASSWORD,
-    },
-  })
+  const t = translations[lang as "en" | "es"].confirmationEmail || translations.es.confirmationEmail
+  const locale = lang === "en" ? enUS : es
+
+  const formattedDate = format(new Date(date), "EEEE, d 'de' MMMM 'de' yyyy", { locale })
 
   const htmlMessage = `
-    <p>Hola ${name},</p>
-    <p>Tu consulta fue agendada para el <strong>${date}</strong> a las <strong>${time}</strong>.</p>
-    ${topic ? `<p><strong>Tema:</strong> ${topic}</p>` : ""}
-    <p>Gracias por reservar con Lexzen.</p>
+    <p>${t.greeting(name)}</p>
+    <p>${t.confirmation(formattedDate, time)}</p>
+    ${topic ? `<p>${t.topic(topic)}</p>` : ""}
+    <p>${t.closing}</p>
+    <p>${t.farewell}</p>
   `
 
   try {
+    const transporter = nodemailer.createTransport({
+      host: process.env.MAIL_HOST,
+      port: Number(process.env.MAIL_PORT),
+      secure: process.env.MAIL_ENCRYPTION === "ssl",
+      auth: {
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PASSWORD,
+      },
+    })
+
     await transporter.sendMail({
       from: `"Lexzen" <${process.env.MAIL_FROM_ADDRESS}>`,
       to: email,
-      subject: "Confirmación de Consulta",
+      subject: t.subject,
       html: htmlMessage,
     })
 

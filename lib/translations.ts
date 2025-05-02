@@ -242,6 +242,7 @@ export const translations = {
       back: "Back",
       continue: "Continue",
       bookConsultation: "Book Free Consultation",
+      slotTaken: "This time slot is already taken. Please choose another.",
       // Confirmation
       consultationBooked: "Legal Consultation Booked!",
       consultationScheduled: "Your free 15-minute legal consultation has been scheduled.",
@@ -332,6 +333,15 @@ export const translations = {
       error: "There was an error submitting your message",
       errorDetails: "Please try again or contact us directly by email.",
       close: "Close",
+    },
+    confirmationEmail: {
+      subject: "Consultation Confirmation",
+      greeting: (name: string) => `Dear ${name},`,
+      confirmation: (date: string, time: string) =>
+        `Your consultation has been scheduled for <strong>${date}</strong> at <strong>${time}</strong>.`,
+      topic: (topic: string) => `<strong>Consultation Topic:</strong> ${topic}`,
+      closing: "Thank you for choosing Lexzen. We're here if you need anything else.",
+      farewell: "Sincerely,<br />The Lexzen Team",
     },
   },
   es: {
@@ -583,6 +593,7 @@ export const translations = {
       back: "Atrás",
       continue: "Continuar",
       bookConsultation: "Reservar Consulta Gratuita",
+      slotTaken: "Este horario ya está reservado. Por favor, elija otro.",
       // Confirmation
       consultationBooked: "¡Consulta Legal Reservada!",
       consultationScheduled: "Su consulta legal gratuita de 15 minutos ha sido programada.",
@@ -674,6 +685,15 @@ export const translations = {
       error: "Hubo un error al enviar tu mensaje",
       errorDetails: "Por favor, inténtalo de nuevo o contáctanos directamente por correo electrónico.",
       close: "Cerrar",
+    },
+    confirmationEmail: {
+      subject: "Confirmación de Consulta",
+      greeting: (name: string) => `Estimado/a ${name},`,
+      confirmation: (date: string, time: string) =>
+        `Le confirmamos que su consulta ha sido programada para el día <strong>${date}</strong> a las <strong>${time}</strong>.`,
+      topic: (topic: string) => `<strong>Tema de la consulta:</strong> ${topic}`,
+      closing: "Agradecemos su confianza en Lexzen. Estamos a su disposición para cualquier consulta adicional.",
+      farewell: "Atentamente,<br />El equipo de Lexzen",
     },
   },
 }
