@@ -90,16 +90,16 @@ export function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      // Simulate API call with a delay
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
 
-      // In a real application, you would send the form data to your API here
-      console.log("Form submitted:", formData)
+      if (!res.ok) throw new Error("Request failed")
 
-      // Show success dialog
       setShowSuccessDialog(true)
 
-      // Reset form
       setFormData({
         fullName: "",
         email: "",
