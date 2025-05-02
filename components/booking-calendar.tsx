@@ -125,7 +125,7 @@ export function BookingCalendar() {
   }
 
   return (
-    <section id="booking" className="w-full py-8 md:py-24 lg:py-32">
+    <section id="booking" className="w-full py-8 md:py-24">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <AnimatedSection direction="up" elementType="heading">
@@ -252,23 +252,25 @@ export function BookingCalendar() {
                     </div>
                   ) : availableSlots.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                      {availableSlots.map((timeString, index) => {
+                      {availableSlots
+                      .sort((a, b) => a.localeCompare(b))
+                      .map((timeString, index) => {
                         const slotTime = new Date(date)
                         const [hours, minutes] = timeString.split(":").map(Number)
                         slotTime.setHours(hours, minutes, 0, 0)
                         return (
-                          <Button
-                            key={index}
-                            variant="outline"
-                            className={`flex items-center justify-center gap-2 py-5 ${timeSlot && slotTime.toISOString() === timeSlot.toISOString()
-                              ? "border-teal-600 bg-teal-50 text-teal-700"
-                              : ""
-                              }`}
-                            onClick={() => handleTimeSelect(slotTime)}
-                          >
-                            <Clock className="h-4 w-4 shrink-0" />
-                            {timeString}
-                          </Button>
+                        <Button
+                          key={index}
+                          variant="outline"
+                          className={`flex items-center justify-center gap-2 py-5 ${timeSlot && slotTime.toISOString() === timeSlot.toISOString()
+                          ? "border-teal-600 bg-teal-50 text-teal-700"
+                          : ""
+                          }`}
+                          onClick={() => handleTimeSelect(slotTime)}
+                        >
+                          <Clock className="h-4 w-4 shrink-0" />
+                          {timeString}
+                        </Button>
                         )
                       })}
                     </div>
@@ -292,7 +294,7 @@ export function BookingCalendar() {
                         {format(date, "EEEE, MMMM d, yyyy", { locale: dateLocale })}
                       </div>
                       <div className="text-sm text-gray-600">
-                        {format(timeSlot, "HH:mm")} - {format(addMinutes(timeSlot, 20), "HH:mm")} (CET/CEST)
+                        {format(timeSlot, "HH:mm")} - {format(addMinutes(timeSlot, 15), "HH:mm")} (CET/CEST)
                       </div>
                     </div>
                   </div>
