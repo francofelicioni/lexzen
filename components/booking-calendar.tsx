@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { appointmentService } from '@/services/appointments'
-import { getAvailabilityForDate } from '@/services/availability'
+import { getAvailabilityForDate, removeSlotFromAvailability } from '@/services/availability'
 import { bookingSchema, BookingFormData } from "@/schemas/booking"
 import { Calendar } from "@/components/ui/calendar"
 import { Button } from "@/components/ui/button"
@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Clock, CalendarIcon, CheckCircle, ChevronLeft } from "lucide-react"
-import { format, addDays, isWeekend, isBefore, addMinutes } from "date-fns"
+import { format, addDays, isWeekend, isBefore, addMinutes, formatDate } from "date-fns"
 import { es } from "date-fns/locale"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
@@ -89,7 +89,7 @@ export function BookingCalendar() {
   const onSubmit = async (data: BookingFormData) => {
     if (!date || !timeSlot) return
 
-    const appointmentDate = date.toISOString().split('T')[0]
+    const appointmentDate = formatDate(date, "yyyy-MM-dd") 
     const localHours = timeSlot.getHours().toString().padStart(2, '0')
     const localMinutes = timeSlot.getMinutes().toString().padStart(2, '0')
     const appointmentTime = `${localHours}:${localMinutes}`
@@ -123,6 +123,8 @@ export function BookingCalendar() {
           lang: language,
         }),
       })
+
+      await removeSlotFromAvailability(appointmentDate, appointmentTime)
 
       setFormData({
         name: data.name,

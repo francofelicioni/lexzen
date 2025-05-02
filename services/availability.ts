@@ -75,13 +75,39 @@ export async function getAvailabilityForDate(date: Date): Promise<string[]> {
 
     if (appointmentError) throw appointmentError
 
-    const bookedTimes = appointmentsData.map((appt) => {
-        const [hour, minute] = new Date(appt.time).toISOString().split('T')[1].split(':')
-        return `${hour}:${minute}`
-    })
+    const normalizeTimeString = (t: string): string =>
+        t.length === 5 ? `${t}:00` : t
+
+    const bookedTimes = appointmentsData.map((appt) => normalizeTimeString(appt.time))
+
 
     // Return available slots that are not already booked
-    return slots.filter((slot) => !bookedTimes.includes(slot))
+    return slots.filter((slot) => !bookedTimes.includes(normalizeTimeString(slot)))
+}
+
+export const removeSlotFromAvailability = async (date: string, time: string) => {
+    const { data, error } = await supabase
+        .from("availability")
+        .select("slots")
+        .eq("date", date)
+        .single()
+
+    if (error) throw error
+
+    const currentSlots: string[] = Array.isArray(data?.slots)
+        ? data.slots
+        : typeof data?.slots === 'string'
+            ? JSON.parse(data.slots)
+            : []
+
+    const updatedSlots = currentSlots.filter((slot) => slot !== time)
+
+    const { error: updateError } = await supabase
+        .from("availability")
+        .update({ slots: updatedSlots })
+        .eq("date", date)
+
+    if (updateError) throw updateError
 }
 
 
