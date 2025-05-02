@@ -22,6 +22,18 @@ interface PricingPackageProps {
   className?: string
 }
 
+interface PricingPackageProps {
+  title: string
+  price: string
+  description: string
+  features: string[]
+  highlighted?: boolean
+  buttonText?: string
+  delay?: number
+  className?: string
+  t: (key: string) => string
+}
+
 function PricingPackage({
   title,
   price,
@@ -31,21 +43,22 @@ function PricingPackage({
   buttonText = "Get Started",
   delay = 0,
   className = "",
+  t,
 }: PricingPackageProps) {
   return (
     <AnimatedSection direction="up" delay={delay} className={`flex flex-col h-full ${className}`}>
       <Card
         className={`flex flex-col h-full transition-all duration-300 ${highlighted ? "border-blue-200 shadow-md" : ""} hover:shadow-lg`}
       >
-        <CardHeader className={`flex flex-grow justify-center items-start mb-4 ${highlighted ? "bg-blue-gray/10 " : "bg-gray-100"}`} >
-          <CardTitle className="flex items-center justify-between text-lg text-xl w-full">
+        <CardHeader className={`flex flex-grow justify-center items-start mb-4 ${highlighted ? "bg-blue-gray/10" : "bg-gray-100"}`}>
+          <CardTitle className="flex items-center justify-between text-lg md:text-3xl w-full">
             {title}
             {highlighted && <Badge className="bg-blue-gray py-2 px-4 mb-4 text-sm mr-2">Popular</Badge>}
           </CardTitle>
           <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
           <div className="mt-2">
-            <span className="text-2xl sm:text-3xl font-bold">{price}</span>
-            {price.includes("€") && <span className="text-sm text-muted-foreground">/{("general.month")}</span>}
+            <span className="text-2xl sm:text-3xl font-bold"> <span className="text-sm"> {t("general.from")} </span>{price}</span>
+            {price.includes("€")}
           </div>
         </CardHeader>
         <CardContent className="flex-grow flex justify-center items-center">
@@ -78,6 +91,7 @@ function PricingPackage({
     </AnimatedSection>
   )
 }
+
 
 interface ServiceItemProps {
   icon: React.ReactNode
@@ -223,6 +237,7 @@ export function ServicesSection() {
                     buttonText={t("services.chooseInitial")}
                     delay={400}
                     className="mb-4 md:mb-0"
+                    t={t}
                   />
                   <PricingPackage
                     title={t("services.advanced")}
@@ -239,6 +254,7 @@ export function ServicesSection() {
                     buttonText={t("services.chooseAdvanced")}
                     delay={500}
                     className="mb-4 md:mb-0"
+                    t={t}
                   />
                   <PricingPackage
                     title={t("services.premium")}
@@ -253,6 +269,7 @@ export function ServicesSection() {
                     ]}
                     buttonText={t("services.choosePremium")}
                     delay={600}
+                    t={t}
                   />
                 </div>
                 <AnimatedSection direction="up" delay={700}>
@@ -292,6 +309,7 @@ export function ServicesSection() {
                     }
                     buttonText={t("services.chooseSilver")}
                     delay={400}
+                    t={t}
                   />
                   <PricingPackage
                     title={t("services.gold")}
@@ -309,6 +327,7 @@ export function ServicesSection() {
                     highlighted={true}
                     buttonText={t("services.chooseGold")}
                     delay={500}
+                    t={t}
                   />
                   <PricingPackage
                     title={t("services.platinum")}
@@ -322,6 +341,7 @@ export function ServicesSection() {
                     ]}
                     buttonText={t("services.choosePlatinum")}
                     delay={600}
+                    t={t}
                   />
                 </div>
               </div>
