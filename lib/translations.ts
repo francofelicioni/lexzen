@@ -496,7 +496,7 @@ export const translations = {
     },
     // About Section
     about: {
-      title: "Conozca quienes somos",
+      title: "Conozca quiénes somos",
       subtitle: "Un equipo de profesionales legales experimentados que combinan experiencia con innovación digital",
       ourStory: "Nuestra Historia",
       storyContent1:
