@@ -8,6 +8,7 @@ export const translations = {
     general: {
       month: "month",
       min2Hours: "minimum 2 hours",
+      from: "from",
     },
     // Navigation
     nav: {
@@ -67,7 +68,7 @@ export const translations = {
         "Protect your digital business interests with professionally drafted agreements and expertise in legal digitalization.",
       // Initial Consultation
       initial: "Initial Advisory",
-      initialDesc: "Essential legal support for early-stage digital entrepreneurs, including:",
+      initialDesc: "Essential legal support for early-stage digital entrepreneurs",
       initialItem1: "Up to 5 hours of legal advice each month",
       initialItem2: "Review of key documents and advice on interpretation",
       initialItem3: "One-off legal consultations via email",
@@ -77,7 +78,7 @@ export const translations = {
       // Advanced Advisory
       advanced: "Advanced Advisory",
       advancedDesc:
-        "Ideal for growing digital businesses with more complex legal needs, including:",
+        "Ideal for growing digital businesses with more complex legal needs",
       advancedItem1: "Up to 10 hours of legal advice each month",
       advancedItem2: "Priority document and contract review",
       advancedItem3: "Extended consultations via email and phone",
@@ -86,7 +87,7 @@ export const translations = {
       chooseAdvanced: "Choose Advanced Advisory",
       // Premium Advisory
       premium: "Premium Advisory",
-      premiumDesc: "Comprehensive coverage in legal digitalization and regulatory compliance for established businesses, including:",
+      premiumDesc: "Comprehensive coverage in legal digitalization and regulatory compliance for established businesses",
       premiumItem1: "Up to 20 hours of legal advice each month",
       premiumItem2: "Priority management of all legal business matters",
       premiumItem3: "Unlimited consultations via email and phone",
@@ -338,6 +339,7 @@ export const translations = {
     general: {
       month: "mes",
       min2Hours: "mínimo 2 horas",
+      from: "desde",
     },
     // Navigation
     nav: {
@@ -397,7 +399,7 @@ export const translations = {
         "Proteja los intereses de su empresa digital con acuerdos redactados profesionalmente y experiencia en digitalización legal.",
       // Initial Consultation
       initial: "Asesoría Inicial",
-      initialDesc: "Soporte esencial para emprendedores digitales en fase inicial, desde:",
+      initialDesc: "Soporte esencial para emprendedores digitales en fase inicial:",
       initialItem1: "Hasta 5 horas de asesoría legal cada mes",
       initialItem2: "Revisión de documentos clave y asesoramiento en su interpretación",
       initialItem3: "Consultas legales puntuales por correo electrónico",
@@ -407,7 +409,7 @@ export const translations = {
       // Advanced Advisory
       advanced: "Asesoría Avanzada",
       advancedDesc:
-        "Ideal para empresas digitales en expansión con necesidades más complejas, desde:",
+        "Ideal para empresas digitales en expansión con necesidades más complejas:",
       advancedItem1: "Hasta 10 horas de asesoría legal cada mes",
       advancedItem2: "Revisión prioritaria de documentos y contratos",
       advancedItem3: "Consultas ampliadas por correo electrónico y teléfono",
@@ -416,7 +418,7 @@ export const translations = {
       chooseAdvanced: "Elegir Asesoría Avanzada",
       // Premium Advisory
       premium: "Asesoría Premium",
-      premiumDesc: "Cobertura total en digitalización legal y cumplimiento normativo para empresas consolidadas, desde:",
+      premiumDesc: "Cobertura total en digitalización legal y cumplimiento normativo para empresas consolidadas:",
       premiumItem1: "Hasta 20 horas de asesoría legal cada mes",
       premiumItem2: "Gestión prioritaria de los aspectos legales del negocio",
       premiumItem3: "Consultas ilimitadas por correo electrónico y teléfono",
