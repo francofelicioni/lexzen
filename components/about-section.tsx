@@ -9,7 +9,7 @@ export function AboutSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="about" className="w-full py-8 md:py-24 lg:py-32 bg-neutral-50">
+    <section id="about" className="w-full py-8 md:py-24 bg-neutral-50">
       <div className="container px-4 md:px-6">
         {/* Update section title to use elementType="heading" */}
         <AnimatedSection direction="up" elementType="heading">

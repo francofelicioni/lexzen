@@ -52,14 +52,19 @@ export function Footer() {
                   {t("footer.services")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="text-gray-400 hover:text-blue-gray block py-1">
                   {t("footer.careers")}
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link href="#" className="text-gray-400 hover:text-blue-gray block py-1">
                   {t("footer.blog")}
+                </Link>
+              </li> */}
+              <li>
+                <Link href="#contact" className="text-gray-400 hover:text-blue-gray">
+                  {t("footer.contact")}
                 </Link>
               </li>
             </ul>
@@ -84,25 +89,20 @@ export function Footer() {
                   {t("footer.legalNotice")}
                 </Link>
               </li>
-              <li>
-                <Link href="#contact" className="text-gray-400 hover:text-blue-gray">
-                  {t("footer.contact")}
-                </Link>
-              </li>
             </ul>
           </div>
 
           {/*  Social Links */}
-          <div className="flex items-center md:gap-4" >
-            {/* <h3 className="text-sm font-medium text-gray-700 mr-2 hidden md:block">{t("footer.socialHeading")}</h3> */}
-            {/* <Link href="#" className="text-gray-500 hover:text-blue-gray">
+          {/* <div className="flex items-center md:gap-4" >
+            <h3 className="text-sm font-medium text-gray-700 mr-2 hidden md:block">{t("footer.socialHeading")}</h3>
+            <Link href="#" className="text-gray-500 hover:text-blue-gray">
                 <Facebook className="size-5" />
                 <span className="sr-only">Facebook</span>
-              </Link> */}
-            {/* <Link href="#" className="text-gray-500 hover:text-blue-gray">
+              </Link>
+            <Link href="#" className="text-gray-500 hover:text-blue-gray">
                 <Twitter className="size-5" />
                 <span className="sr-only">Twitter</span>
-              </Link> */}
+              </Link>
             <Link href="#" className="text-gray-500 hover:text-blue-gray">
               <Instagram className="size-5" />
               <span className="sr-only">Instagram</span>
@@ -111,16 +111,14 @@ export function Footer() {
               <Linkedin className="size-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-          </div>
+          </div> */}
         </div>
 
 
         {/*  Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-between"} items-center gap-4`}>
+          <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-center"} items-center gap-4`}>
             <div className="text-sm text-gray-500">{t("footer.rights")}</div>
-
-
           </div>
         </div>
       </div>

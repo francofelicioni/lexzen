@@ -104,7 +104,7 @@ export function ServicesSection() {
   const [activeTab, setActiveTab] = useState("residency")
 
   return (
-    <section id="services" className="w-full py-8 md:py-24 lg:py-32 bg-neutral-50">
+    <section id="services" className="w-full py-8 md:py-24 bg-neutral-50">
       <div className="container px-4 md:px-6">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-6">
@@ -306,6 +306,7 @@ export function ServicesSection() {
                         t("services.goldItem5"),
                       ]
                     }
+                    highlighted={true}
                     buttonText={t("services.chooseGold")}
                     delay={500}
                   />
@@ -319,7 +320,6 @@ export function ServicesSection() {
                       t("services.platinumItem3"),
                       t("services.platinumItem4"),
                     ]}
-                    highlighted={true}
                     buttonText={t("services.choosePlatinum")}
                     delay={600}
                   />

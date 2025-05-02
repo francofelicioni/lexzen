@@ -11,7 +11,7 @@ export function ContactSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="contact" className="w-full py-8 md:py-24 lg:py-32">
+    <section id="contact" className="w-full py-8 md:py-24">
       <div className="container px-4 md:px-6">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
