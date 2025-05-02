@@ -41,6 +41,7 @@ export function BookingCalendar() {
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [loadingSlots, setLoadingSlots] = useState(false)
+  const [confirmedEmail, setConfirmedEmail] = useState("")
 
   const dateLocale = language === "es" ? es : undefined
 
@@ -54,7 +55,7 @@ export function BookingCalendar() {
     resolver: zodResolver(bookingSchema),
     mode: "onChange",
   })
-  
+
   const disabledDays = (date: Date) => isWeekend(date) || isBefore(date, new Date().setHours(0, 0, 0, 0))
 
   useEffect(() => {
@@ -109,6 +110,26 @@ export function BookingCalendar() {
         time: appointmentTime,
       })
 
+      await fetch("/api/send-confirmation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          topic: data.topic,
+          date: appointmentDate,
+          time: appointmentTime,
+        }),
+      })
+
+      setFormData({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        topic: data.topic || "",
+      })
+
+      setConfirmedEmail(data.email)
       setShowConfirmation(true)
       reset()
     } catch (error) {
@@ -253,26 +274,26 @@ export function BookingCalendar() {
                   ) : availableSlots.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                       {availableSlots
-                      .sort((a, b) => a.localeCompare(b))
-                      .map((timeString, index) => {
-                        const slotTime = new Date(date)
-                        const [hours, minutes] = timeString.split(":").map(Number)
-                        slotTime.setHours(hours, minutes, 0, 0)
-                        return (
-                        <Button
-                          key={index}
-                          variant="outline"
-                          className={`flex items-center justify-center gap-2 py-5 ${timeSlot && slotTime.toISOString() === timeSlot.toISOString()
-                          ? "border-teal-600 bg-teal-50 text-teal-700"
-                          : ""
-                          }`}
-                          onClick={() => handleTimeSelect(slotTime)}
-                        >
-                          <Clock className="h-4 w-4 shrink-0" />
-                          {timeString}
-                        </Button>
-                        )
-                      })}
+                        .sort((a, b) => a.localeCompare(b))
+                        .map((timeString, index) => {
+                          const slotTime = new Date(date)
+                          const [hours, minutes] = timeString.split(":").map(Number)
+                          slotTime.setHours(hours, minutes, 0, 0)
+                          return (
+                            <Button
+                              key={index}
+                              variant="outline"
+                              className={`flex items-center justify-center gap-2 py-5 ${timeSlot && slotTime.toISOString() === timeSlot.toISOString()
+                                ? "border-teal-600 bg-teal-50 text-teal-700"
+                                : ""
+                                }`}
+                              onClick={() => handleTimeSelect(slotTime)}
+                            >
+                              <Clock className="h-4 w-4 shrink-0" />
+                              {timeString}
+                            </Button>
+                          )
+                        })}
                     </div>
                   ) : (
                     <div className="text-center py-8">
@@ -433,7 +454,7 @@ export function BookingCalendar() {
 
           <div className="text-sm text-gray-500 space-y-2">
             <p>
-              {t("booking.confirmationSent")} <span className="font-medium">{formData.email}</span>.
+              {t("booking.confirmationSent")} <span className="font-medium">{confirmedEmail}</span>.
             </p>
             <p>{t("booking.teamContact")}</p>
           </div>
