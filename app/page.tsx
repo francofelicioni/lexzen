@@ -88,7 +88,7 @@ export default function Home() {
               <div className="mx-auto lg:ml-auto">
                 <div className="aspect-video overflow-hidden rounded-xl bg-gray-100 object-cover">
                   <img
-                    src="/placeholder.svg?height=720&width=1280"
+                    src="/hero.png"
                     alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
                     className="w-full h-full object-cover"
                     loading="lazy"

@@ -28,7 +28,7 @@ export function AboutSection() {
 
         {/* Our Story */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center mb-16">
-          <div className="space-y-4">
+          <div className="space-y-4 text-justify">
             <AnimatedSection direction="right" delay={200} elementType="heading">
               <h3 className="text-2xl font-bold">{t("about.ourStory")}</h3>
             </AnimatedSection>
@@ -39,92 +39,17 @@ export function AboutSection() {
           </div>
           <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-xl bg-gray-100">
             <img
-              src="/placeholder.svg?height=800&width=1200"
+              src="/meeting-room.jpg"
               alt="Lexzen online legal advisory team office in Madrid - Center for privacy and data protection expertise"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-6">
-              <div className="text-white font-medium">{t("about.officeLocation")}</div>
+              {/* <div className="text-white font-medium">{t("about.officeLocation")}</div> */}
             </div>
           </div>
         </div>
-
-        {/* Founders */}
-        {/* <div className="space-y-8">
-          <AnimatedSection direction="up" delay={200} elementType="heading">
-            <h3 className="text-2xl font-bold text-center">{t("about.ourFounders")}</h3>
-          </AnimatedSection>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="flex flex-col items-center space-y-5">
-              <div className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
-                <img
-                  src="/placeholder.svg?height=400&width=400"
-                  alt="Elena Martínez - Managing Partner & Legal Director specializing in online legal advisory and privacy and data protection"
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-center">
-                <h4 className="text-lg sm:text-xl font-bold">{t("about.founder1Name")}</h4>
-                <p className="text-blue-gray font-medium">{t("about.founder1Title")}</p>
-                <p className="mt-2 text-sm sm:text-base text-gray-500 max-w-xs mx-auto">{t("about.founder1Bio")}</p>
-                <div className="mt-4 flex justify-center space-x-3">
-                  <div className="flex items-center text-xs sm:text-sm">
-                    <BookOpen className="mr-1 h-4 w-4 text-blue-gray" />
-                    <span>{t("about.founder1Education")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center space-y-4">
-              <div className="relative h-36 w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
-                <img
-                  src="/placeholder.svg?height=400&width=400"
-                  alt="Carlos Rodríguez - Technology & Compliance Director with expertise in legal digitalization and GDPR compliance"
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-center">
-                <h4 className="text-xl font-bold">{t("about.founder2Name")}</h4>
-                <p className="text-blue-gray font-medium">{t("about.founder2Title")}</p>
-                <p className="mt-2 text-gray-500">{t("about.founder2Bio")}</p>
-                <div className="mt-4 flex justify-center space-x-3">
-                  <div className="flex items-center text-sm">
-                    <BookOpen className="mr-1 h-4 w-4 text-blue-gray" />
-                    <span>{t("about.founder2Education")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center space-y-4">
-              <div className="relative h-36 w-36 md:h-48 md:w-48 overflow-hidden rounded-full">
-                <img
-                  src="/placeholder.svg?height=400&width=400"
-                  alt="Sofia Navarro - Immigration & Residency Specialist providing online legal advisory for EU residency applications"
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-center">
-                <h4 className="text-xl font-bold">{t("about.founder3Name")}</h4>
-                <p className="text-blue-gray font-medium">{t("about.founder3Title")}</p>
-                <p className="mt-2 text-gray-500">{t("about.founder3Bio")}</p>
-                <div className="mt-4 flex justify-center space-x-3">
-                  <div className="flex items-center text-sm">
-                    <BookOpen className="mr-1 h-4 w-4 text-blue-gray" />
-                    <span>{t("about.founder3Education")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         {/* Our Values */}
         <div className="mt-20">

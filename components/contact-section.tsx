@@ -41,16 +41,16 @@ export function ContactSection() {
           <div className="order-1 lg:order-2">
             <div className="space-y-8">
               {/* Map or Office Image */}
-              <div className="relative h-[300px] overflow-hidden rounded-xl bg-gray-100">
+              <div className="relative h-[380px] w-full overflow-hidden rounded-xl bg-gray-100">
                 <img
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/office.jpg"
                   alt="Lexzen office location map"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
-                  <div className="text-white font-medium">Lexzen Legal Services</div>
+                  {/* <div className="text-white font-medium">Lexzen Legal Services</div> */}
                 </div>
               </div>
 
@@ -59,27 +59,6 @@ export function ContactSection() {
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
 
                 <div className="grid gap-6 md:grid-cols-2">
-                  {/* Address */}
-                  {/* <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
-                      <MapPin className="h-6 w-6 text-blue-gray" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-lg">Address</h4>
-                      <p className="text-gray-600 text-base">{t("footer.address")}</p>
-                    </div>
-                  </div> */}
-
-                  {/* Phone */}
-                  {/* <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
-                      <Phone className="h-6 w-6 text-blue-gray" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-lg">Phone</h4>
-                      <p className="text-gray-600 text-base">{t("footer.phone")}</p>
-                    </div>
-                  </div> */}
 
                   {/* Email */}
                   <div className="flex items-start gap-4 group">
@@ -122,18 +101,6 @@ export function ContactSection() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Business Hours */}
-                  {/* <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
-                      <Clock className="h-6 w-6 text-blue-gray" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-lg">Business Hours</h4>
-                      <p className="text-gray-600 text-base">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p className="text-gray-600 text-base">Saturday - Sunday: Closed</p>
-                    </div>
-                  </div> */}
                 </div>
               </div>
 

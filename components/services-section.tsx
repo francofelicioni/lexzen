@@ -358,8 +358,8 @@ export function ServicesSection() {
                         <CardTitle>{t("services.forResidents")}</CardTitle>
                         <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
                         <div className="mt-2">
-                          <span className="text-3xl font-bold">€100</span>
-                          <span className="text-sm text-muted-foreground"> one-time fee</span>
+                          <span className="text-sm"> {t("general.from")} </span> <span className="text-3xl font-bold">€100</span>
+                          <span className="text-sm text-muted-foreground"></span>
                         </div>
                       </CardHeader>
                       <CardContent>
@@ -440,8 +440,8 @@ export function ServicesSection() {
                         <CardTitle>{t("services.forNonResidents")}</CardTitle>
                         <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
                         <div className="mt-2">
-                          <span className="text-3xl font-bold">€150</span>
-                          <span className="text-sm text-muted-foreground"> for 2 people</span>
+                          <span className="text-sm"> {t("general.from")} </span><span className="text-3xl font-bold">€150</span>
+                          <span className="text-sm text-muted-foreground"></span>
                         </div>
                       </CardHeader>
                       <CardContent>
@@ -523,7 +523,7 @@ export function ServicesSection() {
                   <h3 className="text-2xl font-bold mb-6">{t("services.specializedTitle")}</h3>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={400}>
-                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
+                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift w-1/2">
                     <CardHeader>
                       <CardTitle>{t("services.consultationTitle")}</CardTitle>
                       <CardDescription>{t("services.consultationDesc")}</CardDescription>
