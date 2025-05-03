@@ -90,28 +90,23 @@ export function ContactForm() {
     setIsSubmitting(true)
 
     try {
+      const token = await grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!, { action: "submit" });
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
+        body: JSON.stringify({ ...formData, token }),
+      });
 
-      if (!res.ok) throw new Error("Request failed")
+      if (!res.ok) throw new Error("Request failed");
 
-      setShowSuccessDialog(true)
-
-      setFormData({
-        fullName: "",
-        email: "",
-        subject: "",
-        message: "",
-        subscribe: false,
-      })
+      setShowSuccessDialog(true);
+      setFormData({ fullName: "", email: "", subject: "", message: "", subscribe: false });
     } catch (error) {
-      console.error("Error submitting form:", error)
-      setShowErrorDialog(true)
+      console.error("Error submitting form:", error);
+      setShowErrorDialog(true);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
@@ -210,11 +205,6 @@ export function ContactForm() {
           >
             {t("contactForm.subscribe")}
           </Label>
-        </div>
-
-        {/* reCAPTCHA placeholder */}
-        <div className="border border-dashed border-gray-300 rounded-md p-4 bg-gray-50 text-center text-sm text-gray-500">
-          reCAPTCHA protection would be integrated here
         </div>
 
         <Button
