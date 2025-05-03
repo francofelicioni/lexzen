@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
+    console.log("📥 Contact form API hit in production");
     const { fullName, email, subject, message, subscribe } = await request.json();
+    console.log("📨 Contact form data:", fullName, email, subject, message, subscribe );
 
     try {
         const transporter = nodemailer.createTransport({
@@ -25,10 +27,9 @@ export async function POST(request: Request) {
             Suscripción a newsletter: ${subscribe ? "Sí" : "No"}
 
             Mensaje:
-            ${message}
-                `,
-                        replyTo: email,
-                    };
+            ${message}`,
+            replyTo: email,
+        };
 
         await transporter.sendMail(mailOptions);
 
