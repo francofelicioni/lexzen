@@ -22,18 +22,11 @@ export function NewsletterForm() {
 
     setStatus("loading")
 
-    // Simulate API call
-    setTimeout(() => {
-      // In a real application, you would send this to your API
-      console.log("Newsletter subscription:", email)
-      setStatus("success")
-      setEmail("")
-
-      // Reset status after 3 seconds
-      setTimeout(() => {
-        setStatus("idle")
-      }, 3000)
-    }, 1000)
+    await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, source: "banner" }),
+    });
   }
 
   return (

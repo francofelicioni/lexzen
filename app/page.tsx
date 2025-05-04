@@ -15,6 +15,7 @@ import { AnimatedSection } from "@/components/animated-section"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { ContactSection } from "@/components/contact-section"
 import { useEffect, useState } from "react"
+import { NewsletterForm } from "@/components/newsletter-form"
 
 export default function Home() {
   const { t } = useLanguage()
@@ -39,9 +40,8 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <MobileNav />
-            <Scale className="h-6 w-6 text-blue-gray" />
             <a href={process.env.NEXT_PUBLIC_APP_URL} rel="noopener noreferrer">
-              <span className="text-2xl font-bold">Lexzen</span>
+              <img src="/logo.png" alt="Lexzen Logo" className="size-10 w-full" />
             </a>
           </div>
           <nav className="hidden md:flex items-center gap-6 md:gap-12">
@@ -69,13 +69,13 @@ export default function Home() {
         <section className="w-full py-8 md:py-24 bg-state-gray">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl text-white">{t("hero.title")}</h1>
-                <p className="max-w-[600px] text-gray-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <div className="space-y-4 lg:space-y-6">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">{t("hero.title")}</h1>
+                <p className="max-w-[600px] text-gray-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
                   {t("hero.subtitle")}
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
-                  <Button className="bg-blue-gray hover:bg-legal-accent-dark w-full sm:w-auto" asChild>
+                  <Button className="bg-legal-accent-dark hover:border hover:border-white w-full sm:w-auto" asChild>
                     <a href="#booking">{t("hero.scheduleFree")}</a>
                   </Button>
                   <Button
@@ -114,7 +114,7 @@ export default function Home() {
         <ContactSection />
 
         {/* Testimonials Section */}
-        <section className="w-full py-8 md:py-24  bg-neutral-50">
+        <section className="w-full py-8 md:py-24 bg-neutral-50">
           <div className="container px-4 md:px-6">
             <AnimatedSection direction="up" elementType="heading">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -185,30 +185,36 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="w-full py-8 md:py-24  bg-blue-gray relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-blue-gray/10 rounded-full opacity-20"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-gray/10 rounded-full opacity-20"></div>
-          </div>
+        {/* CTA Section & Newsletter */}
+        <section className="w-full py-8 md:py-24 bg-blue-gray/10 relative overflow-hidden border border-blue-gray/20">
+
 
           <div className="container px-4 md:px-6 relative z-10">
             <AnimatedSection direction="up" elementType="heading">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">{t("cta.title")}</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-600">{t("cta.title")}</h2>
                   <p className="max-w-[900px] text-gray-100 py-2 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     {t("cta.subtitle")}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 md:min-[400px]:flex-row">
-                  <Button className="bg-white text-blue-gray hover:bg-legal-accent-dark hover:text-white" asChild>
+                  <Button className="bg-legal-accent-dark text-white hover:bg-legal-accent hover:text-gray-100" asChild>
                     <a href="#booking">{t("cta.scheduleConsultation")}</a>
                   </Button>
-                  <Button className="border-white text-white hover:bg-legal-accent-dark border bg-white/10" asChild>
+                  <Button className="border-gray-600 text-gray-600 hover:bg-blue-gray hover:text-white border bg-white/10" asChild>
                     <a href="#contact">{t("cta.contactUs")}</a>
                   </Button>
                 </div>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection direction="up" elementType="heading">
+              <div className="border border-gray-200 px-6 py-8 rounded-lg shadow-sm bg-white max-w-[600px] mx-auto mt-12 space-y-6">
+                <div className="text-center space-y-2">
+                  <h3 className="font-semibold text-gray-900 text-xl">{t("footer.newsletterHeading")}</h3>
+                  <p className="text-gray-600 text-sm">{t("footer.newsletterSubheading")}</p>
+                </div>
+                <NewsletterForm />
               </div>
             </AnimatedSection>
           </div>

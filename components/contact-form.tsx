@@ -83,32 +83,54 @@ export function ContactForm() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (!validateForm()) return
+    if (!validateForm()) return;
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     try {
-      const token = await grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!, { action: "submit" });
+      if (!window.grecaptcha || !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+        console.error("⚠️ reCAPTCHA not loaded or SITE_KEY missing");
+        throw new Error("reCAPTCHA not available");
+      }
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, token }),
+      window.grecaptcha.ready(async () => {
+        try {
+          const token = await window.grecaptcha.execute(
+            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+            { action: "submit" }
+          );
+
+          const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ...formData, token }),
+          });
+
+          if (!res.ok) throw new Error("Request failed");
+
+          setShowSuccessDialog(true);
+          setFormData({
+            fullName: "",
+            email: "",
+            subject: "",
+            message: "",
+            subscribe: false,
+          });
+        } catch (error) {
+          console.error("Error submitting form with reCAPTCHA:", error);
+          setShowErrorDialog(true);
+        } finally {
+          setIsSubmitting(false);
+        }
       });
-
-      if (!res.ok) throw new Error("Request failed");
-
-      setShowSuccessDialog(true);
-      setFormData({ fullName: "", email: "", subject: "", message: "", subscribe: false });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Unexpected error:", error);
       setShowErrorDialog(true);
-    } finally {
       setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <>
