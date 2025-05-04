@@ -16,8 +16,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Scale className="h-6 w-6 text-blue-gray" />
-              <span className="text-xl font-bold">Lexzen</span>
+              <img src="/logo.png" alt="Lexzen Logo" className="size-28 h-full" />
             </div>
             <p className="text-gray-500 mb-6 max-w-md">
               {t("footer.footerDesc")}
@@ -41,24 +40,24 @@ export function Footer() {
           {/* Company Links */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.companyHeading")}</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-blue-gray block py-1">
+                <Link href="#about" className="text-gray-400 hover:text-blue-gray block">
                   {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-gray-400 hover:text-blue-gray block py-1">
+                <Link href="#services" className="text-gray-400 hover:text-blue-gray block">
                   {t("footer.services")}
                 </Link>
               </li>
               {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block py-1">
+                <Link href="#" className="text-gray-400 hover:text-blue-gray block">
                   {t("footer.careers")}
                 </Link>
               </li> */}
               {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block py-1">
+                <Link href="#" className="text-gray-400 hover:text-blue-gray block">
                   {t("footer.blog")}
                 </Link>
               </li> */}
@@ -91,27 +90,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/*  Social Links */}
-          {/* <div className="flex items-center md:gap-4" >
-            <h3 className="text-sm font-medium text-gray-700 mr-2 hidden md:block">{t("footer.socialHeading")}</h3>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Facebook className="size-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Twitter className="size-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-              <Instagram className="size-5" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-              <Linkedin className="size-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-          </div> */}
         </div>
 
 
