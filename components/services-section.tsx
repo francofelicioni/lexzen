@@ -168,53 +168,41 @@ export function ServicesSection() {
                   </div>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={500}>
-                  <div className="flex flex-col items-start gap-2 text-gray-500">
-                    <h4 className="font-bold text-xl">{t("services.howWeHelpTitle")}</h4>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP1")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP2")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP3")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP4")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP5")}</p>
+                  <h4 className="font-bold text-xl mb-4">{t("services.howWeHelpTitle")}</h4>
+
+                  <div className="grid gap-6 md:grid-cols-2 text-justify">
+                    <ServiceItem
+                      icon={<FileText className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP1")}
+                      description={t("services.howWeHelpP1Desc")}
+                      delay={400}
+                    />
+                    <ServiceItem
+                      icon={<FileCheck className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP2")}
+                      description={t("services.howWeHelpP2Desc")}
+                      delay={500}
+                    />
+                    <ServiceItem
+                      icon={<FileContract className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP3")}
+                      description={t("services.howWeHelpP3Desc")}
+                      delay={600}
+                    />
+                    <ServiceItem
+                      icon={<ShieldCheck className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP4")}
+                      description={t("services.howWeHelpP4Desc")}
+                      delay={700}
+                    />
+                    <ServiceItem
+                      icon={<ShoppingCart className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP5")}
+                      description={t("services.howWeHelpP5Desc")}
+                      delay={800}
+                    />
                   </div>
                 </AnimatedSection>
-                {/* <div className="grid gap-6 md:grid-cols-2">
-                  <ServiceItem
-                    icon={<FileText className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.personalizedLegal")}
-                    description={t("services.personalizedLegalDesc")}
-                    delay={400}
-                  />
-                  <ServiceItem
-                    icon={<FileCheck className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.documentPrep")}
-                    description={t("services.documentPrepDesc")}
-                    delay={500}
-                  />
-                  <ServiceItem
-                    icon={<FileContract className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.contractDrafting")}
-                    description={t("services.contractDraftingDesc")}
-                    delay={600}
-                  />
-                  <ServiceItem
-                    icon={<ShieldCheck className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.websitePolicies")}
-                    description={t("services.websitePoliciesDesc")}
-                    delay={700}
-                  />
-                  <ServiceItem
-                    icon={<ShoppingCart className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.ecommerceCompliance")}
-                    description={t("services.ecommerceComplianceDesc")}
-                    delay={800}
-                  />
-                  <ServiceItem
-                    icon={<Handshake className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.ndaAgreements")}
-                    description={t("services.ndaAgreementsDesc")}
-                    delay={900}
-                  />
-                </div> */}
               </div>
 
               <div>
@@ -523,7 +511,7 @@ export function ServicesSection() {
                   <h3 className="text-2xl font-bold mb-6">{t("services.specializedTitle")}</h3>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={400}>
-                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift w-1/2">
+                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift md:w-1/2">
                     <CardHeader>
                       <CardTitle>{t("services.consultationTitle")}</CardTitle>
                       <CardDescription>{t("services.consultationDesc")}</CardDescription>

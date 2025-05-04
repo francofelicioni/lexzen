@@ -118,7 +118,7 @@ export function Footer() {
         {/*  Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-center"} items-center gap-4`}>
-            <div className="text-sm text-gray-500">{t("footer.rights")}</div>
+            <div className="text-sm text-gray-500 text-center">{t("footer.rights")}</div>
           </div>
         </div>
       </div>

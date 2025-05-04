@@ -27,7 +27,7 @@ export function ContactSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
           {/* Contact Form */}
           <div className="order-2 lg:order-1">
             <Card>
@@ -39,7 +39,7 @@ export function ContactSection() {
 
           {/* Contact Information */}
           <div className="order-1 lg:order-2">
-            <div className="space-y-8">
+            <div className="space-y-8 ">
               {/* Map or Office Image */}
               <div className="relative h-[380px] w-full overflow-hidden rounded-xl bg-gray-100">
                 <img
@@ -68,7 +68,7 @@ export function ContactSection() {
                     <div>
                       <h4 className="font-medium text-lg">Email</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`mailto:${t("footer.email")}`} className="text-blue-600 hover:underline">
+                        <a href={`mailto:${t("footer.email")}`} className="hover:text-blue-600 hover:underline">
                           {t("footer.email")}
                         </a>
                       </p>
@@ -95,7 +95,7 @@ export function ContactSection() {
                     <div>
                       <h4 className="font-medium text-lg">WhatsApp</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`https://wa.me/${t("footer.whatsapp")}`} className="text-blue-600 hover:underline">
+                        <a href={`https://wa.me/${t("footer.whatsapp")}`} className="hover:text-blue-600 hover:underline">
                           {t("footer.whatsapp")}
                         </a>
                       </p>

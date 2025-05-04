@@ -24,16 +24,16 @@ export function LanguageSelector() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[140px]">
         <DropdownMenuItem
-          onClick={() => setLanguage("en")}
-          className={`flex items-center gap-2 ${language === "en" ? "bg-accent" : ""} py-3 px-4`}
-        >
-          <span className="text-base">🇺🇸</span> {t("language.en")}
-        </DropdownMenuItem>
-        <DropdownMenuItem
           onClick={() => setLanguage("es")}
           className={`flex items-center gap-2 ${language === "es" ? "bg-accent" : ""} py-3 px-4`}
         >
           <span className="text-base">🇪🇸</span> {t("language.es")}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setLanguage("en")}
+          className={`flex items-center gap-2 ${language === "en" ? "bg-accent" : ""} py-3 px-4`}
+        >
+          <span className="text-base">🇬🇧</span> {t("language.en")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

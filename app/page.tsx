@@ -40,14 +40,16 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <MobileNav />
             <Scale className="h-6 w-6 text-blue-gray" />
-            <span className="text-xl font-bold">Lexzen</span>
+            <a href={process.env.NEXT_PUBLIC_APP_URL} rel="noopener noreferrer">
+              <span className="text-2xl font-bold">Lexzen</span>
+            </a>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            {["services", "about", "bookCall", "contact"].map((item) => (
+          <nav className="hidden md:flex items-center gap-6 md:gap-12">
+            {["services", "about", "contact"].map((item) => (
               <Link
                 key={item}
-                href={`#${item === "bookCall" ? "booking" : item}`}
-                className="text-sm font-medium hover:text-blue-gray"
+                href={`#${item}`}
+                className="text-md font-medium hover:text-blue-gray transition-colors duration-200"
               >
                 {t(`nav.${item}`)}
               </Link>
@@ -56,7 +58,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <LanguageSelector />
             <Button className="bg-blue-gray hover:bg-legal-accent-dark hidden sm:inline-flex">
-              {t("nav.getStarted")}
+              {t("nav.bookCall")}
             </Button>
           </div>
         </div>
@@ -88,7 +90,7 @@ export default function Home() {
               <div className="mx-auto lg:ml-auto">
                 <div className="aspect-video overflow-hidden rounded-xl bg-gray-100 object-cover">
                   <img
-                    src="/hero.png"
+                    src="/hero.jpg"
                     alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -127,12 +129,19 @@ export default function Home() {
                 </div>
               </div>
             </AnimatedSection>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:gap-12 mt-12">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
               <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6 shadow-sm">
                 <p className="text-gray-500 italic">{t("testimonials.testimonial1")}</p>
                 <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-gray-100 h-12 w-12" aria-hidden="true"></div>
-                  <div>
+                  <div className="size-24 w-fit" aria-hidden="true">
+                    <img
+                      src="/avatar3.jpg"
+                      alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
+                      className="w-full h-full object-cover rounded-full"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="w-full">
                     <p className="font-medium">{t("testimonials.client1Name")}</p>
                     <p className="text-sm text-gray-500">{t("testimonials.client1Title")}</p>
                   </div>
@@ -141,10 +150,34 @@ export default function Home() {
               <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6 shadow-sm">
                 <p className="text-gray-500 italic">{t("testimonials.testimonial2")}</p>
                 <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-gray-100 h-12 w-12" aria-hidden="true"></div>
-                  <div>
+                  <div className="size-24 w-fit" aria-hidden="true">
+                    <img
+                      src="/avatar2.jpg"
+                      alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
+                      className="w-full h-full object-cover rounded-full"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="w-full">
                     <p className="font-medium">{t("testimonials.client2Name")}</p>
                     <p className="text-sm text-gray-500">{t("testimonials.client2Title")}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6 shadow-sm">
+                <p className="text-gray-500 italic">{t("testimonials.testimonial3")}</p>
+                <div className="flex items-center gap-4">
+                  <div className="size-24 w-fit" aria-hidden="true">
+                    <img
+                      src="/avatar1.jpg"
+                      alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
+                      className="w-full h-full object-cover rounded-full"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <p className="font-medium">{t("testimonials.client3Name")}</p>
+                    <p className="text-sm text-gray-500">{t("testimonials.client3Title")}</p>
                   </div>
                 </div>
               </div>
