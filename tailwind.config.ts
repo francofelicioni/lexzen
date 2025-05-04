@@ -72,7 +72,7 @@ const config = {
           950: "#042f2e",
         },
         // Direct color names
-        "beige-light": "#f1e4d3",
+        "beige-light": "#FCF6F1",
         "blue-gray": "#7393A7",
         "state-gray": "#7290A2",
         "bone-white": "#FFFDF7",
@@ -81,7 +81,7 @@ const config = {
 
         // Semantic color naming
         legal: {
-          background: "#f1e4d3", // beige-light
+          background: "#FCF6F1", // beige-light
           accent: "#7393A7", // blue-gray
           surface: "#FFFDF7", // bone-white
           secondary: "#E8D9C2", // beige-dark

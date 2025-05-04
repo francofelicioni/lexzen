@@ -212,7 +212,7 @@ export const translations = {
     },
     // Booking Calendar
     booking: {
-      title: "Schedule Your Free 20-Minute Legal Consultation",
+      title: "Schedule Your Free 15-Minute Legal Consultation",
       subtitle:
         "Book a free consultation with our legal experts and receive guidance to protect and grow your digital business.",
       howItWorks: "How Our Free Legal Consultation Works",
@@ -257,18 +257,18 @@ export const translations = {
       done: "Done",
     },
     // Testimonials
-    Testimonials: {
-      title: "What Our Clients Say About Our Consulting Services",
-      subtitle: "Hear from people we've helped with our online legal consulting services.",
-      testimonial1: '"Thanks to the advice and detailed preparation of my application file, the process of obtaining my registration certificate as an EU citizen was much smoother than I expected. The advice was clear at every step and the documents were perfectly organized, which was positively acknowledged by the immigration office. I felt supported and well-informed at all times."',
+    testimonials: {
+      title: "What Our Clients Say About Our Services",
+      subtitle: "Hear from people we've helped with our online legal advisory services.",
+      testimonial1: '"Thanks to the detailed advice and preparation of my application folder, the process of obtaining my EU registration certificate was much smoother than I expected. The guidance was clear at every step, and the documents were perfectly organized, which was positively recognized by the immigration office. I felt supported and well-informed throughout the process."',
       client1Name: "Laura M.",
-      client1Title: "Italian citizen living in Madrid",
-      testimonial2: '"When I launched my online mentoring site, everything was going well until legal questions arose when preparing my first contracts with clients. I did not know how to protect myself or how to make the terms clear.The advice was key to taking that step with confidence: we reviewed clauses, adjusted the language, and everything was clear and professional.Now I work with more peace of mind and confidence."',
-      client2Name: "Carlos G.",
-      client2Title: "Digital Entrepreneur",
-      testimonial3: '"I was not sure what type of residence permit I was eligible for or where to start. They helped me understand which option was best for my situation and guided me through the entire process. We gathered the necessary documents step by step and submitted the application with confidence."',
-      client3Name: "Santiago P.",
-      client3Title: "Resident of the Valencian Community",
+      client1Title: "Italian citizen residing in Madrid",
+      testimonial2: '"When I launched my online mentoring site, everything was going well until legal doubts arose while preparing my first client contracts. I didn’t know how to protect myself or how to clearly define the terms. The advice was key to taking that step with confidence: we reviewed clauses, adjusted the language, and everything was clear and professional. Now I work with more peace of mind and confidence."',
+      client2Name: "Santiago P",
+      client2Title: "Digital entrepreneur",
+      testimonial3: '"I wasn’t sure what type of residence permit I was eligible for or where to start. They helped me understand which option was best for my situation and guided me through the entire process. We gathered the necessary documents step by step and submitted the application with confidence."',
+      client3Name: "Carlos G.",
+      client3Title: "Resident in the Balearic Islands",
     },
     // CTA Section
     cta: {
@@ -301,7 +301,7 @@ export const translations = {
       // Social
       socialHeading: "Follow Us",
       // Newsletter
-      newsletterHeading: "Stay Updated",
+      newsletterHeading: "Subscribe to Our Newsletter",
       newsletterSubheading:
         "Subscribe to our newsletter for legal tips and updates on privacy and data protection",
       emailPlaceholder: "Your email address",
@@ -563,7 +563,7 @@ export const translations = {
       innovationDesc:
         "Contamos con experiencia directa en procesos de movilidad internacional y estructuración legal de negocios digitales, lo que nos permite anticipar escenarios y ofrecer respuestas prácticas alineadas con el entorno actual.",
 
-      readyToWork: "¿Listo para comenzar?",
+      readyToWork: "¡Comienza ahora mismo!",
     },
     // Booking Calendar
     booking: {
@@ -619,11 +619,11 @@ export const translations = {
       client1Name: "Laura M.",
       client1Title: "Ciudadana italiana residiendo en Madrid",
       testimonial2: '"Cuando lancé mi sitio de mentorías online, todo iba bien hasta que surgieron dudas legales al preparar mis primeros contratos con clientes. No sabía cómo protegerme ni cómo dejar claras las condiciones. La asesoría fue clave para dar ese paso con seguridad: revisamos cláusulas, ajustamos el lenguaje y todo quedó claro y profesional. Ahora trabajo con más tranquilidad y confianza."',
-      client2Name: "Carlos G.",
+      client2Name: "Santiago P.",
       client2Title: "Emprendedor digital",
       testimonial3: '"No tenía claro qué tipo de permiso de residencia me correspondía ni por dónde empezar. Me ayudaron a entender cuál era la opción más adecuada para mi situación y me guiaron en todo el proceso. Reunimos los documentos necesarios paso a paso y presentamos la solicitud con confianza."',
-      client3Name: "Santiago P.",
-      client3Title: "Residente en comunidad Valenciana",
+      client3Name: "Carlos G.",
+      client3Title: "Residente en las Islas Baleares",
     },
     // CTA Section
     cta: {
@@ -657,7 +657,7 @@ export const translations = {
       // Social
       socialHeading: "Síguenos",
       // Newsletter
-      newsletterHeading: "Mantente Actualizado",
+      newsletterHeading: "Suscríbete a Nuestro Boletín",
       newsletterSubheading:
         "Suscríbete a nuestro boletín para consejos legales y actualizaciones sobre privacidad y protección de datos",
       emailPlaceholder: "Tu correo electrónico",

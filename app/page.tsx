@@ -189,8 +189,8 @@ export default function Home() {
         <section className="w-full py-8 md:py-24 bg-blue-gray/10 relative overflow-hidden border border-blue-gray/20">
 
 
-          <div className="container px-4 md:px-6 relative z-10">
-            <AnimatedSection direction="up" elementType="heading">
+          <div className="container flex justify-between items-start px-4 md:px-6 relative z-10">
+            <AnimatedSection direction="up" elementType="heading" className="flex-1 border-r border-gray-300">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-600">{t("cta.title")}</h2>
@@ -208,11 +208,11 @@ export default function Home() {
                 </div>
               </div>
             </AnimatedSection>
-            <AnimatedSection direction="up" elementType="heading">
-              <div className="border border-gray-200 px-6 py-8 rounded-lg shadow-sm bg-white max-w-[600px] mx-auto mt-12 space-y-6">
+            <div className="h-full w-[1px] bg-gray-300 mx-6 hidden md:block"></div>
+            <AnimatedSection direction="up" elementType="heading" className="flex-1">
+              <div className="space-y-4 max-w-[600px] mx-auto">
                 <div className="text-center space-y-2">
-                  <h3 className="font-semibold text-gray-900 text-xl">{t("footer.newsletterHeading")}</h3>
-                  <p className="text-gray-600 text-sm">{t("footer.newsletterSubheading")}</p>
+                  <h3 className="font-semibold text-gray-600 text-3xl md:text-4xl">{t("footer.newsletterHeading")}</h3>
                 </div>
                 <NewsletterForm />
               </div>
