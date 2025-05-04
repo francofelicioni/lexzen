@@ -83,13 +83,13 @@ export function BookingRequestsPanel() {
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
             <Badge variant="outline" className="bg-yellow-50 text-yellow-700">
-              <Clock className="mr-1 h-3 w-3" /> Pending: {pendingCount}
+              <Clock className="mr-1 size-3" /> Pending: {pendingCount}
             </Badge>
             <Badge variant="outline" className="bg-green-50 text-green-700">
-              <Check className="mr-1 h-3 w-3" /> Accepted: {acceptedCount}
+              <Check className="mr-1 size-3" /> Accepted: {acceptedCount}
             </Badge>
             <Badge variant="outline" className="bg-red-50 text-red-700">
-              <X className="mr-1 h-3 w-3" /> Rejected: {rejectedCount}
+              <X className="mr-1 size-3" /> Rejected: {rejectedCount}
             </Badge>
           </div>
           <div className="flex gap-2">
@@ -97,8 +97,8 @@ export function BookingRequestsPanel() {
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
               <Input
                 type="search"
-                placeholder="Search requests..."
-                className="pl-8 w-full sm:w-[250px]"
+                placeholder="Search..."
+                className="pl-8 w-full text-sm sm:w-[250px]"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -116,8 +116,9 @@ export function BookingRequestsPanel() {
           </div>
         </div>
 
+        {/* Table View */}
         <div className="rounded-md border">
-          <Table>
+          <Table className="hidden sm:table">
             <TableHeader>
               <TableRow>
                 <TableHead>Client</TableHead>
@@ -160,7 +161,7 @@ export function BookingRequestsPanel() {
                         value={req.status}
                         onChange={(e) => handleStatusChange(req.id, e.target.value as BookingRequest["status"])}
                       >
-                        <option value="pending" className="text-yellow-700" >Pending</option>
+                        <option value="pending" className="text-yellow-700">Pending</option>
                         <option value="accepted" className="text-green-700">Accept</option>
                         <option value="rejected" className="text-red-700">Decline</option>
                       </select>
@@ -176,6 +177,62 @@ export function BookingRequestsPanel() {
               )}
             </TableBody>
           </Table>
+
+          {/* Mobile View */}
+          <div className="sm:hidden">
+            {filteredRequests.length > 0 ? (
+              filteredRequests.map((req) => (
+                <div key={req.id} className="mb-4 rounded-md border p-4 space-y-3 shadow-sm">
+                  {/* Client Info */}
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium text-gray-700">Client</div>
+                    <div className="text-sm text-gray-900">{req.name}</div>
+                    <div className="text-sm text-gray-500">{req.email}</div>
+                  </div>
+
+                  {/* Date & Time */}
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium text-gray-700">Date & Time</div>
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <Calendar className="h-4 w-4 text-gray-500" />
+                      {format(req.date, "MMM d, yyyy")}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <Clock className="h-4 w-4 text-gray-500" />
+                      {format(new Date(`${req.date}T${req.time}`), "h:mm a")}
+                    </div>
+                  </div>
+
+                  {/* Topic */}
+                  <div>
+                    <div className="text-sm font-medium text-gray-700">Topic</div>
+                    <div className="text-sm text-gray-600">{req.topic}</div>
+                  </div>
+
+                  {/* Status */}
+                  <div>
+                    <div className="text-sm font-medium text-gray-700">Status</div>
+                    <StatusBadge status={req.status} />
+                  </div>
+
+                  {/* Status Control */}
+                  <div>
+                    <select
+                      className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+                      value={req.status}
+                      onChange={(e) => handleStatusChange(req.id, e.target.value as BookingRequest["status"])}
+                    >
+                      <option value="pending" className="text-yellow-700">Pending</option>
+                      <option value="accepted" className="text-green-700">Accept</option>
+                      <option value="rejected" className="text-red-700">Decline</option>
+                    </select>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="h-24 text-center text-gray-500">No booking requests found.</div>
+            )}
+          </div>
         </div>
       </CardContent>
     </Card>

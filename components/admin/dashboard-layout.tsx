@@ -15,18 +15,24 @@ export function DashboardLayout() {
       <header className="sticky top-0 z-40 border-b bg-white">
         <div className="container flex h-16 items-center justify-between py-4">
           <div className="flex items-center gap-2">
-            <Scale className="h-6 w-6 text-teal-600" />
-            <span className="text-xl font-bold">Lexzen Admin Dashboard</span>
+            <Scale className="h-6 w-6 text-blue-gray" />
+            <span className="text-lg md:text-xl font-bold">Lexzen Admin Dashboard</span>
           </div>
         </div>
       </header>
 
       <main className="container py-6">
         <Tabs defaultValue="requests" value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="requests">Booking Requests</TabsTrigger>
-            <TabsTrigger value="availability">Availability Management</TabsTrigger>
-            <TabsTrigger value="overview">Booking Overview</TabsTrigger>
+          <TabsList className="flex w-full overflow-x-auto">
+            <TabsTrigger value="requests" className="flex-shrink-0 px-4">
+              Booking Requests
+            </TabsTrigger>
+            <TabsTrigger value="availability" className="flex-shrink-0 px-4">
+              Availability Management
+            </TabsTrigger>
+            <TabsTrigger value="overview" className="flex-shrink-0 px-4">
+              Booking Overview
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="requests" className="space-y-4">
             <BookingRequestsPanel />
