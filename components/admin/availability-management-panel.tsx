@@ -5,7 +5,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { supabase } from "@/lib/supabase"
+import { supabase } from "@/lib/supabse/client"
 import { updateAvailability as saveAvailability } from '@/services/availability'
 import { addDays, addWeeks, format, isSameDay, isWeekend, startOfWeek, subWeeks } from "date-fns"
 import { ChevronLeft, ChevronRight, Clock, Plus, Save, Trash2 } from "lucide-react"
