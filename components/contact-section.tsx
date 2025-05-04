@@ -103,13 +103,6 @@ export function ContactSection() {
                   </div>
                 </div>
               </div>
-
-              {/* Newsletter */}
-              {/* <div className="px-4 py-4 bg-gray-50 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-3 text-lg">{t("footer.newsletterHeading")}</h3>
-                <p className="text-gray-600 text-sm mb-4">{t("footer.newsletterSubheading")}</p>
-                <NewsletterForm />
-              </div> */}
             </div>
           </div>
         </div>
