@@ -39,10 +39,15 @@ export const translations = {
       legalServicesDesc4: "We focus on early-stage startups and digital businesses that need practical and accessible legal guidance, without complications.",
       howWeHelpTitle: "How Can We Help You?",
       howWeHelpP1: "Personalized legal support for digital projects.",
-      howWeHelpP2: "Review and preparation of key business documents.",
-      howWeHelpP3: "Clear and tailored contracts for collaborators, providers, or services.",
-      howWeHelpP4: "Legal texts for your website (Privacy Policy, Cookies Policy, Terms and Conditions).",
-      howWeHelpP5: "Basic compliance recommendations for e-commerce and data protection.",
+      howWeHelpP1Desc: "We provide ongoing legal advice tailored to the specific needs of your digital project, from the initial idea to its implementation.",
+      howWeHelpP2: "Review and preparation of key documentation for your business.",
+      howWeHelpP2Desc: "We review and draft essential legal documents that guarantee the proper functioning and protection of your company.",
+      howWeHelpP3: "Clear and tailored contracts for collaborators, suppliers, or services.",
+      howWeHelpP3Desc: "We draft customized contracts that clearly establish obligations and rights, minimizing risks in your business relationships.",
+      howWeHelpP4: "Legal texts for your website (Privacy Policy, Cookies, Legal).",
+      howWeHelpP4Desc: "We draft comprehensive, up-to-date legal texts tailored to your type of business to ensure the Regulatory compliance on your website.",
+      howWeHelpP5: "Basic recommendations for legal compliance in e-commerce and data protection.",
+      howWeHelpP5Desc: "We offer you a practical guide with essential measures to ensure your online store complies with e-commerce and data protection regulations.",
 
       pricingPackages: "Legal Advisory Packages",
       discounts:
@@ -252,18 +257,18 @@ export const translations = {
       done: "Done",
     },
     // Testimonials
-    testimonials: {
-      title: "What Our Legal Clients Say",
-      subtitle:
-        "Hear from businesses we've helped navigate legal challenges in the digital space with our online legal advisory services.",
-      testimonial1:
-        "Lexzen provided invaluable online legal advice for our e-commerce business. Their expertise in privacy and data protection helped us avoid compliance issues as we expanded online.",
-      client1Name: "Sarah Johnson",
-      client1Title: "CEO, StyleHub",
-      testimonial2:
-        "Working with Lexzen transformed how we approached legal digitalization for our web development projects. Their team made complex legal requirements accessible and practical.",
-      client2Name: "Michael Chen",
-      client2Title: "Founder, TechSolutions",
+    Testimonials: {
+      title: "What Our Clients Say About Our Consulting Services",
+      subtitle: "Hear from people we've helped with our online legal consulting services.",
+      testimonial1: '"Thanks to the advice and detailed preparation of my application file, the process of obtaining my registration certificate as an EU citizen was much smoother than I expected. The advice was clear at every step and the documents were perfectly organized, which was positively acknowledged by the immigration office. I felt supported and well-informed at all times."',
+      client1Name: "Laura M.",
+      client1Title: "Italian citizen living in Madrid",
+      testimonial2: '"When I launched my online mentoring site, everything was going well until legal questions arose when preparing my first contracts with clients. I did not know how to protect myself or how to make the terms clear.The advice was key to taking that step with confidence: we reviewed clauses, adjusted the language, and everything was clear and professional.Now I work with more peace of mind and confidence."',
+      client2Name: "Carlos G.",
+      client2Title: "Digital Entrepreneur",
+      testimonial3: '"I was not sure what type of residence permit I was eligible for or where to start. They helped me understand which option was best for my situation and guided me through the entire process. We gathered the necessary documents step by step and submitted the application with confidence."',
+      client3Name: "Santiago P.",
+      client3Title: "Resident of the Valencian Community",
     },
     // CTA Section
     cta: {
@@ -380,11 +385,15 @@ export const translations = {
       legalServicesDesc4: "Nos enfocamos en startups y negocios digitales en etapas tempranas que necesitan orientación legal práctica y accesible, sin complicaciones.",
       howWeHelpTitle: " ¿En qué podemos ayudarte?",
       howWeHelpP1: "Acompañamiento legal personalizado para proyectos digitales.",
+      howWeHelpP1Desc: "Brindamos asesoría legal continua y adaptada a las necesidades específicas de tu proyecto digital, desde la idea hasta su implementación.",
       howWeHelpP2: "Revisión y elaboración de documentación clave para tu negocio.",
+      howWeHelpP2Desc: "Revisamos y redactamos los documentos legales fundamentales que garantizan el correcto funcionamiento y protección de tu empresa.",
       howWeHelpP3: "Contratos claros y adaptados para colaboradores, proveedores o servicios.",
-      howWeHelpP4: "Textos legales para tu web (Política de Privacidad, Cookies, Términos y Condiciones).",
+      howWeHelpP3Desc: "Elaboramos contratos personalizados que establecen obligaciones y derechos de forma clara, minimizando riesgos en tus relaciones comerciales..",
+      howWeHelpP4: "Textos legales para tu web (Política de Privacidad, Cookies, Legales).",
+      howWeHelpP4Desc: "Redactamos textos legales completos, actualizados y adaptados a tu tipo de negocio para asegurar el cumplimiento normativo en tu sitio web.",
       howWeHelpP5: "Recomendaciones básicas para cumplimiento legal en e-commerce y protección de datos.",
-
+      howWeHelpP5Desc: "Te ofrecemos una guía práctica con medidas esenciales para que tu tienda online cumpla con la normativa de comercio electrónico y protección de datos.",
       pricingPackages: "Paquetes de Asesoría Legal",
       discounts:
         "Descuentos disponibles para contratos de asesoría legal a largo plazo (5%-15%). Contáctenos para más detalles.",
@@ -604,17 +613,17 @@ export const translations = {
     },
     // Testimonials
     testimonials: {
-      title: "Lo Que Dicen Nuestros Clientes de Asesoría Legal",
-      subtitle:
-        "Escuche de empresas a las que hemos ayudado a navegar por desafíos legales en el espacio digital con nuestros servicios de asesoría legal online.",
-      testimonial1:
-        "Lexzen nos proporcionó una asesoría legal online invaluable para nuestro negocio de comercio electrónico. Su experiencia en privacidad y protección de datos nos ayudó a evitar posibles problemas de cumplimiento mientras crecíamos nuestra presencia en línea.",
-      client1Name: "Sarah Johnson",
-      client1Title: "CEO, StyleHub",
-      testimonial2:
-        "Trabajar con Lexzen transformó nuestra forma de abordar la digitalización legal para nuestros proyectos de desarrollo web. Su equipo hizo que los requisitos legales complejos fueran accesibles y prácticos a través de sus servicios de asesoría legal online.",
-      client2Name: "Michael Chen",
-      client2Title: "Fundador, TechSolutions",
+      title: "Lo Que Dicen Nuestros Clientes de Nuestras Asesorías",
+      subtitle: "Escuche de personas a las que hemos ayudado con nuestros servicios de asesoría legal online.",
+      testimonial1: '"Gracias al asesoramiento y preparación detallada de mi carpeta de solicitud, el proceso para obtener mi certificado de registro como ciudadana de la UE fue mucho más fluido de lo que esperaba. La asesoría fue clara en cada paso y los documentos estaban perfectamente organizados, lo que fue reconocido positivamente por la oficina de extranjería. Me sentí acompañada y bien informada en todo momento."',
+      client1Name: "Laura M.",
+      client1Title: "Ciudadana italiana residiendo en Madrid",
+      testimonial2: '"Cuando lancé mi sitio de mentorías online, todo iba bien hasta que surgieron dudas legales al preparar mis primeros contratos con clientes. No sabía cómo protegerme ni cómo dejar claras las condiciones. La asesoría fue clave para dar ese paso con seguridad: revisamos cláusulas, ajustamos el lenguaje y todo quedó claro y profesional. Ahora trabajo con más tranquilidad y confianza."',
+      client2Name: "Carlos G.",
+      client2Title: "Emprendedor digital",
+      testimonial3: '"No tenía claro qué tipo de permiso de residencia me correspondía ni por dónde empezar. Me ayudaron a entender cuál era la opción más adecuada para mi situación y me guiaron en todo el proceso. Reunimos los documentos necesarios paso a paso y presentamos la solicitud con confianza."',
+      client3Name: "Santiago P.",
+      client3Title: "Residente en comunidad Valenciana",
     },
     // CTA Section
     cta: {
@@ -657,6 +666,8 @@ export const translations = {
         "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones legales de Lexzen.",
       subscribeSuccess: "¡Gracias por suscribirte a nuestras actualizaciones legales!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
+      //Whatsapp
+      whatsapp: "+34 912 456 789",
     },
     // Language
     language: {
