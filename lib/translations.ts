@@ -308,7 +308,7 @@ export const translations = {
       subscribe: "Subscribe",
       privacyConsent:
         "By subscribing, you agree to our Privacy Policy and consent to receive legal updates from Lexzen.",
-      subscribeSuccess: "Thank you for subscribing to our legal updates!",
+      subscribeSuccess: "Thank you for subscribing to our newsletter!",
       subscribeError: "There was an error. Please try again.",
     },
     // Language
@@ -664,7 +664,7 @@ export const translations = {
       subscribe: "Suscribirse",
       privacyConsent:
         "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones legales de Lexzen.",
-      subscribeSuccess: "¡Gracias por suscribirte a nuestras actualizaciones legales!",
+      subscribeSuccess: "¡Gracias por suscribirte a nuestro newsletter!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
       //Whatsapp
       whatsapp: "+34 912 456 789",
