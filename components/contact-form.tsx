@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useLanguage } from "@/contexts/language-context"
 import { AlertCircle, CheckCircle, Loader2 } from "lucide-react"
 import { useState } from "react"
+import toast from "react-hot-toast"
 
 type FormData = {
   fullName: string
@@ -95,38 +96,55 @@ export function ContactForm() {
         throw new Error("reCAPTCHA not available");
       }
 
-      window.grecaptcha.ready(async () => {
-        try {
-          const token = await window.grecaptcha.execute(
-            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
-            { action: "submit" }
-          );
+      try {
+        const token = await window.grecaptcha.execute(
+          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+          { action: "submit" }
+        );
 
-          const res = await fetch("/api/contact", {
+        const contactRes = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, token }),
+        });
+
+        if (!contactRes.ok) throw new Error("Contact form failed");
+
+        if (formData.subscribe) {
+          const newsletterRes = await fetch("/api/newsletter", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...formData, token }),
-          });
+            body: JSON.stringify({ email: formData.email, source: "contact_form" }),
+          })
 
-          if (!res.ok) throw new Error("Request failed");
+          const data = await newsletterRes.json()
+          console.log("Newsletter response:", newsletterRes.status, data)
 
-          setShowSuccessDialog(true);
-          setFormData({
-            fullName: "",
-            email: "",
-            subject: "",
-            message: "",
-            subscribe: false,
-          });
-        } catch (error) {
-          console.error("Error submitting form with reCAPTCHA:", error);
-          setShowErrorDialog(true);
-        } finally {
-          setIsSubmitting(false);
+          if (data.error === "Email already subscribed") {
+            toast.error(t("footer.alreadySubscribed"))
+          } else if (!newsletterRes.ok) {
+            console.error("Newsletter error:", data)
+            throw new Error("Newsletter subscription failed")
+          }
         }
-      });
-    } catch (error) {
-      console.error("Unexpected error:", error);
+
+        setShowSuccessDialog(true);
+        setFormData({
+          fullName: "",
+          email: "",
+          subject: "",
+          message: "",
+          subscribe: false,
+        });
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setShowErrorDialog(true);
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+    catch (error) {
+      console.error("Error:", error);
       setShowErrorDialog(true);
       setIsSubmitting(false);
     }

@@ -17,8 +17,6 @@ export function NewsletterForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    console.log("email", email)
-
     if (!email || !email.includes("@")) {
       return
     }
@@ -29,11 +27,18 @@ export function NewsletterForm() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "banner" }),
+        body: JSON.stringify({ email, source: "newsletter_form" }),
       })
   
       const data = await res.json()
-  
+
+      if (data.error === "Email already subscribed") {
+        toast.error(t("footer.alreadySubscribed"))
+        setEmail("")
+        setTimeout(() => setStatus("idle"), 3000)
+        return
+      }
+      
       if (!res.ok) {
         throw new Error(data.error || "Something went wrong")
       }
