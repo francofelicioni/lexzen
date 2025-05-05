@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useLanguage } from "@/contexts/language-context"
 import { AlertCircle, CheckCircle } from "lucide-react"
+import { toast } from "react-hot-toast"
 
 export function NewsletterForm() {
   const { t } = useLanguage()
@@ -16,17 +17,38 @@ export function NewsletterForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    console.log("email", email)
+
     if (!email || !email.includes("@")) {
       return
     }
 
     setStatus("loading")
 
-    await fetch("/api/newsletter", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, source: "banner" }),
-    });
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "newsletter form" }),
+      })
+  
+      const data = await res.json()
+  
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong")
+      }
+  
+      setStatus("success")
+      setEmail("")
+  
+      toast.success(t("footer.subscribeSuccess"))
+  
+      setTimeout(() => setStatus("idle"), 3000)
+    } catch (err) {
+      setStatus("error")
+      toast.error(t("footer.subscribeError"))
+      setTimeout(() => setStatus("idle"), 3000)
+    }
   }
 
   return (
