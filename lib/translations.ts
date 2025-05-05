@@ -657,7 +657,7 @@ export const translations = {
       // Social
       socialHeading: "Síguenos",
       // Newsletter
-      newsletterHeading: "Suscríbete a Nuestro Boletín",
+      newsletterHeading: "Suscríbete a Nuestro Newsletter",
       newsletterSubheading:
         "Suscríbete a nuestro boletín para consejos legales y actualizaciones sobre privacidad y protección de datos",
       emailPlaceholder: "Tu correo electrónico",
