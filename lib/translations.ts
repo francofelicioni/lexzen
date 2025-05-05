@@ -10,6 +10,11 @@ export const translations = {
       min2Hours: "minimum 2 hours",
       from: "from",
     },
+    // Language
+    language: {
+      en: "English",
+      es: "Spanish",
+    },
     // Navigation
     nav: {
       services: "Services",
@@ -312,11 +317,6 @@ export const translations = {
       subscribeError: "There was an error. Please try again.",
       alreadySubscribed: "This email address is already subscribed to our newsletter.",
     },
-    // Language
-    language: {
-      en: "English",
-      es: "Spanish",
-    },
     // Contact Form
     contactForm: {
       title: "Get in Touch",
@@ -349,6 +349,368 @@ export const translations = {
       closing: "Thank you for choosing Lexzen. We're here if you need anything else.",
       farewell: "Sincerely,<br />The Lexzen Team",
     },
+    //Legals
+    legals: {
+      termsOfService: {
+        title: "Lexzen Terms of Service",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          description:
+            "These Terms of Service govern access to, browsing and use of the Lexzen website, as well as the general conditions that apply to the relationship between users and the company regarding the legal services informatively offered through the site.",
+        },
+
+        sections: {
+          provider: {
+            title: "1. Service Provider Identification",
+            name: "Trade name: Lexzen",
+            legalStatus: "Legal form: Company in the process of incorporation",
+            email: "Contact email: privacidad@lexzen.com",
+            purpose:
+              "Website purpose: Legal advisory services for startups and legal residency processes in Spain.",
+          },
+
+          acceptance: {
+            title: "2. Acceptance of the Terms",
+            content:
+              "Accessing and using the website implies full and unconditional acceptance of these terms. If the user disagrees, they must refrain from using the site.",
+            modifications:
+              "Lexzen reserves the right to modify these terms at any time. Continued use after publication implies tacit acceptance of the changes.",
+          },
+
+          access: {
+            title: "3. Website Access",
+            content:
+              "Access is free, except for internet connection costs. Some services may require forms or personal data, subject to the Privacy Policy and applicable laws.",
+          },
+
+          services: {
+            title: "4. Scope and Purpose of Services",
+            content:
+              "The website provides information about legal services in startup law, immigration, and legal consulting for the innovation ecosystem.",
+            disclaimer:
+              "Important: Content is for informational purposes only. It does not establish a professional or attorney-client relationship without express agreement by both parties.",
+          },
+
+          userObligations: {
+            title: "5. User Obligations",
+            items: {
+              use: "Use the website and content lawfully and respectfully.",
+              noFraud: "Do not engage in illegal, fraudulent, or bad faith activities.",
+              noInterference: "Do not interfere with or disrupt the technical operation of the site.",
+              truthfulInfo: "Provide truthful information in contact or service forms.",
+              lexzenRights:
+                "Lexzen reserves the right to deny access to users who violate these conditions.",
+            },
+          },
+
+          intellectualProperty: {
+            title: "6. Intellectual and Industrial Property",
+            content:
+              "All website elements are owned by Lexzen or properly licensed, and protected under Spanish and EU laws.",
+            restriction:
+              "Reproduction, distribution, or modification is prohibited without prior written authorization.",
+          },
+
+          limitation: {
+            title: "7. Limitation of Liability",
+            content:
+              "Lexzen does not guarantee uninterrupted availability or error-free content but will take reasonable measures to address issues.",
+            notResponsibleFor: {
+              damages: "Damages arising from use of the site or its contents.",
+              thirdPartyContent: "Accuracy or legality of third-party content.",
+              viruses: "Viruses or elements that may harm the user's system.",
+            },
+          },
+
+          externalLinks: {
+            title: "8. External Links",
+            content:
+              "This website may include links to third-party websites. Lexzen is not responsible for the content, availability, or policies of those sites.",
+          },
+
+          jurisdiction: {
+            title: "9. Governing Law and Jurisdiction",
+            content:
+              "These terms are governed by Spanish law. Any dispute shall be submitted to the courts of the site owner's residence or the user's residence if acting as a consumer.",
+          },
+
+          contact: {
+            title: "10. Contact",
+            content: "For any questions regarding these Terms of Service, you can write to us at:",
+            email: "📧 privacidad@lexzen.com",
+          },
+        },
+      },
+      privacyPolicy: {
+        title: "Lexzen Privacy Policy",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          description:
+            "At Lexzen, a firm specialized in legal advice for startups and legal residency processes in Spain, we take our commitment to protecting the personal data of our users, clients, and visitors very seriously.",
+          compliance:
+            "This Privacy Policy has been prepared in accordance with Regulation (EU) 2016/679 (GDPR) and Organic Law 3/2018 (LOPDGDD), ensuring the effective exercise of the rights and freedoms of the data subjects.",
+        },
+
+        sections: {
+          identity: {
+            title: "1. Identity of the Data Controller",
+            controller: "Data controller: Lexzen",
+            legalStatus: "Legal status: Company in the process of incorporation",
+            email: "Contact email: privacidad@lexzen.com",
+            phone: "Contact phone: {phone}",
+            note:
+              "Lexzen acts as the data controller for the personal data collected through this website. Once the legal incorporation of the company is completed, this document will be updated with the corresponding identification details.",
+          },
+
+          dataCategories: {
+            title: "2. Categories of Data Processed",
+            description: "We process the following categories of personal data:",
+            items: {
+              identity: "Identification data: name, surname, email address, and phone number.",
+              professional:
+                "Professional and business information: company name, tax ID (if applicable), business sector.",
+              financial: "Tax and financial data (when applicable).",
+              navigation: "Browsing data (cookies and similar technologies).",
+            },
+          },
+
+          purposes: {
+            title: "3. Purposes of the Data Processing",
+            items: {
+              inquiries: "To respond to legal inquiries or information requests.",
+              services: "To provide and manage contracted professional services.",
+              contracts: "To manage pre-contractual or contractual relationships.",
+              legal: "To comply with legal or regulatory obligations.",
+              communications:
+                "To send informative communications, legal newsletters, or relevant content, only with prior consent.",
+              cookies:
+                "To enhance user experience and optimize website functionality using cookies.",
+            },
+          },
+
+          legalBasis: {
+            title: "4. Legal Basis for Data Processing",
+            items: {
+              consent: "The explicit consent of the data subject.",
+              contract: "The execution of a contract or pre-contractual measures requested by the data subject.",
+              legalObligation: "Compliance with legal obligations applicable to Lexzen.",
+              legitimateInterest:
+                "Lexzen’s legitimate interest in improving service quality and website security, without affecting data subject rights.",
+            },
+          },
+
+          recipients: {
+            title: "5. Data Recipients and Disclosures",
+            description:
+              "Lexzen will not disclose personal data to third parties, except in the following cases:",
+            items: {
+              processors:
+                "When necessary for service provision, to data processors bound by contracts and GDPR safeguards (Art. 28).",
+              legal:
+                "To comply with legal obligations before competent authorities, public bodies, or courts.",
+              noCommercial:
+                "Data will never be disclosed for commercial purposes without the informed and explicit consent of the data subject.",
+            },
+          },
+
+          internationalTransfers: {
+            title: "6. International Data Transfers",
+            content:
+              "Currently, no international data transfers outside the European Economic Area (EEA) are foreseen. If required, Lexzen will ensure that adequate safeguards are implemented, such as EU-approved Standard Contractual Clauses.",
+          },
+
+          retention: {
+            title: "7. Data Retention Period",
+            content:
+              "Personal data will be retained only as long as necessary to fulfill the purposes for which it was collected, as well as any applicable legal retention periods. For marketing communications, data will be kept until the data subject withdraws consent.",
+          },
+
+          rights: {
+            title: "8. Rights of the Data Subject",
+            description:
+              "As the data subject, you may exercise your rights under applicable legislation at any time:",
+            list: {
+              access: "Right of access",
+              rectification: "Right to rectification",
+              erasure: "Right to erasure",
+              objection: "Right to object",
+              restriction: "Right to restriction of processing",
+              portability: "Right to data portability",
+              withdraw: "Right to withdraw consent without affecting prior processing legitimacy",
+            },
+            instruction:
+              "To exercise these rights, please send a request to privacidad@lexzen.com, attaching a copy of a valid identification document.",
+            complaint:
+              "If you believe your rights have not been properly respected, you may file a complaint with the Spanish Data Protection Agency (AEPD) at www.aepd.es.",
+          },
+
+          security: {
+            title: "9. Security and Confidentiality",
+            content:
+              "Lexzen implements technical and organizational security measures to ensure the integrity, availability, and confidentiality of personal data. All processes are aligned with the GDPR principles of privacy by design and by default.",
+          },
+
+          cookies: {
+            title: "10. Cookie Policy",
+            content:
+              "This website uses first- and third-party cookies to ensure functionality, improve user experience, and perform statistical analysis. For more information on cookie usage and management, please see our {cookiePolicyLink}.",
+          },
+        },
+      },
+      legalNotice: {
+        title: "Legal Notice",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          legalBasis:
+            "In compliance with Article 10 of Law 34/2002 (LSSI-CE), users accessing this website are informed of the following identification details:",
+        },
+
+        sections: {
+          owner: {
+            title: "1. Website Owner",
+            commercialName: "Trade name: Lexzen",
+            legalStatus: "Legal form: Company in the process of incorporation",
+            email: "Contact email: privacidad@lexzen.com",
+            purpose:
+              "Purpose of the website: Information about legal advisory services for startups and legal residency processes in Spain.",
+            note:
+              "Once Lexzen is formally incorporated as a legal entity, the corresponding tax and registry details will be added.",
+          },
+
+          terms: {
+            title: "2. Terms of Use",
+            description:
+              "Accessing and using this website implies the user status and full acceptance of this Legal Notice and related policies.",
+            commitment:
+              "Users agree to use the site lawfully, in good faith and in accordance with public order, avoiding any actions that may harm Lexzen or third parties.",
+          },
+
+          intellectualProperty: {
+            title: "3. Intellectual and Industrial Property",
+            description:
+              "All content on this website is protected by intellectual or industrial property rights and is either owned by Lexzen or licensed for its use.",
+            restriction:
+              "Reproduction, distribution, public communication, or modification of content is prohibited without Lexzen’s prior written authorization.",
+          },
+
+          liability: {
+            title: "4. Disclaimer of Liability",
+            content:
+              "Lexzen is not liable for damages resulting from website use, nor does it guarantee the absence of harmful elements such as viruses. It is also not responsible for the legality or accuracy of content linked by third parties.",
+          },
+
+          externalLinks: {
+            title: "5. External Links",
+            content:
+              "This website may include links to third-party pages. Lexzen has no control over such sites and assumes no responsibility for their content or availability.",
+          },
+
+          modifications: {
+            title: "6. Modifications",
+            content:
+              "Lexzen reserves the right to modify this Legal Notice, terms of use, and other legal texts at any time without prior notice.",
+          },
+
+          jurisdiction: {
+            title: "7. Governing Law and Jurisdiction",
+            content:
+              "This Legal Notice is governed by Spanish law. Any dispute arising from access to the website will be submitted to the courts of the website owner's residence (or the user's, if a consumer, per Article 29 LSSI-CE).",
+          },
+
+          aiImages: {
+            title: "8. AI-Generated Images",
+            content:
+              "Some images of people on this site have been generated using artificial intelligence to protect user privacy and enhance design. They are illustrative only and do not depict real individuals or anyone affiliated with Lexzen.",
+          },
+        },
+
+        footer: {
+          aiDisclaimer:
+            "Images of people shown on this website were generated using artificial intelligence and do not represent real individuals.",
+        },
+      },
+      cookiePolicy: {
+        title: "Lexzen Cookie Policy",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          description:
+            "This website, owned by Lexzen, uses cookies and similar technologies to enhance user browsing experience, analyze usage, and deliver personalized content.",
+          legal:
+            "This policy explains what cookies are, the types we use, and how users can manage them in accordance with the GDPR, LOPDGDD, and LSSI-CE.",
+        },
+
+        sections: {
+          whatAreCookies: {
+            title: "1. What Are Cookies?",
+            content:
+              "Cookies are small data files downloaded to the user’s device when accessing certain web pages. They store and retrieve browsing information, such as site preferences or usage patterns.",
+          },
+
+          typesOfCookies: {
+            title: "2. Types of Cookies Used",
+            management: {
+              own: "First-party cookies: managed directly by Lexzen.",
+              thirdParty:
+                "Third-party cookies: managed by external entities (e.g., Google Analytics).",
+            },
+            purpose: {
+              technical:
+                "Technical cookies: essential for website operation. Do not require consent.",
+              personalization:
+                "Personalization cookies: allow users to customize site preferences (language, region, etc.).",
+              analytics:
+                "Analytics cookies: collect statistical data to improve content and user experience.",
+              advertising:
+                "Advertising cookies: manage the frequency and content of ads.",
+            },
+            duration: {
+              session: "Session cookies: deleted when the browser is closed.",
+              persistent: "Persistent cookies: remain stored for a set period.",
+            },
+          },
+
+          usedCookies: {
+            title: "3. Cookies Used on This Site",
+            note: "This table is for reference only. Actual cookies may vary depending on tools enabled.",
+          },
+
+          management: {
+            title: "4. Cookie Management and Settings",
+            content:
+              "Users can configure their cookie preferences via the initial banner or browser settings. Cookies already stored can also be blocked or deleted.",
+            browserLinks: {
+              chrome: "Google Chrome: https://support.google.com/chrome/answer/95647",
+              firefox: "Mozilla Firefox: https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences",
+              safari: "Safari: https://support.apple.com/en-us/guide/safari/sfri11471/mac",
+              edge: "Edge: https://support.microsoft.com/en-us/help/4027947/microsoft-edge-delete-cookies",
+            },
+            warning: "Disabling cookies may affect the functionality of the website.",
+          },
+
+          consent: {
+            title: "5. Consent",
+            content:
+              "When first accessing Lexzen’s website, a banner informs you about cookies. You may accept, reject, or configure them. Consent can be modified at any time.",
+          },
+
+          modifications: {
+            title: "6. Modifications to the Cookie Policy",
+            content:
+              "Lexzen reserves the right to modify this policy due to legal changes or website updates. We recommend reviewing it periodically.",
+          },
+
+          contact: {
+            title: "7. Contact",
+            content: "For any questions related to the use of cookies, you can contact us at:",
+            email: "📧 privacidad@lexzen.com",
+          },
+        },
+      }
+    }
   },
   es: {
     // General
@@ -356,6 +718,11 @@ export const translations = {
       month: "mes",
       min2Hours: "mínimo 2 horas",
       from: "desde",
+    },
+    // Language
+    language: {
+      en: "Inglés",
+      es: "Español",
     },
     // Navigation
     nav: {
@@ -671,11 +1038,6 @@ export const translations = {
       //Whatsapp
       whatsapp: "+34 912 456 789",
     },
-    // Language
-    language: {
-      en: "Inglés",
-      es: "Español",
-    },
     // Contact Form
     contactForm: {
       title: "Ponte en Contacto",
@@ -708,5 +1070,365 @@ export const translations = {
       closing: "Agradecemos su confianza en Lexzen. Estamos a su disposición para cualquier consulta adicional.",
       farewell: "Atentamente,<br />El equipo de Lexzen",
     },
-  },
+    //Legals
+    legals: {
+      termsOfService: {
+        title: "Términos de Servicio de Lexzen",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          description:
+            "Los presentes Términos de Servicio regulan el acceso, navegación y uso del sitio web de Lexzen, así como las condiciones generales que rigen la relación entre los usuarios y la empresa en relación con los servicios jurídicos informativos ofrecidos a través del sitio.",
+        },
+
+        sections: {
+          provider: {
+            title: "1. Identificación del prestador de servicios",
+            name: "Nombre comercial: Lexzen",
+            legalStatus: "Forma jurídica: Empresa en fase de constitución",
+            email: "Correo electrónico de contacto: privacidad@lexzen.com",
+            purpose:
+              "Finalidad del sitio web: Asesoramiento legal a startups y gestión jurídica de procesos de residencia en España.",
+          },
+
+          acceptance: {
+            title: "2. Aceptación de los términos",
+            content:
+              "El acceso y uso del sitio web implica la aceptación plena y sin reservas de estos términos. Si el usuario no está de acuerdo, deberá abstenerse de usar el sitio.",
+            modifications:
+              "Lexzen se reserva el derecho a modificar estos términos en cualquier momento. El uso continuado del sitio tras los cambios constituirá aceptación tácita de los mismos.",
+          },
+
+          access: {
+            title: "3. Acceso al sitio web",
+            content:
+              "El acceso al sitio es gratuito, salvo los costes de conexión a internet. Algunos servicios pueden requerir formularios o datos personales, aplicándose la Política de Privacidad y la normativa vigente.",
+          },
+
+          services: {
+            title: "4. Objeto y alcance de los servicios",
+            content:
+              "A través del sitio, Lexzen ofrece información sobre servicios jurídicos en derecho de startups, extranjería y consultoría legal para el ecosistema innovador.",
+            disclaimer:
+              "Importante: El contenido es informativo. No implica contratación ni relación abogado-cliente salvo aceptación expresa por ambas partes.",
+          },
+
+          userObligations: {
+            title: "5. Obligaciones del usuario",
+            items: {
+              use: "Utilizar el sitio y sus contenidos de forma lícita y respetuosa.",
+              noFraud: "No realizar actividades ilícitas, fraudulentas ni contrarias a la buena fe.",
+              noInterference: "No interferir ni alterar el funcionamiento técnico del sitio.",
+              truthfulInfo: "Aportar información veraz en formularios.",
+              lexzenRights:
+                "Lexzen puede denegar el acceso a usuarios que incumplan estas condiciones.",
+            },
+          },
+
+          intellectualProperty: {
+            title: "6. Propiedad intelectual e industrial",
+            content:
+              "Todos los elementos del sitio son propiedad de Lexzen o cuentan con licencias legítimas. Su uso está protegido por leyes españolas y europeas.",
+            restriction:
+              "Queda prohibida su reproducción, distribución o transformación sin autorización previa y por escrito.",
+          },
+
+          limitation: {
+            title: "7. Limitación de responsabilidad",
+            content:
+              "Lexzen no garantiza disponibilidad continua ni ausencia de errores, aunque tomará medidas razonables para evitarlos.",
+            notResponsibleFor: {
+              damages: "Daños derivados del uso del sitio o sus contenidos.",
+              thirdPartyContent: "Veracidad o legalidad de contenidos de terceros.",
+              viruses: "Virus u otros elementos que puedan dañar el sistema del usuario.",
+            },
+          },
+
+          externalLinks: {
+            title: "8. Enlaces externos",
+            content:
+              "Este sitio puede contener enlaces a páginas de terceros. Lexzen no se responsabiliza del contenido, disponibilidad ni políticas de dichos sitios.",
+          },
+
+          jurisdiction: {
+            title: "9. Legislación aplicable y jurisdicción",
+            content:
+              "Los términos se rigen por la legislación española. Para controversias, se aplicarán los juzgados del titular del sitio o del usuario si actúa como consumidor.",
+          },
+
+          contact: {
+            title: "10. Contacto",
+            content: "Para consultas sobre estos Términos de Servicio, puedes escribirnos a:",
+            email: "📧 privacidad@lexzen.com",
+          },
+        },
+      },
+      privacyPolicy: {
+        title: "Política de Privacidad de Lexzen",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          description:
+            "En Lexzen, firma especializada en asesoramiento legal a startups y en procesos de residencia legal en España, asumimos con la máxima seriedad nuestro compromiso con la protección de los datos personales de nuestros usuarios, clientes y visitantes.",
+          compliance:
+            "Esta Política de Privacidad ha sido elaborada en cumplimiento del Reglamento (UE) 2016/679 (RGPD), y de la Ley Orgánica 3/2018 (LOPDGDD), garantizando el ejercicio efectivo de los derechos y libertades fundamentales de los interesados.",
+        },
+
+        sections: {
+          identity: {
+            title: "1. Identidad del Responsable del Tratamiento",
+            controller: "Responsable del tratamiento: Lexzen",
+            legalStatus: "Forma jurídica: Empresa en fase de constitución",
+            email: "Correo electrónico de contacto: privacidad@lexzen.com",
+            phone: "Teléfono de contacto: {phone}",
+            note:
+              "Lexzen actúa como responsable del tratamiento de los datos personales recabados a través de este sitio web. Una vez formalizada la constitución legal de la empresa, se actualizarán en este documento los datos identificativos correspondientes.",
+          },
+
+          dataCategories: {
+            title: "2. Categorías de Datos Tratados",
+            description: "Tratamos las siguientes categorías de datos personales:",
+            items: {
+              identity: "Datos identificativos: nombre, apellidos, email, teléfono.",
+              professional: "Información profesional y de empresa: razón social, NIF/CIF, sector.",
+              financial: "Datos fiscales y financieros (si procede).",
+              navigation: "Información de navegación (cookies y tecnologías similares).",
+            },
+          },
+
+          purposes: {
+            title: "3. Finalidades del Tratamiento",
+            items: {
+              inquiries: "Atender consultas jurídicas o solicitudes de información.",
+              services: "Prestar y gestionar servicios contratados.",
+              contracts: "Gestionar relaciones precontractuales o contractuales.",
+              legal: "Cumplir con obligaciones legales aplicables.",
+              communications:
+                "Enviar comunicaciones legales o informativas, solo con consentimiento previo.",
+              cookies: "Mejorar la experiencia de navegación mediante cookies.",
+            },
+          },
+
+          legalBasis: {
+            title: "4. Legitimación del Tratamiento",
+            items: {
+              consent: "Consentimiento expreso del interesado.",
+              contract: "Ejecución de un contrato o medidas precontractuales.",
+              legalObligation: "Cumplimiento de obligaciones legales.",
+              legitimateInterest:
+                "Interés legítimo de Lexzen en la mejora del servicio y seguridad del sitio web.",
+            },
+          },
+
+          recipients: {
+            title: "5. Destinatarios y Cesiones de Datos",
+            description:
+              "Lexzen no comunicará datos personales a terceros, salvo en los siguientes supuestos:",
+            items: {
+              processors:
+                "Prestación de servicios por encargados del tratamiento contratados conforme al artículo 28 del RGPD.",
+              legal:
+                "Cumplimiento de obligaciones legales ante autoridades, organismos públicos o tribunales.",
+              noCommercial:
+                "En ningún caso se cederán datos con fines comerciales sin consentimiento expreso.",
+            },
+          },
+
+          internationalTransfers: {
+            title: "6. Transferencias Internacionales",
+            content:
+              "Actualmente no se prevé la transferencia internacional de datos fuera del EEE. De ser necesario, se garantizarán las salvaguardas legales como las cláusulas tipo de la UE.",
+          },
+
+          retention: {
+            title: "7. Plazo de Conservación",
+            content:
+              "Los datos se conservarán mientras sean necesarios para los fines recogidos y conforme a los plazos legales. Para comunicaciones comerciales, hasta la revocación del consentimiento.",
+          },
+
+          rights: {
+            title: "8. Ejercicio de Derechos",
+            description:
+              "Puedes ejercer en cualquier momento tus derechos reconocidos por la ley:",
+            list: {
+              access: "Derecho de acceso",
+              rectification: "Derecho de rectificación",
+              erasure: "Derecho de supresión",
+              objection: "Derecho de oposición",
+              restriction: "Derecho a la limitación del tratamiento",
+              portability: "Derecho a la portabilidad de los datos",
+              withdraw: "Derecho a retirar el consentimiento",
+            },
+            instruction:
+              "Para ejercerlos, escribe a privacidad@lexzen.com adjuntando documento de identidad.",
+            complaint:
+              "Si consideras que no se han atendido tus derechos, puedes reclamar ante la AEPD: www.aepd.es",
+          },
+
+          security: {
+            title: "9. Seguridad y Confidencialidad",
+            content:
+              "Lexzen aplica medidas técnicas y organizativas para garantizar la integridad, disponibilidad y confidencialidad de los datos personales, conforme a los principios del RGPD.",
+          },
+
+          cookies: {
+            title: "10. Política de Cookies",
+            content:
+              "Este sitio usa cookies propias y de terceros para funcionalidad, experiencia y análisis. Para más información, consulta nuestra {cookiePolicyLink}.",
+          },
+        },
+      },
+      legalNotice: {
+        title: "Aviso Legal",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          legalBasis:
+            "En cumplimiento de lo dispuesto en el artículo 10 de la Ley 34/2002 (LSSI-CE), se informa a los usuarios que accedan al presente sitio web de los siguientes datos identificativos:",
+        },
+
+        sections: {
+          owner: {
+            title: "1. Titular del Sitio Web",
+            commercialName: "Denominación comercial: Lexzen",
+            legalStatus: "Forma jurídica: Empresa en fase de constitución",
+            email: "Correo electrónico de contacto: privacidad@lexzen.com",
+            purpose:
+              "Finalidad del sitio web: Información sobre servicios de asesoría jurídica para startups y procesos de residencia legal en España.",
+            note:
+              "Una vez formalizada la constitución de Lexzen como persona jurídica, se incorporarán los datos fiscales y de registro mercantil pertinentes.",
+          },
+
+          terms: {
+            title: "2. Condiciones de Uso",
+            description:
+              "El acceso y utilización del sitio web atribuye la condición de usuario, e implica la aceptación plena y sin reservas del presente Aviso Legal y demás políticas.",
+            commitment:
+              "El usuario se compromete a utilizar el sitio conforme a la ley, la buena fe y el orden público, absteniéndose de perjudicar a Lexzen o a terceros.",
+          },
+
+          intellectualProperty: {
+            title: "3. Propiedad Intelectual e Industrial",
+            description:
+              "Todos los contenidos del sitio están protegidos por derechos de propiedad intelectual o industrial y son propiedad exclusiva de Lexzen o están autorizados para su uso.",
+            restriction:
+              "Está prohibida la reproducción, distribución o transformación sin autorización expresa y por escrito de Lexzen.",
+          },
+
+          liability: {
+            title: "4. Exclusión de Responsabilidad",
+            content:
+              "Lexzen no se responsabiliza de daños derivados del uso del sitio, ni garantiza la ausencia de virus u otros elementos que puedan afectar el sistema del usuario. Tampoco se hace responsable del contenido enlazado por terceros.",
+          },
+
+          externalLinks: {
+            title: "5. Enlaces Externos",
+            content:
+              "Este sitio puede contener enlaces a páginas de terceros. Lexzen no ejerce control sobre ellas y no se responsabiliza de su contenido o funcionamiento.",
+          },
+
+          modifications: {
+            title: "6. Modificaciones",
+            content:
+              "Lexzen se reserva el derecho de modificar este Aviso Legal, las condiciones de uso y demás textos legales sin previo aviso.",
+          },
+
+          jurisdiction: {
+            title: "7. Legislación Aplicable y Jurisdicción",
+            content:
+              "Este Aviso Legal se rige por la legislación española. Para resolver conflictos, el usuario y Lexzen se someten a los tribunales del lugar de residencia del titular del sitio o del usuario (si es consumidor).",
+          },
+
+          aiImages: {
+            title: "8. Imágenes Generadas por Inteligencia Artificial",
+            content:
+              "Algunas imágenes de personas en este sitio han sido generadas mediante inteligencia artificial para proteger la privacidad y mejorar la estética. No representan individuos reales ni deben interpretarse como personas vinculadas a Lexzen.",
+          },
+        },
+
+        footer: {
+          aiDisclaimer:
+            "Las imágenes de personas mostradas en este sitio web han sido generadas mediante inteligencia artificial y no representan individuos reales.",
+        },
+      },
+      cookiePolicy: {
+        title: "Política de Cookies de Lexzen",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          description:
+            "El presente sitio web, titularidad de Lexzen, utiliza cookies y tecnologías similares para mejorar la experiencia de navegación del usuario, analizar el uso del sitio y ofrecer contenidos adaptados a sus intereses.",
+          legal:
+            "Esta política explica qué son las cookies, qué tipos utilizamos y cómo pueden ser gestionadas por el usuario conforme al RGPD, la LOPDGDD y la LSSI-CE.",
+        },
+
+        sections: {
+          whatAreCookies: {
+            title: "1. ¿Qué son las Cookies?",
+            content:
+              "Las cookies son pequeños archivos de datos que se descargan en el dispositivo del usuario al acceder a determinadas páginas web. Estas permiten almacenar y recuperar información sobre la navegación, como preferencias del sitio o patrones de comportamiento.",
+          },
+
+          typesOfCookies: {
+            title: "2. Tipos de Cookies Utilizadas",
+            management: {
+              own: "Cookies propias: gestionadas directamente por Lexzen.",
+              thirdParty:
+                "Cookies de terceros: gestionadas por entidades externas (por ejemplo, Google Analytics).",
+            },
+            purpose: {
+              technical: "Cookies técnicas: necesarias para el funcionamiento del sitio. No requieren consentimiento.",
+              personalization:
+                "Cookies de personalización: permiten al usuario configurar el sitio según sus preferencias (idioma, región, etc.).",
+              analytics:
+                "Cookies de análisis: recopilan datos estadísticos para mejorar el contenido y la experiencia.",
+              advertising:
+                "Cookies publicitarias: permiten gestionar la frecuencia y el contenido de los anuncios.",
+            },
+            duration: {
+              session: "Cookies de sesión: se eliminan al cerrar el navegador.",
+              persistent:
+                "Cookies persistentes: permanecen almacenadas durante un tiempo determinado.",
+            },
+          },
+
+          usedCookies: {
+            title: "3. Cookies Utilizadas en Este Sitio",
+            note: "Esta tabla es orientativa. Las cookies pueden variar según las herramientas activadas en el sitio.",
+          },
+
+          management: {
+            title: "4. Gestión y Configuración de Cookies",
+            content:
+              "El usuario puede configurar sus preferencias mediante el banner inicial o en la configuración del navegador. También puede bloquear o eliminar cookies ya instaladas.",
+            browserLinks: {
+              chrome: "Google Chrome: https://support.google.com/chrome/answer/95647",
+              firefox: "Mozilla Firefox: https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web",
+              safari: "Safari: https://support.apple.com/es-es/guide/safari/sfri11471/mac",
+              edge: "Edge: https://support.microsoft.com/es-es/help/4027947/microsoft-edge-delete-cookies",
+            },
+            warning: "La desactivación de cookies puede afectar a la funcionalidad del sitio web.",
+          },
+
+          consent: {
+            title: "5. Consentimiento",
+            content:
+              "Cuando accedes por primera vez al sitio web de Lexzen, se te informa mediante un banner. Puedes aceptar, rechazar o configurar el uso de cookies. El consentimiento puede modificarse en cualquier momento.",
+          },
+
+          modifications: {
+            title: "6. Modificaciones de la Política de Cookies",
+            content:
+              "Lexzen se reserva el derecho de modificar esta política conforme a cambios legislativos o actualizaciones del sitio. Se recomienda revisarla periódicamente.",
+          },
+
+          contact: {
+            title: "7. Contacto",
+            content: "Para cualquier duda relacionada con el uso de cookies, puedes escribirnos a:",
+            email: "📧 privacidad@lexzen.com",
+          },
+        },
+      },
+    },
+  }
 }
