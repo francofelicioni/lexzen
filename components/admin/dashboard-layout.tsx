@@ -17,7 +17,7 @@ export function DashboardLayout() {
           <div className="flex items-center gap-2 w-full mx-auto mt-2">
             <img src="/logo.png" alt="Lexzen Logo" className="block size-32 h-full" />
             <span>|</span>
-            <span className="text-lg md:text-xl font-medium">Admin Dashboard</span>
+            <span className="text-lg md:text-xl font-medium mt-1">Admin Dashboard</span>
           </div>
         </div>
       </header>
