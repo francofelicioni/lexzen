@@ -29,7 +29,7 @@ export function NewsletterForm() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "newsletter form" }),
+        body: JSON.stringify({ email, source: "banner" }),
       })
   
       const data = await res.json()
