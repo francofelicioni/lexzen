@@ -79,7 +79,7 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
               </div>
             </CardContent>
             <CardFooter>
-              <Button type="submit" className="w-full bg-blue-gray hover:bg-teal-700" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-blue-gray hover:bg-blue-gray/90" disabled={isLoading}>
                 {isLoading ? "Authenticating..." : "Login to Dashboard"}
               </Button>
             </CardFooter>

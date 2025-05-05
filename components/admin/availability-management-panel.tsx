@@ -28,7 +28,7 @@ const generateTimeSlots = () => {
   // addRange(10, 14, 30)
 
   // Afternoon: 16:00 a 20:00
-  addRange(16, 20, 15)
+  addRange(16, 21 + 15 / 60, 15)
 
   return slots
 }

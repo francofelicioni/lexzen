@@ -41,8 +41,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <MobileNav />
             <a href={process.env.NEXT_PUBLIC_APP_URL} rel="noopener noreferrer">
-              <img src="/logo.png" alt="Lexzen Logo" className="mt-1.5 size-8 sm:hidden w-full" />
-              <img src="/logo.png" alt="Lexzen Logo" className="hidden sm:block size-10 w-full" />
+              <img src="/logo.png" alt="Lexzen Logo" className="block mt-1 size-32 h-full" />
             </a>
           </div>
           <nav className="hidden md:flex items-center gap-6 lg:gap-12">

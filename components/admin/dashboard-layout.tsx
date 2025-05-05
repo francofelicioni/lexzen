@@ -14,16 +14,17 @@ export function DashboardLayout() {
     <div className="min-h-screen bg-gray-50">
       <header className="sticky top-0 z-40 border-b bg-white">
         <div className="container flex h-16 items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Lexzen Logo" className="size-12 w-full" />
-            <span className="text-lg md:text-xl font-bold">Lexzen Admin Dashboard</span>
+          <div className="flex items-center gap-2 w-full mx-auto mt-2">
+            <img src="/logo.png" alt="Lexzen Logo" className="block size-32 h-full" />
+            <span>|</span>
+            <span className="text-lg md:text-xl font-medium">Admin Dashboard</span>
           </div>
         </div>
       </header>
 
       <main className="container py-6">
         <Tabs defaultValue="requests" value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-          <TabsList className="flex w-full overflow-x-auto">
+          <TabsList className="flex w-full overflow-x-auto overflow-y-hidden md:space-x-8">
             <TabsTrigger value="requests" className="flex-shrink-0 px-4">
               Booking Requests
             </TabsTrigger>

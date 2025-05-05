@@ -31,14 +31,14 @@ export function ScrollToTop() {
   }, [])
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div className="fixed bottom-20 right-3 z-50">
       {isVisible && (
         <Button
           onClick={scrollToTop}
           className="rounded-full p-3 bg-blue-gray hover:bg-legal-accent-dark shadow-lg transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
           aria-label="Scroll to top"
         >
-          <ChevronUp className="h-5 w-5" />
+          <ChevronUp className="size-5" />
         </Button>
       )}
     </div>
