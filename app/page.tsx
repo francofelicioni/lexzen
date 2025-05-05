@@ -41,10 +41,11 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <MobileNav />
             <a href={process.env.NEXT_PUBLIC_APP_URL} rel="noopener noreferrer">
-              <img src="/logo.png" alt="Lexzen Logo" className="size-10 w-full" />
+              <img src="/logo.png" alt="Lexzen Logo" className="mt-1.5 size-8 sm:hidden w-full" />
+              <img src="/logo.png" alt="Lexzen Logo" className="hidden sm:block size-10 w-full" />
             </a>
           </div>
-          <nav className="hidden md:flex items-center gap-6 md:gap-12">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-12">
             {["services", "about", "contact"].map((item) => (
               <Link
                 key={item}
@@ -187,10 +188,8 @@ export default function Home() {
 
         {/* CTA Section & Newsletter */}
         <section className="w-full py-8 md:py-24 bg-blue-gray/10 relative overflow-hidden border border-blue-gray/20">
-
-
-          <div className="container flex justify-between items-start px-4 md:px-6 relative z-10">
-            <AnimatedSection direction="up" elementType="heading" className="flex-1 border-r border-gray-300">
+          <div className="container flex flex-col md:flex-row justify-between items-start px-4 md:px-6 relative z-10 space-y-8 md:space-y-0">
+            <AnimatedSection direction="up" elementType="heading" className="flex-1 md:border-r border-gray-300">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-600">{t("cta.title")}</h2>
@@ -208,9 +207,9 @@ export default function Home() {
                 </div>
               </div>
             </AnimatedSection>
-            <div className="h-full w-[1px] bg-gray-300 mx-6 hidden md:block"></div>
+            <div className="w-full border-b border-gray-300 md:hidden"></div>
             <AnimatedSection direction="up" elementType="heading" className="flex-1">
-              <div className="space-y-4 max-w-[600px] mx-auto">
+              <div className="space-y-4 px-4 md:max-w-[600px] mx-auto">
                 <div className="text-center space-y-2">
                   <h3 className="font-semibold text-gray-600 text-3xl md:text-4xl">{t("footer.newsletterHeading")}</h3>
                 </div>

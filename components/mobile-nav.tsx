@@ -19,7 +19,7 @@ export function MobileNav() {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon" className="md:hidden hover:bg-blue-gray/10 transition-colors duration-300">
-          <Menu className="h-6 w-6" />
+          <Menu className="size-8" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
@@ -31,7 +31,7 @@ export function MobileNav() {
               variant="ghost"
               size="icon"
               onClick={() => setOpen(false)}
-              className="transition-transform duration-300 hover:rotate-90 p-2 h-10 w-10"
+              className="transition-transform duration-300 hover:rotate-90 p-2 size-10"
             >
               <span className="sr-only">Close menu</span>
             </Button>
