@@ -189,14 +189,14 @@ export default function Home() {
         <section className="w-full py-8 md:py-24 bg-blue-gray/10 relative overflow-hidden border border-blue-gray/20">
           <div className="container flex flex-col md:flex-row justify-between items-start px-4 md:px-6 relative z-10 space-y-8 md:space-y-0">
             <AnimatedSection direction="up" elementType="heading" className="flex-1 md:border-r border-gray-300">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center px-4">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-600">{t("cta.title")}</h2>
                   <p className="max-w-[900px] text-gray-100 py-2 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     {t("cta.subtitle")}
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 md:min-[400px]:flex-row">
+                <div className="flex flex-col lg:flex-row md:min-[400px] gap-2">
                   <Button className="bg-legal-accent-dark text-white hover:bg-legal-accent hover:text-gray-100" asChild>
                     <a href="#booking">{t("cta.scheduleConsultation")}</a>
                   </Button>
@@ -208,7 +208,7 @@ export default function Home() {
             </AnimatedSection>
             <div className="w-full border-b border-gray-300 md:hidden"></div>
             <AnimatedSection direction="up" elementType="heading" className="flex-1">
-              <div className="space-y-4 px-4 md:max-w-[600px] mx-auto">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center px-4 sm:max-w-[600px]">
                 <div className="text-center space-y-2">
                   <h3 className="font-semibold text-gray-600 text-3xl md:text-4xl">{t("footer.newsletterHeading")}</h3>
                 </div>
