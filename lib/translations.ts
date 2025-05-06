@@ -9,6 +9,7 @@ export const translations = {
       month: "month",
       min2Hours: "minimum 2 hours",
       from: "from",
+      whatsapp: "+34 614 481 326",
     },
     // Navigation
     nav: {
@@ -258,7 +259,7 @@ export const translations = {
     },
     // Testimonials
     testimonials: {
-      title: "What Our Clients Say About Our Services",
+      title: "What Our Clients Say",
       subtitle: "Hear from people we've helped with our online legal advisory services.",
       testimonial1: '"Thanks to the detailed advice and preparation of my application folder, the process of obtaining my EU registration certificate was much smoother than I expected. The guidance was clear at every step, and the documents were perfectly organized, which was positively recognized by the immigration office. I felt supported and well-informed throughout the process."',
       client1Name: "Laura M.",
@@ -614,7 +615,7 @@ export const translations = {
     },
     // Testimonials
     testimonials: {
-      title: "Lo Que Dicen Nuestros Clientes de Nuestras Asesorías",
+      title: "Lo Que Dicen Nuestros Clientes",
       subtitle: "Escuche de personas a las que hemos ayudado con nuestros servicios de asesoría legal online.",
       testimonial1: '"Gracias al asesoramiento y preparación detallada de mi carpeta de solicitud, el proceso para obtener mi certificado de registro como ciudadana de la UE fue mucho más fluido de lo que esperaba. La asesoría fue clara en cada paso y los documentos estaban perfectamente organizados, lo que fue reconocido positivamente por la oficina de extranjería. Me sentí acompañada y bien informada en todo momento."',
       client1Name: "Laura M.",
@@ -664,12 +665,10 @@ export const translations = {
       emailPlaceholder: "Tu correo electrónico",
       subscribe: "Suscribirse",
       privacyConsent:
-        "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones legales de Lexzen.",
+        "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones de nuestra parte.",
       subscribeSuccess: "¡Gracias por suscribirte a nuestro newsletter!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
       alreadySubscribed: "Este correo ya está suscrito a nuestro newsletter.",
-      //Whatsapp
-      whatsapp: "+34 912 456 789",
     },
     // Language
     language: {

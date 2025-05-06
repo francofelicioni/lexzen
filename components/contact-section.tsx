@@ -95,8 +95,8 @@ export function ContactSection() {
                     <div>
                       <h4 className="font-medium text-lg">WhatsApp</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`https://wa.me/${t("footer.whatsapp")}`} className="hover:text-blue-600 hover:underline">
-                          {t("footer.whatsapp")}
+                        <a href={`https://wa.me/${t("general.whatsapp")}`} className="hover:text-blue-600 hover:underline">
+                          {t("general.whatsapp")}
                         </a>
                       </p>
                     </div>
