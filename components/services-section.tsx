@@ -515,7 +515,7 @@ export function ServicesSection() {
                 <AnimatedSection direction="up" delay={500}>
                   <h4 className="font-bold text-xl my-4">{t("services.howWeHelpTitle")}</h4>
 
-                  <div className="grid gap-6 md:grid-cols-2 text-justify">
+                  <div className="grid gap-6 md:grid-cols-2 lg:text-justify">
                     <ServiceItem
                       icon={<FileText className="h-5 w-5 text-blue-gray" />}
                       title={t("services.howWeHelpP1")}
