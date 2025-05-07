@@ -40,35 +40,30 @@ export function ContactSection() {
 
           {/* Contact Information */}
           <div className="order-1 lg:order-2">
-            <div className="space-y-8 ">
-              {/* Map or Office Image */}
-              <div className="relative h-[380px] w-full overflow-hidden rounded-xl bg-gray-100">
+            <div className="space-y-8 rounded-lg bg-white shadow-md p-6 lg:p-8">
                 <img
                   src="/office.jpg"
                   alt="Lexzen office location map"
-                  className="h-full w-full object-cover"
+                  className="lg:h-full object-fit cover rounded-xl w-full h-64 lg:h-96"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
-                  {/* <div className="text-white font-medium">Lexzen Legal Services</div> */}
                 </div>
-              </div>
-
               {/* Contact Details */}
               <div className="space-y-6">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
-                <div className="grid gap-6 grid-cols-2 lg:grid-cols-1">
+                <div className="grid gap-6 grid-cols-1">
                   {/* Email */}
                   <div className="flex items-center gap-2 lg:gap-4 group">
                     <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
-                      <Mail className="size-5 lg:size-6 text-blue-gray" />
+                      <Mail className="size-6 text-blue-gray" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg">Email</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} className="hover:text-blue-600 hover:underline">
-                          {process.env.NEXT_PUBLIC_EMAIL}
+                        <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-blue-600 hover:underline">
+                          {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                         </a>
                       </p>
                     </div>
@@ -78,7 +73,7 @@ export function ContactSection() {
                     <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="size-5 lg:size-6 text-blue-gray"
+                        className="size-6 text-blue-gray"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
