@@ -233,10 +233,10 @@ export function BookingCalendar() {
           </Card>
 
           {/* Booking */}
-          <Card className={`${isMobile && step > 1 ? "col-span-full" : ""}`} id="bookingCalendar" ref={formRef}>
+          <Card className={`${isMobile && step > 1 ? "col-span-full" : ""}`} id="bookingCalendar">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>{t("booking.bookYourConsultation")}</CardTitle>
+                <CardTitle ref={formRef}>{t("booking.bookYourConsultation")}</CardTitle>
                 {isMobile && step > 1 && (
                   <Button
                     variant="ghost"
