@@ -55,7 +55,7 @@ export function MobileNav() {
               asChild
             >
               <a
-                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                href={`https://wa.me/+34614481326?text=${encodeURIComponent(
                   `${t(`whatsappMessage.hello`)}`
                 )}`}
                 target="_blank"
