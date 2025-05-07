@@ -15,6 +15,8 @@ export function MobileNav() {
     setOpen(false)
   }
 
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -53,7 +55,7 @@ export function MobileNav() {
               asChild
             >
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                   `${t(`whatsappMessage.hello`)}`
                 )}`}
                 target="_blank"

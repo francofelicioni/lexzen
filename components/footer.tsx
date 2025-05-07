@@ -9,6 +9,10 @@ export function Footer() {
   const { t } = useLanguage()
   const isMobile = useMobile()
 
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
+
+
   return (
     <footer className="bg-gray-50 border-t">
       <div className="container px-4 md:px-6 py-12 md:py-16">
@@ -24,11 +28,11 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Phone className="size-5 text-blue-gray shrink-0" />
-                <span className="text-gray-400"><a href="tel:{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}">{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}</a></span>
+                <span className="text-gray-400"><a href={`tel:${whatsappNumber}`}>{whatsappNumber}</a></span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="size-5 text-blue-gray shrink-0" />
-                <span className="text-gray-400"><a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a></span>
+                <span className="text-gray-400"><a href={`mailto:${contactEmail}`}>{contactEmail}</a></span>
               </div>
             </div>
           </div>
