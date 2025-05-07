@@ -304,8 +304,7 @@ export const translations = {
         "Subscribe to our newsletter for legal tips and updates on privacy and data protection",
       emailPlaceholder: "Your email address",
       subscribe: "Subscribe",
-      privacyConsent:
-        "By subscribing, you agree to our Privacy Policy and consent to receive legal updates from Lexzen.",
+      privacyConsent:"By subscribing, you agree to our Privacy Policy and receive updates from us.",
       subscribeSuccess: "Thank you for subscribing to our newsletter!",
       subscribeError: "There was an error. Please try again.",
       alreadySubscribed: "This email address is already subscribed to our newsletter.",
@@ -665,8 +664,7 @@ export const translations = {
         "Suscríbete a nuestro boletín para consejos legales y actualizaciones sobre privacidad y protección de datos",
       emailPlaceholder: "Tu correo electrónico",
       subscribe: "Suscribirse",
-      privacyConsent:
-        "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones de nuestra parte.",
+      privacyConsent:"Al suscribirte, aceptas nuestra Política de Privacidad y recibir actualizaciones de nosotros.",
       subscribeSuccess: "¡Gracias por suscribirte a nuestro newsletter!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
       alreadySubscribed: "Este correo ya está suscrito a nuestro newsletter.",
