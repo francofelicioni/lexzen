@@ -58,13 +58,11 @@ export function ContactSection() {
               {/* Contact Details */}
               <div className="space-y-6">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
-
-                <div className="grid gap-6 md:grid-cols-2">
-
+                <div className="grid gap-6 grid-cols-2 lg:grid-cols-1">
                   {/* Email */}
-                  <div className="flex items-start gap-4 group">
+                  <div className="flex items-center gap-2 lg:gap-4 group">
                     <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
-                      <Mail className="h-6 w-6 text-blue-gray" />
+                      <Mail className="size-5 lg:size-6 text-blue-gray" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg">Email</h4>
@@ -75,13 +73,12 @@ export function ContactSection() {
                       </p>
                     </div>
                   </div>
-
                   {/* WhatsApp */}
-                  <div className="flex items-start gap-4 group">
+                  <div className="flex items-center gap-2 lg:gap-4 group">
                     <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="size-7 text-blue-gray"
+                        className="size-5 lg:size-6 text-blue-gray"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
@@ -98,7 +95,7 @@ export function ContactSection() {
                       <p className="text-gray-600 text-base">
                         <a
                           href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                          `${t(`whatsappMessage.hello`)}`
+                            `${t(`whatsappMessage.hello`)}`
                           )}`}
                           target="_blank"
                           rel="noopener noreferrer"
