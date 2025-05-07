@@ -127,7 +127,7 @@ export function ServicesSection() {
   const [activeTab, setActiveTab] = useState("residency")
 
   return (
-    <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50">
+    <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50 shadow-lg shadow-gray-200 border-b">
       <div className="container px-4 md:px-6 mb-12">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center my-6">
@@ -225,7 +225,7 @@ export function ServicesSection() {
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-2">
                   <AnimatedSection direction="right" delay={400}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
+                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
                       <CardHeader>
                         <CardTitle>{t("services.forResidents")}</CardTitle>
                         <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
@@ -317,7 +317,7 @@ export function ServicesSection() {
                   </AnimatedSection>
 
                   <AnimatedSection direction="left" delay={500}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
+                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
                       <CardHeader>
                         <CardTitle>{t("services.forNonResidents")}</CardTitle>
                         <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
@@ -398,7 +398,6 @@ export function ServicesSection() {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
                             window.open(url, "_blank");
-
                           }}
                         >
                           {t("services.selectPackage")}
@@ -526,7 +525,7 @@ export function ServicesSection() {
                 <AnimatedSection direction="up" delay={500}>
                   <h4 className="font-bold text-xl my-4">{t("services.howWeHelpTitle")}</h4>
 
-                  <div className="grid gap-6 md:grid-cols-2 text-justify">
+                  <div className="grid gap-6 md:grid-cols-2 lg:text-justify">
                     <ServiceItem
                       icon={<FileText className="h-5 w-5 text-blue-gray" />}
                       title={t("services.howWeHelpP1")}
@@ -565,7 +564,7 @@ export function ServicesSection() {
                 <AnimatedSection direction="up" delay={300} elementType="heading">
                   <h3 className="text-2xl font-bold my-6">{t("services.pricingPackages")}</h3>
                 </AnimatedSection>
-                <div className="grid gap-8 md:grid-cols-3">
+                <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   {/* Pricing Packages */}
                   <PricingPackage
                     title={t("services.initial")}

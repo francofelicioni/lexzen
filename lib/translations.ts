@@ -9,6 +9,7 @@ export const translations = {
       month: "month",
       min2Hours: "minimum 2 hours",
       from: "from",
+      whatsapp: "+34 614 481 326",
     },
     // Navigation
     nav: {
@@ -16,7 +17,7 @@ export const translations = {
       about: "About Us",
       bookCall: "Book Free Consultation",
       contact: "Contact",
-      getStarted: "Get Started",
+      sendWhatsapp: "Send us a Whatsapp Message",
     },
     // Hero Section
     hero: {
@@ -158,7 +159,7 @@ export const translations = {
       selectPackage: "Select Package",
       // Specialized Advice
       specializedTitle: "Specialized Legal Advisory for EU Residency",
-      consultationTitle: "Specific legal guidance for residency paperwork:",
+      consultationTitle: "Specific legal guidance for residency paperwork",
       consultationDesc: "Personalized Residency Legal Consultation",
       bookConsultation: "(+ €50 per additional person)",
       consultationItem1: "Detailed analysis of individual situation",
@@ -258,7 +259,7 @@ export const translations = {
     },
     // Testimonials
     testimonials: {
-      title: "What Our Clients Say About Our Services",
+      title: "What Our Clients Say",
       subtitle: "Hear from people we've helped with our online legal advisory services.",
       testimonial1: '"Thanks to the detailed advice and preparation of my application folder, the process of obtaining my EU registration certificate was much smoother than I expected. The guidance was clear at every step, and the documents were perfectly organized, which was positively recognized by the immigration office. I felt supported and well-informed throughout the process."',
       client1Name: "Laura M.",
@@ -294,10 +295,7 @@ export const translations = {
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contact",
-      address: "Calle Gran Vía 28, Madrid, Spain",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contact with us quickly",
       // Social
       socialHeading: "Follow Us",
       // Newsletter
@@ -349,6 +347,12 @@ export const translations = {
       closing: "Thank you for choosing Lexzen. We're here if you need anything else.",
       farewell: "Sincerely,<br />The Lexzen Team",
     },
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hello, I'm interested in the service",
+      moreInfo: "Can you send me more information? Thanks",
+      hello: "Hello, I'm interested in your legal services. Can you send me more information? Thanks",
+    },
   },
   es: {
     // General
@@ -364,6 +368,7 @@ export const translations = {
       bookCall: "Reservar Consulta Gratuita",
       contact: "Contacto",
       getStarted: "Comenzar",
+      sendWhatsapp: "Enviar mensaje por Whatsapp",
     },
     // Hero Section
     hero: {
@@ -506,7 +511,7 @@ export const translations = {
       selectPackage: "Seleccionar Paquete",
       // Specialized Advice
       specializedTitle: "Asesoría Legal Especializada en Residencia UE",
-      consultationTitle: "Orientación legal específica para trámites de residencia:",
+      consultationTitle: "Orientación legal específica para trámites de residencia",
       consultationDesc: "Consulta Legal Personalizada de Residencia",
       bookConsultation: "(+ €50 por cada persona adicional)",
       consultationItem1: "Análisis detallado de la situación individual",
@@ -614,7 +619,7 @@ export const translations = {
     },
     // Testimonials
     testimonials: {
-      title: "Lo Que Dicen Nuestros Clientes de Nuestras Asesorías",
+      title: "Lo Que Dicen Nuestros Clientes",
       subtitle: "Escuche de personas a las que hemos ayudado con nuestros servicios de asesoría legal online.",
       testimonial1: '"Gracias al asesoramiento y preparación detallada de mi carpeta de solicitud, el proceso para obtener mi certificado de registro como ciudadana de la UE fue mucho más fluido de lo que esperaba. La asesoría fue clara en cada paso y los documentos estaban perfectamente organizados, lo que fue reconocido positivamente por la oficina de extranjería. Me sentí acompañada y bien informada en todo momento."',
       client1Name: "Laura M.",
@@ -651,10 +656,7 @@ export const translations = {
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contacto",
-      address: "Calle Gran Vía 28, Madrid, España",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contacta con nosotros rápidamente",
       // Social
       socialHeading: "Síguenos",
       // Newsletter
@@ -664,12 +666,10 @@ export const translations = {
       emailPlaceholder: "Tu correo electrónico",
       subscribe: "Suscribirse",
       privacyConsent:
-        "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones legales de Lexzen.",
+        "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones de nuestra parte.",
       subscribeSuccess: "¡Gracias por suscribirte a nuestro newsletter!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
       alreadySubscribed: "Este correo ya está suscrito a nuestro newsletter.",
-      //Whatsapp
-      whatsapp: "+34 912 456 789",
     },
     // Language
     language: {
@@ -707,6 +707,12 @@ export const translations = {
       topic: (topic: string) => `<strong>Tema de la consulta:</strong> ${topic}`,
       closing: "Agradecemos su confianza en Lexzen. Estamos a su disposición para cualquier consulta adicional.",
       farewell: "Atentamente,<br />El equipo de Lexzen",
+    },
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hola, estoy interesado/a en el servicio",
+      moreInfo: "¿Podrían enviarme más información? Gracias",
+      hello: "Hola, estoy interesado/a en sus serviios de asesoría legal. ¿Podrían enviarme más información? Gracias",
     },
   },
 }

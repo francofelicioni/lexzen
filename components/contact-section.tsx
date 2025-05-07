@@ -6,6 +6,7 @@ import { ContactForm } from "./contact-form"
 import { AnimatedSection } from "./animated-section"
 import { Card, CardContent } from "@/components/ui/card"
 import { NewsletterForm } from "./newsletter-form"
+import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
   const { t } = useLanguage()
@@ -48,7 +49,7 @@ export function ContactSection() {
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   {/* <div className="text-white font-medium">Lexzen Legal Services</div> */}
                 </div>
@@ -57,30 +58,27 @@ export function ContactSection() {
               {/* Contact Details */}
               <div className="space-y-6">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
-
-                <div className="grid gap-6 md:grid-cols-2">
-
+                <div className="grid gap-6 grid-cols-2 lg:grid-cols-1">
                   {/* Email */}
-                  <div className="flex items-start gap-4 group">
+                  <div className="flex items-center gap-2 lg:gap-4 group">
                     <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
-                      <Mail className="h-6 w-6 text-blue-gray" />
+                      <Mail className="size-5 lg:size-6 text-blue-gray" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg">Email</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`mailto:${t("footer.email")}`} className="hover:text-blue-600 hover:underline">
-                          {t("footer.email")}
+                        <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} className="hover:text-blue-600 hover:underline">
+                          {process.env.NEXT_PUBLIC_EMAIL}
                         </a>
                       </p>
                     </div>
                   </div>
-
                   {/* WhatsApp */}
-                  <div className="flex items-start gap-4 group">
+                  <div className="flex items-center gap-2 lg:gap-4 group">
                     <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="size-7 text-blue-gray"
+                        className="size-5 lg:size-6 text-blue-gray"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
@@ -95,8 +93,15 @@ export function ContactSection() {
                     <div>
                       <h4 className="font-medium text-lg">WhatsApp</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`https://wa.me/${t("footer.whatsapp")}`} className="hover:text-blue-600 hover:underline">
-                          {t("footer.whatsapp")}
+                        <a
+                          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                            `${t(`whatsappMessage.hello`)}`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 hover:underline"
+                        >
+                          {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
                         </a>
                       </p>
                     </div>
