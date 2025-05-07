@@ -57,7 +57,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 my-4">
       <form onSubmit={handleSubmit} className="space-y-3">
         <div className="relative">
           <Input
@@ -112,7 +112,7 @@ export function NewsletterForm() {
         )}
       </form>
 
-      <p className="text-sm text-gray-500">{t("footer.privacyConsent")}</p>
+      <p className="text-sm text-gray-500 text-center">{t("footer.privacyConsent")}</p>
     </div>
   )
 }
