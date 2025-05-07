@@ -29,14 +29,6 @@ export function MobileNav() {
             <a href={process.env.NEXT_PUBLIC_APP_URL} rel="noopener noreferrer">
               <img src="/logo.png" alt="Lexzen Logo" className="block mt-1 size-32 h-full" />
             </a>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setOpen(false)}
-              className="transition-transform duration-300 hover:rotate-90 p-2 size-10"
-            >
-              <span className="sr-only">Close menu</span>
-            </Button>
           </div>
           <nav className="flex flex-col gap-8">
             {[
