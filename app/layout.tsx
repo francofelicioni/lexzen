@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
 import { SafeHydratedThemeProvider } from "@/components/theme-provider-safe"
 import { Toaster } from "react-hot-toast"
+import Script from "next/script"
 
-// Load Inter font with multiple weights
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -15,7 +15,6 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 })
 
-// Load Merriweather font
 const merriweather = Merriweather({
   subsets: ["latin"],
   variable: "--font-merriweather",
@@ -49,6 +48,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: "favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "apple-touch-icon.png",
+  },
   robots: {
     index: true,
     follow: true,
@@ -63,11 +67,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="icon" href="/favicon.ico" />
-        <script
+        <link rel="icon" href="/favicon.ico" />
+        <Script
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-          async
-          defer
+          strategy="afterInteractive"
         />
       </head>
       <body className={`${inter.variable} ${merriweather.variable} font-body`}>
