@@ -42,12 +42,12 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.companyHeading")}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-blue-gray block">
+                <Link href="#about" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-gray-400 hover:text-blue-gray block">
+                <Link href="#services" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.services")}
                 </Link>
               </li>
@@ -81,8 +81,6 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
-
         {/*  Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-center"} items-center gap-4`}>
