@@ -22,10 +22,6 @@ export function Footer() {
               {t("footer.footerDesc")}
             </p>
             <div className="space-y-3">
-              {/* <div className="flex items-start gap-2">
-                <MapPin className="size-5 text-blue-gray mt-0.5 shrink-0" />
-                <span className="text-gray-400">{t("footer.address")}</span>
-              </div> */}
               <div className="flex items-center gap-2">
                 <Phone className="size-5 text-blue-gray shrink-0" />
                 <span className="text-gray-400"><a href="tel:{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}">{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}</a></span>
@@ -51,16 +47,6 @@ export function Footer() {
                   {t("footer.services")}
                 </Link>
               </li>
-              {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block">
-                  {t("footer.careers")}
-                </Link>
-              </li> */}
-              {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block">
-                  {t("footer.blog")}
-                </Link>
-              </li> */}
               <li>
                 <Link href="#contact" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.contact")}
