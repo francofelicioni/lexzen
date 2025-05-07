@@ -295,10 +295,7 @@ export const translations = {
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contact",
-      address: "Calle Gran Vía 28, Madrid, Spain",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contact with us quickly",
       // Social
       socialHeading: "Follow Us",
       // Newsletter
@@ -659,10 +656,7 @@ export const translations = {
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contacto",
-      address: "Calle Gran Vía 28, Madrid, España",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contacta con nosotros rápidamente",
       // Social
       socialHeading: "Síguenos",
       // Newsletter
@@ -717,8 +711,8 @@ export const translations = {
     // WhatsApp Message
     whatsappMessage: {
       greeting: "Hola, estoy interesado/a en el servicio",
-      moreInfo: "Pueden enviarme mas información? Gracias",
-      hello: "Hola, estoy interesado/a en sus serviios de asesoría legal. Pueden enviarme mas información? Gracias",
+      moreInfo: "¿Podrían enviarme más información? Gracias",
+      hello: "Hola, estoy interesado/a en sus serviios de asesoría legal. ¿Podrían enviarme más información? Gracias",
     },
   },
 }
