@@ -9,15 +9,15 @@ export function AboutSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="about" className="w-full py-8 md:py-24 bg-beige-light">
+    <section id="about" className="w-full py-8 md:py-24 bg-beige-light shadow-lg shadow-gray-200">
       <div className="container px-4 md:px-6">
-        {/* Update section title to use elementType="heading" */}
-        <AnimatedSection direction="up" elementType="heading">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
-                {t("nav.about")}
-              </div>
+      {/* Update section title to use elementType="heading" */}
+      <AnimatedSection direction="up" elementType="heading">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+        <div className="space-y-2">
+          <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
+          {t("nav.about")}
+          </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t("about.title")}</h2>
               <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 {t("about.subtitle")}
@@ -40,11 +40,11 @@ export function AboutSection() {
           <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-xl bg-gray-100">
             <img
               src="/meeting-room.jpg"
-              alt="Lexzen online legal advisory team office in Madrid - Center for privacy and data protection expertise"
+              alt="Lexzen online legal advisory team office"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-6">
               {/* <div className="text-white font-medium">{t("about.officeLocation")}</div> */}
             </div>

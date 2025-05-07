@@ -48,7 +48,7 @@ export function ContactSection() {
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   {/* <div className="text-white font-medium">Lexzen Legal Services</div> */}
                 </div>

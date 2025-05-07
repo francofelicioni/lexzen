@@ -83,7 +83,7 @@ function PricingPackage({
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base">
+          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base md:max-w-[250px]">
             {buttonText}
           </Button>
         </CardFooter>
@@ -118,7 +118,7 @@ export function ServicesSection() {
   const [activeTab, setActiveTab] = useState("residency")
 
   return (
-    <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50">
+    <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50 shadow-lg shadow-gray-200 border-b">
       <div className="container px-4 md:px-6 mb-12">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center my-6">
@@ -290,7 +290,7 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
+                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift md:max-w-[200px]">
                           {t("services.selectPackage")}
                         </Button>
                       </CardFooter>
@@ -372,7 +372,7 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
+                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift md:max-w-[200px]">
                           {t("services.selectPackage")}
                         </Button>
                       </CardFooter>
@@ -460,7 +460,7 @@ export function ServicesSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
+                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift md:max-w-[200px]">
                         {t("services.selectPackage")}
                       </Button>
                     </CardFooter>
