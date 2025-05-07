@@ -87,7 +87,7 @@ function PricingPackage({
             className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base"
             onClick={() => {
               const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
-              const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+              const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
               window.open(url, "_blank");
             }}
           >
@@ -301,7 +301,7 @@ export function ServicesSection() {
                           className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
                           onClick={() => {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
-                            const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                            const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
                             window.open(url, "_blank");
                           }}
                         >
@@ -390,7 +390,7 @@ export function ServicesSection() {
                           className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
                           onClick={() => {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
-                            const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                            const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
                             window.open(url, "_blank");
                           }}
                         >
@@ -481,16 +481,16 @@ export function ServicesSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                    <Button
-                          className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
-                          onClick={() => {
-                            const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
-                            const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
-                            window.open(url, "_blank");
-                          }}
-                        >
-                          {t("services.selectPackage")}
-                        </Button>
+                      <Button
+                        className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
+                        onClick={() => {
+                          const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
+                          const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+                          window.open(url, "_blank");
+                        }}
+                      >
+                        {t("services.selectPackage")}
+                      </Button>
                     </CardFooter>
                   </Card>
                 </AnimatedSection>

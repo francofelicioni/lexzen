@@ -6,6 +6,7 @@ import { ContactForm } from "./contact-form"
 import { AnimatedSection } from "./animated-section"
 import { Card, CardContent } from "@/components/ui/card"
 import { NewsletterForm } from "./newsletter-form"
+import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
   const { t } = useLanguage()
@@ -68,8 +69,8 @@ export function ContactSection() {
                     <div>
                       <h4 className="font-medium text-lg">Email</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`mailto:${t("footer.email")}`} className="hover:text-blue-600 hover:underline">
-                          {t("footer.email")}
+                        <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} className="hover:text-blue-600 hover:underline">
+                          {process.env.NEXT_PUBLIC_EMAIL}
                         </a>
                       </p>
                     </div>
@@ -95,8 +96,15 @@ export function ContactSection() {
                     <div>
                       <h4 className="font-medium text-lg">WhatsApp</h4>
                       <p className="text-gray-600 text-base">
-                        <a href={`https://wa.me/${t("general.whatsapp")}`} className="hover:text-blue-600 hover:underline">
-                          {t("general.whatsapp")}
+                        <a
+                          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                          `${t(`whatsappMessage.hello`)}`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 hover:underline"
+                        >
+                          {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
                         </a>
                       </p>
                     </div>
