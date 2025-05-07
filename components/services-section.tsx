@@ -88,7 +88,7 @@ function PricingPackage({
             onClick={() => {
               const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
               const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-              window.open(url, "_blank");
+              window.open(url);
             }}
           >
             {buttonText}
@@ -125,7 +125,7 @@ export function ServicesSection() {
   const [activeTab, setActiveTab] = useState("residency")
 
   return (
-    <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50">
+    <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50 shadow-lg shadow-gray-200 border-b">
       <div className="container px-4 md:px-6 mb-12">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center my-6">
@@ -302,7 +302,7 @@ export function ServicesSection() {
                           onClick={() => {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                            window.open(url, "_blank");
+                            window.open(url);
                           }}
                         >
                           {t("services.selectPackage")}
@@ -391,7 +391,7 @@ export function ServicesSection() {
                           onClick={() => {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                            window.open(url, "_blank");
+                            window.open(url);
                           }}
                         >
                           {t("services.selectPackage")}
@@ -486,7 +486,7 @@ export function ServicesSection() {
                         onClick={() => {
                           const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
                           const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                          window.open(url, "_blank");
+                          window.open(url);
                         }}
                       >
                         {t("services.selectPackage")}
