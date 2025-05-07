@@ -61,7 +61,7 @@ function PricingPackage({
             {price.includes("€")}
           </div>
         </CardHeader>
-        <CardContent className="flex-grow flex justify-center items-center">
+        <CardContent className="flex-grow flex justify-start items-center">
           <ul className="space-y-3 text-sm sm:text-base">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start gap-2">
@@ -83,9 +83,18 @@ function PricingPackage({
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base">
+          <div className="flex justify-start items-center">
+          <Button
+            className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base"
+            onClick={() => {
+              const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
+              const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+              window.open(url, "_blank");
+            }}
+          >
             {buttonText}
           </Button>
+          </div>
         </CardFooter>
       </Card>
     </AnimatedSection>
@@ -289,11 +298,21 @@ export function ServicesSection() {
                           </li>
                         </ul>
                       </CardContent>
-                      <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                          {t("services.selectPackage")}
-                        </Button>
-                      </CardFooter>
+                      <div className="flex justify-start items-center">
+                        <CardFooter>
+                          <Button
+                            className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
+                            onClick={() => {
+                              const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
+                              const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+                              window.open(url, "_blank");
+
+                            }}
+                          >
+                            {t("services.selectPackage")}
+                          </Button>
+                        </CardFooter>
+                      </div>
                     </Card>
                   </AnimatedSection>
 
@@ -372,9 +391,19 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
+                      <div className="flex justify-start items-center">
+                        <Button
+                          className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
+                          onClick={() => {
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
+                            const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+                            window.open(url, "_blank");
+
+                          }}
+                        >
                           {t("services.selectPackage")}
                         </Button>
+                      </div>
                       </CardFooter>
                     </Card>
                   </AnimatedSection>
@@ -460,9 +489,19 @@ export function ServicesSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
+                    <div className="flex justify-start items-center">
+                      <Button
+                        className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
+                        onClick={() => {
+                          const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
+                          const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+                          window.open(url, "_blank");
+
+                        }}
+                      >
                         {t("services.selectPackage")}
                       </Button>
+                    </div>
                     </CardFooter>
                   </Card>
                 </AnimatedSection>
