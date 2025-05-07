@@ -60,12 +60,14 @@ export function MobileNav() {
               className="w-full bg-blue-gray hover:bg-legal-accent-dark transition-transform duration-300 hover:scale-105 flex items-center justify-center gap-2"
               asChild
             >
-                <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(t("whatsappMessage.hello"))}`}
+              <a
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                  `${t(`whatsappMessage.hello`)}`
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
-                >
+              >
                 {t("nav.sendWhatsapp")}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

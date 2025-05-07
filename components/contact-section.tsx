@@ -41,15 +41,15 @@ export function ContactSection() {
           {/* Contact Information */}
           <div className="order-1 lg:order-2">
             <div className="space-y-8 rounded-lg bg-white shadow-md p-6 lg:p-8">
-                <img
-                  src="/office.jpg"
-                  alt="Lexzen office location map"
-                  className="lg:h-full object-fit cover rounded-xl w-full h-64 lg:h-96"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                </div>
+              <img
+                src="/office.jpg"
+                alt="Lexzen office location map"
+                className="lg:h-full object-fit cover rounded-xl w-full h-64 lg:h-96"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-6">
+              </div>
               {/* Contact Details */}
               <div className="space-y-6">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
@@ -61,16 +61,20 @@ export function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-medium text-lg">Email</h4>
-                      <p className="text-gray-600 text-base">
-                        <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-blue-600 hover:underline">
+                        <Button asChild variant="link" className="bg-transparent hover:bg-blue-gray/20 transition-colors p-0 hover:px-2 transition-all duration-300">
+                        <a
+                          href={`https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?text=${encodeURIComponent(t("whatsappMessage.hello"))}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                         </a>
-                      </p>
+                        </Button>
                     </div>
                   </div>
                   {/* WhatsApp */}
                   <div className="flex items-center gap-2 lg:gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="size-6 text-blue-gray"
@@ -87,18 +91,15 @@ export function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-medium text-lg">WhatsApp</h4>
-                      <p className="text-gray-600 text-base">
+                      <Button asChild variant="link" className="bg-transparent hover:bg-blue-gray/20 transition-colors p-0 hover:px-2 transition-all duration-300">
                         <a
-                          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                            `${t(`whatsappMessage.hello`)}`
-                          )}`}
+                          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(t("whatsappMessage.hello"))}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-blue-600 hover:underline"
                         >
                           {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
                         </a>
-                      </p>
+                      </Button>
                     </div>
                   </div>
                 </div>
