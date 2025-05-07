@@ -88,7 +88,7 @@ function PricingPackage({
             onClick={() => {
               const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
               const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-              window.open(url);
+              window.open(url, "_blank");
             }}
           >
             {buttonText}
@@ -302,7 +302,8 @@ export function ServicesSection() {
                           onClick={() => {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                            window.open(url);
+                           window.open(url, "_blank");
+
                           }}
                         >
                           {t("services.selectPackage")}
@@ -391,7 +392,8 @@ export function ServicesSection() {
                           onClick={() => {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                            window.open(url);
+                           window.open(url, "_blank");
+
                           }}
                         >
                           {t("services.selectPackage")}
@@ -486,7 +488,8 @@ export function ServicesSection() {
                         onClick={() => {
                           const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
                           const url = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-                          window.open(url);
+                         window.open(url, "_blank");
+
                         }}
                       >
                         {t("services.selectPackage")}
