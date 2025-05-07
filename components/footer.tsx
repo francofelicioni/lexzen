@@ -28,7 +28,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Phone className="size-5 text-blue-gray shrink-0" />
-                <span className="text-gray-400"><a href={`tel:${whatsappNumber}`}>{whatsappNumber}</a></span>
+                <span className="text-gray-400"><a href={`tel:+34614481326`}>{whatsappNumber}</a></span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="size-5 text-blue-gray shrink-0" />

@@ -8,11 +8,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { NewsletterForm } from "./newsletter-form"
 import { Button } from "@/components/ui/button"
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
 const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
 
 export function ContactSection() {
   const { t } = useLanguage()
+
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
 
   return (
     <section id="contact" className="w-full py-8 md:py-24">
@@ -96,7 +97,7 @@ export function ContactSection() {
                       <h4 className="font-medium text-lg">WhatsApp</h4>
                       <Button asChild variant="link" className="bg-transparent hover:bg-blue-gray/20 transition-colors p-0 hover:px-2 transition-all duration-300">
                         <a
-                          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t("whatsappMessage.hello"))}`}
+                          href={`https://wa.me/+34614481326}?text=${encodeURIComponent(t("whatsappMessage.hello"))}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
