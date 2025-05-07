@@ -17,7 +17,7 @@ export const translations = {
       about: "About Us",
       bookCall: "Book Free Consultation",
       contact: "Contact",
-      getStarted: "Get Started",
+      sendWhatsapp: "Send us a Whatsapp Message",
     },
     // Hero Section
     hero: {
@@ -159,7 +159,7 @@ export const translations = {
       selectPackage: "Select Package",
       // Specialized Advice
       specializedTitle: "Specialized Legal Advisory for EU Residency",
-      consultationTitle: "Specific legal guidance for residency paperwork:",
+      consultationTitle: "Specific legal guidance for residency paperwork",
       consultationDesc: "Personalized Residency Legal Consultation",
       bookConsultation: "(+ €50 per additional person)",
       consultationItem1: "Detailed analysis of individual situation",
@@ -350,6 +350,12 @@ export const translations = {
       closing: "Thank you for choosing Lexzen. We're here if you need anything else.",
       farewell: "Sincerely,<br />The Lexzen Team",
     },
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hello, I'm interested in the service",
+      moreInfo: "Can you send me more information? Thanks",
+      hello: "Hello, I'm interested in your legal services. Can you send me more information? Thanks",
+    },
   },
   es: {
     // General
@@ -365,6 +371,7 @@ export const translations = {
       bookCall: "Reservar Consulta Gratuita",
       contact: "Contacto",
       getStarted: "Comenzar",
+      sendWhatsapp: "Enviar mensaje por Whatsapp",
     },
     // Hero Section
     hero: {
@@ -507,7 +514,7 @@ export const translations = {
       selectPackage: "Seleccionar Paquete",
       // Specialized Advice
       specializedTitle: "Asesoría Legal Especializada en Residencia UE",
-      consultationTitle: "Orientación legal específica para trámites de residencia:",
+      consultationTitle: "Orientación legal específica para trámites de residencia",
       consultationDesc: "Consulta Legal Personalizada de Residencia",
       bookConsultation: "(+ €50 por cada persona adicional)",
       consultationItem1: "Análisis detallado de la situación individual",
@@ -706,6 +713,12 @@ export const translations = {
       topic: (topic: string) => `<strong>Tema de la consulta:</strong> ${topic}`,
       closing: "Agradecemos su confianza en Lexzen. Estamos a su disposición para cualquier consulta adicional.",
       farewell: "Atentamente,<br />El equipo de Lexzen",
+    },
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hola, estoy interesado/a en el servicio",
+      moreInfo: "Pueden enviarme mas información? Gracias",
+      hello: "Hola, estoy interesado/a en sus serviios de asesoría legal. Pueden enviarme mas información? Gracias",
     },
   },
 }
