@@ -97,7 +97,9 @@ export function ContactSection() {
                       <h4 className="font-medium text-lg">WhatsApp</h4>
                       <Button asChild variant="link" className="bg-transparent hover:bg-blue-gray/20 transition-colors p-0 hover:px-2 transition-all duration-300">
                         <a
-                          href={`https://wa.me/+34614481326}?text=${encodeURIComponent(t("whatsappMessage.hello"))}`}
+                          href={`https://wa.me/+34614481326?text=${encodeURIComponent(
+                            `${t(`whatsappMessage.hello`)}`
+                          )}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
