@@ -25,7 +25,7 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: "Lexzen - Asesoría Legal Online | Consulta Gratuita de 15 Minutos",
   description:
-    "Servicios especializados de asesoría legal online para negocios digitales y residencia en la UE. Orientación experta en privacidad y protección de datos, digitalización legal y cumplimiento normativo. Agenda una consulta legal gratuita hoy.",
+    "Servicios especializados de asesoría legal online para residencia en la UE, emprendedores y negocios digitales. Orientación experta en privacidad y protección de datos, digitalización legal y cumplimiento normativo. Agenda una consulta legal gratuita hoy.",
   keywords:
     "asesoría legal online, privacidad y protección de datos, digitalización legal, consulta legal gratuita, residencia en la UE, cumplimiento GDPR, derecho de negocios digitales, servicios legales tecnológicos",
   authors: [{ name: "Servicios Legales Lexzen" }],
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://lexzen.com",
-    title: "Lexzen - Asesoría Legal Online para Negocios Digitales",
+    title: "Lexzen - Asesoría Legal Online | Consulta Gratuita de 15 Minutos",
     description:
-      "Servicios especializados de asesoría legal online para negocios digitales y residencia en la UE. Orientación experta en privacidad y protección de datos.",
+      "Servicios especializados de asesoría legal online para residencia en la UE, emprendedores y negocios digitales. Orientación experta en privacidad y protección de datos.",
     siteName: "Servicios Legales Lexzen",
     images: [
       {

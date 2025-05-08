@@ -45,7 +45,7 @@ export function LegalServiceStructuredData() {
                 itemOffered: {
                   "@type": "Service",
                   name: "Asesoría Legal Online",
-                  description: "Asesoría legal online para negocios digitales y residentes en la UE.",
+                  description: "Asesoría legal online para residentes en la UE, emprendedores y negocios digitales.",
                 },
               },
               {
