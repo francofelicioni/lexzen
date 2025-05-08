@@ -30,10 +30,10 @@ export function CtaAndNewsletter() {
                 <div className="w-full border-b border-gray-300 md:hidden"></div>
                 <div className="w-px h-24 bg-gray-300 hidden lg:block"></div>
                 <AnimatedSection direction="up" elementType="heading" className="flex-1 lg:max-w-[600px]">
-                    <div className="text-center space-y-4">
+                    <div className="flex flex-col items-center justify-center space-y-4 text-center px-4">
                         <h3 className="font-semibold text-gray-600 text-3xl md:text-4xl">{t("footer.newsletterHeading")}</h3>
+                        <NewsletterForm />
                     </div>
-                    <NewsletterForm />
                 </AnimatedSection>
             </div>
         </section>
