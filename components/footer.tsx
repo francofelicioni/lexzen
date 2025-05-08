@@ -64,18 +64,23 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.legalHeading")}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray">
+                <Link href="/legals/legal-notice" className="text-gray-400 hover:text-blue-gray">
+                  {t("footer.legalNotice")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/legals/privacy-policy" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.privacyPolicy")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray">
-                  {t("footer.termsOfService")}
+                <Link href="/legals/cookie-policy" className="text-gray-400 hover:text-blue-gray">
+                  {t("footer.cookiePolicy")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray">
-                  {t("footer.legalNotice")}
+                <Link href="/legals/terms-of-service" className="text-gray-400 hover:text-blue-gray">
+                  {t("footer.termsOfService")}
                 </Link>
               </li>
             </ul>
