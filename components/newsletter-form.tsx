@@ -66,7 +66,7 @@ export function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="pr-24 transition-all duration-300 focus:border-blue-gray focus:ring-blue-gray h-12 text-base"
+            className="transition-all duration-300 focus:border-blue-gray focus:ring-blue-gray h-12 text-base"
             disabled={status === "loading" || status === "success"}
           />
           <Button
