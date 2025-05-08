@@ -350,7 +350,7 @@ export const translations = {
     whatsappMessage: {
       greeting: "Hello, I'm interested in the service",
       moreInfo: "Can you send me more information? Thanks",
-      hello: "Hello, I'm interested in your legal services. Can you send me more information? Thanks",
+      hello: "Hello, I'm interested in your legal consultancy services. Can you send me more information? Thanks",
     },
   },
   es: {
@@ -710,7 +710,7 @@ export const translations = {
     whatsappMessage: {
       greeting: "Hola, estoy interesado/a en el servicio",
       moreInfo: "¿Podrían enviarme más información? Gracias",
-      hello: "Hola, estoy interesado/a en sus serviios de asesoría legal. ¿Podrían enviarme más información? Gracias",
+      hello: "Hola, estoy interesado/a en sus servicios de asesoría legal. ¿Podrían enviarme más información? Gracias",
     },
   },
 }
