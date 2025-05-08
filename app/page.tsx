@@ -137,8 +137,7 @@ export default function Home() {
                     <img
                       src="/avatar3.jpg"
                       alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
-                      className="w-full h-full object-cover rounded-full"
-                      loading="lazy"
+                      className="h-full object-cover rounded-full"                      loading="lazy"
                     />
                   </div>
                   <div className="w-full">
@@ -154,8 +153,7 @@ export default function Home() {
                     <img
                       src="/avatar2.jpg"
                       alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
-                      className="w-full h-full object-cover rounded-full"
-                      loading="lazy"
+                      className="h-full object-cover rounded-full"                      loading="lazy"
                     />
                   </div>
                   <div className="w-full">
@@ -171,8 +169,7 @@ export default function Home() {
                     <img
                       src="/avatar1.jpg"
                       alt="Lexzen online legal advisory team providing expert guidance on privacy and data protection for digital businesses"
-                      className="w-full h-full object-cover rounded-full"
-                      loading="lazy"
+                      className="h-full object-cover rounded-full"                      loading="lazy"
                     />
                   </div>
                   <div className="w-full">
@@ -187,16 +184,16 @@ export default function Home() {
 
         {/* CTA Section & Newsletter */}
         <section className="w-full py-8 md:py-24 bg-blue-gray/10 relative overflow-hidden border border-blue-gray/20">
-          <div className="container flex flex-col md:flex-row justify-between items-start px-4 md:px-6 relative z-10 space-y-8 md:space-y-0">
-            <AnimatedSection direction="up" elementType="heading" className="flex-1 md:border-r border-gray-300">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="container flex flex-col md:flex-row justify-between items-start lg:items-center px-4 md:px-6 relative space-y-8 md:space-y-0">
+            <AnimatedSection direction="up" elementType="heading" className="flex-1 lg:max-w-[600px]">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center px-4">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-gray-600">{t("cta.title")}</h2>
                   <p className="max-w-[900px] text-gray-100 py-2 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     {t("cta.subtitle")}
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 md:min-[400px]:flex-row">
+                <div className="flex flex-col lg:flex-row md:min-[400px] gap-2">
                   <Button className="bg-legal-accent-dark text-white hover:bg-legal-accent hover:text-gray-100" asChild>
                     <a href="#booking">{t("cta.scheduleConsultation")}</a>
                   </Button>
@@ -207,13 +204,12 @@ export default function Home() {
               </div>
             </AnimatedSection>
             <div className="w-full border-b border-gray-300 md:hidden"></div>
-            <AnimatedSection direction="up" elementType="heading" className="flex-1">
-              <div className="space-y-4 px-4 md:max-w-[600px] mx-auto">
-                <div className="text-center space-y-2">
+            <div className="w-px h-24 bg-gray-300 hidden lg:block"></div>
+            <AnimatedSection direction="up" elementType="heading" className="flex-1 lg:max-w-[600px]">
+                <div className="text-center space-y-4">
                   <h3 className="font-semibold text-gray-600 text-3xl md:text-4xl">{t("footer.newsletterHeading")}</h3>
                 </div>
                 <NewsletterForm />
-              </div>
             </AnimatedSection>
           </div>
         </section>

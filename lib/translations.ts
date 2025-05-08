@@ -9,6 +9,7 @@ export const translations = {
       month: "month",
       min2Hours: "minimum 2 hours",
       from: "from",
+      whatsapp: "+34 614 481 326",
     },
     // Language
     language: {
@@ -21,7 +22,7 @@ export const translations = {
       about: "About Us",
       bookCall: "Book Free Consultation",
       contact: "Contact",
-      getStarted: "Get Started",
+      sendWhatsapp: "Send us a Whatsapp Message",
     },
     // Hero Section
     hero: {
@@ -163,7 +164,7 @@ export const translations = {
       selectPackage: "Select Package",
       // Specialized Advice
       specializedTitle: "Specialized Legal Advisory for EU Residency",
-      consultationTitle: "Specific legal guidance for residency paperwork:",
+      consultationTitle: "Specific legal guidance for residency paperwork",
       consultationDesc: "Personalized Residency Legal Consultation",
       bookConsultation: "(+ €50 per additional person)",
       consultationItem1: "Detailed analysis of individual situation",
@@ -220,7 +221,7 @@ export const translations = {
       title: "Schedule Your Free 15-Minute Legal Consultation",
       subtitle:
         "Book a free consultation with our legal experts and receive guidance to protect and grow your digital business.",
-      howItWorks: "How Our Free Legal Consultation Works",
+      howItWorks: "How Our Free Consultation Works",
       howItWorksDesc: "Simple steps to schedule your free online legal consultation",
       step1: "Select a Date and Time",
       step1Desc: "Choose from available slots Monday to Friday, Spanish time zone (CET/CEST)",
@@ -233,7 +234,7 @@ export const translations = {
       consultationItem2: "Initial assessment of your legal needs",
       consultationItem3: "Recommendations for next legal steps",
       consultationItem4: "No obligation to hire legal services",
-      bookYourConsultation: "Book Your Free Legal Consultation",
+      bookYourConsultation: "Book Your Consultation",
       selectDate: "Select a date for your consultation",
       chooseTime: "Choose an available time slot",
       completeDetails: "Complete your booking details",
@@ -263,7 +264,7 @@ export const translations = {
     },
     // Testimonials
     testimonials: {
-      title: "What Our Clients Say About Our Services",
+      title: "What Our Clients Say",
       subtitle: "Hear from people we've helped with our online legal advisory services.",
       testimonial1: '"Thanks to the detailed advice and preparation of my application folder, the process of obtaining my EU registration certificate was much smoother than I expected. The guidance was clear at every step, and the documents were perfectly organized, which was positively recognized by the immigration office. I felt supported and well-informed throughout the process."',
       client1Name: "Laura M.",
@@ -299,10 +300,7 @@ export const translations = {
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contact",
-      address: "Calle Gran Vía 28, Madrid, Spain",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contact with us quickly",
       // Social
       socialHeading: "Follow Us",
       // Newsletter
@@ -311,8 +309,7 @@ export const translations = {
         "Subscribe to our newsletter for legal tips and updates on privacy and data protection",
       emailPlaceholder: "Your email address",
       subscribe: "Subscribe",
-      privacyConsent:
-        "By subscribing, you agree to our Privacy Policy and consent to receive legal updates from Lexzen.",
+      privacyConsent:"By subscribing, you agree to our Privacy Policy and receive updates from us.",
       subscribeSuccess: "Thank you for subscribing to our newsletter!",
       subscribeError: "There was an error. Please try again.",
       alreadySubscribed: "This email address is already subscribed to our newsletter.",
@@ -710,7 +707,13 @@ export const translations = {
           },
         },
       }
-    }
+    },
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hello, I'm interested in the service",
+      moreInfo: "Can you send me more information? Thanks",
+      hello: "Hello, I'm interested in your legal consultancy services. Can you send me more information? Thanks",
+    },
   },
   es: {
     // General
@@ -731,6 +734,7 @@ export const translations = {
       bookCall: "Reservar Consulta Gratuita",
       contact: "Contacto",
       getStarted: "Comenzar",
+      sendWhatsapp: "Enviar mensaje por Whatsapp",
     },
     // Hero Section
     hero: {
@@ -873,7 +877,7 @@ export const translations = {
       selectPackage: "Seleccionar Paquete",
       // Specialized Advice
       specializedTitle: "Asesoría Legal Especializada en Residencia UE",
-      consultationTitle: "Orientación legal específica para trámites de residencia:",
+      consultationTitle: "Orientación legal específica para trámites de residencia",
       consultationDesc: "Consulta Legal Personalizada de Residencia",
       bookConsultation: "(+ €50 por cada persona adicional)",
       consultationItem1: "Análisis detallado de la situación individual",
@@ -938,7 +942,7 @@ export const translations = {
       title: "Programe Su Consulta Legal Gratuita de 15 Minutos",
       subtitle:
         "Agende una consulta gratuita con nuestros expertos y obtenga la orientación legal necesaria para proteger y expandir su empresa de manera sólida en el mundo digital.",
-      howItWorks: "Cómo Funciona Nuestra Consulta Legal Gratuita",
+      howItWorks: "Cómo Funciona Nuestra Consulta Gratuita",
       howItWorksDesc: "Pasos simples para programar su consulta legal online gratuita",
       step1: "Seleccione una Fecha y Hora",
       step1Desc: "Elija entre los horarios disponibles de lunes a viernes en zona horaria española (CET/CEST)",
@@ -951,7 +955,7 @@ export const translations = {
       consultationItem2: "Evaluación inicial de sus necesidades legales",
       consultationItem3: "Recomendaciones para los siguientes pasos legales",
       consultationItem4: "Sin obligación de contratar servicios legales",
-      bookYourConsultation: "Reserve Su Consulta Legal Gratuita",
+      bookYourConsultation: "Reserve su Consulta Gratuita",
       selectDate: "Seleccione una fecha para su consulta legal gratuita",
       chooseTime: "Elija un horario disponible",
       completeDetails: "Complete sus datos de reserva",
@@ -981,7 +985,7 @@ export const translations = {
     },
     // Testimonials
     testimonials: {
-      title: "Lo Que Dicen Nuestros Clientes de Nuestras Asesorías",
+      title: "Lo Que Dicen Nuestros Clientes",
       subtitle: "Escuche de personas a las que hemos ayudado con nuestros servicios de asesoría legal online.",
       testimonial1: '"Gracias al asesoramiento y preparación detallada de mi carpeta de solicitud, el proceso para obtener mi certificado de registro como ciudadana de la UE fue mucho más fluido de lo que esperaba. La asesoría fue clara en cada paso y los documentos estaban perfectamente organizados, lo que fue reconocido positivamente por la oficina de extranjería. Me sentí acompañada y bien informada en todo momento."',
       client1Name: "Laura M.",
@@ -1018,10 +1022,7 @@ export const translations = {
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contacto",
-      address: "Calle Gran Vía 28, Madrid, España",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contacta con nosotros rápidamente",
       // Social
       socialHeading: "Síguenos",
       // Newsletter
@@ -1030,13 +1031,10 @@ export const translations = {
         "Suscríbete a nuestro boletín para consejos legales y actualizaciones sobre privacidad y protección de datos",
       emailPlaceholder: "Tu correo electrónico",
       subscribe: "Suscribirse",
-      privacyConsent:
-        "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones legales de Lexzen.",
+      privacyConsent:"Al suscribirte, aceptas nuestra Política de Privacidad y recibir actualizaciones de nosotros.",
       subscribeSuccess: "¡Gracias por suscribirte a nuestro newsletter!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
       alreadySubscribed: "Este correo ya está suscrito a nuestro newsletter.",
-      //Whatsapp
-      whatsapp: "+34 912 456 789",
     },
     // Contact Form
     contactForm: {
@@ -1430,5 +1428,11 @@ export const translations = {
         },
       },
     },
-  }
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hola, estoy interesado/a en el servicio",
+      moreInfo: "¿Podrían enviarme más información? Gracias",
+      hello: "Hola, estoy interesado/a en sus servicios de asesoría legal. ¿Podrían enviarme más información? Gracias",
+    },
+  },
 }

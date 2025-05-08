@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
 import { SafeHydratedThemeProvider } from "@/components/theme-provider-safe"
 import { Toaster } from "react-hot-toast"
+import Script from "next/script"
 
-// Load Inter font with multiple weights
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -15,7 +15,6 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 })
 
-// Load Merriweather font
 const merriweather = Merriweather({
   subsets: ["latin"],
   variable: "--font-merriweather",
@@ -24,43 +23,40 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
-  title: "Lexzen - Online Legal Advisory for Digital Businesses | Free Consultation",
+  title: "Lexzen - Asesoría Legal Online | Consulta Gratuita de 15 Minutos",
   description:
-    "Specialized online legal advisory services for digital businesses and EU residency. Expert guidance in privacy and data protection, legal digitalization, and compliance. Schedule a free legal consultation today.",
+    "Servicios especializados de asesoría legal online para residencia en la UE, emprendedores y negocios digitales. Orientación experta en privacidad y protección de datos, digitalización legal y cumplimiento normativo. Agenda una consulta legal gratuita hoy.",
   keywords:
-    "online legal advisory, privacy and data protection, legal digitalization, free legal consultation, EU residency, GDPR compliance, digital business law, legal tech services",
-  authors: [{ name: "Lexzen Legal Services" }],
-  creator: "Lexzen Legal Team",
+    "asesoría legal online, privacidad y protección de datos, digitalización legal, consulta legal gratuita, residencia en la UE, cumplimiento GDPR, derecho de negocios digitales, servicios legales tecnológicos",
+  authors: [{ name: "Servicios Legales Lexzen" }],
+  creator: "Equipo Legal Lexzen",
   publisher: "Lexzen",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "es_ES",
     url: "https://lexzen.com",
-    title: "Lexzen - Online Legal Advisory for Digital Businesses",
+    title: "Lexzen - Asesoría Legal Online | Consulta Gratuita de 15 Minutos",
     description:
-      "Specialized online legal advisory services for digital businesses and EU residency. Expert guidance in privacy and data protection.",
-    siteName: "Lexzen Legal Services",
+      "Servicios especializados de asesoría legal online para residencia en la UE, emprendedores y negocios digitales. Orientación experta en privacidad y protección de datos.",
+    siteName: "Servicios Legales Lexzen",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Lexzen - Online Legal Advisory Services",
+        alt: "Servicios Legales Lexzen",
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Lexzen - Online Legal Advisory for Digital Businesses",
-    description:
-      "Specialized online legal advisory services for digital businesses and EU residency. Expert guidance in privacy and data protection.",
-    images: ["/twitter-image.jpg"],
+  icons: {
+    icon: "favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "apple-touch-icon.png",
   },
   robots: {
     index: true,
     follow: true,
   },
-  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -71,10 +67,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
+        <link rel="icon" href="/favicon.ico" />
+        <Script
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-          async
-          defer
+          strategy="afterInteractive"
         />
       </head>
       <body className={`${inter.variable} ${merriweather.variable} font-body`}>

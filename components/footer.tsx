@@ -9,6 +9,10 @@ export function Footer() {
   const { t } = useLanguage()
   const isMobile = useMobile()
 
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
+
+
   return (
     <footer className="bg-gray-50 border-t">
       <div className="container px-4 md:px-6 py-12 md:py-16">
@@ -22,17 +26,13 @@ export function Footer() {
               {t("footer.footerDesc")}
             </p>
             <div className="space-y-3">
-              {/* <div className="flex items-start gap-2">
-                <MapPin className="size-5 text-blue-gray mt-0.5 shrink-0" />
-                <span className="text-gray-400">{t("footer.address")}</span>
-              </div> */}
               <div className="flex items-center gap-2">
                 <Phone className="size-5 text-blue-gray shrink-0" />
-                <span className="text-gray-400">{t("footer.phone")}</span>
+                <span className="text-gray-400"><a href={`tel:+34614481326`}>{whatsappNumber}</a></span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="size-5 text-blue-gray shrink-0" />
-                <span className="text-gray-400">{t("footer.email")}</span>
+                <span className="text-gray-400"><a href={`mailto:${contactEmail}`}>{contactEmail}</a></span>
               </div>
             </div>
           </div>
@@ -42,25 +42,15 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.companyHeading")}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-blue-gray block">
+                <Link href="#about" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-gray-400 hover:text-blue-gray block">
+                <Link href="#services" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.services")}
                 </Link>
               </li>
-              {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block">
-                  {t("footer.careers")}
-                </Link>
-              </li> */}
-              {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block">
-                  {t("footer.blog")}
-                </Link>
-              </li> */}
               <li>
                 <Link href="#contact" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.contact")}
@@ -91,8 +81,6 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
-
         {/*  Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-center"} items-center gap-4`}>

@@ -6,9 +6,14 @@ import { ContactForm } from "./contact-form"
 import { AnimatedSection } from "./animated-section"
 import { Card, CardContent } from "@/components/ui/card"
 import { NewsletterForm } from "./newsletter-form"
+import { Button } from "@/components/ui/button"
+
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
 
 export function ContactSection() {
   const { t } = useLanguage()
+
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
 
   return (
     <section id="contact" className="w-full py-8 md:py-24">
@@ -39,48 +44,44 @@ export function ContactSection() {
 
           {/* Contact Information */}
           <div className="order-1 lg:order-2">
-            <div className="space-y-8 ">
-              {/* Map or Office Image */}
-              <div className="relative h-[380px] w-full overflow-hidden rounded-xl bg-gray-100">
-                <img
-                  src="/office.jpg"
-                  alt="Lexzen office location map"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                  {/* <div className="text-white font-medium">Lexzen Legal Services</div> */}
-                </div>
+            <div className="space-y-8 rounded-lg bg-white shadow-md p-6 lg:p-8">
+              <img
+                src="/office.jpg"
+                alt="Lexzen office location map"
+                className="lg:h-full object-fit cover rounded-xl w-full h-64 lg:h-96"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-6">
               </div>
-
               {/* Contact Details */}
               <div className="space-y-6">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
-
-                <div className="grid gap-6 md:grid-cols-2">
-
+                <div className="grid gap-6 grid-cols-1">
                   {/* Email */}
-                  <div className="flex items-start gap-4 group">
+                  <div className="flex items-center gap-2 lg:gap-4 group">
                     <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
-                      <Mail className="h-6 w-6 text-blue-gray" />
+                      <Mail className="size-6 text-blue-gray" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg">Email</h4>
-                      <p className="text-gray-600 text-base">
-                        <a href={`mailto:${t("footer.email")}`} className="hover:text-blue-600 hover:underline">
-                          {t("footer.email")}
+                      <Button asChild variant="link" className="bg-transparent hover:bg-blue-gray/20 transition-colors p-0 hover:px-2 transition-all duration-300">
+                        <a
+                          href={`mailto:${contactEmail}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {contactEmail}
                         </a>
-                      </p>
+                      </Button>
                     </div>
                   </div>
-
                   {/* WhatsApp */}
-                  <div className="flex items-start gap-4 group">
-                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors">
+                  <div className="flex items-center gap-2 lg:gap-4 group">
+                    <div className="rounded-full bg-blue-gray/10 p-3 mt-1 group-hover:bg-blue-gray/20 transition-colors ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="size-7 text-blue-gray"
+                        className="size-6 text-blue-gray"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
@@ -94,11 +95,17 @@ export function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-medium text-lg">WhatsApp</h4>
-                      <p className="text-gray-600 text-base">
-                        <a href={`https://wa.me/${t("footer.whatsapp")}`} className="hover:text-blue-600 hover:underline">
-                          {t("footer.whatsapp")}
+                      <Button asChild variant="link" className="bg-transparent hover:bg-blue-gray/20 transition-colors p-0 hover:px-2 transition-all duration-300">
+                        <a
+                          href={`https://wa.me/+34614481326?text=${encodeURIComponent(
+                            `${t(`whatsappMessage.hello`)}`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {whatsappNumber}
                         </a>
-                      </p>
+                      </Button>
                     </div>
                   </div>
                 </div>
