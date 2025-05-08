@@ -84,16 +84,16 @@ function PricingPackage({
         </CardContent>
         <CardFooter>
           <div className="flex justify-start items-center">
-          <Button
-            className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base"
-            onClick={() => {
-              const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
-              const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
-              window.open(url, "_blank");
-            }}
-          >
-            {buttonText}
-          </Button>
+            <Button
+              className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base"
+              onClick={() => {
+                const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
+                const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                window.open(url, "_blank");
+              }}
+            >
+              {buttonText}
+            </Button>
           </div>
         </CardFooter>
       </Card>
@@ -391,18 +391,18 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                      <div className="flex justify-start items-center">
-                        <Button
-                          className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
-                          onClick={() => {
-                            const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
-                            const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
-                            window.open(url, "_blank");
-                          }}
-                        >
-                          {t("services.selectPackage")}
-                        </Button>
-                      </div>
+                        <div className="flex justify-start items-center">
+                          <Button
+                            className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
+                            onClick={() => {
+                              const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
+                              const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                              window.open(url, "_blank");
+                            }}
+                          >
+                            {t("services.selectPackage")}
+                          </Button>
+                        </div>
                       </CardFooter>
                     </Card>
                   </AnimatedSection>
@@ -488,19 +488,19 @@ export function ServicesSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                    <div className="flex justify-start items-center">
-                      <Button
-                        className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
-                        onClick={() => {
-                          const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
-                          const url = `https://wa.me/34614481326?text=${encodeURIComponent(message)}`;
-                          window.open(url, "_blank");
+                      <div className="flex justify-start items-center">
+                        <Button
+                          className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift"
+                          onClick={() => {
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
+                            const url = `https://wa.me/34614481326?text=${encodeURIComponent(message)}`;
+                            window.open(url, "_blank");
 
-                        }}
-                      >
-                        {t("services.selectPackage")}
-                      </Button>
-                    </div>
+                          }}
+                        >
+                          {t("services.selectPackage")}
+                        </Button>
+                      </div>
                     </CardFooter>
                   </Card>
                 </AnimatedSection>
@@ -626,12 +626,14 @@ export function ServicesSection() {
         </Tabs>
       </div>
       {/* CTA */}
-      <AnimatedSection direction="up" delay={700} className="py-16 text-center">
-        <h3 className="text-xl font-bold mb-4">{t("about.readyToWork")}</h3>
-        <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
-          <a href="#bookingCalendar">{t("hero.scheduleFree")}</a>
-        </Button>
+      <AnimatedSection direction="up" delay={700} className="mt-8 mb-16 text-center">
+        <div className="container px-6 py-8 md:px-12 md:py-10 bg-gradient-to-r from-blue-50 to-white-50 shadow-lg rounded-xl w-fit mx-auto">
+          <h3 className="text-xl font-bold mb-4 text-blue-gray">{t("about.readyToWork")}</h3>
+          <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
+            <a href="#booking">{t("hero.scheduleFree")}</a>
+          </Button>
+        </div>
       </AnimatedSection>
-    </section>
+    </section >
   )
 }
