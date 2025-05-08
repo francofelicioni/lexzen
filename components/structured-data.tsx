@@ -8,16 +8,14 @@ export function LegalServiceStructuredData() {
           "@type": "LegalService",
           name: "Lexzen Asesoría Legal",
           description:
-            "Servicios especializados de asesoría legal online para negocios digitales y residencia en la UE. Orientación experta en privacidad y protección de datos, digitalización legal y cumplimiento normativo.",
+            "Servicios especializados de asesoría legal | Residencia en la UE y asesoría legal para emprendedores. Orientación experta en privacidad y protección de datos, digitalización legal y cumplimiento normativo.",
           url: "https://lexzen.com",
-          logo: "https://lexzen.com/logo.png",
+          logo: "https://lexzen.com/lexzen.jpg",
           address: {
             addressCountry: "ES",
           },
           telephone: "+34614481326",
           email: "info@lexzen.com",
-          openingHours: "Lu,Ma,Mi,Ju,Vi 09:00-18:00",
-          priceRange: "€€",
           serviceType: [
             "Asesoría Legal Online",
             "Privacidad y Protección de Datos",
@@ -97,9 +95,9 @@ export function LocalBusinessStructuredData() {
           telephone: "+34614481326",
           address: {
             // "@type": "PostalAddress",
-            // streetAddress: "Calle Gran Vía 28",
-            // addressLocality: "Madrid",
-            // postalCode: "28013",
+            // streetAddress: "",
+            // addressLocality: "",
+            // postalCode: "",
             addressCountry: "ES",
           },
           // geo: {
