@@ -553,7 +553,7 @@ export const translations = {
           cookies: {
             title: "10. Cookie Policy",
             content:
-              "This website uses first- and third-party cookies to ensure functionality, improve user experience, and perform statistical analysis. For more information on cookie usage and management, please see our {cookiePolicyLink}.",
+              "This website uses first- and third-party cookies to ensure functionality, improve user experience, and perform statistical analysis. For more information on cookie usage and management, please see our ",
           },
         },
       },
@@ -1274,7 +1274,7 @@ export const translations = {
           cookies: {
             title: "10. Política de Cookies",
             content:
-              "Este sitio usa cookies propias y de terceros para funcionalidad, experiencia y análisis. Para más información, consulta nuestra {cookiePolicyLink}.",
+              "Este sitio usa cookies propias y de terceros para funcionalidad, experiencia y análisis. Para más información, consulta nuestra ",
           },
         },
       },

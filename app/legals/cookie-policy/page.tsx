@@ -14,7 +14,7 @@ const CookiePolicy = () => {
             <div className="max-w-3xl mx-auto px-4 py-10">
                 <h1 className="text-3xl font-bold mb-2">{t('legals.cookiePolicy.title')}</h1>
                 <p className="text-sm text-gray-500 mb-6">
-                    {/* {t('legals.cookiePolicy.lastUpdated', { date: 'May 2025' })} */}
+                    {t('legals.cookiePolicy.lastUpdated').replace('{date}', 'May 2025')}
                 </p>
 
                 <p className="mb-4">{t('legals.cookiePolicy.intro.description')}</p>
@@ -49,7 +49,7 @@ const CookiePolicy = () => {
                 <section className="mb-8">
                     <h2 className="text-xl font-semibold mb-2">{t('legals.cookiePolicy.sections.usedCookies.title')}</h2>
                     <p>{t('legals.cookiePolicy.sections.usedCookies.note')}</p>
-                    {/* Aquí puedes renderizar la tabla de cookies si la tienes */}
+                    {/* To do: table */}
                 </section>
 
                 <section className="mb-8">

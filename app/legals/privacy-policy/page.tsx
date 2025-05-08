@@ -4,20 +4,19 @@ import React from 'react';
 import { useLanguage } from '@/contexts/language-context';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import Link from 'next/link';
 
 const PrivacyPolicy = () => {
 
     const { t } = useLanguage();
 
-
     return (
-
-        <>    
+        <>
             <Header />
             <div className="max-w-3xl mx-auto px-4 py-10">
                 <h1 className="text-3xl font-bold mb-2">{t('legals.privacyPolicy.title')}</h1>
                 <p className="text-sm text-gray-500 mb-6">
-                    {/* {t('legals.privacyPolicy.lastUpdated', { date: 'May 2025' })} */}
+                    {t('legals.privacyPolicy.lastUpdated').replace('{date}', 'May 2025')}
                 </p>
 
                 <p className="mb-4">{t('legals.privacyPolicy.intro.description')}</p>
@@ -29,7 +28,7 @@ const PrivacyPolicy = () => {
                         <li>{t('legals.privacyPolicy.sections.identity.controller')}</li>
                         <li>{t('legals.privacyPolicy.sections.identity.legalStatus')}</li>
                         <li>{t('legals.privacyPolicy.sections.identity.email')}</li>
-                        {/* <li>{t('legals.privacyPolicy.sections.identity.phone', { phone: '+34614481326' })}</li> */}
+                        <li>{t('legals.privacyPolicy.sections.identity.phone').replace('{phone}', '+34614481326')}</li>
                         <li>{t('legals.privacyPolicy.sections.identity.note')}</li>
                     </ul>
                 </section>
@@ -111,9 +110,8 @@ const PrivacyPolicy = () => {
                 <section>
                     <h2 className="text-xl font-semibold mb-2">{t('legals.privacyPolicy.sections.cookies.title')}</h2>
                     <p>
-                        {/* {t('legals.privacyPolicy.sections.cookies.content', {
-                        cookiePolicyLink: <Link href="/legal/cookie-policy" className="text-blue-600 underline">Cookie Policy</Link>,
-                    })} */}
+                        {t('legals.privacyPolicy.sections.cookies.content')}
+                        <a href="/legals/cookie-policy">{t('footer.cookiePolicy')}.</a>
                     </p>
                 </section>
             </div>
