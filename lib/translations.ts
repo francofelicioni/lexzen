@@ -290,6 +290,7 @@ export const translations = {
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       legalNotice: "Legal Notice",
+      cookiePolicy: "Cookie Policy",
       contact: "Contact",
       // Company
       companyHeading: "Company",
@@ -1012,6 +1013,7 @@ export const translations = {
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
       legalNotice: "Aviso Legal",
+      cookiePolicy: "Política de Cookies",
       contact: "Contacto",
       // Company
       companyHeading: "Empresa",
