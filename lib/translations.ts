@@ -28,7 +28,8 @@ export const translations = {
     hero: {
       title: "Practical Legal Solutions for Startups and New Residents in Europe",
       subtitle:
-        "Accessible and clear legal advice for those starting businesses, relocating, or facing early legal challenges while building their projects. From contracts to residency paperwork, with a strategic approach and international expertise.",
+        "Accessible and clear legal advice for those starting businesses, relocating, or facing early legal challenges while building their projects.",
+      subtitle2:"From contracts to residency paperwork, with a strategic approach and international expertise.",
       scheduleFree: "Schedule Free Legal Consultation",
       viewServices: "View Legal Services",
     },
@@ -178,42 +179,45 @@ export const translations = {
       subtitle: "A team of experienced legal professionals combining expertise with digital innovation",
       ourStory: "Our Story",
       storyContent1:
-        "Lexzen was born from direct experience: navigating the personal and professional challenges of settling in a new country, from complex residency paperwork to legal hurdles faced when starting or running a digital business abroad.",
-      storyContent2:
-        "The project started with a clear conviction: many people don't need heavy legal jargon — they need clear, accessible support aligned with their reality. Those starting a new chapter in Europe or building a digital business often face critical legal decisions they're unprepared for. That's where Lexzen adds value.",
+      "Lexzen was born from firsthand experience: navigating, step by step, the personal and professional challenges of settling in a new country.",
+      storyContent2: "From the complexity of residency paperwork to the legal obstacles faced by those starting or developing a digital business from abroad.",
       storyContent3:
-        "With solid legal training and practical experience in migration processes, contract advisory, and legal structuring for emerging projects, we offer a service focused on strategic guidance without unnecessary complexity. Our approach combines technical expertise with lived experience, providing real, understandable, and applicable solutions.",
-      storyContent4:
-        "We believe in legal advice that not only solves but also supports. Having walked this path ourselves, we are uniquely positioned to guide others on theirs.",
+      "The project was founded with a clear conviction: many people don't need lengthy legal speeches but rather clear, accessible guidance aligned with the specifics of their reality.",
+      storyContent4: "Those starting a new chapter in Europe or building a business in the digital environment often face key legal decisions for which they are not always prepared. This is where Lexzen adds value.",
+      storyContent5:
+      "With solid legal training and practical experience in migration processes, contract advisory, and legal structuring for emerging projects, we offer a service focused on strategic guidance without unnecessary complexity.",
+      storyContent6: "Our approach combines technical knowledge with lived experience to provide real, understandable, and applicable solutions.",
+      storyContent7:
+      "We believe in legal advisory that not only solves problems but also supports clients. Having walked this path ourselves, we understand it and put that knowledge at the service of those starting their journey today.",
       ourFounders: "Our Legal Experts",
       founder1Name: "Elena Martínez",
       founder1Title: "Managing Partner and Legal Director",
       founder1Bio:
-        "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. She has advised major tech companies and startups across Europe, specializing in privacy and data protection.",
+      "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. She has advised major tech companies and startups across Europe, specializing in privacy and data protection.",
       founder1Education: "J.D., Complutense University",
       founder2Name: "Carlos Rodríguez",
       founder2Title: "Technology and Compliance Director",
       founder2Bio:
-        "Carlos brings a unique combination of legal and technical expertise, specializing in privacy, GDPR compliance, and legal digitalization. His dual background in law and IT bridges the gap between legal requirements and technical implementation.",
+      "Carlos brings a unique combination of legal and technical expertise, specializing in privacy, GDPR compliance, and legal digitalization. His dual background in law and IT bridges the gap between legal requirements and technical implementation.",
       founder2Education: "LL.M., IE Law School",
       founder3Name: "Sofia Navarro",
       founder3Title: "Immigration and Residency Specialist",
       founder3Bio:
-        "Sofia specializes in immigration law and residency requirements, particularly for EU citizens and family reunifications. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes.",
+      "Sofia specializes in immigration law and residency requirements, particularly for EU citizens and family reunifications. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes.",
       founder3Education: "J.D., University of Barcelona",
       ourValues: "Core Values",
       integrity: "Legal Clarity",
       integrityDesc:
-        "We prioritize conceptual precision and accessible communication. Our mission is to interpret and explain legal content clearly without losing rigor.",
+      "We prioritize conceptual precision and accessible communication. Our mission is to interpret and explain legal content clearly without losing rigor.",
       clientCentered: "Individualized Advisory",
       clientCenteredDesc:
-        "Every situation deserves specific analysis. We provide professional support tailored to each case's particular needs, with strategic focus and personalized attention.",
+      "Every situation deserves specific analysis. We provide professional support tailored to each case's particular needs, with strategic focus and personalized attention.",
       excellence: "Technical Excellence with Operational Vision",
       excellenceDesc:
-        "We maintain high standards of legal quality, combining strong regulatory grounding with viable, decision-oriented solutions.",
+      "We maintain high standards of legal quality, combining strong regulatory grounding with viable, decision-oriented solutions.",
       innovation: "Applied Professional Experience",
       innovationDesc:
-        "With firsthand experience in international mobility and digital business legal structuring, we anticipate scenarios and offer practical, up-to-date responses.",
+      "With firsthand experience in international mobility and digital business legal structuring, we anticipate scenarios and offer practical, up-to-date responses.",
       readyToWork: "Ready to Get Started?",
     },
     // Booking Calendar
@@ -310,7 +314,7 @@ export const translations = {
         "Subscribe to our newsletter for legal tips and updates on privacy and data protection",
       emailPlaceholder: "Your email address",
       subscribe: "Subscribe",
-      privacyConsent:"By subscribing, you agree to our Privacy Policy and receive updates from us.",
+      privacyConsent: "By subscribing, you agree to our Privacy Policy and receive updates from us.",
       subscribeSuccess: "Thank you for subscribing to our newsletter!",
       subscribeError: "There was an error. Please try again.",
       alreadySubscribed: "This email address is already subscribed to our newsletter.",
@@ -741,7 +745,8 @@ export const translations = {
     hero: {
       title: "Soluciones legales prácticas para startups y nuevos residentes en Europa",
       subtitle:
-        "Asesoramiento accesible y claro para quienes emprenden, se relocalizan o enfrentan los primeros desafíos legales a la hora de desarrollar su negocio. Desde contratos hasta trámites de residencia, con mirada estratégica y experiencia internacional.",
+        "Asesoramiento accesible y claro para quienes emprenden, se relocalizan o enfrentan los primeros desafíos legales a la hora de desarrollar su negocio.",
+      subtitle2: "Desde contratos hasta trámites de residencia, con mirada estratégica y experiencia internacional.",
       scheduleFree: "Programar Consulta Gratuita",
       viewServices: "Ver Servicios Legales",
     },
@@ -892,14 +897,16 @@ export const translations = {
       subtitle: "Un equipo de profesionales legales experimentados que combinan experiencia con innovación digital",
       ourStory: "Nuestra Historia",
       storyContent1:
-        "Lexzen surge a partir de una experiencia directa: atravesar, paso a paso, los desafíos personales y profesionales que implica establecerse en un nuevo país. Desde la complejidad de los trámites de residencia hasta los obstáculos legales que enfrentan quienes emprenden o desarrollan un negocio digital desde el extranjero.",
-      storyContent2:
-        "El proyecto nació con una convicción clara: muchas personas no necesitan grandes discursos jurídicos, sino acompañamiento claro, accesible y alineado con las particularidades de su realidad. Quienes están iniciando una nueva etapa en Europa, o construyendo una empresa en el entorno digital, suelen enfrentarse a decisiones legales clave para las cuales no siempre están preparados. Ahí es donde Lexzen aporta valor.",
+        "Lexzen surge a partir de una experiencia directa: atravesar, paso a paso, los desafíos personales y profesionales que implica establecerse en un nuevo país.",
+      storyContent2: "Desde la complejidad de los trámites de residencia hasta los obstáculos legales que enfrentan quienes emprenden o desarrollan un negocio digital desde el extranjero.",
       storyContent3:
-        "Con una sólida formación jurídica y experiencia práctica en procesos de migración, asesoría contractual y estructura legal para proyectos emergentes, ofrecemos un servicio centrado en la orientación estratégica, sin complejidad innecesaria. Nuestro enfoque combina el conocimiento técnico con la experiencia vivida, para brindar soluciones reales, comprensibles y aplicables.",
-      storyContent4:
+        "El proyecto nació con una convicción clara: muchas personas no necesitan grandes discursos jurídicos, sino acompañamiento claro, accesible y alineado con las particularidades de su realidad.",
+      storyContent4: "Quienes están iniciando una nueva etapa en Europa, o construyendo una empresa en el entorno digital, suelen enfrentarse a decisiones legales clave para las cuales no siempre están preparados. Ahí es donde Lexzen aporta valor.",
+      storyContent5:
+        "Con una sólida formación jurídica y experiencia práctica en procesos de migración, asesoría contractual y estructura legal para proyectos emergentes, ofrecemos un servicio centrado en la orientación estratégica, sin complejidad innecesaria.",
+      storyContent6: " Nuestro enfoque combina el conocimiento técnico con la experiencia vivida, para brindar soluciones reales, comprensibles y aplicables.",
+      storyContent7:
         "Creemos en una asesoría legal que no solo resuelve, sino que también acompaña. Porque haber transitado este camino nos permite comprenderlo, y poner ese conocimiento al servicio de quienes lo inician hoy.",
-
       ourFounders: "Nuestros Expertos Legales",
       // Founders
       founder1Name: "Elena Martínez",
@@ -936,7 +943,7 @@ export const translations = {
       innovationDesc:
         "Contamos con experiencia directa en procesos de movilidad internacional y estructuración legal de negocios digitales, lo que nos permite anticipar escenarios y ofrecer respuestas prácticas alineadas con el entorno actual.",
 
-      readyToWork: "¡Comienza ahora mismo!",
+      readyToWork: "Estamos listos para ayudarte",
     },
     // Booking Calendar
     booking: {
@@ -1033,7 +1040,7 @@ export const translations = {
         "Suscríbete a nuestro boletín para consejos legales y actualizaciones sobre privacidad y protección de datos",
       emailPlaceholder: "Tu correo electrónico",
       subscribe: "Suscribirse",
-      privacyConsent:"Al suscribirte, aceptas nuestra Política de Privacidad y recibir actualizaciones de nosotros.",
+      privacyConsent: "Al suscribirte, aceptas nuestra Política de Privacidad y recibir actualizaciones de nosotros.",
       subscribeSuccess: "¡Gracias por suscribirte a nuestro newsletter!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
       alreadySubscribed: "Este correo ya está suscrito a nuestro newsletter.",

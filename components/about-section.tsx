@@ -32,10 +32,12 @@ export function AboutSection() {
             <AnimatedSection direction="right" delay={200} elementType="heading">
               <h3 className="text-2xl font-bold">{t("about.ourStory")}</h3>
             </AnimatedSection>
-            <p className="text-gray-500">{t("about.storyContent1")}</p>
-            <p className="text-gray-500">{t("about.storyContent2")}</p>
-            <p className="text-gray-500">{t("about.storyContent3")}</p>
-            <p className="text-gray-500">{t("about.storyContent4")}</p>
+            <p className="text-gray-500 bg-gray-100 p-4 rounded">{t("about.storyContent1")}</p>
+            <p className="text-gray-500 bg-gray-100 p-4 rounded ">{t("about.storyContent2")}</p>
+            <p className="text-gray-500 bg-gray-100 p-4 rounded ">{t("about.storyContent3")}</p>
+            <p className="text-gray-500 bg-gray-100 p-4 rounded ">{t("about.storyContent4")}</p>
+            <p className="text-gray-500 bg-gray-100 p-4 rounded ">{t("about.storyContent5")}</p>
+            <p className="text-gray-500 bg-gray-100 p-4 rounded ">{t("about.storyContent6")}</p>
           </div>
           <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-xl bg-gray-100">
             <img
