@@ -10,6 +10,8 @@ import { FileCheck, FileCodeIcon as FileContract, FileText, ShieldCheck, Shoppin
 import type React from "react"
 import { useState } from "react"
 import { AnimatedSection } from "./animated-section"
+import { CtaSection } from "./cta-section"
+
 
 interface PricingPackageProps {
   title: string
@@ -128,7 +130,7 @@ export function ServicesSection() {
 
   return (
     <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50 shadow-lg shadow-gray-200 border-b">
-      <div className="container px-4 md:px-6 mb-12">
+      <div className="container px-4 md:px-6 mb-12 space-y-8">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center my-6">
             <div className="space-y-2">
@@ -159,8 +161,11 @@ export function ServicesSection() {
               <div className="grid gap-6">
                 <AnimatedSection direction="up" delay={300}>
                   <h3 className="text-2xl font-bold my-6">{t("services.residencyTitle")}</h3>
-                  <p className="my-2">{t("services.residencyDesc1")}</p>
-                  <p>{t("services.residencyDesc2")}</p>
+                  <div className="space-y-3">
+                    <p className="my-2">{t("services.residencyDesc1")}</p>
+                    <p className="my-2">{t("services.residencyDesc2")}</p>
+                    <p className="my-2">{t("services.residencyDesc3")}</p>
+                  </div>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={300}>
                   <h3 className="text-2xl font-bold my-4">{t("services.residencySubTitle")}</h3>
@@ -624,16 +629,10 @@ export function ServicesSection() {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* CTA */}
+        <CtaSection />
       </div>
-      {/* CTA */}
-      <AnimatedSection direction="up" delay={700} className="mt-8 mb-16 text-center">
-        <div className="container px-6 py-8 md:px-12 md:py-10 bg-gradient-to-r from-blue-50 to-white-50 shadow-lg rounded-xl w-fit mx-auto">
-          <h3 className="text-xl font-bold mb-4 text-blue-gray">{t("about.readyToWork")}</h3>
-          <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
-            <a href="#booking">{t("hero.scheduleFree")}</a>
-          </Button>
-        </div>
-      </AnimatedSection>
     </section >
   )
 }
