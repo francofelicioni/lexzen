@@ -254,7 +254,7 @@ export function ContactForm() {
         >
           {isSubmitting ? (
             <span className="flex items-center gap-2">
-              <Loader2 className="h-5 w-5 animate-spin" />
+              <Loader2 className="size-5 animate-spin" />
               {t("contactForm.sending")}
             </span>
           ) : (
@@ -289,7 +289,7 @@ export function ContactForm() {
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-red-600">
-              <AlertCircle className="h-5 w-5" />
+              <AlertCircle className="size-5" />
               {t("contactForm.error")}
             </DialogTitle>
             <DialogDescription>{t("contactForm.errorDetails")}</DialogDescription>

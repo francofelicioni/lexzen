@@ -1,8 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronUp } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
@@ -31,7 +31,7 @@ export function ScrollToTop() {
   }, [])
 
   return (
-    <div className="fixed bottom-20 right-3 z-50">
+    <div className="fixed bottom-20 right-3 z-100">
       {isVisible && (
         <Button
           onClick={scrollToTop}

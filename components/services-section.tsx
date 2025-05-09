@@ -1,15 +1,15 @@
 "use client"
 
-import type React from "react"
-import { FileText, FileCheck, FileCodeIcon as FileContract, ShieldCheck, ShoppingCart, Handshake } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
-import { AnimatedSection } from "./animated-section"
+import { FileCheck, FileCodeIcon as FileContract, FileText, ShieldCheck, ShoppingCart } from "lucide-react"
+import type React from "react"
 import { useState } from "react"
+import { AnimatedSection } from "./animated-section"
 
 interface PricingPackageProps {
   title: string
@@ -144,7 +144,7 @@ export function ServicesSection() {
         </AnimatedSection>
 
         <Tabs defaultValue="residency" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 mb-12 md:mb-0 h-full border border-muted bg-muted ">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 h-full border border-muted bg-muted ">
             <TabsTrigger value="residency" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
               {t("services.tabResidency")}
             </TabsTrigger>

@@ -1,12 +1,11 @@
 "use client"
 
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
-import { ContactForm } from "./contact-form"
-import { AnimatedSection } from "./animated-section"
-import { Card, CardContent } from "@/components/ui/card"
-import { NewsletterForm } from "./newsletter-form"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/language-context"
+import { Mail } from "lucide-react"
+import { AnimatedSection } from "./animated-section"
+import { ContactForm } from "./contact-form"
 
 const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
 
@@ -32,30 +31,28 @@ export function ContactSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid gap-8 lg:grid-cols-2 items-center">
+        <div className="grid gap-8 lg:grid-cols-2 items-stretch h-full">
           {/* Contact Form */}
-          <div className="order-2 lg:order-1">
-            <Card>
-              <CardContent className="p-6">
+          <div className="order-2 lg:order-1 flex">
+            <Card className="flex-grow">
+              <CardContent className="p-6 h-full">
                 <ContactForm />
               </CardContent>
             </Card>
           </div>
 
           {/* Contact Information */}
-          <div className="order-1 lg:order-2">
-            <div className="space-y-8 rounded-lg bg-white shadow-md p-6 lg:p-8">
+          <div className="order-1 lg:order-2 flex">
+            <div className="space-y-8 rounded-lg bg-white shadow-md p-6 lg:p-8 flex-grow flex flex-col">
               <img
                 src="/office.jpg"
                 alt="Lexzen office location map"
-                className="lg:h-full object-fit cover rounded-xl w-full h-64 lg:h-96"
+                className="object-cover lg:object-fit cover rounded-xl w-full sm:w-[400px] h-64 lg:h-96 mx-auto"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-6">
-              </div>
+              <div className="absolute bottom-0 left-0 p-6"></div>
               {/* Contact Details */}
-              <div className="space-y-6">
+              <div className="space-y-6 flex-grow flex flex-col justify-between">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
                 <div className="grid gap-6 grid-cols-1">
                   {/* Email */}

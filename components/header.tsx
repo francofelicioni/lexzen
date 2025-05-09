@@ -1,8 +1,8 @@
+import { useLanguage } from "@/contexts/language-context";
+import Link from "next/link";
 import { LanguageSelector } from "./language-selector";
 import { MobileNav } from "./mobile-nav";
-import Link from "next/link"
 import { Button } from "./ui/button";
-import { useLanguage } from "@/contexts/language-context";
 
 export function Header() {
     const { t } = useLanguage()
@@ -30,7 +30,7 @@ export function Header() {
                 <div className="flex items-center gap-2">
                     <LanguageSelector />
                     <Button className="bg-blue-gray hover:bg-legal-accent-dark hidden sm:inline-flex">
-                        {t("nav.bookCall")}
+                        <a href="#booking">{t("nav.bookCall")}</a>
                     </Button>
                 </div>
             </div>
