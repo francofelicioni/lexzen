@@ -109,8 +109,9 @@ export const translations = {
 
       // Residency
       residencyTitle: "Practical and Personalized Legal Assistance for Residency Processes in Spain.",
-      residencyDesc1: "Relocating to a new country requires handling complex paperwork. Our service is designed to provide clear, accessible support throughout each step of the residency process, tailored to individual needs.",
-      residencyDesc2: "Flexible packages are available for residency applications, family reunification, and specific legal consultations, all online and with professional support.",
+      residencyDesc1: "Relocating to a new country requires handling complex paperwork",
+      residencyDesc2: "Our service is designed to provide clear, accessible support throughout each step of the residency process, tailored to individual needs.",
+      residencyDesc3: "Flexible packages are available for residency applications, family reunification, and specific legal consultations, all online and with professional support.",
 
       residencySubTitle: 'EU Residency Registration Services ("Green NIE")',
       residencySubTitleDesc: 'Three levels of support to match your needs:',
@@ -282,10 +283,11 @@ export const translations = {
     },
     // CTA Section
     cta: {
-      title: "Ready to Boost Your Business?",
-      subtitle: "",
-      scheduleConsultation: "Schedule Free Legal Consultation",
-      contactUs: "Contact Our Legal Team",
+      title: "How to Book an Appointment",
+      scheduleConsultation1: 'Choose your preferred date and time - Select the day and hour that best suits your schedule.',
+      scheduleConsultation2: 'No payment required upfront - This is a free, no-obligation appointment.',
+      scheduleConsultation3: 'Receive your confirmation - You’ll get a confirmation email with the meeting link.',
+      contactUs: "Book now",
     },
     // Footer
     footer: {
@@ -825,8 +827,9 @@ export const translations = {
 
       // Residency
       residencyTitle: "Asistencia legal práctica y personalizada para procesos de residencia en España.",
-      residencyDesc1: "Instalarse en un nuevo país implica gestionar trámites que pueden ser complejos. Nuestro servicio está orientado a brindar apoyo en cada etapa del proceso de residencia, de manera clara, accesible y adaptada a las necesidades de cada caso.",
-      residencyDesc2: "Se ofrecen paquetes flexibles para solicitudes de residencia, reunificación familiar y consultas legales específicas, siempre de forma online y con acompañamiento profesional.",
+      residencyDesc1: "Instalarse en un nuevo país implica gestionar trámites que pueden ser complejos.",
+      residencyDesc2: "Nuestro servicio está orientado a brindar apoyo en cada etapa del proceso de residencia, de manera clara, accesible y adaptada a las necesidades de cada caso.",
+      residencyDesc3: "Se ofrecen paquetes flexibles para solicitudes de residencia, reunificación familiar y consultas legales específicas, siempre de forma online y con acompañamiento profesional.",
 
       residencySubTitle: 'Servicios de Registro de Residencia UE ("NIE Verde")',
       residencySubTitleDesc: 'Tres niveles de asistencia para adaptar el servicio a cada necesidad:',
@@ -1007,11 +1010,11 @@ export const translations = {
     },
     // CTA Section
     cta: {
-      title: "¿Te gustaría impulsar tu negocio?",
-      subtitle:
-        "",
-      scheduleConsultation: "Programar consulta gratuita",
-      contactUs: "Contactar a Nuestro Equipo",
+      title: "Cómo Reservar la consulta Gratuita",
+      scheduleConsultation1: 'Elija su fecha y hora preferida - Seleccione el día y la hora que mejor se adapten a su horario.',
+      scheduleConsultation2: 'No se requiere pago por adelantado - Esta es una cita gratuita y sin compromiso.',
+      scheduleConsultation3: 'Reciba su confirmación - Recibirá un correo electrónico con el enlace de la reunión.',
+      contactUs: "Reservar",
     },
     // Footer
     footer: {
