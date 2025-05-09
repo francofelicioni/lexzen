@@ -1,5 +1,3 @@
-// Removed incorrect Button import
-import { AnimatedSection } from "./animated-section";
 import { useLanguage } from "@/contexts/language-context";
 import { Button } from "./ui/button";
 
@@ -7,7 +5,7 @@ export function CtaSection() {
     const { t } = useLanguage();
     return (
         <div  className="w-full max-w-4xl rounded-lg  mx-auto p-6 bg-blue-gray/10 border border-blue-gray/20 shadow-md text-center space-y-6">
-            <h2 className="text-2xl font-bold">{t("cta.title")}</h2>
+            <h2 className="text-2xl font-bold">{t("cta.title2")}</h2>
             <ol className="w-fit mx-auto text-left list-decimal list-inside space-y-6 text-gray-700 font-medium my-4">
                 <li>
                 {t("cta.scheduleConsultation1")}
@@ -20,7 +18,7 @@ export function CtaSection() {
                 </li>
             </ol>
             <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
-                <a href="#booking">{t("cta.contactUs")}</a>
+                <a href="#booking">{t("cta.bookNow")}</a>
             </Button>
         </div>
     );

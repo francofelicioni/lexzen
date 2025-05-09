@@ -283,11 +283,15 @@ export const translations = {
     },
     // CTA Section
     cta: {
-      title: "How to Book an Appointment",
-      scheduleConsultation1: 'Choose your preferred date and time - Select the day and hour that best suits your schedule.',
-      scheduleConsultation2: 'No payment required upfront - This is a free, no-obligation appointment.',
-      scheduleConsultation3: 'Receive your confirmation - You’ll get a confirmation email with the meeting link.',
-      contactUs: "Book now",
+      title: "Would you like to boost your business?",
+      title2: "How to Book an Appointment",
+      scheduleConsultation1: "Choose your preferred date and time - Select the day and hour that best suits your schedule.",
+      scheduleConsultation2: "No payment required upfront - This is a free, no-obligation appointment.",
+      scheduleConsultation3: "Receive your confirmation - You’ll get a confirmation email with the meeting link.",
+      bookNow: "Book now",
+      scheduleConsultation: "Schedule a Free Consultation",
+      contactUs: "Contact us"
+      
     },
     // Footer
     footer: {
@@ -1010,11 +1014,14 @@ export const translations = {
     },
     // CTA Section
     cta: {
-      title: "Cómo Reservar la consulta Gratuita",
+      title: "¿Te gustaría impulsar tu negocio?",
+      title2: "Cómo Reservar la consulta Gratuita",
       scheduleConsultation1: 'Elija su fecha y hora preferida - Seleccione el día y la hora que mejor se adapten a su horario.',
       scheduleConsultation2: 'No se requiere pago por adelantado - Esta es una cita gratuita y sin compromiso.',
       scheduleConsultation3: 'Reciba su confirmación - Recibirá un correo electrónico con el enlace de la reunión.',
-      contactUs: "Reservar",
+      contactUs: "Contáctanos",
+      scheduleConsultation: "Programar consulta gratuita",
+      bookNow: "Reservar",
     },
     // Footer
     footer: {
