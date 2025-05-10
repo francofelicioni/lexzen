@@ -72,7 +72,7 @@ export function NewsletterForm() {
           <Button
             type="submit"
             size="sm"
-            className="absolute right-1 top-1 h-10 px-4 bg-blue-gray hover:bg-legal-accent-dark transition-all duration-300 hover:scale-105 text-base"
+            className="absolute right-1 top-1 h-10 px-4 bg-button-orange hover:bg-legal-accent-dark transition-all duration-300 hover:scale-105 text-base"
             disabled={status === "loading" || status === "success"}
           >
             {status === "loading" ? (

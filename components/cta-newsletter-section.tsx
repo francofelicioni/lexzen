@@ -16,7 +16,7 @@ export function CtaAndNewsletter() {
                             {t("cta.subtitle")}
                         </p>
                         <div className="flex flex-col lg:flex-row md:min-[400px] gap-2">
-                            <Button className="bg-legal-accent-dark text-white hover:bg-legal-accent hover:text-gray-100" asChild>
+                            <Button className="bg-button-orange text-white hover:bg-legal-accent hover:text-gray-100" asChild>
                                 <a href="#booking">{t("cta.scheduleConsultation")}</a>
                             </Button>
                             <Button className="border-gray-600 text-gray-600 hover:bg-blue-gray hover:text-white border bg-white/10" asChild>

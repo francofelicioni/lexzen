@@ -22,14 +22,14 @@ export function HeroSection() {
                             <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
                                 <Button
 
-                                    className="w-full sm:w-auto bg-black/20 text-gray-100 font-semibold hover:bg-black/30"
+                                    className="w-full sm:w-auto bg-button-orange text-gray-100 font-semibold hover:bg-dark-gray hover:text-neutral-50 hover-lift"
                                     asChild
                                 >
                                     <a href="#services" className="z-10">{t("hero.viewServices")}</a>
                                 </Button>
                                 <Button
                                     variant="outline"
-                                    className="w-full sm:w-auto"
+                                    className="w-full sm:w-auto hover-lift hover:border-none"
                                     asChild
                                 >
                                     <a href="#booking" className="z-10">{t("hero.scheduleFree")}</a>

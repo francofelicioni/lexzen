@@ -29,7 +29,7 @@ export function Header() {
                 </nav>
                 <div className="flex items-center gap-2">
                     <LanguageSelector />
-                    <Button className="bg-blue-gray hover:bg-legal-accent-dark hidden sm:inline-flex">
+                    <Button className="bg-button-orange hover:bg-legal-accent-dark hidden sm:inline-flex">
                         <a href="#booking">{t("nav.bookCall")}</a>
                     </Button>
                 </div>

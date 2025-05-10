@@ -249,7 +249,7 @@ export function ContactForm() {
 
         <Button
           type="submit"
-          className="w-full bg-blue-gray hover:bg-legal-accent-dark py-5 text-base"
+          className="w-full md:w-1/2 bg-button-orange hover:bg-legal-accent-dark py-5 text-base"
           disabled={isSubmitting}
         >
           {isSubmitting ? (

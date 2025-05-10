@@ -17,7 +17,7 @@ export function CtaSection() {
                     {t("cta.scheduleConsultation3")}
                 </li>
             </ol>
-            <Button className="bg-blue-gray hover:bg-legal-accent-dark hover-lift" asChild>
+            <Button className="bg-button-orange hover:bg-legal-accent-dark hover-lift w-full md:w-1/2" asChild>
                 <a href="#booking">{t("cta.bookNow")}</a>
             </Button>
         </div>

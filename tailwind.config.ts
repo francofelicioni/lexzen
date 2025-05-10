@@ -78,6 +78,7 @@ const config = {
         "bone-white": "#FFFDF7",
         "beige-dark": "#E8D9C2",
         "dark-gray": "#3F3F3F",
+        "button-orange": "#D97B4A",
 
         // Semantic color naming
         legal: {
