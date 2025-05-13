@@ -11,7 +11,7 @@ const LegalNotice = () => {
     return (
         <>
             <Header />
-            <div className="max-w-3xl mx-auto px-4 py-10">
+            <div className="max-w-3xl mx-auto px-4 py-10 text-justify">
                 <h1 className="text-3xl font-bold mb-2">{t('legals.legalNotice.title')}</h1>
                 <p className="text-sm text-gray-500 mb-6">
                     {t('legals.legalNotice.lastUpdated').replace('{date}', 'May 2025')}
