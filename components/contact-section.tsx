@@ -15,7 +15,7 @@ export function ContactSection() {
   const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
 
   return (
-    <section id="contact" className="w-full py-8 md:pt-12 md:pb-24">
+    <section id="contact" className="w-full py-8 md:pt-12 md:pb-24 bg-contact-section">
       <div className="container px-4 md:px-6">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -43,16 +43,16 @@ export function ContactSection() {
 
           {/* Contact Information */}
           <div className="order-1 lg:order-2 flex">
-            <div className="space-y-8 rounded-lg bg-white shadow-md p-6 lg:p-8 flex-grow flex flex-col">
+            <div className="space-y-8 rounded-lg bg-white shadow-md p-6 lg:p-8 flex-grow flex flex-col justify-between">
               <img
                 src="/office.jpg"
                 alt="Lexzen office location map"
-                className="object-cover lg:object-fit cover rounded-xl w-full sm:w-[400px] h-64 lg:h-96 mx-auto"
+                className="object-cover object-fit cover rounded-xl w-full sm:w-[400px] md:w-[500px] h-64  mx-auto"
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 p-6"></div>
               {/* Contact Details */}
-              <div className="space-y-6 flex-grow flex flex-col justify-between">
+              <div className="space-y-6 flex flex-col justify-between">
                 <h3 className="text-xl font-bold">{t("footer.contactHeading")}</h3>
                 <div className="grid gap-6 grid-cols-1">
                   {/* Email */}

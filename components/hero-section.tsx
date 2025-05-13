@@ -6,7 +6,7 @@ export function HeroSection() {
 
     return (
         <>
-            <section className="w-full py-8 md:py-24 bg-state-gray/80">
+            <section className="w-full py-8 md:py-24 bg-hero-blue">
                 <div className="container px-4 md:px-6">
                     <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                         <div className="space-y-4 lg:space-y-6">
@@ -22,7 +22,7 @@ export function HeroSection() {
                             <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
                                 <Button
 
-                                    className="w-full sm:w-auto bg-button-orange text-gray-100 font-semibold hover:bg-dark-gray hover:text-neutral-50 hover-lift"
+                                    className="w-full sm:w-auto bg-button-orange text-gray-100 font-semibold hover:bg-button-orange-hover hover:text-neutral-50 hover-lift"
                                     asChild
                                 >
                                     <a href="#services" className="z-10">{t("hero.viewServices")}</a>
