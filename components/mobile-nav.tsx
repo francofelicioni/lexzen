@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, X } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { usePathname, useRouter } from "next/navigation"
 
 export function MobileNav() {
   const { t } = useLanguage()
@@ -14,6 +15,26 @@ export function MobileNav() {
   const handleLinkClick = () => {
     setOpen(false)
   }
+
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleNavClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    setOpen(false)
+
+    if (pathname === "/") {
+      const section = document.getElementById(id)
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" })
+        }, 100)
+      }
+    } else {
+      router.push(`/#${id}`)
+    }
+  }
+
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -32,24 +53,24 @@ export function MobileNav() {
           </div>
           <nav className="flex flex-col gap-8">
             {[
-              { href: "#services", label: t("nav.services"), delay: "animation-delay-100" },
-              { href: "#about", label: t("nav.about"), delay: "animation-delay-200" },
-              { href: "#booking", label: t("nav.bookCall"), delay: "animation-delay-300" },
-              { href: "#contact", label: t("nav.contact"), delay: "animation-delay-400" },
+              { id: "services", label: t("nav.services"), delay: "animation-delay-100" },
+              { id: "about", label: t("nav.about"), delay: "animation-delay-200" },
+              { id: "booking", label: t("nav.bookCall"), delay: "animation-delay-300" },
+              { id: "contact", label: t("nav.contact"), delay: "animation-delay-400" },
             ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
+              <a
+                key={item.id}
+                href={`/#${item.id}`}
+                onClick={handleNavClick(item.id)}
                 className={`text-lg font-medium hover:text-blue-gray transition-colors animate-slide-right ${item.delay} py-2`}
-                onClick={handleLinkClick}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </nav>
           <div className="mt-auto pt-6 animate-slide-up animation-delay-500">
             <Button
-              className="w-full bg-blue-gray hover:bg-legal-accent-dark transition-transform duration-300 hover:scale-105 flex items-center justify-center gap-2"
+              className="w-full bg-button-orange hover:button-orange-hover transition-transform duration-300 hover:scale-105 flex items-center justify-center gap-2"
               asChild
             >
               <a
