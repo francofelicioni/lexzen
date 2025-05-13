@@ -87,7 +87,7 @@ function PricingPackage({
         <CardFooter>
           <div className="flex justify-start items-center">
             <Button
-              className="w-full bg-button-orange hover:bg-legal-accent-dark hover-lift py-5 text-base"
+              className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift py-5 text-base"
               onClick={() => {
                 const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
                 const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
@@ -306,7 +306,7 @@ export function ServicesSection() {
                       <div className="flex justify-start items-center">
                         <CardFooter>
                           <Button
-                            className="w-full bg-button-orange hover:bg-legal-accent-dark hover-lift"
+                            className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
                             onClick={() => {
                               const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
                               const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
@@ -398,7 +398,7 @@ export function ServicesSection() {
                       <CardFooter>
                         <div className="flex justify-start items-center">
                           <Button
-                            className="w-full bg-button-orange hover:bg-legal-accent-dark hover-lift"
+                            className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
                             onClick={() => {
                               const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
                               const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
@@ -495,7 +495,7 @@ export function ServicesSection() {
                     <CardFooter>
                       <div className="flex justify-start items-center">
                         <Button
-                          className="w-full bg-button-orange hover:bg-legal-accent-dark hover-lift"
+                          className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
                           onClick={() => {
                             const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/34614481326?text=${encodeURIComponent(message)}`;
