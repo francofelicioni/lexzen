@@ -223,7 +223,7 @@ export const translations = {
     },
     // Booking Calendar
     booking: {
-      title: "Schedule Your Free 15-Minute Legal Consultation",
+      title: "Schedule Your Free 15-Minute Consultation",
       subtitle:
         "Book a free consultation with our legal experts and receive guidance to protect and grow your digital business.",
       howItWorks: "How Our Free Consultation Works",
@@ -261,7 +261,7 @@ export const translations = {
       slotTaken: "This time slot is already taken. Please choose another.",
       // Confirmation
       consultationBooked: "Legal Consultation Booked!",
-      consultationScheduled: "Your free 15-minute legal consultation has been scheduled.",
+      consultationScheduled: "Your free 15-minute consultation has been scheduled.",
       confirmationSent: "A confirmation email has been sent to",
       teamContact:
         "Our legal team will contact you shortly before your scheduled time with the call link or phone number.",
@@ -373,7 +373,7 @@ export const translations = {
             title: "1. Service Provider Identification",
             name: "Trade name: Lexzen",
             legalStatus: "Legal form: Company in the process of incorporation",
-            email: "Contact email: privacidad@lexzen.com",
+            email: "Contact email: privacy@lexzen.com",
             purpose:
               "Website purpose: Legal advisory services for startups and legal residency processes in Spain.",
           },
@@ -446,7 +446,7 @@ export const translations = {
           contact: {
             title: "10. Contact",
             content: "For any questions regarding these Terms of Service, you can write to us at:",
-            email: "📧 privacidad@lexzen.com",
+            email: "📧 privacy@lexzen.com",
           },
         },
       },
@@ -466,7 +466,7 @@ export const translations = {
             title: "1. Identity of the Data Controller",
             controller: "Data controller: Lexzen",
             legalStatus: "Legal status: Company in the process of incorporation",
-            email: "Contact email: privacidad@lexzen.com",
+            email: "Contact email: privacy@lexzen.com",
             phone: "Contact phone: {phone}",
             note:
               "Lexzen acts as the data controller for the personal data collected through this website. Once the legal incorporation of the company is completed, this document will be updated with the corresponding identification details.",
@@ -549,7 +549,7 @@ export const translations = {
               withdraw: "Right to withdraw consent without affecting prior processing legitimacy",
             },
             instruction:
-              "To exercise these rights, please send a request to privacidad@lexzen.com, attaching a copy of a valid identification document.",
+              "To exercise these rights, please send a request to privacy@lexzen.com, attaching a copy of a valid identification document.",
             complaint:
               "If you believe your rights have not been properly respected, you may file a complaint with the Spanish Data Protection Agency (AEPD) at www.aepd.es.",
           },
@@ -581,7 +581,7 @@ export const translations = {
             title: "1. Website Owner",
             commercialName: "Trade name: Lexzen",
             legalStatus: "Legal form: Company in the process of incorporation",
-            email: "Contact email: privacidad@lexzen.com",
+            email: "Contact email: privacy@lexzen.com",
             purpose:
               "Purpose of the website: Information about legal advisory services for startups and legal residency processes in Spain.",
             note:
@@ -714,7 +714,7 @@ export const translations = {
           contact: {
             title: "7. Contact",
             content: "For any questions related to the use of cookies, you can contact us at:",
-            email: "📧 privacidad@lexzen.com",
+            email: "📧 privacy@lexzen.com",
           },
         },
       }
@@ -954,7 +954,7 @@ export const translations = {
     },
     // Booking Calendar
     booking: {
-      title: "Programe Su Consulta Legal Gratuita de 15 Minutos",
+      title: "Programe Su Consulta Gratuita de 15 Minutos",
       subtitle:
         "Agende una consulta gratuita con nuestros expertos y obtenga la orientación legal necesaria para proteger y expandir su empresa de manera sólida en el mundo digital.",
       howItWorks: "Cómo Funciona Nuestra Consulta Gratuita",
@@ -1103,7 +1103,7 @@ export const translations = {
             title: "1. Identificación del prestador de servicios",
             name: "Nombre comercial: Lexzen",
             legalStatus: "Forma jurídica: Empresa en fase de constitución",
-            email: "Correo electrónico de contacto: privacidad@lexzen.com",
+            email: "Correo electrónico de contacto: privacy@lexzen.com",
             purpose:
               "Finalidad del sitio web: Asesoramiento legal a startups y gestión jurídica de procesos de residencia en España.",
           },
@@ -1176,7 +1176,7 @@ export const translations = {
           contact: {
             title: "10. Contacto",
             content: "Para consultas sobre estos Términos de Servicio, puedes escribirnos a:",
-            email: "📧 privacidad@lexzen.com",
+            email: "📧 privacy@lexzen.com",
           },
         },
       },
@@ -1196,7 +1196,7 @@ export const translations = {
             title: "1. Identidad del Responsable del Tratamiento",
             controller: "Responsable del tratamiento: Lexzen",
             legalStatus: "Forma jurídica: Empresa en fase de constitución",
-            email: "Correo electrónico de contacto: privacidad@lexzen.com",
+            email: "Correo electrónico de contacto: privacy@lexzen.com",
             phone: "Teléfono de contacto: {phone}",
             note:
               "Lexzen actúa como responsable del tratamiento de los datos personales recabados a través de este sitio web. Una vez formalizada la constitución legal de la empresa, se actualizarán en este documento los datos identificativos correspondientes.",
@@ -1277,7 +1277,7 @@ export const translations = {
               withdraw: "Derecho a retirar el consentimiento",
             },
             instruction:
-              "Para ejercerlos, escribe a privacidad@lexzen.com adjuntando documento de identidad.",
+              "Para ejercerlos, escribe a privacy@lexzen.com adjuntando documento de identidad.",
             complaint:
               "Si consideras que no se han atendido tus derechos, puedes reclamar ante la AEPD: www.aepd.es",
           },
@@ -1309,7 +1309,7 @@ export const translations = {
             title: "1. Titular del Sitio Web",
             commercialName: "Denominación comercial: Lexzen",
             legalStatus: "Forma jurídica: Empresa en fase de constitución",
-            email: "Correo electrónico de contacto: privacidad@lexzen.com",
+            email: "Correo electrónico de contacto: privacy@lexzen.com",
             purpose:
               "Finalidad del sitio web: Información sobre servicios de asesoría jurídica para startups y procesos de residencia legal en España.",
             note:
@@ -1442,7 +1442,7 @@ export const translations = {
           contact: {
             title: "7. Contacto",
             content: "Para cualquier duda relacionada con el uso de cookies, puedes escribirnos a:",
-            email: "📧 privacidad@lexzen.com",
+            email: "📧 privacy@lexzen.com",
           },
         },
       },
