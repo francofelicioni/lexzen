@@ -78,7 +78,12 @@ const config = {
         "bone-white": "#FFFDF7",
         "beige-dark": "#E8D9C2",
         "dark-gray": "#3F3F3F",
-        "button-orange": "#D97B4A",
+        "button-orange": "#D0B19F",
+        "button-orange-hover": "#CFAF8D",
+        "hero-blue": "#7BA3BC",
+        "cta-button": "#9B9FA1",
+        "cta-button-hover": "#A7A9AB",
+        "contact-section": "#F0F4F6",
 
         // Semantic color naming
         legal: {
