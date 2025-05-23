@@ -89,7 +89,10 @@ export function Footer() {
         {/*  Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-center"} items-center gap-4`}>
-            <div className="text-sm text-gray-500 text-center">{t("footer.rights")}</div>
+            <div className="text-sm text-gray-500 text-center space-x-1">
+              <span dangerouslySetInnerHTML={{ __html: t("footer.buildBy") }} />
+              <span>| {t("footer.rights")}</span>
+            </div>
           </div>
         </div>
       </div>

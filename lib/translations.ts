@@ -296,7 +296,8 @@ export const translations = {
     // Footer
     footer: {
       footerDesc: "Legal advisory tailored to your needs, specializing in digital businesses and EU residency.",
-      rights: "© 2025 Lexzen Online Legal Advisory. All rights reserved.",
+      rights: "© 2025 Lexzen. All rights reserved.",
+      buildBy: "Developed by <a href='https://www.360-webs.com' target='_blank'>360 Webs</a>",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       legalNotice: "Legal Notice",
@@ -1026,7 +1027,8 @@ export const translations = {
     // Footer
     footer: {
       footerDesc: "Asesoría legal adaptado a sus necesidades, especializada para empresas digitales y residencia en la UE.",
-      rights: "© 2025 Lexzen Asesoría Legal Online. Todos los derechos reservados.",
+      rights: "© 2025 Lexzen. Todos los derechos reservados.",
+      buildBy: "Desarrollado por <a href='https://www.360-webs.com' target='_blank'>360 Webs</a>",
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
       legalNotice: "Aviso Legal",
