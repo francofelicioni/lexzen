@@ -225,7 +225,7 @@ export const translations = {
     booking: {
       title: "Schedule Your Free 15-Minute Consultation",
       subtitle:
-        "Book a free consultation with our legal experts and receive guidance to protect and grow your digital business.",
+        "Schedule your free consultation with us! We want to understand your situation and provide you with the best possible solution.",
       howItWorks: "How Our Free Consultation Works",
       howItWorksDesc: "Simple steps to schedule your free online legal consultation",
       step1: "Select a Date and Time",
@@ -898,6 +898,16 @@ export const translations = {
       consultationItem2: "Recomendación de los permisos de residencia adecuados",
       consultationItem3: "Lista de verificación de documentación requerida",
       consultationItem4: "Horas adicionales disponibles a €30/hora",
+
+      //Review of key documents
+      otherTitle: "Otros ",
+      reviewTitle: "Orientación legal específica para trámites de residencia",
+      reviewDesc: "Consulta Legal Personalizada de Residencia",
+      bookReview: "(+ €50 por cada persona adicional)",
+      reviewItem1: "Análisis detallado de la situación individual",
+      reviewItem2: "Recomendación de los permisos de residencia adecuados",
+      reviewItem3: "Lista de verificación de documentación requerida",
+      reviewItem4: "Horas adicionales disponibles a €30/hora",
     },
     // About Section
     about: {
@@ -957,7 +967,7 @@ export const translations = {
     booking: {
       title: "Programe Su Consulta Gratuita de 15 Minutos",
       subtitle:
-        "Agende una consulta gratuita con nuestros expertos y obtenga la orientación legal necesaria para proteger y expandir su empresa de manera sólida en el mundo digital.",
+        "¡Agenda tu consulta gratuita con nosotros! Queremos conocer tu situación y ofrecerte la mejor solución posible.",
       howItWorks: "Cómo Funciona Nuestra Consulta Gratuita",
       howItWorksDesc: "Pasos simples para programar su consulta legal online gratuita",
       step1: "Seleccione una Fecha y Hora",
