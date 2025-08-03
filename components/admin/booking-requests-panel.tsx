@@ -10,6 +10,8 @@ import { format } from "date-fns"
 import { Calendar, Check, Clock, Mail, Search, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
+import { isValid, parseISO } from "date-fns"
+import { isValidDate } from "@/utils/date"
 
 type BookingRequest = {
   id: string
@@ -140,13 +142,14 @@ export function BookingRequestsPanel() {
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex items-center">
-                        <Calendar className="mr-1 h-4 w-4 text-gray-500" />
-                        <span>{format(req.date, "MMM d, yyyy")}</span>
-                      </div>
                       <div className="flex items-center text-sm text-gray-500">
                         <Clock className="mr-1 h-3 w-3" />
-                        <span>{format(new Date(`${req.date}T${req.time}`), "h:mm a")}</span>
+                        <span>
+                          {req.date && req.time ? (() => {
+                            const dateTime = new Date(`${req.date}T${req.time}`)
+                            return isValidDate(dateTime) ? format(dateTime, "h:mm a") : "Invalid time"
+                          })() : "No time set"}
+                        </span>
                       </div>
                     </TableCell>
                     <TableCell className="max-w-[200px] truncate" title={req.topic}>
@@ -195,11 +198,14 @@ export function BookingRequestsPanel() {
                     <div className="text-sm font-medium text-gray-700">Date & Time</div>
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <Calendar className="h-4 w-4 text-gray-500" />
-                      {format(req.date, "MMM d, yyyy")}
+                      {req.date ? format(new Date(req.date), "MMM d, yyyy") : "No date set"}
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <Clock className="h-4 w-4 text-gray-500" />
-                      {format(new Date(`${req.date}T${req.time}`), "h:mm a")}
+                      {req.date && req.time ? (() => {
+                        const dateTime = new Date(`${req.date}T${req.time}`)
+                        return isValidDate(dateTime) ? format(dateTime, "h:mm a") : "Invalid time"
+                      })() : "No time set"}
                     </div>
                   </div>
 
