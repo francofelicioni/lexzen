@@ -58,10 +58,10 @@ function PricingPackage({
             {highlighted && <Badge className="bg-button-orange py-2 px-4 mb-4 text-sm mr-2">Popular</Badge>}
           </CardTitle>
           <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
-          <div className="mt-2">
+          {/* <div className="mt-2">
             <span className="text-2xl sm:text-3xl font-bold"> <span className="text-sm"> {t("general.from")} </span>{price}</span>
             {price.includes("€")}
-          </div>
+          </div> */}
         </CardHeader>
         <CardContent className="flex-grow flex justify-start items-center">
           <ul className="space-y-3 text-sm sm:text-base">
@@ -234,10 +234,10 @@ export function ServicesSection() {
                       <CardHeader>
                         <CardTitle>{t("services.forResidents")}</CardTitle>
                         <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
-                        <div className="mt-2">
+                        {/* <div className="mt-2">
                           <span className="text-sm"> {t("general.from")} </span> <span className="text-3xl font-bold">€100</span>
                           <span className="text-sm text-muted-foreground"></span>
-                        </div>
+                        </div> */}
                       </CardHeader>
                       <CardContent>
                         <ul className="space-y-2 text-sm">
@@ -326,10 +326,10 @@ export function ServicesSection() {
                       <CardHeader>
                         <CardTitle>{t("services.forNonResidents")}</CardTitle>
                         <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
-                        <div className="mt-2">
+                        {/* <div className="mt-2">
                           <span className="text-sm"> {t("general.from")} </span><span className="text-3xl font-bold">€150</span>
                           <span className="text-sm text-muted-foreground"></span>
-                        </div>
+                        </div> */}
                       </CardHeader>
                       <CardContent>
                         <ul className="space-y-2 text-sm">
@@ -423,10 +423,10 @@ export function ServicesSection() {
                     <CardHeader>
                       <CardTitle>{t("services.consultationTitle")}</CardTitle>
                       <CardDescription>{t("services.consultationDesc")}</CardDescription>
-                      <div className="mt-2">
+                      {/* <div className="mt-2">
                         <span className="text-3xl font-bold">€50</span>
                         <span className="text-sm text-muted-foreground ml-1">({t("general.min2Hours")})</span>
-                      </div>
+                      </div> */}
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2 text-sm">
