@@ -305,16 +305,21 @@ export function BookingCalendar() {
                             <Button
                               key={index}
                               variant="outline"
-                              className={`flex items-center justify-center gap-2 py-5 ${timeSlot && slotTime.toISOString() === timeSlot.toISOString()
-                                ? "border-teal-600 bg-teal-50 text-teal-700"
-                                : ""
-                                }`}
+                              className={`flex items-center justify-center gap-2 py-5 ${
+                                slotTime instanceof Date &&
+                                timeSlot instanceof Date &&
+                                !isNaN(slotTime.getTime()) &&
+                                !isNaN(timeSlot.getTime()) &&
+                                slotTime.toISOString() === timeSlot.toISOString()
+                                  ? "border-teal-600 bg-teal-50 text-teal-700"
+                                  : ""
+                              }`}
                               onClick={() => handleTimeSelect(slotTime)}
                             >
                               <Clock className="h-4 w-4 shrink-0" />
                               {timeString}
                             </Button>
-                          )
+                          );                          
                         })}
                     </div>
                   ) : (
