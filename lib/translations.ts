@@ -161,7 +161,7 @@ export const translations = {
       forNonResidentsItem1: "Document preparation and review",
       forNonResidentsItem2: "Appointment management for NIE",
       forNonResidentsItem3: "Application process follow-up",
-      forNonResidentsItem4: "Comprehensive legal advice",
+      forNonResidentsItem4: "Specialized immigration management",
 
       selectPackage: "Select Package",
       // Specialized Advice
@@ -271,15 +271,15 @@ export const translations = {
     landing: {
       consultationAvailable: "Free Consultation Available",
       heroTitle: "Get Residency by Arraigo - New Immigration Regulations",
-      heroSubtitle: "Expert legal guidance for residency by arraigo under the new immigration regulations. Book your free consultation to understand your options.",
+      heroSubtitle: "Management services for residency by arraign under the new immigration regulations. Book your free consultation to understand your options.",
       bookNow: "Book Now",
       learnMore: "Learn More",
       whyChooseUs: "Why Choose Our Immigration Legal Services?",
       whyChooseUsDesc: "We specialize in residency by arraigo cases under the new immigration regulations, providing expert guidance throughout the process.",
       benefit1Title: "15-Minute Free Consultation",
       benefit1Desc: "Get immediate guidance on your residency by arraigo case. Our experts will assess your situation and explain the new regulations.",
-      benefit2Title: "Expert Immigration Lawyers",
-      benefit2Desc: "Our specialized lawyers have extensive experience with the new immigration regulations and residency by arraigo procedures.",
+      benefit2Title: "Specialized in immigration processes",
+      benefit2Desc: "We have extensive experience with the new immigration regulations and residency by arraigo procedures.",
       benefit3Title: "100% Online Service",
       benefit3Desc: "Complete your consultation from anywhere. No travel required - just a phone or video call to discuss your case.",
       readyToStart: "Ready to Start Your Residency Process?",
@@ -786,7 +786,7 @@ export const translations = {
     // Services Section
     services: {
       title: "Soluciones Legales Online Especializadas",
-      subtitle: "Asesoramiento legal experto adaptado a las necesidades específicas de su negocio digital",
+      subtitle: "Gestión especializada adaptada a las necesidades específicas de su negocio digital",
       tabStartups: "Para Negocios Digitales y Startups",
       tabResidency: "Para Residencia de Ciudadanos UE (España)",
       legalServices: "Servicios Legales Online para Negocios Digitales",
@@ -912,7 +912,7 @@ export const translations = {
       forNonResidentsItem1: "Preparación y revisión de documentación",
       forNonResidentsItem2: "Gestión de citas para NIE",
       forNonResidentsItem3: "Seguimiento del proceso de solicitud",
-      forNonResidentsItem4: "Asesoramiento legal integral",
+      forNonResidentsItem4: "Gestión especializada en inmigración",
 
       selectPackage: "Seleccionar Paquete",
       // Specialized Advice
@@ -1039,15 +1039,15 @@ export const translations = {
     landing: {
       consultationAvailable: "Consulta Gratuita Disponible",
       heroTitle: "Obtén Residencia por Arraigo - Nuevo Reglamento de Extranjería",
-      heroSubtitle: "Asesoramiento legal experto para residencia por arraigo según el nuevo reglamento de extranjería. Reserva tu consulta gratuita para entender tus opciones.",
+      heroSubtitle: "Servicios de gestión para residencia por arraigo según el nuevo reglamento de extranjería. Reserva tu consulta gratuita para entender tus opciones.",
       bookNow: "Reservar Ahora",
       learnMore: "Saber Más",
       whyChooseUs: "¿Por Qué Elegir Nuestros Servicios de Inmigración?",
       whyChooseUsDesc: "Nos especializamos en casos de residencia por arraigo según el nuevo reglamento de extranjería, proporcionando asesoramiento experto durante todo el proceso.",
       benefit1Title: "Consulta Gratuita de 15 Minutos",
       benefit1Desc: "Obtén orientación inmediata sobre tu caso de residencia por arraigo. Nuestros expertos evaluarán tu situación y explicarán el nuevo reglamento.",
-      benefit2Title: "Abogados Expertos en Inmigración",
-      benefit2Desc: "Nuestros abogados especializados tienen amplia experiencia con el nuevo reglamento de extranjería y procedimientos de residencia por arraigo.",
+      benefit2Title: "Gestión especializada en inmigración",
+      benefit2Desc: "Tenemos amplia experiencia con el nuevo reglamento de extranjería y procedimientos de residencia por arraigo.",
       benefit3Title: "Servicio 100% Online",
       benefit3Desc: "Completa tu consulta desde cualquier lugar. No se requiere viaje - solo una llamada telefónica o videollamada para discutir tu caso.",
       readyToStart: "¿Listo para Iniciar tu Proceso de Residencia?",
