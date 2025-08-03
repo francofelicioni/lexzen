@@ -7,10 +7,10 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { supabase } from "@/lib/supabase/client"
 import { updateAvailability as saveAvailability } from '@/services/availability'
-import { addDays, addWeeks, format, isSameDay, isWeekend, startOfWeek, subWeeks } from "date-fns"
+import { addDays, addWeeks, format, isSameDay, isWeekend, parseISO, startOfWeek, subWeeks } from "date-fns"
 import { ChevronLeft, ChevronRight, Clock, Plus, Save, Trash2 } from "lucide-react"
 import { useEffect, useState } from "react"
-import { isValidDate } from "@/utils/date"
+import { isValidDate, normalizeDate } from "@/utils/date"
 
 const generateTimeSlots = () => {
   const slots: string[] = []
@@ -63,9 +63,7 @@ export function AvailabilityManagementPanel() {
       }
 
       const mapped = data.map((item: any) => {
-        const [year, month, day] = item.date.split('-').map(Number)
-        const parsedDate = new Date(Date.UTC(year, month - 1, day))
-        const localDate = new Date(parsedDate.getUTCFullYear(), parsedDate.getUTCMonth(), parsedDate.getUTCDate())
+        const localDate = parseISO(item.date)
 
         return {
           date: localDate,
@@ -116,7 +114,10 @@ export function AvailabilityManagementPanel() {
   }, [selectedDate])
 
   const getDateAvailability = (date: Date) => {
-    const slot = availability.find((a) => isSameDay(a.date, date))
+    const slot = availability.find((a) => {
+      const availDate = normalizeDate(a.date)
+      return isSameDay(availDate, date)
+    })
     return slot ? slot.slots : []
   }
 
