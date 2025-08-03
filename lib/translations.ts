@@ -260,11 +260,11 @@ export const translations = {
       bookConsultation: "Book Free Consultation",
       slotTaken: "This time slot is already taken. Please choose another.",
       // Confirmation
-      consultationBooked: "Legal Consultation Booked!",
+      consultationBooked: "Consultation Booked!",
       consultationScheduled: "Your free 15-minute consultation has been scheduled.",
       confirmationSent: "A confirmation email has been sent to",
       teamContact:
-        "Our legal team will contact you shortly before your scheduled time with the call link or phone number.",
+        "Our team will contact you shortly before your scheduled time with the call link.",
       done: "Done",
     },
     // Testimonials
@@ -305,7 +305,7 @@ export const translations = {
       contact: "Contact",
       // Company
       companyHeading: "Company",
-      aboutUs: "About Our Legal Team",
+      aboutUs: "About Our Team",
       services: "Legal Services",
       careers: "Legal Careers",
       blog: "Legal Blog",
@@ -1002,11 +1002,11 @@ export const translations = {
       bookConsultation: "Reservar Consulta Gratuita",
       slotTaken: "Este horario ya está reservado. Por favor, elija otro.",
       // Confirmation
-      consultationBooked: "¡Consulta Legal Reservada!",
-      consultationScheduled: "Su consulta legal gratuita de 15 minutos ha sido programada.",
+      consultationBooked: "¡Consulta reservada!",
+      consultationScheduled: "Su consult gratuita de 15 minutos ha sido programada.",
       confirmationSent: "Hemos enviado un correo electrónico de confirmación a",
       teamContact:
-        "Nuestro equipo legal se pondrá en contacto con usted poco antes de la hora programada con el enlace de llamada o número de teléfono.",
+        "Nos pondremos en contacto poco antes de la hora programada con el enlace de la llamada.",
       done: "Listo",
     },
     // Testimonials
@@ -1046,7 +1046,7 @@ export const translations = {
       contact: "Contacto",
       // Company
       companyHeading: "Empresa",
-      aboutUs: "Sobre Nuestro Equipo Legal",
+      aboutUs: "Sobre Nuestro Equipo",
       services: "Servicios Legales",
       careers: "Carreras Legales",
       blog: "Blog Legal",
