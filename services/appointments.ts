@@ -25,6 +25,10 @@ function normalizeTimeString(t: string): string {
 
 export const appointmentService = {
   async createAppointment(data: AppointmentData) {
+    if (!data.date || !data.time || !data.full_name) {
+      throw new Error("Missing required appointment fields")
+    }
+  
     const appointmentDate = data.date
     const appointmentTime = normalizeTimeString(data.time)
 
@@ -54,8 +58,8 @@ export const appointmentService = {
       .eq('date', date)
       .eq('time', appointmentTime)
 
-    if (error && error.code !== 'PGRST116') throw error
-    return !data || data.length === 0
+      if (error && error.code !== 'PGRST116') throw error
+      return Array.isArray(data) && data.length === 0
   }
 }
 
@@ -67,6 +71,7 @@ export const getAppointments = async () => {
 
   if (error) throw error
 
+  if (!Array.isArray(data)) return []
   return data.map((appt) => ({
     id: appt.id,
     name: appt.full_name,
@@ -78,10 +83,14 @@ export const getAppointments = async () => {
   }))
 }
 
+
 export const updateAppointmentStatus = async (
   id: string,
   status: "pending" | "accepted" | "rejected"
 ) => {
+  if (!id || !status) {
+    throw new Error("Missing ID or status for update")
+  }
 
   const { error } = await supabase
     .from("appointments")
