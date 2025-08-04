@@ -72,20 +72,31 @@ export default function RootLayout({
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
           strategy="afterInteractive"
         />
-        <Script id="meta-pixel" strategy="afterInteractive">
-                {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '750503187706732');
-            fbq('track', 'PageView');
-          `}
-        </Script>
+        <Script
+          id="fb-pixel-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+              __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '750503187706732');
+            `,
+          }}
+        />
+
+        <Script
+          id="fb-pageview"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `fbq('track', 'PageView');`,
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${merriweather.variable} font-body`}>
         <SafeHydratedThemeProvider>
