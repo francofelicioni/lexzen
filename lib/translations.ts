@@ -259,6 +259,7 @@ export const translations = {
       continue: "Continue",
       bookConsultation: "Book Free Consultation",
       slotTaken: "This time slot is already taken. Please choose another.",
+      submitting: "Submitting...",
       // Confirmation
       consultationBooked: "Consultation Booked!",
       consultationScheduled: "Your free 15-minute consultation has been scheduled.",
@@ -1027,6 +1028,7 @@ export const translations = {
       continue: "Continuar",
       bookConsultation: "Reservar Consulta Gratuita",
       slotTaken: "Este horario ya está reservado. Por favor, elija otro.",
+      submitting: "Enviando...",
       // Confirmation
       consultationBooked: "¡Consulta reservada!",
       consultationScheduled: "Su consult gratuita de 15 minutos ha sido programada.",
