@@ -91,14 +91,6 @@ export default function RootLayout({
             `,
           }}
         />
-
-        <Script
-          id="fb-pageview"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `fbq('track', 'PageView');`,
-          }}
-        />
       </head>
       <body className={`${inter.variable} ${merriweather.variable} font-body`}>
         <SafeHydratedThemeProvider>

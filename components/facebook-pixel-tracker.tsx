@@ -1,12 +1,13 @@
-"use client"
+'use client'
 
-import { useEffect } from "react"
-import { pageview } from "@/lib/facebookPixel"
+import { useEffect } from 'react'
 
 export function FacebookPixelTracker() {
   useEffect(() => {
-    pageview()
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'PageView')
+    }
   }, [])
 
   return null
-} 
+}
