@@ -7,6 +7,8 @@ import { LanguageProvider } from "@/contexts/language-context"
 import { SafeHydratedThemeProvider } from "@/components/theme-provider-safe"
 import { Toaster } from "react-hot-toast"
 import Script from "next/script"
+import { FacebookPixelTracker } from "@/components/facebook-pixel-tracker"
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -103,6 +105,7 @@ export default function RootLayout({
           <LanguageProvider>
             <Toaster position="top-right" />
             {children}
+            <FacebookPixelTracker />
           </LanguageProvider>
         </SafeHydratedThemeProvider>
       </body>
