@@ -1022,7 +1022,7 @@ export const translations = {
       emailPlaceholder: "su.correo@ejemplo.com",
       phone: "Número de Teléfono *",
       phonePlaceholder: "+34 XXX XXX XXX",
-      topic: "Tema de Consulta Legal",
+      topic: "Tema de Consulta",
       topicPlaceholder: "Describa brevemente qué asuntos legales le gustaría discutir",
       back: "Atrás",
       continue: "Continuar",
