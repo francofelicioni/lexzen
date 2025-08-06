@@ -30,7 +30,7 @@ export default function Home() {
       <LocalBusinessStructuredData />
 
       {/* Scroll to Top Button */}
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
 
       {/* Header */}
       <Header />
