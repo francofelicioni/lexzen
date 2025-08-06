@@ -290,7 +290,7 @@ export function ServicesSection() {
                         <Button
                           className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
                           onClick={() => {
-                            const message = `${t("whatsappMessage.greeting")}: ${t("services.residencyTitle")} ${t("services.general")}. ${t("whatsappMessage.moreInfo")}`;
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.general")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
                             window.open(url, "_blank");
                           }}
@@ -414,7 +414,7 @@ export function ServicesSection() {
                         <Button
                           className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
                           onClick={() => {
-                            const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
                             window.open(url, "_blank");
 
@@ -562,7 +562,7 @@ export function ServicesSection() {
                         <Button
                           className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
                           onClick={() => {
-                            const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/34614481326?text=${encodeURIComponent(message)}`;
                             window.open(url, "_blank");
 
@@ -583,10 +583,6 @@ export function ServicesSection() {
                     <CardHeader>
                       <CardTitle>{t("services.consultationTitle")}</CardTitle>
                       <CardDescription>{t("services.consultationDesc")}</CardDescription>
-                      {/* <div className="mt-2">
-                        <span className="text-3xl font-bold">€50</span>
-                        <span className="text-sm text-muted-foreground ml-1">({t("general.min2Hours")})</span>
-                      </div> */}
                     </CardHeader>
 
                     <CardContent>
@@ -677,7 +673,7 @@ export function ServicesSection() {
                         <Button
                           className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
                           onClick={() => {
-                            const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
                             const url = `https://wa.me/34614481326?text=${encodeURIComponent(message)}`;
                             window.open(url, "_blank");
 
