@@ -29,16 +29,16 @@ export const translations = {
       title: "Practical Legal Solutions for Startups and New Residents in Europe",
       subtitle:
         "Accessible and clear legal advice for those starting businesses, relocating, or facing early legal challenges while building their projects.",
-      subtitle2:"From contracts to residency paperwork, with a strategic approach and international expertise.",
+      subtitle2: "From contracts to residency paperwork, with a strategic approach and international expertise.",
       scheduleFree: "Schedule Free Legal Consultation",
       viewServices: "View Legal Services",
     },
     // Services Section
     services: {
-      title: "Specialized Online Legal Solutions",
-      subtitle: "Expert legal advice tailored to the specific needs of your digital business",
+      title: "Legal and Management Solutions for Startups and New Residents in Europe",
+      subtitle: "We provide specialized legal advice for startups, as well as professional support for individuals relocating or undergoing residency procedures.<br/><br/>From contracts and strategic legal guidance to the full management of immigration processes, we offer an international approach tailored to your needs.",
       tabStartups: "For Digital Businesses and Startups",
-      tabResidency: "For EU Citizenship Residency (Spain)",
+      tabResidency: "Residence Management Services in Spain",
       legalServices: "Online Legal Services for Digital Businesses",
       legalServicesDesc1: "We advise those launching, growing, or developing their digital projects.",
       legalServicesDesc2: "Each step in building a business — from validating an idea to launching a website or signing the first contract — involves important legal decisions.",
@@ -108,13 +108,21 @@ export const translations = {
       choosePremium: "Choose Premium Advisory",
 
       // Residency
-      residencyTitle: "Practical and Personalized Legal Assistance for Residency Processes in Spain.",
-      residencyDesc1: "Relocating to a new country requires handling complex paperwork",
-      residencyDesc2: "Our service is designed to provide clear, accessible support throughout each step of the residency process, tailored to individual needs.",
+      residencyTitle: "Professional, practical, and 100% online support for immigration procedures",
+      residencyDesc1: "Relocating to a new country involves navigating processes that can be complex.",
+      residencyDesc2: "Our team provides comprehensive support for handling immigration procedures in a clear, accessible, and personalized way.",
       residencyDesc3: "Flexible packages are available for residency applications, family reunification, and specific legal consultations, all online and with professional support.",
-
-      residencySubTitle: 'EU Residency Registration Services ("Green NIE")',
-      residencySubTitleDesc: 'Three levels of support to match your needs:',
+      // General
+      general: "EU Residence Registration (Green NIE)",
+      generalDesc: "Comprehensive management of EU citizen registration in Spain",
+      generalItem1: "Preparation and review of documentation",
+      generalItem2: "Verification of requirements related to proof of funds (employee, student, self-employed, or self-sufficient)",
+      generalItem3: "Support in obtaining health insurance",
+      generalItem4: "Preparation of application dossier",
+      generalItem5: "Coordination of appointments with Immigration Office",
+      generalItem6: "Ongoing support via email and phone",
+      generalItem7: "Post-submission follow-up",
+      chooseGeneral: "Request now",
 
       // Silver
       silver: "Silver",
@@ -149,30 +157,38 @@ export const translations = {
       // Family Reunification
       familyTitle: "Family Reunification Legal Assistance",
       familySubTitle: "Support for family reunification processes, tailored to the type of residency:",
-      forResidents: "For EU Residents",
-      forResidentsDesc: "Legal support for EU residents bringing family members",
-      forResidentsItem1: "Comprehensive assistance in document preparation",
-      forResidentsItem2: "Support in obtaining digital certificates",
-      forResidentsItem3: "Appointment management for NIE",
-      forResidentsItem4: "Application process follow-up",
 
-      forNonResidents: "For Non-Residents",
-      forNonResidentsDesc: "Complete legal package for family reunification",
-      forNonResidentsItem1: "Document preparation and review",
-      forNonResidentsItem2: "Appointment management for NIE",
-      forNonResidentsItem3: "Application process follow-up",
-      forNonResidentsItem4: "Specialized immigration management",
+      forResidents: "Residence for Family Members of EU Citizens",
+      forResidentsDesc: "For spouses, registered partners, children, ascendants, or other dependent relatives",
+      forResidentsItem1: "Assessment of the applicable family relationship",
+      forResidentsItem2: "Complete preparation and review of documentation",
+      forResidentsItem3: "Preparation of the application dossier",
+      forResidentsItem4: "Appointment scheduling with the Immigration Office",
+      forResidentsItem5: "Support in obtaining health insurance and digital certificatee",
+      forResidentsItem6: "Post-submission follow-up",
 
-      selectPackage: "Select Package",
-      // Specialized Advice
-      specializedTitle: "Specialized Legal Advisory for EU Residency",
-      consultationTitle: "Specific legal guidance for residency paperwork",
-      consultationDesc: "Personalized Residency Legal Consultation",
-      bookConsultation: "(+ €50 per additional person)",
-      consultationItem1: "Detailed analysis of individual situation",
-      consultationItem2: "Recommendation of suitable residency permits",
-      consultationItem3: "Checklist of required documents",
-      consultationItem4: "Additional hours available at €30/hour",
+      forNonResidents: "Arraigo (According to the New Immigration Regulations)",
+      forNonResidentsDesc: "Comprehensive management for residency applications under Arraigo",
+      forNonResidentsDesc2: "We process all types of rooting contemplated in the current regulations: </br><strong>Social Arraigo, Employment-Based Arraigo, Family Arraigo, Training-Based Arraigo, and Second-Chance Arraigo</strong>, according to the specific conditions and requirements of each case.",
+      forNonResidentsItem1: "Profile assessment and determination of the most suitable Arraigo type",
+      forNonResidentsItem2: "Review and preparation of required documentation",
+      forNonResidentsItem3: "Support in the management of reports",
+      forNonResidentsItem4: "Preparation of the application dossier",
+      forNonResidentsItem5: "Appointment scheduling with the Immigration Office",
+      forNonResidentsItem6: "Ongoing support via email and phone",
+      forNonResidentsItem7: "Post-submission follow-up",  
+      selectPackage: "Request Management",
+
+      specializedTitle: "Specialized Legal Advice for EU Residency",
+      consultationTitle: "Personalized Consultation for Residency Procedures",
+      consultationDesc: "Individual guidance to find the most suitable residency pathway",
+      bookConsultation: "(+ €50 for each additional person)",
+      consultationItem1: "Personalized analysis of the migration situation",
+      consultationItem2: "Recommendation of the most appropriate permits or pathways",
+      consultationItem3: "Verification of requirements and documentation",
+      consultationItem4: "Customized checklist based on the type of application",
+      consultationItem5: "Flexibility to extend the session as needed",
+      priceDescription: "€30/hour · €50/2-hour session",
     },
     // About Section
     about: {
@@ -180,45 +196,45 @@ export const translations = {
       subtitle: "A team of experienced legal professionals combining expertise with digital innovation",
       ourStory: "Our Story",
       storyContent1:
-      "Lexzen was born from firsthand experience: navigating, step by step, the personal and professional challenges of settling in a new country.",
+        "Lexzen was born from firsthand experience: navigating, step by step, the personal and professional challenges of settling in a new country.",
       storyContent2: "From the complexity of residency paperwork to the legal obstacles faced by those starting or developing a digital business from abroad.",
       storyContent3:
-      "The project was founded with a clear conviction: many people don't need lengthy legal speeches but rather clear, accessible guidance aligned with the specifics of their reality.",
+        "The project was founded with a clear conviction: many people don't need lengthy legal speeches but rather clear, accessible guidance aligned with the specifics of their reality.",
       storyContent4: "Those starting a new chapter in Europe or building a business in the digital environment often face key legal decisions for which they are not always prepared. This is where Lexzen adds value.",
       storyContent5:
-      "With solid legal training and practical experience in migration processes, contract advisory, and legal structuring for emerging projects, we offer a service focused on strategic guidance without unnecessary complexity.",
+        "With solid legal training and practical experience in migration processes, contract advisory, and legal structuring for emerging projects, we offer a service focused on strategic guidance without unnecessary complexity.",
       storyContent6: "Our approach combines technical knowledge with lived experience to provide real, understandable, and applicable solutions.",
       storyContent7:
-      "We believe in legal advisory that not only solves problems but also supports clients. Having walked this path ourselves, we understand it and put that knowledge at the service of those starting their journey today.",
+        "We believe in legal advisory that not only solves problems but also supports clients. Having walked this path ourselves, we understand it and put that knowledge at the service of those starting their journey today.",
       ourFounders: "Our Legal Experts",
       founder1Name: "Elena Martínez",
       founder1Title: "Managing Partner and Legal Director",
       founder1Bio:
-      "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. She has advised major tech companies and startups across Europe, specializing in privacy and data protection.",
+        "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. She has advised major tech companies and startups across Europe, specializing in privacy and data protection.",
       founder1Education: "J.D., Complutense University",
       founder2Name: "Carlos Rodríguez",
       founder2Title: "Technology and Compliance Director",
       founder2Bio:
-      "Carlos brings a unique combination of legal and technical expertise, specializing in privacy, GDPR compliance, and legal digitalization. His dual background in law and IT bridges the gap between legal requirements and technical implementation.",
+        "Carlos brings a unique combination of legal and technical expertise, specializing in privacy, GDPR compliance, and legal digitalization. His dual background in law and IT bridges the gap between legal requirements and technical implementation.",
       founder2Education: "LL.M., IE Law School",
       founder3Name: "Sofia Navarro",
       founder3Title: "Immigration and Residency Specialist",
       founder3Bio:
-      "Sofia specializes in immigration law and residency requirements, particularly for EU citizens and family reunifications. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes.",
+        "Sofia specializes in immigration law and residency requirements, particularly for EU citizens and family reunifications. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes.",
       founder3Education: "J.D., University of Barcelona",
       ourValues: "Core Values",
       integrity: "Legal Clarity",
       integrityDesc:
-      "We prioritize conceptual precision and accessible communication. Our mission is to interpret and explain legal content clearly without losing rigor.",
+        "We prioritize conceptual precision and accessible communication. Our mission is to interpret and explain legal content clearly without losing rigor.",
       clientCentered: "Individualized Advisory",
       clientCenteredDesc:
-      "Every situation deserves specific analysis. We provide professional support tailored to each case's particular needs, with strategic focus and personalized attention.",
+        "Every situation deserves specific analysis. We provide professional support tailored to each case's particular needs, with strategic focus and personalized attention.",
       excellence: "Technical Excellence with Operational Vision",
       excellenceDesc:
-      "We maintain high standards of legal quality, combining strong regulatory grounding with viable, decision-oriented solutions.",
+        "We maintain high standards of legal quality, combining strong regulatory grounding with viable, decision-oriented solutions.",
       innovation: "Applied Professional Experience",
       innovationDesc:
-      "With firsthand experience in international mobility and digital business legal structuring, we anticipate scenarios and offer practical, up-to-date responses.",
+        "With firsthand experience in international mobility and digital business legal structuring, we anticipate scenarios and offer practical, up-to-date responses.",
       readyToWork: "Ready to Get Started?",
     },
     // Booking Calendar
@@ -312,13 +328,23 @@ export const translations = {
     cta: {
       title: "Would you like to boost your business?",
       title2: "How to Book an Appointment",
+      subtitle: "Get started with your legal consultation in just three simple steps",
+      freeConsultation: "Free 15-Minute Consultation",
+      step1Title: "Select Your Time",
+      step2Title: "No Payment Required",
+      step3Title: "Get Confirmation",
       scheduleConsultation1: "Choose your preferred date and time - Select the day and hour that best suits your schedule.",
       scheduleConsultation2: "No payment required upfront - This is a free, no-obligation appointment.",
       scheduleConsultation3: "Receive your confirmation - You’ll get a confirmation email with the meeting link.",
+      readyToStart: "Ready to Start Your Legal Journey?",
+      readyToStartDesc: "Take the first step towards resolving your legal matters with expert guidance.",
       bookNow: "Book now",
       scheduleConsultation: "Schedule a Free Consultation",
-      contactUs: "Contact us"
-      
+      contactUs: "Contact us",
+      guarantee1: "No obligation to hire",
+      guarantee2: "15-minute free consultation",
+      guarantee3: "Expert legal advice"
+
     },
     // Footer
     footer: {
@@ -786,10 +812,10 @@ export const translations = {
     },
     // Services Section
     services: {
-      title: "Soluciones Legales Online Especializadas",
-      subtitle: "Gestión especializada adaptada a las necesidades específicas de su negocio digital",
+      title: "Soluciones legales y de gestión para startups y nuevos residentes en Europa",
+      subtitle: "Brindamos asesoramiento legal especializado para startups, así como gestión profesional para personas que se relocalizan o atraviesan trámites de residencia. </br> Desde contratos y asesoría jurídica estratégica hasta la gestión integral de procesos migratorios, ofrecemos un enfoque internacional adaptado a tus necesidades.",
       tabStartups: "Para Negocios Digitales y Startups",
-      tabResidency: "Para Residencia de Ciudadanos UE (España)",
+      tabResidency: "Servicios de Gestión de Residencias en España",
       legalServices: "Servicios Legales Online para Negocios Digitales",
       legalServicesDesc1: "Asesoramos a quienes emprenden, lanzan o hacen crecer su proyecto en el mundo digital.",
       legalServicesDesc2: "Cada paso en el desarrollo de un negocio —desde validar una idea hasta lanzar una web o firmar el primer contrato— implica decisiones legales importantes.",
@@ -858,13 +884,22 @@ export const translations = {
       choosePremium: "Elegir Asesoría Premium",
 
       // Residency
-      residencyTitle: "Asistencia legal práctica y personalizada para procesos de residencia en España.",
-      residencyDesc1: "Instalarse en un nuevo país implica gestionar trámites que pueden ser complejos.",
-      residencyDesc2: "Nuestro servicio está orientado a brindar apoyo en cada etapa del proceso de residencia, de manera clara, accesible y adaptada a las necesidades de cada caso.",
+      residencyTitle: "Acompañamiento profesional, práctico y 100% online para trámites de extranjería.",
+      residencyDesc1: "Instalarse en un nuevo país implica coordinar procesos que pueden resultar complejos.",
+      residencyDesc2: "Nuestro equipo ofrece apoyo completo para la gestión de trámites migratorios, de forma clara, accesible y adaptada a cada situación.",
       residencyDesc3: "Se ofrecen paquetes flexibles para solicitudes de residencia, reunificación familiar y consultas legales específicas, siempre de forma online y con acompañamiento profesional.",
 
-      residencySubTitle: 'Servicios de Registro de Residencia UE ("NIE Verde")',
-      residencySubTitleDesc: 'Tres niveles de asistencia para adaptar el servicio a cada necesidad:',
+      // General
+      general: "Registro de Residencia UE (NIE Verde)",
+      generalDesc: "Gestión integral del registro como ciudadano de la UE en España",
+      generalItem1: "Preparación y revisión de la documentación",
+      generalItem2: "Verificación de requisitos relativos a la acreditación de fondos (trabajador, estudiante, autónomo o autosuficiente)",
+      generalItem3: "Apoyo para obtener seguro médico",
+      generalItem4: "Preparación de dossier de solicitud",
+      generalItem5: "Coordinación de citas en Extranjería",
+      generalItem6: "Acompañamiento por correo electrónico y telefónico", 
+      generalItem7: "Seguimiento posterior a la presentación",
+      chooseGeneral: "Solicitar Gestión",
 
       // Silver
       silver: "Plata",
@@ -873,7 +908,6 @@ export const translations = {
       silverItem2: "Asesoramiento personalizado",
       silverItem3: "Checklist de documentación necesaria y verificación",
       silverItem4: "Soporte por correo electrónico",
-
 
       // Gold
       gold: "Oro",
@@ -899,32 +933,41 @@ export const translations = {
       choosePlatinum: "Elegir Platino",
 
       // Family Reunification
-      familyTitle: "Asistencia Legal para Reunificación Familiar",
-      familySubTitle: "Apoyo en el proceso de reunificación familiar, adaptado según el tipo de residencia:",
-      forResidents: "Para Residentes UE",
-      forResidentsDesc: "Apoyo legal para residentes de la UE que traen a miembros de su familia",
-      forResidentsItem1: "Asistencia integral en preparación de documentación",
-      forResidentsItem2: "Soporte en la obtención de certificados digitales",
-      forResidentsItem3: "Gestión de citas para NIE",
-      forResidentsItem4: "Seguimiento del proceso de solicitud",
+      familyTitle: "Residencia para Familiares de Ciudadanos UE",
+      familySubTitle: "Para cónyuges, parejas registradas, hijos, ascendientes u otros familiares dependientes",
+      forResidents: "Residencia para Familiares de Ciudadanos UE",
+      forResidentsDesc: "Para cónyuges, parejas registradas, hijos, ascendientes u otros familiares dependientes",
+      forResidentsItem1: "Análisis del tipo de vínculo familiar aplicable",
+      forResidentsItem2: "Preparación y revisión completa de la documentación",
+      forResidentsItem3: "Preparación de dossier de solicitud",
+      forResidentsItem4: "Coordinación de citas en Extranjería",
+      forResidentsItem5: "Apoyo para obtención de seguro médico y certificado digital ",
+      forResidentsItem6: "Seguimiento posterior a la presentación",
 
-      forNonResidents: "Para No Residentes",
-      forNonResidentsDesc: "Paquete legal completo para reunificación familiar",
-      forNonResidentsItem1: "Preparación y revisión de documentación",
-      forNonResidentsItem2: "Gestión de citas para NIE",
-      forNonResidentsItem3: "Seguimiento del proceso de solicitud",
-      forNonResidentsItem4: "Gestión especializada en inmigración",
+      // Arraigo
+      forNonResidents: "Arraigo (Conforme al Nuevo Reglamento de Extranjería)",
+      forNonResidentsDesc: "Gestión completa para solicitudes de residencia por arraigo",
+      forNonResidentsDesc2: "Tramitamos todos los tipos de arraigo contemplados en la normativa actual: </br><strong> Arraigo Social, Arraigo Sociolaboral, Arraigo Familiar, Arraigo Socioformativo y Arraigo de Segunda Oportunidad</strong>, según las condiciones y requisitos específicos de cada caso.",
+      forNonResidentsItem1: "Evaluación del perfil y determinación del tipo de arraigo más adecuado",
+      forNonResidentsItem2: "Revisión y preparación de la documentación requerida",
+      forNonResidentsItem3: "Apoyo en la gestión de informes",
+      forNonResidentsItem4: "Preparación de dossier de solicitud",
+      forNonResidentsItem5: "Coordinación de citas en Extranjería",
+      forNonResidentsItem6: "Acompañamiento por correo electrónico y telefónico",
+      forNonResidentsItem7: "Seguimiento posterior a la presentación",
+      selectPackage: "Solicitar Gestión",
 
-      selectPackage: "Seleccionar Paquete",
       // Specialized Advice
       specializedTitle: "Asesoría Legal Especializada en Residencia UE",
-      consultationTitle: "Orientación legal específica para trámites de residencia",
-      consultationDesc: "Consulta Legal Personalizada de Residencia",
+      consultationTitle: "Consultoría Personalizada en Trámites de Residencia",
+      consultationDesc: "Asesoramiento individual para encontrar la vía de residencia adecuada",
       bookConsultation: "(+ €50 por cada persona adicional)",
-      consultationItem1: "Análisis detallado de la situación individual",
-      consultationItem2: "Recomendación de los permisos de residencia adecuados",
-      consultationItem3: "Lista de verificación de documentación requerida",
-      consultationItem4: "Horas adicionales disponibles a €30/hora",
+      consultationItem1: "Análisis personalizado de la situación migratoria",
+      consultationItem2: "Recomendación de los permisos o vías más adecuadas",
+      consultationItem3: "Verificación de requisitos y documentación",
+      consultationItem4: "Lista de verificación por tipo de trámite",
+      consultationItem5: "Flexibilidad para ampliar la sesión según necesidad",
+      priceDescription: "30 €/hora · 50 €/sesión de 2 horas",
 
       //Review of key documents
       otherTitle: "Otros ",
@@ -1081,12 +1124,22 @@ export const translations = {
     cta: {
       title: "¿Te gustaría impulsar tu negocio?",
       title2: "Cómo Reservar la consulta Gratuita",
+      subtitle: "Comienza con tu consulta legal en solo tres pasos simples",
+      freeConsultation: "Consulta Gratuita de 15 Minutos",
+      step1Title: "Selecciona tu Hora",
+      step2Title: "Sin Pago Requerido",
+      step3Title: "Recibe Confirmación",
       scheduleConsultation1: 'Elija su fecha y hora preferida - Seleccione el día y la hora que mejor se adapten a su horario.',
       scheduleConsultation2: 'No se requiere pago por adelantado - Esta es una cita gratuita y sin compromiso.',
       scheduleConsultation3: 'Reciba su confirmación - Recibirá un correo electrónico con el enlace de la reunión.',
+      readyToStart: "¿Listo para Comenzar tu Proceso Legal?",
+      readyToStartDesc: "Da el primer paso hacia la resolución de tus asuntos legales con orientación experta.",
       contactUs: "Contáctanos",
       scheduleConsultation: "Programar consulta gratuita",
       bookNow: "Reservar",
+      guarantee1: "Sin obligación de contratar",
+      guarantee2: "Consulta gratuita de 15 minutos",
+      guarantee3: "Asesoramiento legal experto"
     },
     // Footer
     footer: {

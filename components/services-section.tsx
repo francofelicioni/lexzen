@@ -58,10 +58,6 @@ function PricingPackage({
             {highlighted && <Badge className="bg-button-orange py-2 px-4 mb-4 text-sm mr-2">Popular</Badge>}
           </CardTitle>
           <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
-          {/* <div className="mt-2">
-            <span className="text-2xl sm:text-3xl font-bold"> <span className="text-sm"> {t("general.from")} </span>{price}</span>
-            {price.includes("€")}
-          </div> */}
         </CardHeader>
         <CardContent className="flex-grow flex justify-start items-center">
           <ul className="space-y-3 text-sm sm:text-base">
@@ -133,20 +129,20 @@ export function ServicesSection() {
       <div className="container px-4 md:px-6 mb-12 space-y-8">
         <AnimatedSection direction="up" elementType="heading">
           <div className="flex flex-col items-center justify-center space-y-4 text-center my-6">
-            <div className="space-y-2">
+            <div className="space-y-2 w-full mx-auto flex flex-col justify-center items-center">
               <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.services")}
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("services.title")}</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {t("services.subtitle")}
+                <span dangerouslySetInnerHTML={{ __html: t("services.subtitle") }} />
               </p>
             </div>
           </div>
         </AnimatedSection>
 
-        <Tabs defaultValue="residency" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 h-full border border-muted bg-muted ">
+        <Tabs defaultValue="residency" className="w-full h-full" onValueChange={setActiveTab}>
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 h-full border border-muted bg-muted">
             <TabsTrigger value="residency" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
               {t("services.tabResidency")}
             </TabsTrigger>
@@ -157,269 +153,433 @@ export function ServicesSection() {
 
           {/* For EU Citizens Residency */}
           <TabsContent value="residency" className="transition-all duration-500">
-            <div className="grid gap-8">
-              <div className="grid gap-6">
-                <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold my-6">{t("services.residencyTitle")}</h3>
-                  <div className="space-y-3">
-                    <p className="my-2">{t("services.residencyDesc1")}</p>
-                    <p className="my-2">{t("services.residencyDesc2")}</p>
-                    <p className="my-2">{t("services.residencyDesc3")}</p>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold my-4">{t("services.residencySubTitle")}</h3>
-                  <p className="mt-2">{t("services.residencySubTitleDesc")}</p>
-                </AnimatedSection>
-                <div className="grid gap-6 md:grid-cols-3">
-                  <PricingPackage
-                    title={t("services.silver")}
-                    price="€40"
-                    description={t("services.silverDesc")}
-                    features={
-                      [
-                        t("services.silverItem1"),
-                        t("services.silverItem2"),
-                        t("services.silverItem3"),
-                        t("services.silverItem4"),
-                      ]
-                    }
-                    buttonText={t("services.chooseSilver")}
-                    delay={400}
-                    t={t}
-                  />
-                  <PricingPackage
-                    title={t("services.gold")}
-                    price="€50"
-                    description={t("services.goldDesc")}
-                    features={
-                      [
-                        t("services.goldItem1"),
-                        t("services.goldItem2"),
-                        t("services.goldItem3"),
-                        t("services.goldItem4"),
-                        t("services.goldItem5"),
-                      ]
-                    }
-                    highlighted={true}
-                    buttonText={t("services.chooseGold")}
-                    delay={500}
-                    t={t}
-                  />
-                  <PricingPackage
-                    title={t("services.platinum")}
-                    price="€75"
-                    description={t("services.platinumDesc")}
-                    features={[
-                      t("services.platinumItem1"),
-                      t("services.platinumItem2"),
-                      t("services.platinumItem3"),
-                      t("services.platinumItem4"),
-                    ]}
-                    buttonText={t("services.choosePlatinum")}
-                    delay={600}
-                    t={t}
-                  />
-                </div>
+
+            <AnimatedSection direction="up" delay={300}>
+              <h3 className="text-2xl font-bold my-6">{t("services.residencyTitle")}</h3>
+              <div className="space-y-3">
+                <p className="my-2">{t("services.residencyDesc1")}</p>
+                <p className="my-2">{t("services.residencyDesc2")}</p>
               </div>
+            </AnimatedSection>
 
-              <div>
-                <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold my-6">{t("services.familyTitle")}</h3>
-                  <p className="my-4">{t("services.familySubTitle")}</p>
-                </AnimatedSection>
-                <div className="grid gap-6 md:grid-cols-2">
-                  <AnimatedSection direction="right" delay={400}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
-                      <CardHeader>
-                        <CardTitle>{t("services.forResidents")}</CardTitle>
-                        <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
-                        {/* <div className="mt-2">
-                          <span className="text-sm"> {t("general.from")} </span> <span className="text-3xl font-bold">€100</span>
-                          <span className="text-sm text-muted-foreground"></span>
-                        </div> */}
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2 text-sm">
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forResidentsItem1")}</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forResidentsItem2")}</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forResidentsItem3")}</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forResidentsItem4")}</span>
-                          </li>
-                        </ul>
-                      </CardContent>
-                      <div className="flex justify-start items-center">
-                        <CardFooter>
-                          <Button
-                            className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
-                            onClick={() => {
-                              const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
-                              const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
-                              window.open(url, "_blank");
-
-                            }}
-                          >
-                            {t("services.selectPackage")}
-                          </Button>
-                        </CardFooter>
-                      </div>
-                    </Card>
-                  </AnimatedSection>
-
-                  <AnimatedSection direction="left" delay={500}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
-                      <CardHeader>
-                        <CardTitle>{t("services.forNonResidents")}</CardTitle>
-                        <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
-                        {/* <div className="mt-2">
-                          <span className="text-sm"> {t("general.from")} </span><span className="text-3xl font-bold">€150</span>
-                          <span className="text-sm text-muted-foreground"></span>
-                        </div> */}
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2 text-sm">
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forNonResidentsItem1")}</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forNonResidentsItem2")}</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forNonResidentsItem3")}</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span>{t("services.forNonResidentsItem4")}</span>
-                          </li>
-                        </ul>
-                      </CardContent>
-                      <CardFooter>
-                        <div className="flex justify-start items-center">
-                          <Button
-                            className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
-                            onClick={() => {
-                              const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
-                              const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
-                              window.open(url, "_blank");
-                            }}
-                          >
-                            {t("services.selectPackage")}
-                          </Button>
-                        </div>
-                      </CardFooter>
-                    </Card>
-                  </AnimatedSection>
-                </div>
-              </div>
-
-              <div>
-                <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold my-6">{t("services.specializedTitle")}</h3>
-                </AnimatedSection>
+            {/* Services Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+              {/* Residency */}
+              <div className="flex flex-col gap-4">
                 <AnimatedSection direction="up" delay={400}>
-                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift md:w-1/2">
+                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
+                    <CardHeader>
+                      <CardTitle>{t("services.general")}</CardTitle>
+                      <CardDescription>{t("services.generalDesc")}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.generalItem1")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.generalItem2")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.generalItem3")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.generalItem4")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.generalItem5")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.generalItem6")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.generalItem7")}</span>
+                        </li>
+                      </ul>
+                      <div className="mt-4 flex items-center">
+                        <span className="text-sm">{t("general.from")}</span>
+                        <span className="text-2xl font-bold ml-2">€75</span>
+                      </div>
+                    </CardContent>
+                    <div className="flex justify-start items-center">
+                      <CardFooter>
+                        <Button
+                          className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
+                          onClick={() => {
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.residencyTitle")} ${t("services.general")}. ${t("whatsappMessage.moreInfo")}`;
+                            const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                            window.open(url, "_blank");
+                          }}
+                        >
+                          {t("services.chooseGeneral")}
+                        </Button>
+                      </CardFooter>
+                    </div>
+                  </Card>
+                </AnimatedSection>
+              </div>
+
+              {/* Family Reunification */}
+              <div className="flex flex-col gap-4">
+                <AnimatedSection direction="right" delay={400}>
+                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
+                    <CardHeader>
+                      <CardTitle>{t("services.forResidents")}</CardTitle>
+                      <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forResidentsItem1")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forResidentsItem2")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forResidentsItem3")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forResidentsItem4")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forResidentsItem5")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forResidentsItem6")}</span>
+                        </li>
+                      </ul>
+                      <div className="mt-4 flex items-center">
+                        <span className="text-sm">{t("general.from")}</span>
+                        <span className="text-2xl font-bold ml-2">€200</span>
+                      </div>
+                    </CardContent>
+                    <div className="flex justify-start items-center">
+                      <CardFooter>
+                        <Button
+                          className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
+                          onClick={() => {
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
+                            const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                            window.open(url, "_blank");
+
+                          }}
+                        >
+                          {t("services.selectPackage")}
+                        </Button>
+                      </CardFooter>
+                    </div>
+                  </Card>
+                </AnimatedSection>
+              </div>
+
+              {/* Settlement (New Immigration Regulations) */}
+              <div className="flex flex-col gap-4">
+                <AnimatedSection direction="up" delay={400}>
+                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
+                    <CardHeader>
+                      <CardTitle>{t("services.forNonResidents")}</CardTitle>
+                      <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
+                      
+                    </CardHeader>
+
+                    <CardContent>
+                      <p
+                        className="text-md mb-4"
+                        dangerouslySetInnerHTML={{ __html: t("services.forNonResidentsDesc2") }}
+                      />
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forNonResidentsItem1")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forNonResidentsItem2")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forNonResidentsItem3")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forNonResidentsItem4")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forNonResidentsItem5")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forNonResidentsItem6")}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.forNonResidentsItem7")}</span>
+                        </li>
+                      </ul>
+                      <div className="mt-4 flex items-center">
+                        <span className="text-sm">{t("general.from")}</span>
+                        <span className="text-2xl font-bold ml-2">€250</span>
+                      </div>
+                    </CardContent>
+
+                    <CardFooter>
+      
+                      <div className="flex justify-start items-center">
+                        <Button
+                          className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
+                          onClick={() => {
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
+                            const url = `https://wa.me/34614481326?text=${encodeURIComponent(message)}`;
+                            window.open(url, "_blank");
+
+                          }}
+                        >
+                          {t("services.selectPackage")}
+                        </Button>
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </AnimatedSection>
+              </div>
+
+              {/* Specialized Advice */}
+              <div className="flex flex-col gap-4">
+                <AnimatedSection direction="up" delay={400}>
+                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
                     <CardHeader>
                       <CardTitle>{t("services.consultationTitle")}</CardTitle>
                       <CardDescription>{t("services.consultationDesc")}</CardDescription>
@@ -428,6 +588,7 @@ export function ServicesSection() {
                         <span className="text-sm text-muted-foreground ml-1">({t("general.min2Hours")})</span>
                       </div> */}
                     </CardHeader>
+
                     <CardContent>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start gap-2">
@@ -490,8 +651,27 @@ export function ServicesSection() {
                           </svg>
                           <span>{t("services.consultationItem4")}</span>
                         </li>
+                        <li className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-4 w-4 text-blue-gray mt-0.5 shrink-0"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{t("services.consultationItem5")}</span>
+                        </li>
                       </ul>
+                      <div className="mt-4 flex items-center">
+                        <span className="text-xl font-bold ml-2">{t("services.priceDescription")}</span>
+                      </div>
                     </CardContent>
+
                     <CardFooter>
                       <div className="flex justify-start items-center">
                         <Button
