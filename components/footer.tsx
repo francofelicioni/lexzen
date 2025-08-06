@@ -9,6 +9,10 @@ export function Footer() {
   const { t } = useLanguage()
   const isMobile = useMobile()
 
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
+
+
   return (
     <footer className="bg-gray-50 border-t">
       <div className="container px-4 md:px-6 py-12 md:py-16">
@@ -16,24 +20,19 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Scale className="h-6 w-6 text-blue-gray" />
-              <span className="text-xl font-bold">Lexzen</span>
+              <img src="/logo.png" alt="Lexzen Logo" className="size-28 h-full" />
             </div>
             <p className="text-gray-500 mb-6 max-w-md">
               {t("footer.footerDesc")}
             </p>
             <div className="space-y-3">
-              {/* <div className="flex items-start gap-2">
-                <MapPin className="size-5 text-blue-gray mt-0.5 shrink-0" />
-                <span className="text-gray-400">{t("footer.address")}</span>
-              </div> */}
               <div className="flex items-center gap-2">
                 <Phone className="size-5 text-blue-gray shrink-0" />
-                <span className="text-gray-400">{t("footer.phone")}</span>
+                <span className="text-gray-400"><a href={`tel:+34614481326`}>{whatsappNumber}</a></span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="size-5 text-blue-gray shrink-0" />
-                <span className="text-gray-400">{t("footer.email")}</span>
+                <span className="text-gray-400"><a href={`mailto:${contactEmail}`}>{contactEmail}</a></span>
               </div>
             </div>
           </div>
@@ -41,27 +40,17 @@ export function Footer() {
           {/* Company Links */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.companyHeading")}</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-blue-gray block py-1">
+                <Link href="#about" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-gray-400 hover:text-blue-gray block py-1">
+                <Link href="#services" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.services")}
                 </Link>
               </li>
-              {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block py-1">
-                  {t("footer.careers")}
-                </Link>
-              </li> */}
-              {/* <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray block py-1">
-                  {t("footer.blog")}
-                </Link>
-              </li> */}
               <li>
                 <Link href="#contact" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.contact")}
@@ -75,50 +64,35 @@ export function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">{t("footer.legalHeading")}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray">
+                <Link href="/legals/legal-notice" className="text-gray-400 hover:text-blue-gray">
+                  {t("footer.legalNotice")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/legals/privacy-policy" className="text-gray-400 hover:text-blue-gray">
                   {t("footer.privacyPolicy")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray">
-                  {t("footer.termsOfService")}
+                <Link href="/legals/cookie-policy" className="text-gray-400 hover:text-blue-gray">
+                  {t("footer.cookiePolicy")}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-blue-gray">
-                  {t("footer.legalNotice")}
+                <Link href="/legals/terms-of-service" className="text-gray-400 hover:text-blue-gray">
+                  {t("footer.termsOfService")}
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/*  Social Links */}
-          {/* <div className="flex items-center md:gap-4" >
-            <h3 className="text-sm font-medium text-gray-700 mr-2 hidden md:block">{t("footer.socialHeading")}</h3>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Facebook className="size-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-                <Twitter className="size-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-              <Instagram className="size-5" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="#" className="text-gray-500 hover:text-blue-gray">
-              <Linkedin className="size-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-          </div> */}
         </div>
-
-
         {/*  Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className={`flex ${isMobile ? "flex-col space-y-4" : "flex-row justify-center"} items-center gap-4`}>
-            <div className="text-sm text-gray-500">{t("footer.rights")}</div>
+            <div className="text-sm text-gray-500 text-center space-x-1">
+              <span dangerouslySetInnerHTML={{ __html: t("footer.buildBy") }} />
+              <span>| {t("footer.rights")}</span>
+            </div>
           </div>
         </div>
       </div>

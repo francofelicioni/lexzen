@@ -72,16 +72,22 @@ const config = {
           950: "#042f2e",
         },
         // Direct color names
-        "beige-light": "#F3E9DC",
+        "beige-light": "#FCF6F1",
         "blue-gray": "#7393A7",
-        "state-gray": "#5a7a8e",
+        "state-gray": "#7290A2",
         "bone-white": "#FFFDF7",
         "beige-dark": "#E8D9C2",
         "dark-gray": "#3F3F3F",
+        "button-orange": "#D0B19F",
+        "button-orange-hover": "#CFAF8D",
+        "hero-blue": "#7BA3BC",
+        "cta-button": "#9B9FA1",
+        "cta-button-hover": "#A7A9AB",
+        "contact-section": "#F0F4F6",
 
         // Semantic color naming
         legal: {
-          background: "#F3E9DC", // beige-light
+          background: "#FCF6F1", // beige-light
           accent: "#7393A7", // blue-gray
           surface: "#FFFDF7", // bone-white
           secondary: "#E8D9C2", // beige-dark

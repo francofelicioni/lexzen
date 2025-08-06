@@ -52,7 +52,7 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1">
             <div className="flex items-center justify-center mb-6">
-              <Scale className="h-10 w-10 text-teal-600 mr-2" />
+              <Scale className="size-10 text-blue-gray mr-2" />
               <span className="text-2xl font-bold">Lexzen Admin</span>
             </div>
             <CardTitle className="text-xl text-center">Admin Login</CardTitle>
@@ -79,7 +79,7 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
               </div>
             </CardContent>
             <CardFooter>
-              <Button type="submit" className="w-full bg-teal-600 hover:bg-teal-700" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-blue-gray hover:bg-blue-gray/90" disabled={isLoading}>
                 {isLoading ? "Authenticating..." : "Login to Dashboard"}
               </Button>
             </CardFooter>
@@ -91,7 +91,7 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-2.5 right-4 z-50">
         <Button variant="outline" size="sm" onClick={handleLogout}>
           Logout
         </Button>

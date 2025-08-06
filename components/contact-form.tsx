@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useLanguage } from "@/contexts/language-context"
 import { AlertCircle, CheckCircle, Loader2 } from "lucide-react"
 import { useState } from "react"
+import toast from "react-hot-toast"
 
 type FormData = {
   fullName: string
@@ -83,32 +84,71 @@ export function ContactForm() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (!validateForm()) return
+    if (!validateForm()) return;
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     try {
-      const token = await grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!, { action: "submit" });
+      if (!window.grecaptcha || !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+        console.error("⚠️ reCAPTCHA not loaded or SITE_KEY missing");
+        throw new Error("reCAPTCHA not available");
+      }
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, token }),
-      });
+      try {
+        const token = await window.grecaptcha.execute(
+          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+          { action: "submit" }
+        );
 
-      if (!res.ok) throw new Error("Request failed");
+        const contactRes = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, token }),
+        });
 
-      setShowSuccessDialog(true);
-      setFormData({ fullName: "", email: "", subject: "", message: "", subscribe: false });
-    } catch (error) {
-      console.error("Error submitting form:", error);
+        if (!contactRes.ok) throw new Error("Contact form failed");
+
+        if (formData.subscribe) {
+          const newsletterRes = await fetch("/api/newsletter", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: formData.email, source: "contact_form" }),
+          })
+
+          const data = await newsletterRes.json()
+          console.log("Newsletter response:", newsletterRes.status, data)
+
+          if (data.error === "Email already subscribed") {
+            toast.error(t("footer.alreadySubscribed"))
+          } else if (!newsletterRes.ok) {
+            console.error("Newsletter error:", data)
+            throw new Error("Newsletter subscription failed")
+          }
+        }
+
+        setShowSuccessDialog(true);
+        setFormData({
+          fullName: "",
+          email: "",
+          subject: "",
+          message: "",
+          subscribe: false,
+        });
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setShowErrorDialog(true);
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+    catch (error) {
+      console.error("Error:", error);
       setShowErrorDialog(true);
-    } finally {
       setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <>
@@ -209,12 +249,12 @@ export function ContactForm() {
 
         <Button
           type="submit"
-          className="w-full bg-blue-gray hover:bg-legal-accent-dark py-5 text-base"
+          className="w-full md:w-1/2 bg-button-orange hover:bg-legal-accent-dark py-5 text-base"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
             <span className="flex items-center gap-2">
-              <Loader2 className="h-5 w-5 animate-spin" />
+              <Loader2 className="size-5 animate-spin" />
               {t("contactForm.sending")}
             </span>
           ) : (
@@ -249,7 +289,7 @@ export function ContactForm() {
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-red-600">
-              <AlertCircle className="h-5 w-5" />
+              <AlertCircle className="size-5" />
               {t("contactForm.error")}
             </DialogTitle>
             <DialogDescription>{t("contactForm.errorDetails")}</DialogDescription>

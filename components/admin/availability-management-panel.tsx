@@ -5,7 +5,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { supabase } from "@/lib/supabase"
+import { supabase } from "@/lib/supabase/client"
 import { updateAvailability as saveAvailability } from '@/services/availability'
 import { addDays, addWeeks, format, isSameDay, isWeekend, startOfWeek, subWeeks } from "date-fns"
 import { ChevronLeft, ChevronRight, Clock, Plus, Save, Trash2 } from "lucide-react"
@@ -364,23 +364,23 @@ export function AvailabilityManagementPanel() {
             )}
 
             <div className="mt-6 border-t pt-6">
-              <h3 className="mb-4 text-lg font-medium">Weekly Schedule</h3>
+              <h3 className="mb-4 text-lg font-medium text-center md:text-left">Weekly Schedule</h3>
 
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-col md:flex-row items-center justify-between mb-4">
                 <Button variant="outline" size="sm" onClick={goToPreviousWeek}>
-                  <ChevronLeft className="h-4 w-4" />
+                  <ChevronLeft className="size-4" />
                   Previous Week
                 </Button>
-                <div className="font-medium">
+                <div className="font-medium text-sm my-4">
                   {format(weekStart, "MMM d")} - {format(addDays(weekStart, 6), "MMM d, yyyy")}
                 </div>
                 <Button variant="outline" size="sm" onClick={goToNextWeek}>
                   Next Week
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="size-4" />
                 </Button>
               </div>
 
-              <div className="grid grid-cols-7 gap-2">
+              <div className="grid grid-cols-2 md:grid-cols-7 gap-2">
                 {weekDays.map((day, index) => (
                   <div
                     key={index}

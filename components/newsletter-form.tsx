@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useLanguage } from "@/contexts/language-context"
 import { AlertCircle, CheckCircle } from "lucide-react"
+import { toast } from "react-hot-toast"
 
 export function NewsletterForm() {
   const { t } = useLanguage()
@@ -22,22 +23,41 @@ export function NewsletterForm() {
 
     setStatus("loading")
 
-    // Simulate API call
-    setTimeout(() => {
-      // In a real application, you would send this to your API
-      console.log("Newsletter subscription:", email)
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "newsletter_form" }),
+      })
+  
+      const data = await res.json()
+
+      if (data.error === "Email already subscribed") {
+        toast.error(t("footer.alreadySubscribed"))
+        setEmail("")
+        setTimeout(() => setStatus("idle"), 3000)
+        return
+      }
+      
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong")
+      }
+  
       setStatus("success")
       setEmail("")
-
-      // Reset status after 3 seconds
-      setTimeout(() => {
-        setStatus("idle")
-      }, 3000)
-    }, 1000)
+  
+      toast.success(t("footer.subscribeSuccess"))
+  
+      setTimeout(() => setStatus("idle"), 3000)
+    } catch (err) {
+      setStatus("error")
+      toast.error(t("footer.subscribeError"))
+      setTimeout(() => setStatus("idle"), 3000)
+    }
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 my-4">
       <form onSubmit={handleSubmit} className="space-y-3">
         <div className="relative">
           <Input
@@ -46,13 +66,13 @@ export function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="pr-24 transition-all duration-300 focus:border-blue-gray focus:ring-blue-gray h-12 text-base"
+            className="transition-all duration-300 focus:border-blue-gray focus:ring-blue-gray h-12 text-base"
             disabled={status === "loading" || status === "success"}
           />
           <Button
             type="submit"
             size="sm"
-            className="absolute right-1 top-1 h-10 px-4 bg-blue-gray hover:bg-legal-accent-dark transition-all duration-300 hover:scale-105 text-base"
+            className="absolute right-1 top-1 h-10 px-4 bg-button-orange hover:bg-legal-accent-dark transition-all duration-300 hover:scale-105 text-base"
             disabled={status === "loading" || status === "success"}
           >
             {status === "loading" ? (
@@ -92,7 +112,7 @@ export function NewsletterForm() {
         )}
       </form>
 
-      <p className="text-sm text-gray-500">{t("footer.privacyConsent")}</p>
+      <p className="text-sm text-gray-500 text-center">{t("footer.privacyConsent")}</p>
     </div>
   )
 }

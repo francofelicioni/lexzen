@@ -9,6 +9,12 @@ export const translations = {
       month: "month",
       min2Hours: "minimum 2 hours",
       from: "from",
+      whatsapp: "+34 614 481 326",
+    },
+    // Language
+    language: {
+      en: "English",
+      es: "Spanish",
     },
     // Navigation
     nav: {
@@ -16,13 +22,14 @@ export const translations = {
       about: "About Us",
       bookCall: "Book Free Consultation",
       contact: "Contact",
-      getStarted: "Get Started",
+      sendWhatsapp: "Send us a Whatsapp Message",
     },
     // Hero Section
     hero: {
       title: "Practical Legal Solutions for Startups and New Residents in Europe",
       subtitle:
-        "Accessible and clear legal advice for those starting businesses, relocating, or facing early legal challenges while building their projects. From contracts to residency paperwork, with a strategic approach and international expertise.",
+        "Accessible and clear legal advice for those starting businesses, relocating, or facing early legal challenges while building their projects.",
+      subtitle2:"From contracts to residency paperwork, with a strategic approach and international expertise.",
       scheduleFree: "Schedule Free Legal Consultation",
       viewServices: "View Legal Services",
     },
@@ -102,8 +109,9 @@ export const translations = {
 
       // Residency
       residencyTitle: "Practical and Personalized Legal Assistance for Residency Processes in Spain.",
-      residencyDesc1: "Relocating to a new country requires handling complex paperwork. Our service is designed to provide clear, accessible support throughout each step of the residency process, tailored to individual needs.",
-      residencyDesc2: "Flexible packages are available for residency applications, family reunification, and specific legal consultations, all online and with professional support.",
+      residencyDesc1: "Relocating to a new country requires handling complex paperwork",
+      residencyDesc2: "Our service is designed to provide clear, accessible support throughout each step of the residency process, tailored to individual needs.",
+      residencyDesc3: "Flexible packages are available for residency applications, family reunification, and specific legal consultations, all online and with professional support.",
 
       residencySubTitle: 'EU Residency Registration Services ("Green NIE")',
       residencySubTitleDesc: 'Three levels of support to match your needs:',
@@ -153,12 +161,12 @@ export const translations = {
       forNonResidentsItem1: "Document preparation and review",
       forNonResidentsItem2: "Appointment management for NIE",
       forNonResidentsItem3: "Application process follow-up",
-      forNonResidentsItem4: "Comprehensive legal advice",
+      forNonResidentsItem4: "Specialized immigration management",
 
       selectPackage: "Select Package",
       // Specialized Advice
       specializedTitle: "Specialized Legal Advisory for EU Residency",
-      consultationTitle: "Specific legal guidance for residency paperwork:",
+      consultationTitle: "Specific legal guidance for residency paperwork",
       consultationDesc: "Personalized Residency Legal Consultation",
       bookConsultation: "(+ €50 per additional person)",
       consultationItem1: "Detailed analysis of individual situation",
@@ -172,50 +180,53 @@ export const translations = {
       subtitle: "A team of experienced legal professionals combining expertise with digital innovation",
       ourStory: "Our Story",
       storyContent1:
-        "Lexzen was born from direct experience: navigating the personal and professional challenges of settling in a new country, from complex residency paperwork to legal hurdles faced when starting or running a digital business abroad.",
-      storyContent2:
-        "The project started with a clear conviction: many people don't need heavy legal jargon — they need clear, accessible support aligned with their reality. Those starting a new chapter in Europe or building a digital business often face critical legal decisions they're unprepared for. That's where Lexzen adds value.",
+      "Lexzen was born from firsthand experience: navigating, step by step, the personal and professional challenges of settling in a new country.",
+      storyContent2: "From the complexity of residency paperwork to the legal obstacles faced by those starting or developing a digital business from abroad.",
       storyContent3:
-        "With solid legal training and practical experience in migration processes, contract advisory, and legal structuring for emerging projects, we offer a service focused on strategic guidance without unnecessary complexity. Our approach combines technical expertise with lived experience, providing real, understandable, and applicable solutions.",
-      storyContent4:
-        "We believe in legal advice that not only solves but also supports. Having walked this path ourselves, we are uniquely positioned to guide others on theirs.",
+      "The project was founded with a clear conviction: many people don't need lengthy legal speeches but rather clear, accessible guidance aligned with the specifics of their reality.",
+      storyContent4: "Those starting a new chapter in Europe or building a business in the digital environment often face key legal decisions for which they are not always prepared. This is where Lexzen adds value.",
+      storyContent5:
+      "With solid legal training and practical experience in migration processes, contract advisory, and legal structuring for emerging projects, we offer a service focused on strategic guidance without unnecessary complexity.",
+      storyContent6: "Our approach combines technical knowledge with lived experience to provide real, understandable, and applicable solutions.",
+      storyContent7:
+      "We believe in legal advisory that not only solves problems but also supports clients. Having walked this path ourselves, we understand it and put that knowledge at the service of those starting their journey today.",
       ourFounders: "Our Legal Experts",
       founder1Name: "Elena Martínez",
       founder1Title: "Managing Partner and Legal Director",
       founder1Bio:
-        "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. She has advised major tech companies and startups across Europe, specializing in privacy and data protection.",
+      "With over 15 years of experience in corporate and digital law, Elena leads our online legal advisory strategy and oversees all client engagements. She has advised major tech companies and startups across Europe, specializing in privacy and data protection.",
       founder1Education: "J.D., Complutense University",
       founder2Name: "Carlos Rodríguez",
       founder2Title: "Technology and Compliance Director",
       founder2Bio:
-        "Carlos brings a unique combination of legal and technical expertise, specializing in privacy, GDPR compliance, and legal digitalization. His dual background in law and IT bridges the gap between legal requirements and technical implementation.",
+      "Carlos brings a unique combination of legal and technical expertise, specializing in privacy, GDPR compliance, and legal digitalization. His dual background in law and IT bridges the gap between legal requirements and technical implementation.",
       founder2Education: "LL.M., IE Law School",
       founder3Name: "Sofia Navarro",
       founder3Title: "Immigration and Residency Specialist",
       founder3Bio:
-        "Sofia specializes in immigration law and residency requirements, particularly for EU citizens and family reunifications. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes.",
+      "Sofia specializes in immigration law and residency requirements, particularly for EU citizens and family reunifications. Her compassionate approach and attention to detail have helped hundreds of clients successfully navigate complex residency processes.",
       founder3Education: "J.D., University of Barcelona",
       ourValues: "Core Values",
       integrity: "Legal Clarity",
       integrityDesc:
-        "We prioritize conceptual precision and accessible communication. Our mission is to interpret and explain legal content clearly without losing rigor.",
+      "We prioritize conceptual precision and accessible communication. Our mission is to interpret and explain legal content clearly without losing rigor.",
       clientCentered: "Individualized Advisory",
       clientCenteredDesc:
-        "Every situation deserves specific analysis. We provide professional support tailored to each case's particular needs, with strategic focus and personalized attention.",
+      "Every situation deserves specific analysis. We provide professional support tailored to each case's particular needs, with strategic focus and personalized attention.",
       excellence: "Technical Excellence with Operational Vision",
       excellenceDesc:
-        "We maintain high standards of legal quality, combining strong regulatory grounding with viable, decision-oriented solutions.",
+      "We maintain high standards of legal quality, combining strong regulatory grounding with viable, decision-oriented solutions.",
       innovation: "Applied Professional Experience",
       innovationDesc:
-        "With firsthand experience in international mobility and digital business legal structuring, we anticipate scenarios and offer practical, up-to-date responses.",
+      "With firsthand experience in international mobility and digital business legal structuring, we anticipate scenarios and offer practical, up-to-date responses.",
       readyToWork: "Ready to Get Started?",
     },
     // Booking Calendar
     booking: {
-      title: "Schedule Your Free 20-Minute Legal Consultation",
+      title: "Schedule Your Free 15-Minute Consultation",
       subtitle:
-        "Book a free consultation with our legal experts and receive guidance to protect and grow your digital business.",
-      howItWorks: "How Our Free Legal Consultation Works",
+        "Schedule your free consultation with us! We want to understand your situation and provide you with the best possible solution.",
+      howItWorks: "How Our Free Consultation Works",
       howItWorksDesc: "Simple steps to schedule your free online legal consultation",
       step1: "Select a Date and Time",
       step1Desc: "Choose from available slots Monday to Friday, Spanish time zone (CET/CEST)",
@@ -228,7 +239,7 @@ export const translations = {
       consultationItem2: "Initial assessment of your legal needs",
       consultationItem3: "Recommendations for next legal steps",
       consultationItem4: "No obligation to hire legal services",
-      bookYourConsultation: "Book Your Free Legal Consultation",
+      bookYourConsultation: "Book Your Consultation",
       selectDate: "Select a date for your consultation",
       chooseTime: "Choose an available time slot",
       completeDetails: "Complete your booking details",
@@ -248,73 +259,99 @@ export const translations = {
       continue: "Continue",
       bookConsultation: "Book Free Consultation",
       slotTaken: "This time slot is already taken. Please choose another.",
+      submitting: "Submitting...",
       // Confirmation
-      consultationBooked: "Legal Consultation Booked!",
-      consultationScheduled: "Your free 15-minute legal consultation has been scheduled.",
+      consultationBooked: "Consultation Booked!",
+      consultationScheduled: "Your free 15-minute consultation has been scheduled.",
       confirmationSent: "A confirmation email has been sent to",
       teamContact:
-        "Our legal team will contact you shortly before your scheduled time with the call link or phone number.",
+        "Our team will contact you shortly before your scheduled time with the call link.",
       done: "Done",
     },
+    // Landing Page
+    landing: {
+      consultationAvailable: "Free Consultation Available",
+      heroTitle: "Get Residency by Arraigo - New Immigration Regulations",
+      heroSubtitle: "Management services for residency by arraign under the new immigration regulations. Book your free consultation to understand your options.",
+      bookNow: "Book Now",
+      learnMore: "Learn More",
+      whyChooseUs: "Why Choose Our Immigration Legal Services?",
+      whyChooseUsDesc: "We specialize in residency by arraigo cases under the new immigration regulations, providing expert guidance throughout the process.",
+      benefit1Title: "15-Minute Free Consultation",
+      benefit1Desc: "Get immediate guidance on your residency by arraigo case. Our experts will assess your situation and explain the new regulations.",
+      benefit2Title: "Specialized in immigration processes",
+      benefit2Desc: "We have extensive experience with the new immigration regulations and residency by arraigo procedures.",
+      benefit3Title: "100% Online Service",
+      benefit3Desc: "Complete your consultation from anywhere. No travel required - just a phone or video call to discuss your case.",
+      readyToStart: "Ready to Start Your Residency Process?",
+      readyToStartDesc: "Don't wait to understand your options for residency by arraigo. Book your free consultation today and take the first step towards legal residency.",
+      bookFreeConsultation: "I want my free consultation",
+      guarantee1: "No obligation to hire",
+      guarantee2: "15-minute free consultation",
+      guarantee3: "Expert immigration advice",
+      bookYourSession: "Book Your Immigration Consultation",
+      bookYourSessionDesc: "Select your preferred date and time for your free 15-minute consultation about residency by arraigo.",
+      finalCTA: "Don't Wait - Start Your Residency Process Today",
+      finalCTADesc: "Your residency matters deserve immediate attention. Book your free consultation now and get expert guidance on the new immigration regulations.",
+    },
     // Testimonials
-    Testimonials: {
-      title: "What Our Clients Say About Our Consulting Services",
-      subtitle: "Hear from people we've helped with our online legal consulting services.",
-      testimonial1: '"Thanks to the advice and detailed preparation of my application file, the process of obtaining my registration certificate as an EU citizen was much smoother than I expected. The advice was clear at every step and the documents were perfectly organized, which was positively acknowledged by the immigration office. I felt supported and well-informed at all times."',
+    testimonials: {
+      title: "What Our Clients Say",
+      subtitle: "Hear from people we've helped with our online legal advisory services.",
+      testimonial1: '"Thanks to the detailed advice and preparation of my application folder, the process of obtaining my EU registration certificate was much smoother than I expected. The guidance was clear at every step, and the documents were perfectly organized, which was positively recognized by the immigration office. I felt supported and well-informed throughout the process."',
       client1Name: "Laura M.",
-      client1Title: "Italian citizen living in Madrid",
-      testimonial2: '"When I launched my online mentoring site, everything was going well until legal questions arose when preparing my first contracts with clients. I did not know how to protect myself or how to make the terms clear.The advice was key to taking that step with confidence: we reviewed clauses, adjusted the language, and everything was clear and professional.Now I work with more peace of mind and confidence."',
-      client2Name: "Carlos G.",
-      client2Title: "Digital Entrepreneur",
-      testimonial3: '"I was not sure what type of residence permit I was eligible for or where to start. They helped me understand which option was best for my situation and guided me through the entire process. We gathered the necessary documents step by step and submitted the application with confidence."',
-      client3Name: "Santiago P.",
-      client3Title: "Resident of the Valencian Community",
+      client1Title: "Italian citizen residing in Madrid",
+      testimonial2: '"When I launched my online mentoring site, everything was going well until legal doubts arose while preparing my first client contracts. I didn’t know how to protect myself or how to clearly define the terms. The advice was key to taking that step with confidence: we reviewed clauses, adjusted the language, and everything was clear and professional. Now I work with more peace of mind and confidence."',
+      client2Name: "Santiago P",
+      client2Title: "Digital entrepreneur",
+      testimonial3: '"I wasn’t sure what type of residence permit I was eligible for or where to start. They helped me understand which option was best for my situation and guided me through the entire process. We gathered the necessary documents step by step and submitted the application with confidence."',
+      client3Name: "Carlos G.",
+      client3Title: "Resident in the Balearic Islands",
     },
     // CTA Section
     cta: {
-      title: "Ready to Boost Your Business?",
-      subtitle: "",
-      scheduleConsultation: "Schedule Free Legal Consultation",
-      contactUs: "Contact Our Legal Team",
+      title: "Would you like to boost your business?",
+      title2: "How to Book an Appointment",
+      scheduleConsultation1: "Choose your preferred date and time - Select the day and hour that best suits your schedule.",
+      scheduleConsultation2: "No payment required upfront - This is a free, no-obligation appointment.",
+      scheduleConsultation3: "Receive your confirmation - You’ll get a confirmation email with the meeting link.",
+      bookNow: "Book now",
+      scheduleConsultation: "Schedule a Free Consultation",
+      contactUs: "Contact us"
+      
     },
     // Footer
     footer: {
       footerDesc: "Legal advisory tailored to your needs, specializing in digital businesses and EU residency.",
-      rights: "© 2025 Lexzen Online Legal Advisory. All rights reserved.",
+      rights: "© 2025 Lexzen. All rights reserved.",
+      buildBy: "Developed by <a href='https://www.360-webs.com' target='_blank'>360 Webs</a>",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       legalNotice: "Legal Notice",
+      cookiePolicy: "Cookie Policy",
       contact: "Contact",
       // Company
       companyHeading: "Company",
-      aboutUs: "About Our Legal Team",
+      aboutUs: "About Our Team",
       services: "Legal Services",
       careers: "Legal Careers",
       blog: "Legal Blog",
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contact",
-      address: "Calle Gran Vía 28, Madrid, Spain",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contact with us quickly",
       // Social
       socialHeading: "Follow Us",
       // Newsletter
-      newsletterHeading: "Stay Updated",
+      newsletterHeading: "Subscribe to Our Newsletter",
       newsletterSubheading:
         "Subscribe to our newsletter for legal tips and updates on privacy and data protection",
       emailPlaceholder: "Your email address",
       subscribe: "Subscribe",
-      privacyConsent:
-        "By subscribing, you agree to our Privacy Policy and consent to receive legal updates from Lexzen.",
-      subscribeSuccess: "Thank you for subscribing to our legal updates!",
+      privacyConsent: "By subscribing, you agree to our Privacy Policy and receive updates from us.",
+      subscribeSuccess: "Thank you for subscribing to our newsletter!",
       subscribeError: "There was an error. Please try again.",
-    },
-    // Language
-    language: {
-      en: "English",
-      es: "Spanish",
+      alreadySubscribed: "This email address is already subscribed to our newsletter.",
     },
     // Contact Form
     contactForm: {
@@ -348,6 +385,374 @@ export const translations = {
       closing: "Thank you for choosing Lexzen. We're here if you need anything else.",
       farewell: "Sincerely,<br />The Lexzen Team",
     },
+    //Legals
+    legals: {
+      termsOfService: {
+        title: "Lexzen Terms of Service",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          description:
+            "These Terms of Service govern access to, browsing and use of the Lexzen website, as well as the general conditions that apply to the relationship between users and the company regarding the legal services informatively offered through the site.",
+        },
+
+        sections: {
+          provider: {
+            title: "1. Service Provider Identification",
+            name: "Trade name: Lexzen",
+            legalStatus: "Legal form: Company in the process of incorporation",
+            email: "Contact email: privacy@lexzen.com",
+            purpose:
+              "Website purpose: Legal advisory services for startups and legal residency processes in Spain.",
+          },
+
+          acceptance: {
+            title: "2. Acceptance of the Terms",
+            content:
+              "Accessing and using the website implies full and unconditional acceptance of these terms. If the user disagrees, they must refrain from using the site.",
+            modifications:
+              "Lexzen reserves the right to modify these terms at any time. Continued use after publication implies tacit acceptance of the changes.",
+          },
+
+          access: {
+            title: "3. Website Access",
+            content:
+              "Access is free, except for internet connection costs. Some services may require forms or personal data, subject to the Privacy Policy and applicable laws.",
+          },
+
+          services: {
+            title: "4. Scope and Purpose of Services",
+            content:
+              "The website provides information about legal services in startup law, immigration, and legal consulting for the innovation ecosystem.",
+            disclaimer:
+              "Important: Content is for informational purposes only. It does not establish a professional or attorney-client relationship without express agreement by both parties.",
+          },
+
+          userObligations: {
+            title: "5. User Obligations",
+            items: {
+              use: "Use the website and content lawfully and respectfully.",
+              noFraud: "Do not engage in illegal, fraudulent, or bad faith activities.",
+              noInterference: "Do not interfere with or disrupt the technical operation of the site.",
+              truthfulInfo: "Provide truthful information in contact or service forms.",
+              lexzenRights:
+                "Lexzen reserves the right to deny access to users who violate these conditions.",
+            },
+          },
+
+          intellectualProperty: {
+            title: "6. Intellectual and Industrial Property",
+            content:
+              "All website elements are owned by Lexzen or properly licensed, and protected under Spanish and EU laws.",
+            restriction:
+              "Reproduction, distribution, or modification is prohibited without prior written authorization.",
+          },
+
+          limitation: {
+            title: "7. Limitation of Liability",
+            content:
+              "Lexzen does not guarantee uninterrupted availability or error-free content but will take reasonable measures to address issues.",
+            notResponsibleFor: {
+              damages: "Damages arising from use of the site or its contents.",
+              thirdPartyContent: "Accuracy or legality of third-party content.",
+              viruses: "Viruses or elements that may harm the user's system.",
+            },
+          },
+
+          externalLinks: {
+            title: "8. External Links",
+            content:
+              "This website may include links to third-party websites. Lexzen is not responsible for the content, availability, or policies of those sites.",
+          },
+
+          jurisdiction: {
+            title: "9. Governing Law and Jurisdiction",
+            content:
+              "These terms are governed by Spanish law. Any dispute shall be submitted to the courts of the site owner's residence or the user's residence if acting as a consumer.",
+          },
+
+          contact: {
+            title: "10. Contact",
+            content: "For any questions regarding these Terms of Service, you can write to us at:",
+            email: "📧 privacy@lexzen.com",
+          },
+        },
+      },
+      privacyPolicy: {
+        title: "Lexzen Privacy Policy",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          description:
+            "At Lexzen, a firm specialized in legal advice for startups and legal residency processes in Spain, we take our commitment to protecting the personal data of our users, clients, and visitors very seriously.",
+          compliance:
+            "This Privacy Policy has been prepared in accordance with Regulation (EU) 2016/679 (GDPR) and Organic Law 3/2018 (LOPDGDD), ensuring the effective exercise of the rights and freedoms of the data subjects.",
+        },
+
+        sections: {
+          identity: {
+            title: "1. Identity of the Data Controller",
+            controller: "Data controller: Lexzen",
+            legalStatus: "Legal status: Company in the process of incorporation",
+            email: "Contact email: privacy@lexzen.com",
+            phone: "Contact phone: {phone}",
+            note:
+              "Lexzen acts as the data controller for the personal data collected through this website. Once the legal incorporation of the company is completed, this document will be updated with the corresponding identification details.",
+          },
+
+          dataCategories: {
+            title: "2. Categories of Data Processed",
+            description: "We process the following categories of personal data:",
+            items: {
+              identity: "Identification data: name, surname, email address, and phone number.",
+              professional:
+                "Professional and business information: company name, tax ID (if applicable), business sector.",
+              financial: "Tax and financial data (when applicable).",
+              navigation: "Browsing data (cookies and similar technologies).",
+            },
+          },
+
+          purposes: {
+            title: "3. Purposes of the Data Processing",
+            items: {
+              inquiries: "To respond to legal inquiries or information requests.",
+              services: "To provide and manage contracted professional services.",
+              contracts: "To manage pre-contractual or contractual relationships.",
+              legal: "To comply with legal or regulatory obligations.",
+              communications:
+                "To send informative communications, legal newsletters, or relevant content, only with prior consent.",
+              cookies:
+                "To enhance user experience and optimize website functionality using cookies.",
+            },
+          },
+
+          legalBasis: {
+            title: "4. Legal Basis for Data Processing",
+            items: {
+              consent: "The explicit consent of the data subject.",
+              contract: "The execution of a contract or pre-contractual measures requested by the data subject.",
+              legalObligation: "Compliance with legal obligations applicable to Lexzen.",
+              legitimateInterest:
+                "Lexzen’s legitimate interest in improving service quality and website security, without affecting data subject rights.",
+            },
+          },
+
+          recipients: {
+            title: "5. Data Recipients and Disclosures",
+            description:
+              "Lexzen will not disclose personal data to third parties, except in the following cases:",
+            items: {
+              processors:
+                "When necessary for service provision, to data processors bound by contracts and GDPR safeguards (Art. 28).",
+              legal:
+                "To comply with legal obligations before competent authorities, public bodies, or courts.",
+              noCommercial:
+                "Data will never be disclosed for commercial purposes without the informed and explicit consent of the data subject.",
+            },
+          },
+
+          internationalTransfers: {
+            title: "6. International Data Transfers",
+            content:
+              "Currently, no international data transfers outside the European Economic Area (EEA) are foreseen. If required, Lexzen will ensure that adequate safeguards are implemented, such as EU-approved Standard Contractual Clauses.",
+          },
+
+          retention: {
+            title: "7. Data Retention Period",
+            content:
+              "Personal data will be retained only as long as necessary to fulfill the purposes for which it was collected, as well as any applicable legal retention periods. For marketing communications, data will be kept until the data subject withdraws consent.",
+          },
+
+          rights: {
+            title: "8. Rights of the Data Subject",
+            description:
+              "As the data subject, you may exercise your rights under applicable legislation at any time:",
+            list: {
+              access: "Right of access",
+              rectification: "Right to rectification",
+              erasure: "Right to erasure",
+              objection: "Right to object",
+              restriction: "Right to restriction of processing",
+              portability: "Right to data portability",
+              withdraw: "Right to withdraw consent without affecting prior processing legitimacy",
+            },
+            instruction:
+              "To exercise these rights, please send a request to privacy@lexzen.com, attaching a copy of a valid identification document.",
+            complaint:
+              "If you believe your rights have not been properly respected, you may file a complaint with the Spanish Data Protection Agency (AEPD) at www.aepd.es.",
+          },
+
+          security: {
+            title: "9. Security and Confidentiality",
+            content:
+              "Lexzen implements technical and organizational security measures to ensure the integrity, availability, and confidentiality of personal data. All processes are aligned with the GDPR principles of privacy by design and by default.",
+          },
+
+          cookies: {
+            title: "10. Cookie Policy",
+            content:
+              "This website uses first- and third-party cookies to ensure functionality, improve user experience, and perform statistical analysis. For more information on cookie usage and management, please see our ",
+          },
+        },
+      },
+      legalNotice: {
+        title: "Legal Notice",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          legalBasis:
+            "In compliance with Article 10 of Law 34/2002 (LSSI-CE), users accessing this website are informed of the following identification details:",
+        },
+
+        sections: {
+          owner: {
+            title: "1. Website Owner",
+            commercialName: "Trade name: Lexzen",
+            legalStatus: "Legal form: Company in the process of incorporation",
+            email: "Contact email: privacy@lexzen.com",
+            purpose:
+              "Purpose of the website: Information about legal advisory services for startups and legal residency processes in Spain.",
+            note:
+              "Once Lexzen is formally incorporated as a legal entity, the corresponding tax and registry details will be added.",
+          },
+
+          terms: {
+            title: "2. Terms of Use",
+            description:
+              "Accessing and using this website implies the user status and full acceptance of this Legal Notice and related policies.",
+            commitment:
+              "Users agree to use the site lawfully, in good faith and in accordance with public order, avoiding any actions that may harm Lexzen or third parties.",
+          },
+
+          intellectualProperty: {
+            title: "3. Intellectual and Industrial Property",
+            description:
+              "All content on this website is protected by intellectual or industrial property rights and is either owned by Lexzen or licensed for its use.",
+            restriction:
+              "Reproduction, distribution, public communication, or modification of content is prohibited without Lexzen’s prior written authorization.",
+          },
+
+          liability: {
+            title: "4. Disclaimer of Liability",
+            content:
+              "Lexzen is not liable for damages resulting from website use, nor does it guarantee the absence of harmful elements such as viruses. It is also not responsible for the legality or accuracy of content linked by third parties.",
+          },
+
+          externalLinks: {
+            title: "5. External Links",
+            content:
+              "This website may include links to third-party pages. Lexzen has no control over such sites and assumes no responsibility for their content or availability.",
+          },
+
+          modifications: {
+            title: "6. Modifications",
+            content:
+              "Lexzen reserves the right to modify this Legal Notice, terms of use, and other legal texts at any time without prior notice.",
+          },
+
+          jurisdiction: {
+            title: "7. Governing Law and Jurisdiction",
+            content:
+              "This Legal Notice is governed by Spanish law. Any dispute arising from access to the website will be submitted to the courts of the website owner's residence (or the user's, if a consumer, per Article 29 LSSI-CE).",
+          },
+
+          aiImages: {
+            title: "8. AI-Generated Images",
+            content:
+              "Some images of people on this site have been generated using artificial intelligence to protect user privacy and enhance design. They are illustrative only and do not depict real individuals or anyone affiliated with Lexzen.",
+          },
+        },
+
+        footer: {
+          aiDisclaimer:
+            "Images of people shown on this website were generated using artificial intelligence and do not represent real individuals.",
+        },
+      },
+      cookiePolicy: {
+        title: "Lexzen Cookie Policy",
+        lastUpdated: "Last updated: {date}",
+
+        intro: {
+          description:
+            "This website, owned by Lexzen, uses cookies and similar technologies to enhance user browsing experience, analyze usage, and deliver personalized content.",
+          legal:
+            "This policy explains what cookies are, the types we use, and how users can manage them in accordance with the GDPR, LOPDGDD, and LSSI-CE.",
+        },
+
+        sections: {
+          whatAreCookies: {
+            title: "1. What Are Cookies?",
+            content:
+              "Cookies are small data files downloaded to the user’s device when accessing certain web pages. They store and retrieve browsing information, such as site preferences or usage patterns.",
+          },
+
+          typesOfCookies: {
+            title: "2. Types of Cookies Used",
+            management: {
+              own: "First-party cookies: managed directly by Lexzen.",
+              thirdParty:
+                "Third-party cookies: managed by external entities (e.g., Google Analytics).",
+            },
+            purpose: {
+              technical:
+                "Technical cookies: essential for website operation. Do not require consent.",
+              personalization:
+                "Personalization cookies: allow users to customize site preferences (language, region, etc.).",
+              analytics:
+                "Analytics cookies: collect statistical data to improve content and user experience.",
+              advertising:
+                "Advertising cookies: manage the frequency and content of ads.",
+            },
+            duration: {
+              session: "Session cookies: deleted when the browser is closed.",
+              persistent: "Persistent cookies: remain stored for a set period.",
+            },
+          },
+
+          usedCookies: {
+            title: "3. Cookies Used on This Site",
+            note: "This table is for reference only. Actual cookies may vary depending on tools enabled.",
+          },
+
+          management: {
+            title: "4. Cookie Management and Settings",
+            content:
+              "Users can configure their cookie preferences via the initial banner or browser settings. Cookies already stored can also be blocked or deleted.",
+            browserLinks: {
+              chrome: "Google Chrome: https://support.google.com/chrome/answer/95647",
+              firefox: "Mozilla Firefox: https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences",
+              safari: "Safari: https://support.apple.com/en-us/guide/safari/sfri11471/mac",
+              edge: "Edge: https://support.microsoft.com/en-us/help/4027947/microsoft-edge-delete-cookies",
+            },
+            warning: "Disabling cookies may affect the functionality of the website.",
+          },
+
+          consent: {
+            title: "5. Consent",
+            content:
+              "When first accessing Lexzen’s website, a banner informs you about cookies. You may accept, reject, or configure them. Consent can be modified at any time.",
+          },
+
+          modifications: {
+            title: "6. Modifications to the Cookie Policy",
+            content:
+              "Lexzen reserves the right to modify this policy due to legal changes or website updates. We recommend reviewing it periodically.",
+          },
+
+          contact: {
+            title: "7. Contact",
+            content: "For any questions related to the use of cookies, you can contact us at:",
+            email: "📧 privacy@lexzen.com",
+          },
+        },
+      }
+    },
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hello, I'm interested in the service",
+      moreInfo: "Can you send me more information? Thanks",
+      hello: "Hello, I'm interested in your legal consultancy services. Can you send me more information? Thanks",
+    },
   },
   es: {
     // General
@@ -356,6 +761,11 @@ export const translations = {
       min2Hours: "mínimo 2 horas",
       from: "desde",
     },
+    // Language
+    language: {
+      en: "Inglés",
+      es: "Español",
+    },
     // Navigation
     nav: {
       services: "Servicios",
@@ -363,19 +773,21 @@ export const translations = {
       bookCall: "Reservar Consulta Gratuita",
       contact: "Contacto",
       getStarted: "Comenzar",
+      sendWhatsapp: "Enviar mensaje por Whatsapp",
     },
     // Hero Section
     hero: {
       title: "Soluciones legales prácticas para startups y nuevos residentes en Europa",
       subtitle:
-        "Asesoramiento accesible y claro para quienes emprenden, se relocalizan o enfrentan los primeros desafíos legales a la hora de desarrollar su negocio. Desde contratos hasta trámites de residencia, con mirada estratégica y experiencia internacional.",
+        "Asesoramiento accesible y claro para quienes emprenden, se relocalizan o enfrentan los primeros desafíos legales a la hora de desarrollar su negocio.",
+      subtitle2: "Desde contratos hasta trámites de residencia, con mirada estratégica y experiencia internacional.",
       scheduleFree: "Programar Consulta Gratuita",
       viewServices: "Ver Servicios Legales",
     },
     // Services Section
     services: {
       title: "Soluciones Legales Online Especializadas",
-      subtitle: "Asesoramiento legal experto adaptado a las necesidades específicas de su negocio digital",
+      subtitle: "Gestión especializada adaptada a las necesidades específicas de su negocio digital",
       tabStartups: "Para Negocios Digitales y Startups",
       tabResidency: "Para Residencia de Ciudadanos UE (España)",
       legalServices: "Servicios Legales Online para Negocios Digitales",
@@ -447,8 +859,9 @@ export const translations = {
 
       // Residency
       residencyTitle: "Asistencia legal práctica y personalizada para procesos de residencia en España.",
-      residencyDesc1: "Instalarse en un nuevo país implica gestionar trámites que pueden ser complejos. Nuestro servicio está orientado a brindar apoyo en cada etapa del proceso de residencia, de manera clara, accesible y adaptada a las necesidades de cada caso.",
-      residencyDesc2: "Se ofrecen paquetes flexibles para solicitudes de residencia, reunificación familiar y consultas legales específicas, siempre de forma online y con acompañamiento profesional.",
+      residencyDesc1: "Instalarse en un nuevo país implica gestionar trámites que pueden ser complejos.",
+      residencyDesc2: "Nuestro servicio está orientado a brindar apoyo en cada etapa del proceso de residencia, de manera clara, accesible y adaptada a las necesidades de cada caso.",
+      residencyDesc3: "Se ofrecen paquetes flexibles para solicitudes de residencia, reunificación familiar y consultas legales específicas, siempre de forma online y con acompañamiento profesional.",
 
       residencySubTitle: 'Servicios de Registro de Residencia UE ("NIE Verde")',
       residencySubTitleDesc: 'Tres niveles de asistencia para adaptar el servicio a cada necesidad:',
@@ -500,18 +913,28 @@ export const translations = {
       forNonResidentsItem1: "Preparación y revisión de documentación",
       forNonResidentsItem2: "Gestión de citas para NIE",
       forNonResidentsItem3: "Seguimiento del proceso de solicitud",
-      forNonResidentsItem4: "Asesoramiento legal integral",
+      forNonResidentsItem4: "Gestión especializada en inmigración",
 
       selectPackage: "Seleccionar Paquete",
       // Specialized Advice
       specializedTitle: "Asesoría Legal Especializada en Residencia UE",
-      consultationTitle: "Orientación legal específica para trámites de residencia:",
+      consultationTitle: "Orientación legal específica para trámites de residencia",
       consultationDesc: "Consulta Legal Personalizada de Residencia",
       bookConsultation: "(+ €50 por cada persona adicional)",
       consultationItem1: "Análisis detallado de la situación individual",
       consultationItem2: "Recomendación de los permisos de residencia adecuados",
       consultationItem3: "Lista de verificación de documentación requerida",
       consultationItem4: "Horas adicionales disponibles a €30/hora",
+
+      //Review of key documents
+      otherTitle: "Otros ",
+      reviewTitle: "Orientación legal específica para trámites de residencia",
+      reviewDesc: "Consulta Legal Personalizada de Residencia",
+      bookReview: "(+ €50 por cada persona adicional)",
+      reviewItem1: "Análisis detallado de la situación individual",
+      reviewItem2: "Recomendación de los permisos de residencia adecuados",
+      reviewItem3: "Lista de verificación de documentación requerida",
+      reviewItem4: "Horas adicionales disponibles a €30/hora",
     },
     // About Section
     about: {
@@ -519,14 +942,16 @@ export const translations = {
       subtitle: "Un equipo de profesionales legales experimentados que combinan experiencia con innovación digital",
       ourStory: "Nuestra Historia",
       storyContent1:
-        "Lexzen surge a partir de una experiencia directa: atravesar, paso a paso, los desafíos personales y profesionales que implica establecerse en un nuevo país. Desde la complejidad de los trámites de residencia hasta los obstáculos legales que enfrentan quienes emprenden o desarrollan un negocio digital desde el extranjero.",
-      storyContent2:
-        "El proyecto nació con una convicción clara: muchas personas no necesitan grandes discursos jurídicos, sino acompañamiento claro, accesible y alineado con las particularidades de su realidad. Quienes están iniciando una nueva etapa en Europa, o construyendo una empresa en el entorno digital, suelen enfrentarse a decisiones legales clave para las cuales no siempre están preparados. Ahí es donde Lexzen aporta valor.",
+        "Lexzen surge a partir de una experiencia directa: atravesar, paso a paso, los desafíos personales y profesionales que implica establecerse en un nuevo país.",
+      storyContent2: "Desde la complejidad de los trámites de residencia hasta los obstáculos legales que enfrentan quienes emprenden o desarrollan un negocio digital desde el extranjero.",
       storyContent3:
-        "Con una sólida formación jurídica y experiencia práctica en procesos de migración, asesoría contractual y estructura legal para proyectos emergentes, ofrecemos un servicio centrado en la orientación estratégica, sin complejidad innecesaria. Nuestro enfoque combina el conocimiento técnico con la experiencia vivida, para brindar soluciones reales, comprensibles y aplicables.",
-      storyContent4:
+        "El proyecto nació con una convicción clara: muchas personas no necesitan grandes discursos jurídicos, sino acompañamiento claro, accesible y alineado con las particularidades de su realidad.",
+      storyContent4: "Quienes están iniciando una nueva etapa en Europa, o construyendo una empresa en el entorno digital, suelen enfrentarse a decisiones legales clave para las cuales no siempre están preparados. Ahí es donde Lexzen aporta valor.",
+      storyContent5:
+        "Con una sólida formación jurídica y experiencia práctica en procesos de migración, asesoría contractual y estructura legal para proyectos emergentes, ofrecemos un servicio centrado en la orientación estratégica, sin complejidad innecesaria.",
+      storyContent6: " Nuestro enfoque combina el conocimiento técnico con la experiencia vivida, para brindar soluciones reales, comprensibles y aplicables.",
+      storyContent7:
         "Creemos en una asesoría legal que no solo resuelve, sino que también acompaña. Porque haber transitado este camino nos permite comprenderlo, y poner ese conocimiento al servicio de quienes lo inician hoy.",
-
       ourFounders: "Nuestros Expertos Legales",
       // Founders
       founder1Name: "Elena Martínez",
@@ -563,14 +988,14 @@ export const translations = {
       innovationDesc:
         "Contamos con experiencia directa en procesos de movilidad internacional y estructuración legal de negocios digitales, lo que nos permite anticipar escenarios y ofrecer respuestas prácticas alineadas con el entorno actual.",
 
-      readyToWork: "¿Listo para comenzar?",
+      readyToWork: "Estamos listos para ayudarte",
     },
     // Booking Calendar
     booking: {
-      title: "Programe Su Consulta Legal Gratuita de 15 Minutos",
+      title: "Programe Su Consulta Gratuita de 15 Minutos",
       subtitle:
-        "Agende una consulta gratuita con nuestros expertos y obtenga la orientación legal necesaria para proteger y expandir su empresa de manera sólida en el mundo digital.",
-      howItWorks: "Cómo Funciona Nuestra Consulta Legal Gratuita",
+        "¡Agenda tu consulta gratuita con nosotros! Queremos conocer tu situación y ofrecerte la mejor solución posible.",
+      howItWorks: "Cómo Funciona Nuestra Consulta Gratuita",
       howItWorksDesc: "Pasos simples para programar su consulta legal online gratuita",
       step1: "Seleccione una Fecha y Hora",
       step1Desc: "Elija entre los horarios disponibles de lunes a viernes en zona horaria española (CET/CEST)",
@@ -583,7 +1008,7 @@ export const translations = {
       consultationItem2: "Evaluación inicial de sus necesidades legales",
       consultationItem3: "Recomendaciones para los siguientes pasos legales",
       consultationItem4: "Sin obligación de contratar servicios legales",
-      bookYourConsultation: "Reserve Su Consulta Legal Gratuita",
+      bookYourConsultation: "Reserve su Consulta Gratuita",
       selectDate: "Seleccione una fecha para su consulta legal gratuita",
       chooseTime: "Elija un horario disponible",
       completeDetails: "Complete sus datos de reserva",
@@ -597,82 +1022,104 @@ export const translations = {
       emailPlaceholder: "su.correo@ejemplo.com",
       phone: "Número de Teléfono *",
       phonePlaceholder: "+34 XXX XXX XXX",
-      topic: "Tema de Consulta Legal",
+      topic: "Tema de Consulta",
       topicPlaceholder: "Describa brevemente qué asuntos legales le gustaría discutir",
       back: "Atrás",
       continue: "Continuar",
       bookConsultation: "Reservar Consulta Gratuita",
       slotTaken: "Este horario ya está reservado. Por favor, elija otro.",
+      submitting: "Enviando...",
       // Confirmation
-      consultationBooked: "¡Consulta Legal Reservada!",
-      consultationScheduled: "Su consulta legal gratuita de 15 minutos ha sido programada.",
+      consultationBooked: "¡Consulta reservada!",
+      consultationScheduled: "Su consult gratuita de 15 minutos ha sido programada.",
       confirmationSent: "Hemos enviado un correo electrónico de confirmación a",
       teamContact:
-        "Nuestro equipo legal se pondrá en contacto con usted poco antes de la hora programada con el enlace de llamada o número de teléfono.",
+        "Nos pondremos en contacto poco antes de la hora programada con el enlace de la llamada.",
       done: "Listo",
+    },
+    // Landing Page
+    landing: {
+      consultationAvailable: "Consulta Gratuita Disponible",
+      heroTitle: "Obtén Residencia por Arraigo - Nuevo Reglamento de Extranjería",
+      heroSubtitle: "Servicios de gestión para residencia por arraigo según el nuevo reglamento de extranjería. Reserva tu consulta gratuita para entender tus opciones.",
+      bookNow: "Reservar Ahora",
+      learnMore: "Saber Más",
+      whyChooseUs: "¿Por Qué Elegir Nuestros Servicios de Inmigración?",
+      whyChooseUsDesc: "Nos especializamos en casos de residencia por arraigo según el nuevo reglamento de extranjería, proporcionando asesoramiento experto durante todo el proceso.",
+      benefit1Title: "Consulta Gratuita de 15 Minutos",
+      benefit1Desc: "Obtén orientación inmediata sobre tu caso de residencia por arraigo. Nuestros expertos evaluarán tu situación y explicarán el nuevo reglamento.",
+      benefit2Title: "Gestión especializada en inmigración",
+      benefit2Desc: "Tenemos amplia experiencia con el nuevo reglamento de extranjería y procedimientos de residencia por arraigo.",
+      benefit3Title: "Servicio 100% Online",
+      benefit3Desc: "Completa tu consulta desde cualquier lugar. No se requiere viaje - solo una llamada telefónica o videollamada para discutir tu caso.",
+      readyToStart: "¿Listo para Iniciar tu Proceso de Residencia?",
+      readyToStartDesc: "No esperes para entender tus opciones de residencia por arraigo. Reserva tu consulta gratuita hoy y da el primer paso hacia la residencia legal.",
+      bookFreeConsultation: "Quiero mi consulta gratuita",
+      guarantee1: "Sin obligación de contratar",
+      guarantee2: "Consulta gratuita de 15 minutos",
+      guarantee3: "Asesoramiento experto en inmigración",
+      bookYourSession: "Reserva Tu Consulta de Inmigración",
+      bookYourSessionDesc: "Selecciona tu fecha y hora preferida para tu consulta gratuita de 15 minutos sobre residencia por arraigo.",
+      finalCTA: "No Esperes - Inicia tu Proceso de Residencia Hoy",
+      finalCTADesc: "Tu proceso de residencia merece atención inmediata. Reserva tu consulta gratuita ahora y obtén asesoramiento experto sobre el nuevo reglamento de extranjería.",
     },
     // Testimonials
     testimonials: {
-      title: "Lo Que Dicen Nuestros Clientes de Nuestras Asesorías",
+      title: "Lo Que Dicen Nuestros Clientes",
       subtitle: "Escuche de personas a las que hemos ayudado con nuestros servicios de asesoría legal online.",
       testimonial1: '"Gracias al asesoramiento y preparación detallada de mi carpeta de solicitud, el proceso para obtener mi certificado de registro como ciudadana de la UE fue mucho más fluido de lo que esperaba. La asesoría fue clara en cada paso y los documentos estaban perfectamente organizados, lo que fue reconocido positivamente por la oficina de extranjería. Me sentí acompañada y bien informada en todo momento."',
       client1Name: "Laura M.",
       client1Title: "Ciudadana italiana residiendo en Madrid",
       testimonial2: '"Cuando lancé mi sitio de mentorías online, todo iba bien hasta que surgieron dudas legales al preparar mis primeros contratos con clientes. No sabía cómo protegerme ni cómo dejar claras las condiciones. La asesoría fue clave para dar ese paso con seguridad: revisamos cláusulas, ajustamos el lenguaje y todo quedó claro y profesional. Ahora trabajo con más tranquilidad y confianza."',
-      client2Name: "Carlos G.",
+      client2Name: "Santiago P.",
       client2Title: "Emprendedor digital",
       testimonial3: '"No tenía claro qué tipo de permiso de residencia me correspondía ni por dónde empezar. Me ayudaron a entender cuál era la opción más adecuada para mi situación y me guiaron en todo el proceso. Reunimos los documentos necesarios paso a paso y presentamos la solicitud con confianza."',
-      client3Name: "Santiago P.",
-      client3Title: "Residente en comunidad Valenciana",
+      client3Name: "Carlos G.",
+      client3Title: "Residente en las Islas Baleares",
     },
     // CTA Section
     cta: {
       title: "¿Te gustaría impulsar tu negocio?",
-      subtitle:
-        "",
+      title2: "Cómo Reservar la consulta Gratuita",
+      scheduleConsultation1: 'Elija su fecha y hora preferida - Seleccione el día y la hora que mejor se adapten a su horario.',
+      scheduleConsultation2: 'No se requiere pago por adelantado - Esta es una cita gratuita y sin compromiso.',
+      scheduleConsultation3: 'Reciba su confirmación - Recibirá un correo electrónico con el enlace de la reunión.',
+      contactUs: "Contáctanos",
       scheduleConsultation: "Programar consulta gratuita",
-      contactUs: "Contactar a Nuestro Equipo",
+      bookNow: "Reservar",
     },
     // Footer
     footer: {
       footerDesc: "Asesoría legal adaptado a sus necesidades, especializada para empresas digitales y residencia en la UE.",
-      rights: "© 2025 Lexzen Asesoría Legal Online. Todos los derechos reservados.",
+      rights: "© 2025 Lexzen. Todos los derechos reservados.",
+      buildBy: "Desarrollado por <a href='https://www.360-webs.com' target='_blank'>360 Webs</a>",
       privacyPolicy: "Política de Privacidad",
       termsOfService: "Términos de Servicio",
       legalNotice: "Aviso Legal",
+      cookiePolicy: "Política de Cookies",
       contact: "Contacto",
       // Company
       companyHeading: "Empresa",
-      aboutUs: "Sobre Nuestro Equipo Legal",
+      aboutUs: "Sobre Nuestro Equipo",
       services: "Servicios Legales",
       careers: "Carreras Legales",
       blog: "Blog Legal",
       // Legal
       legalHeading: "Legal",
       // Contact
-      contactHeading: "Contacto",
-      address: "Calle Gran Vía 28, Madrid, España",
-      phone: "+34 912 456 789",
-      email: "info@lexzen.com",
+      contactHeading: "Contacta con nosotros rápidamente",
       // Social
       socialHeading: "Síguenos",
       // Newsletter
-      newsletterHeading: "Mantente Actualizado",
+      newsletterHeading: "Suscríbete a Nuestro Newsletter",
       newsletterSubheading:
         "Suscríbete a nuestro boletín para consejos legales y actualizaciones sobre privacidad y protección de datos",
       emailPlaceholder: "Tu correo electrónico",
       subscribe: "Suscribirse",
-      privacyConsent:
-        "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones legales de Lexzen.",
-      subscribeSuccess: "¡Gracias por suscribirte a nuestras actualizaciones legales!",
+      privacyConsent: "Al suscribirte, aceptas nuestra Política de Privacidad y recibir actualizaciones de nosotros.",
+      subscribeSuccess: "¡Gracias por suscribirte a nuestro newsletter!",
       subscribeError: "Hubo un error. Por favor, inténtalo de nuevo.",
-      //Whatsapp
-      whatsapp: "+34 912 456 789",
-    },
-    // Language
-    language: {
-      en: "Inglés",
-      es: "Español",
+      alreadySubscribed: "Este correo ya está suscrito a nuestro newsletter.",
     },
     // Contact Form
     contactForm: {
@@ -705,6 +1152,372 @@ export const translations = {
       topic: (topic: string) => `<strong>Tema de la consulta:</strong> ${topic}`,
       closing: "Agradecemos su confianza en Lexzen. Estamos a su disposición para cualquier consulta adicional.",
       farewell: "Atentamente,<br />El equipo de Lexzen",
+    },
+    //Legals
+    legals: {
+      termsOfService: {
+        title: "Términos de Servicio de Lexzen",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          description:
+            "Los presentes Términos de Servicio regulan el acceso, navegación y uso del sitio web de Lexzen, así como las condiciones generales que rigen la relación entre los usuarios y la empresa en relación con los servicios jurídicos informativos ofrecidos a través del sitio.",
+        },
+
+        sections: {
+          provider: {
+            title: "1. Identificación del prestador de servicios",
+            name: "Nombre comercial: Lexzen",
+            legalStatus: "Forma jurídica: Empresa en fase de constitución",
+            email: "Correo electrónico de contacto: privacy@lexzen.com",
+            purpose:
+              "Finalidad del sitio web: Asesoramiento legal a startups y gestión jurídica de procesos de residencia en España.",
+          },
+
+          acceptance: {
+            title: "2. Aceptación de los términos",
+            content:
+              "El acceso y uso del sitio web implica la aceptación plena y sin reservas de estos términos. Si el usuario no está de acuerdo, deberá abstenerse de usar el sitio.",
+            modifications:
+              "Lexzen se reserva el derecho a modificar estos términos en cualquier momento. El uso continuado del sitio tras los cambios constituirá aceptación tácita de los mismos.",
+          },
+
+          access: {
+            title: "3. Acceso al sitio web",
+            content:
+              "El acceso al sitio es gratuito, salvo los costes de conexión a internet. Algunos servicios pueden requerir formularios o datos personales, aplicándose la Política de Privacidad y la normativa vigente.",
+          },
+
+          services: {
+            title: "4. Objeto y alcance de los servicios",
+            content:
+              "A través del sitio, Lexzen ofrece información sobre servicios jurídicos en derecho de startups, extranjería y consultoría legal para el ecosistema innovador.",
+            disclaimer:
+              "Importante: El contenido es informativo. No implica contratación ni relación abogado-cliente salvo aceptación expresa por ambas partes.",
+          },
+
+          userObligations: {
+            title: "5. Obligaciones del usuario",
+            items: {
+              use: "Utilizar el sitio y sus contenidos de forma lícita y respetuosa.",
+              noFraud: "No realizar actividades ilícitas, fraudulentas ni contrarias a la buena fe.",
+              noInterference: "No interferir ni alterar el funcionamiento técnico del sitio.",
+              truthfulInfo: "Aportar información veraz en formularios.",
+              lexzenRights:
+                "Lexzen puede denegar el acceso a usuarios que incumplan estas condiciones.",
+            },
+          },
+
+          intellectualProperty: {
+            title: "6. Propiedad intelectual e industrial",
+            content:
+              "Todos los elementos del sitio son propiedad de Lexzen o cuentan con licencias legítimas. Su uso está protegido por leyes españolas y europeas.",
+            restriction:
+              "Queda prohibida su reproducción, distribución o transformación sin autorización previa y por escrito.",
+          },
+
+          limitation: {
+            title: "7. Limitación de responsabilidad",
+            content:
+              "Lexzen no garantiza disponibilidad continua ni ausencia de errores, aunque tomará medidas razonables para evitarlos.",
+            notResponsibleFor: {
+              damages: "Daños derivados del uso del sitio o sus contenidos.",
+              thirdPartyContent: "Veracidad o legalidad de contenidos de terceros.",
+              viruses: "Virus u otros elementos que puedan dañar el sistema del usuario.",
+            },
+          },
+
+          externalLinks: {
+            title: "8. Enlaces externos",
+            content:
+              "Este sitio puede contener enlaces a páginas de terceros. Lexzen no se responsabiliza del contenido, disponibilidad ni políticas de dichos sitios.",
+          },
+
+          jurisdiction: {
+            title: "9. Legislación aplicable y jurisdicción",
+            content:
+              "Los términos se rigen por la legislación española. Para controversias, se aplicarán los juzgados del titular del sitio o del usuario si actúa como consumidor.",
+          },
+
+          contact: {
+            title: "10. Contacto",
+            content: "Para consultas sobre estos Términos de Servicio, puedes escribirnos a:",
+            email: "📧 privacy@lexzen.com",
+          },
+        },
+      },
+      privacyPolicy: {
+        title: "Política de Privacidad de Lexzen",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          description:
+            "En Lexzen, firma especializada en asesoramiento legal a startups y en procesos de residencia legal en España, asumimos con la máxima seriedad nuestro compromiso con la protección de los datos personales de nuestros usuarios, clientes y visitantes.",
+          compliance:
+            "Esta Política de Privacidad ha sido elaborada en cumplimiento del Reglamento (UE) 2016/679 (RGPD), y de la Ley Orgánica 3/2018 (LOPDGDD), garantizando el ejercicio efectivo de los derechos y libertades fundamentales de los interesados.",
+        },
+
+        sections: {
+          identity: {
+            title: "1. Identidad del Responsable del Tratamiento",
+            controller: "Responsable del tratamiento: Lexzen",
+            legalStatus: "Forma jurídica: Empresa en fase de constitución",
+            email: "Correo electrónico de contacto: privacy@lexzen.com",
+            phone: "Teléfono de contacto: {phone}",
+            note:
+              "Lexzen actúa como responsable del tratamiento de los datos personales recabados a través de este sitio web. Una vez formalizada la constitución legal de la empresa, se actualizarán en este documento los datos identificativos correspondientes.",
+          },
+
+          dataCategories: {
+            title: "2. Categorías de Datos Tratados",
+            description: "Tratamos las siguientes categorías de datos personales:",
+            items: {
+              identity: "Datos identificativos: nombre, apellidos, email, teléfono.",
+              professional: "Información profesional y de empresa: razón social, NIF/CIF, sector.",
+              financial: "Datos fiscales y financieros (si procede).",
+              navigation: "Información de navegación (cookies y tecnologías similares).",
+            },
+          },
+
+          purposes: {
+            title: "3. Finalidades del Tratamiento",
+            items: {
+              inquiries: "Atender consultas jurídicas o solicitudes de información.",
+              services: "Prestar y gestionar servicios contratados.",
+              contracts: "Gestionar relaciones precontractuales o contractuales.",
+              legal: "Cumplir con obligaciones legales aplicables.",
+              communications:
+                "Enviar comunicaciones legales o informativas, solo con consentimiento previo.",
+              cookies: "Mejorar la experiencia de navegación mediante cookies.",
+            },
+          },
+
+          legalBasis: {
+            title: "4. Legitimación del Tratamiento",
+            items: {
+              consent: "Consentimiento expreso del interesado.",
+              contract: "Ejecución de un contrato o medidas precontractuales.",
+              legalObligation: "Cumplimiento de obligaciones legales.",
+              legitimateInterest:
+                "Interés legítimo de Lexzen en la mejora del servicio y seguridad del sitio web.",
+            },
+          },
+
+          recipients: {
+            title: "5. Destinatarios y Cesiones de Datos",
+            description:
+              "Lexzen no comunicará datos personales a terceros, salvo en los siguientes supuestos:",
+            items: {
+              processors:
+                "Prestación de servicios por encargados del tratamiento contratados conforme al artículo 28 del RGPD.",
+              legal:
+                "Cumplimiento de obligaciones legales ante autoridades, organismos públicos o tribunales.",
+              noCommercial:
+                "En ningún caso se cederán datos con fines comerciales sin consentimiento expreso.",
+            },
+          },
+
+          internationalTransfers: {
+            title: "6. Transferencias Internacionales",
+            content:
+              "Actualmente no se prevé la transferencia internacional de datos fuera del EEE. De ser necesario, se garantizarán las salvaguardas legales como las cláusulas tipo de la UE.",
+          },
+
+          retention: {
+            title: "7. Plazo de Conservación",
+            content:
+              "Los datos se conservarán mientras sean necesarios para los fines recogidos y conforme a los plazos legales. Para comunicaciones comerciales, hasta la revocación del consentimiento.",
+          },
+
+          rights: {
+            title: "8. Ejercicio de Derechos",
+            description:
+              "Puedes ejercer en cualquier momento tus derechos reconocidos por la ley:",
+            list: {
+              access: "Derecho de acceso",
+              rectification: "Derecho de rectificación",
+              erasure: "Derecho de supresión",
+              objection: "Derecho de oposición",
+              restriction: "Derecho a la limitación del tratamiento",
+              portability: "Derecho a la portabilidad de los datos",
+              withdraw: "Derecho a retirar el consentimiento",
+            },
+            instruction:
+              "Para ejercerlos, escribe a privacy@lexzen.com adjuntando documento de identidad.",
+            complaint:
+              "Si consideras que no se han atendido tus derechos, puedes reclamar ante la AEPD: www.aepd.es",
+          },
+
+          security: {
+            title: "9. Seguridad y Confidencialidad",
+            content:
+              "Lexzen aplica medidas técnicas y organizativas para garantizar la integridad, disponibilidad y confidencialidad de los datos personales, conforme a los principios del RGPD.",
+          },
+
+          cookies: {
+            title: "10. Política de Cookies",
+            content:
+              "Este sitio usa cookies propias y de terceros para funcionalidad, experiencia y análisis. Para más información, consulta nuestra ",
+          },
+        },
+      },
+      legalNotice: {
+        title: "Aviso Legal",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          legalBasis:
+            "En cumplimiento de lo dispuesto en el artículo 10 de la Ley 34/2002 (LSSI-CE), se informa a los usuarios que accedan al presente sitio web de los siguientes datos identificativos:",
+        },
+
+        sections: {
+          owner: {
+            title: "1. Titular del Sitio Web",
+            commercialName: "Denominación comercial: Lexzen",
+            legalStatus: "Forma jurídica: Empresa en fase de constitución",
+            email: "Correo electrónico de contacto: privacy@lexzen.com",
+            purpose:
+              "Finalidad del sitio web: Información sobre servicios de asesoría jurídica para startups y procesos de residencia legal en España.",
+            note:
+              "Una vez formalizada la constitución de Lexzen como persona jurídica, se incorporarán los datos fiscales y de registro mercantil pertinentes.",
+          },
+
+          terms: {
+            title: "2. Condiciones de Uso",
+            description:
+              "El acceso y utilización del sitio web atribuye la condición de usuario, e implica la aceptación plena y sin reservas del presente Aviso Legal y demás políticas.",
+            commitment:
+              "El usuario se compromete a utilizar el sitio conforme a la ley, la buena fe y el orden público, absteniéndose de perjudicar a Lexzen o a terceros.",
+          },
+
+          intellectualProperty: {
+            title: "3. Propiedad Intelectual e Industrial",
+            description:
+              "Todos los contenidos del sitio están protegidos por derechos de propiedad intelectual o industrial y son propiedad exclusiva de Lexzen o están autorizados para su uso.",
+            restriction:
+              "Está prohibida la reproducción, distribución o transformación sin autorización expresa y por escrito de Lexzen.",
+          },
+
+          liability: {
+            title: "4. Exclusión de Responsabilidad",
+            content:
+              "Lexzen no se responsabiliza de daños derivados del uso del sitio, ni garantiza la ausencia de virus u otros elementos que puedan afectar el sistema del usuario. Tampoco se hace responsable del contenido enlazado por terceros.",
+          },
+
+          externalLinks: {
+            title: "5. Enlaces Externos",
+            content:
+              "Este sitio puede contener enlaces a páginas de terceros. Lexzen no ejerce control sobre ellas y no se responsabiliza de su contenido o funcionamiento.",
+          },
+
+          modifications: {
+            title: "6. Modificaciones",
+            content:
+              "Lexzen se reserva el derecho de modificar este Aviso Legal, las condiciones de uso y demás textos legales sin previo aviso.",
+          },
+
+          jurisdiction: {
+            title: "7. Legislación Aplicable y Jurisdicción",
+            content:
+              "Este Aviso Legal se rige por la legislación española. Para resolver conflictos, el usuario y Lexzen se someten a los tribunales del lugar de residencia del titular del sitio o del usuario (si es consumidor).",
+          },
+
+          aiImages: {
+            title: "8. Imágenes Generadas por Inteligencia Artificial",
+            content:
+              "Algunas imágenes de personas en este sitio han sido generadas mediante inteligencia artificial para proteger la privacidad y mejorar la estética. No representan individuos reales ni deben interpretarse como personas vinculadas a Lexzen.",
+          },
+        },
+
+        footer: {
+          aiDisclaimer:
+            "Las imágenes de personas mostradas en este sitio web han sido generadas mediante inteligencia artificial y no representan individuos reales.",
+        },
+      },
+      cookiePolicy: {
+        title: "Política de Cookies de Lexzen",
+        lastUpdated: "Última actualización: {date}",
+
+        intro: {
+          description:
+            "El presente sitio web, titularidad de Lexzen, utiliza cookies y tecnologías similares para mejorar la experiencia de navegación del usuario, analizar el uso del sitio y ofrecer contenidos adaptados a sus intereses.",
+          legal:
+            "Esta política explica qué son las cookies, qué tipos utilizamos y cómo pueden ser gestionadas por el usuario conforme al RGPD, la LOPDGDD y la LSSI-CE.",
+        },
+
+        sections: {
+          whatAreCookies: {
+            title: "1. ¿Qué son las Cookies?",
+            content:
+              "Las cookies son pequeños archivos de datos que se descargan en el dispositivo del usuario al acceder a determinadas páginas web. Estas permiten almacenar y recuperar información sobre la navegación, como preferencias del sitio o patrones de comportamiento.",
+          },
+
+          typesOfCookies: {
+            title: "2. Tipos de Cookies Utilizadas",
+            management: {
+              own: "Cookies propias: gestionadas directamente por Lexzen.",
+              thirdParty:
+                "Cookies de terceros: gestionadas por entidades externas (por ejemplo, Google Analytics).",
+            },
+            purpose: {
+              technical: "Cookies técnicas: necesarias para el funcionamiento del sitio. No requieren consentimiento.",
+              personalization:
+                "Cookies de personalización: permiten al usuario configurar el sitio según sus preferencias (idioma, región, etc.).",
+              analytics:
+                "Cookies de análisis: recopilan datos estadísticos para mejorar el contenido y la experiencia.",
+              advertising:
+                "Cookies publicitarias: permiten gestionar la frecuencia y el contenido de los anuncios.",
+            },
+            duration: {
+              session: "Cookies de sesión: se eliminan al cerrar el navegador.",
+              persistent:
+                "Cookies persistentes: permanecen almacenadas durante un tiempo determinado.",
+            },
+          },
+
+          usedCookies: {
+            title: "3. Cookies Utilizadas en Este Sitio",
+            note: "Esta tabla es orientativa. Las cookies pueden variar según las herramientas activadas en el sitio.",
+          },
+
+          management: {
+            title: "4. Gestión y Configuración de Cookies",
+            content:
+              "El usuario puede configurar sus preferencias mediante el banner inicial o en la configuración del navegador. También puede bloquear o eliminar cookies ya instaladas.",
+            browserLinks: {
+              chrome: "Google Chrome: https://support.google.com/chrome/answer/95647",
+              firefox: "Mozilla Firefox: https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web",
+              safari: "Safari: https://support.apple.com/es-es/guide/safari/sfri11471/mac",
+              edge: "Edge: https://support.microsoft.com/es-es/help/4027947/microsoft-edge-delete-cookies",
+            },
+            warning: "La desactivación de cookies puede afectar a la funcionalidad del sitio web.",
+          },
+
+          consent: {
+            title: "5. Consentimiento",
+            content:
+              "Cuando accedes por primera vez al sitio web de Lexzen, se te informa mediante un banner. Puedes aceptar, rechazar o configurar el uso de cookies. El consentimiento puede modificarse en cualquier momento.",
+          },
+
+          modifications: {
+            title: "6. Modificaciones de la Política de Cookies",
+            content:
+              "Lexzen se reserva el derecho de modificar esta política conforme a cambios legislativos o actualizaciones del sitio. Se recomienda revisarla periódicamente.",
+          },
+
+          contact: {
+            title: "7. Contacto",
+            content: "Para cualquier duda relacionada con el uso de cookies, puedes escribirnos a:",
+            email: "📧 privacy@lexzen.com",
+          },
+        },
+      },
+    },
+    // WhatsApp Message
+    whatsappMessage: {
+      greeting: "Hola, estoy interesado/a en el servicio",
+      moreInfo: "¿Podrían enviarme más información? Gracias",
+      hello: "Hola, estoy interesado/a en sus servicios de asesoría legal. ¿Podrían enviarme más información? Gracias",
     },
   },
 }

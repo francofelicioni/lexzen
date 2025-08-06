@@ -1,15 +1,17 @@
 "use client"
 
-import type React from "react"
-import { FileText, FileCheck, FileCodeIcon as FileContract, ShieldCheck, ShoppingCart, Handshake } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
-import { AnimatedSection } from "./animated-section"
+import { FileCheck, FileCodeIcon as FileContract, FileText, ShieldCheck, ShoppingCart } from "lucide-react"
+import type React from "react"
 import { useState } from "react"
+import { AnimatedSection } from "./animated-section"
+import { CtaSection } from "./cta-section"
+
 
 interface PricingPackageProps {
   title: string
@@ -53,15 +55,15 @@ function PricingPackage({
         <CardHeader className={`flex flex-grow justify-center items-start mb-4 ${highlighted ? "bg-blue-gray/10" : "bg-gray-100"}`}>
           <CardTitle className="flex items-center justify-between text-lg md:text-3xl w-full">
             {title}
-            {highlighted && <Badge className="bg-blue-gray py-2 px-4 mb-4 text-sm mr-2">Popular</Badge>}
+            {highlighted && <Badge className="bg-button-orange py-2 px-4 mb-4 text-sm mr-2">Popular</Badge>}
           </CardTitle>
           <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
-          <div className="mt-2">
+          {/* <div className="mt-2">
             <span className="text-2xl sm:text-3xl font-bold"> <span className="text-sm"> {t("general.from")} </span>{price}</span>
             {price.includes("€")}
-          </div>
+          </div> */}
         </CardHeader>
-        <CardContent className="flex-grow flex justify-center items-center">
+        <CardContent className="flex-grow flex justify-start items-center">
           <ul className="space-y-3 text-sm sm:text-base">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start gap-2">
@@ -83,9 +85,18 @@ function PricingPackage({
           </ul>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift py-5 text-base">
-            {buttonText}
-          </Button>
+          <div className="flex justify-start items-center">
+            <Button
+              className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift py-5 text-base"
+              onClick={() => {
+                const message = `${t("whatsappMessage.greeting")}: ${title}. ${t("whatsappMessage.moreInfo")} `;
+                const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                window.open(url, "_blank");
+              }}
+            >
+              {buttonText}
+            </Button>
+          </div>
         </CardFooter>
       </Card>
     </AnimatedSection>
@@ -118,10 +129,10 @@ export function ServicesSection() {
   const [activeTab, setActiveTab] = useState("residency")
 
   return (
-    <section id="services" className="w-full py-8 md:py-24 bg-neutral-50">
-      <div className="container px-4 md:px-6">
+    <section id="services" className="w-full pt-8 md:pt-24 bg-neutral-50 shadow-lg shadow-gray-200 border-b">
+      <div className="container px-4 md:px-6 mb-12 space-y-8">
         <AnimatedSection direction="up" elementType="heading">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center my-6">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-blue-gray/10 px-3 py-1 text-sm text-blue-gray">
                 {t("nav.services")}
@@ -135,7 +146,7 @@ export function ServicesSection() {
         </AnimatedSection>
 
         <Tabs defaultValue="residency" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 mb-12 md:mb-0 h-full border border-muted bg-muted ">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 h-full border border-muted bg-muted ">
             <TabsTrigger value="residency" className={`${isMobile ? "text-sm py-2" : "text-base"}`}>
               {t("services.tabResidency")}
             </TabsTrigger>
@@ -144,155 +155,21 @@ export function ServicesSection() {
             </TabsTrigger>
           </TabsList>
 
-          {/* For Startups & Online Businesses */}
-          <TabsContent value="startups" className="transition-all duration-500">
-            <div className="grid gap-8">
-              <div className="grid gap-6">
-                <AnimatedSection direction="up" delay={300} elementType="heading">
-                  <h3 className="text-2xl font-bold">{t("services.legalServices")}</h3>
-                </AnimatedSection>
-                <AnimatedSection direction="up" delay={400}>
-                  <div className="space-y-4">
-                    <p className="flex items-start gap-2 text-gray-500 font-">
-                      {t("services.legalServicesDesc1")}
-                    </p>
-                    <p className="flex items-start gap-2 text-gray-500">
-                      {t("services.legalServicesDesc2")}
-                    </p>
-                    <p className="flex items-start gap-2 text-gray-500">
-                      {t("services.legalServicesDesc3")}
-                    </p>
-                    <p className="flex items-start gap-2 text-gray-500">
-                      {t("services.legalServicesDesc4")}
-                    </p>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection direction="up" delay={500}>
-                  <div className="flex flex-col items-start gap-2 text-gray-500">
-                    <h4 className="font-bold text-xl">{t("services.howWeHelpTitle")}</h4>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP1")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP2")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP3")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP4")}</p>
-                    <p><span className="mr-1">✅</span>{t("services.howWeHelpP5")}</p>
-                  </div>
-                </AnimatedSection>
-                {/* <div className="grid gap-6 md:grid-cols-2">
-                  <ServiceItem
-                    icon={<FileText className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.personalizedLegal")}
-                    description={t("services.personalizedLegalDesc")}
-                    delay={400}
-                  />
-                  <ServiceItem
-                    icon={<FileCheck className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.documentPrep")}
-                    description={t("services.documentPrepDesc")}
-                    delay={500}
-                  />
-                  <ServiceItem
-                    icon={<FileContract className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.contractDrafting")}
-                    description={t("services.contractDraftingDesc")}
-                    delay={600}
-                  />
-                  <ServiceItem
-                    icon={<ShieldCheck className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.websitePolicies")}
-                    description={t("services.websitePoliciesDesc")}
-                    delay={700}
-                  />
-                  <ServiceItem
-                    icon={<ShoppingCart className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.ecommerceCompliance")}
-                    description={t("services.ecommerceComplianceDesc")}
-                    delay={800}
-                  />
-                  <ServiceItem
-                    icon={<Handshake className="h-5 w-5 text-blue-gray" />}
-                    title={t("services.ndaAgreements")}
-                    description={t("services.ndaAgreementsDesc")}
-                    delay={900}
-                  />
-                </div> */}
-              </div>
-
-              <div>
-                <AnimatedSection direction="up" delay={300} elementType="heading">
-                  <h3 className="text-2xl font-bold mb-6">{t("services.pricingPackages")}</h3>
-                </AnimatedSection>
-                <div className="grid gap-8 md:grid-cols-3">
-                  {/* Pricing Packages */}
-                  <PricingPackage
-                    title={t("services.initial")}
-                    price="€150"
-                    description={t("services.initialDesc")}
-                    features={[
-                      t("services.initialItem1"),
-                      t("services.initialItem2"),
-                      t("services.initialItem3"),
-                      t("services.initialItem4"),
-                      t("services.initialItem5"),
-                    ]}
-                    buttonText={t("services.chooseInitial")}
-                    delay={400}
-                    className="mb-4 md:mb-0"
-                    t={t}
-                  />
-                  <PricingPackage
-                    title={t("services.advanced")}
-                    price="€250"
-                    description={t("services.advancedDesc")}
-                    features={[
-                      t("services.advancedItem1"),
-                      t("services.advancedItem2"),
-                      t("services.advancedItem3"),
-                      t("services.advancedItem4"),
-                      t("services.advancedItem5"),
-                    ]}
-                    highlighted={true}
-                    buttonText={t("services.chooseAdvanced")}
-                    delay={500}
-                    className="mb-4 md:mb-0"
-                    t={t}
-                  />
-                  <PricingPackage
-                    title={t("services.premium")}
-                    price="€400"
-                    description={t("services.premiumDesc")}
-                    features={[
-                      t("services.premiumItem1"),
-                      t("services.premiumItem2"),
-                      t("services.premiumItem3"),
-                      t("services.premiumItem4"),
-                      t("services.premiumItem5"),
-                    ]}
-                    buttonText={t("services.choosePremium")}
-                    delay={600}
-                    t={t}
-                  />
-                </div>
-                <AnimatedSection direction="up" delay={700}>
-                  <div className="mt-6 text-center text-sm text-gray-500">
-                    <p>{t("services.discounts")}</p>
-                  </div>
-                </AnimatedSection>
-              </div>
-            </div>
-          </TabsContent>
-
           {/* For EU Citizens Residency */}
           <TabsContent value="residency" className="transition-all duration-500">
             <div className="grid gap-8">
               <div className="grid gap-6">
                 <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold mb-6">{t("services.residencyTitle")}</h3>
-                  <p className="my-2">{t("services.residencyDesc1")}</p>
-                  <p>{t("services.residencyDesc2")}</p>
+                  <h3 className="text-2xl font-bold my-6">{t("services.residencyTitle")}</h3>
+                  <div className="space-y-3">
+                    <p className="my-2">{t("services.residencyDesc1")}</p>
+                    <p className="my-2">{t("services.residencyDesc2")}</p>
+                    <p className="my-2">{t("services.residencyDesc3")}</p>
+                  </div>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold mb-6">{t("services.residencySubTitle")}</h3>
-                  <p className="my-2">{t("services.residencySubTitleDesc")}</p>
+                  <h3 className="text-2xl font-bold my-4">{t("services.residencySubTitle")}</h3>
+                  <p className="mt-2">{t("services.residencySubTitleDesc")}</p>
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-3">
                   <PricingPackage
@@ -348,19 +225,19 @@ export function ServicesSection() {
 
               <div>
                 <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold mb-6">{t("services.familyTitle")}</h3>
-                  <p className="my-2">{t("services.familySubTitle")}</p>
+                  <h3 className="text-2xl font-bold my-6">{t("services.familyTitle")}</h3>
+                  <p className="my-4">{t("services.familySubTitle")}</p>
                 </AnimatedSection>
                 <div className="grid gap-6 md:grid-cols-2">
                   <AnimatedSection direction="right" delay={400}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
+                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
                       <CardHeader>
                         <CardTitle>{t("services.forResidents")}</CardTitle>
                         <CardDescription>{t("services.forResidentsDesc")}</CardDescription>
-                        <div className="mt-2">
+                        {/* <div className="mt-2">
                           <span className="text-sm"> {t("general.from")} </span> <span className="text-3xl font-bold">€100</span>
                           <span className="text-sm text-muted-foreground"></span>
-                        </div>
+                        </div> */}
                       </CardHeader>
                       <CardContent>
                         <ul className="space-y-2 text-sm">
@@ -426,23 +303,33 @@ export function ServicesSection() {
                           </li>
                         </ul>
                       </CardContent>
-                      <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                          {t("services.selectPackage")}
-                        </Button>
-                      </CardFooter>
+                      <div className="flex justify-start items-center">
+                        <CardFooter>
+                          <Button
+                            className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
+                            onClick={() => {
+                              const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forResidents")}. ${t("whatsappMessage.moreInfo")}`;
+                              const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                              window.open(url, "_blank");
+
+                            }}
+                          >
+                            {t("services.selectPackage")}
+                          </Button>
+                        </CardFooter>
+                      </div>
                     </Card>
                   </AnimatedSection>
 
                   <AnimatedSection direction="left" delay={500}>
-                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift">
+                    <Card className="transition-all duration-300 hover:shadow-lg hover-lift h-full flex flex-col justify-between">
                       <CardHeader>
                         <CardTitle>{t("services.forNonResidents")}</CardTitle>
                         <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
-                        <div className="mt-2">
+                        {/* <div className="mt-2">
                           <span className="text-sm"> {t("general.from")} </span><span className="text-3xl font-bold">€150</span>
                           <span className="text-sm text-muted-foreground"></span>
-                        </div>
+                        </div> */}
                       </CardHeader>
                       <CardContent>
                         <ul className="space-y-2 text-sm">
@@ -509,9 +396,18 @@ export function ServicesSection() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                          {t("services.selectPackage")}
-                        </Button>
+                        <div className="flex justify-start items-center">
+                          <Button
+                            className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
+                            onClick={() => {
+                              const message = `${t("whatsappMessage.greeting")}: ${t("services.familyTitle")} ${t("services.forNonResidents")}. ${t("whatsappMessage.moreInfo")}`;
+                              const url = `https://wa.me/+34614481326?text=${encodeURIComponent(message)}`;
+                              window.open(url, "_blank");
+                            }}
+                          >
+                            {t("services.selectPackage")}
+                          </Button>
+                        </div>
                       </CardFooter>
                     </Card>
                   </AnimatedSection>
@@ -520,17 +416,17 @@ export function ServicesSection() {
 
               <div>
                 <AnimatedSection direction="up" delay={300}>
-                  <h3 className="text-2xl font-bold mb-6">{t("services.specializedTitle")}</h3>
+                  <h3 className="text-2xl font-bold my-6">{t("services.specializedTitle")}</h3>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={400}>
-                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift w-1/2">
+                  <Card className="transition-all duration-300 hover:shadow-lg hover-lift md:w-1/2">
                     <CardHeader>
                       <CardTitle>{t("services.consultationTitle")}</CardTitle>
                       <CardDescription>{t("services.consultationDesc")}</CardDescription>
-                      <div className="mt-2">
+                      {/* <div className="mt-2">
                         <span className="text-3xl font-bold">€50</span>
                         <span className="text-sm text-muted-foreground ml-1">({t("general.min2Hours")})</span>
-                      </div>
+                      </div> */}
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2 text-sm">
@@ -597,17 +493,146 @@ export function ServicesSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button className="w-full bg-blue-gray hover:bg-legal-accent-dark hover-lift">
-                        {t("services.selectPackage")}
-                      </Button>
+                      <div className="flex justify-start items-center">
+                        <Button
+                          className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
+                          onClick={() => {
+                            const message = `${t("whatsappMessage.greeting")}: ${t("services.specializedTitle")} ${t("services.consultationTitle")}. ${t("whatsappMessage.moreInfo")}`;
+                            const url = `https://wa.me/34614481326?text=${encodeURIComponent(message)}`;
+                            window.open(url, "_blank");
+
+                          }}
+                        >
+                          {t("services.selectPackage")}
+                        </Button>
+                      </div>
                     </CardFooter>
                   </Card>
                 </AnimatedSection>
               </div>
             </div>
           </TabsContent>
+
+          {/* For Startups & Online Businesses */}
+          <TabsContent value="startups" className="transition-all duration-500">
+            <div className="grid gap-8">
+              <div className="grid gap-6">
+                <AnimatedSection direction="up" delay={300} elementType="heading">
+                  <h3 className="text-2xl font-bold my-6">{t("services.legalServices")}</h3>
+
+                  <div className="space-y-3 mb-4 text-gray-600">
+                    <p>{t("services.legalServicesDesc1")}</p>
+                    <p>{t("services.legalServicesDesc2")}</p>
+                    <p>{t("services.legalServicesDesc3")}</p>
+                    <p>{t("services.legalServicesDesc4")}</p>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection direction="up" delay={500}>
+                  <h4 className="font-bold text-xl my-4">{t("services.howWeHelpTitle")}</h4>
+
+                  <div className="grid gap-6 md:grid-cols-2 lg:text-justify">
+                    <ServiceItem
+                      icon={<FileText className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP1")}
+                      description={t("services.howWeHelpP1Desc")}
+                      delay={400}
+                    />
+                    <ServiceItem
+                      icon={<FileCheck className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP2")}
+                      description={t("services.howWeHelpP2Desc")}
+                      delay={500}
+                    />
+                    <ServiceItem
+                      icon={<FileContract className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP3")}
+                      description={t("services.howWeHelpP3Desc")}
+                      delay={600}
+                    />
+                    <ServiceItem
+                      icon={<ShieldCheck className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP4")}
+                      description={t("services.howWeHelpP4Desc")}
+                      delay={700}
+                    />
+                    <ServiceItem
+                      icon={<ShoppingCart className="h-5 w-5 text-blue-gray" />}
+                      title={t("services.howWeHelpP5")}
+                      description={t("services.howWeHelpP5Desc")}
+                      delay={800}
+                    />
+                  </div>
+                </AnimatedSection>
+              </div>
+
+              <div>
+                <AnimatedSection direction="up" delay={300} elementType="heading">
+                  <h3 className="text-2xl font-bold my-6">{t("services.pricingPackages")}</h3>
+                </AnimatedSection>
+                <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  {/* Pricing Packages */}
+                  <PricingPackage
+                    title={t("services.initial")}
+                    price="€150"
+                    description={t("services.initialDesc")}
+                    features={[
+                      t("services.initialItem1"),
+                      t("services.initialItem2"),
+                      t("services.initialItem3"),
+                      t("services.initialItem4"),
+                      t("services.initialItem5"),
+                    ]}
+                    buttonText={t("services.chooseInitial")}
+                    delay={400}
+                    className="mb-4 md:mb-0"
+                    t={t}
+                  />
+                  <PricingPackage
+                    title={t("services.advanced")}
+                    price="€250"
+                    description={t("services.advancedDesc")}
+                    features={[
+                      t("services.advancedItem1"),
+                      t("services.advancedItem2"),
+                      t("services.advancedItem3"),
+                      t("services.advancedItem4"),
+                      t("services.advancedItem5"),
+                    ]}
+                    highlighted={true}
+                    buttonText={t("services.chooseAdvanced")}
+                    delay={500}
+                    className="mb-4 md:mb-0"
+                    t={t}
+                  />
+                  <PricingPackage
+                    title={t("services.premium")}
+                    price="€400"
+                    description={t("services.premiumDesc")}
+                    features={[
+                      t("services.premiumItem1"),
+                      t("services.premiumItem2"),
+                      t("services.premiumItem3"),
+                      t("services.premiumItem4"),
+                      t("services.premiumItem5"),
+                    ]}
+                    buttonText={t("services.choosePremium")}
+                    delay={600}
+                    t={t}
+                  />
+                </div>
+                <AnimatedSection direction="up" delay={700}>
+                  <div className="mt-6 text-center text-sm text-gray-500">
+                    <p>{t("services.discounts")}</p>
+                  </div>
+                </AnimatedSection>
+              </div>
+            </div>
+          </TabsContent>
         </Tabs>
+
+        {/* CTA */}
+        <CtaSection />
       </div>
-    </section>
+    </section >
   )
 }

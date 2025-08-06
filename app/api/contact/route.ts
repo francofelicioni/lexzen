@@ -13,10 +13,9 @@ export async function POST(request: Request) {
     const recaptchaJson = await recaptchaRes.json();
 
     if (!recaptchaJson.success || recaptchaJson.score < 0.5) {
-        console.warn("reCAPTCHA suspicious:", recaptchaJson);
-        return NextResponse.json({ success: false, message: "reCAPTCHA failed" }, { status: 400 });
+      console.warn("reCAPTCHA failed:", recaptchaJson);
+      return NextResponse.json({ success: false, message: "reCAPTCHA failed" }, { status: 400 });
     }
-
 
     try {
         const transporter = nodemailer.createTransport({

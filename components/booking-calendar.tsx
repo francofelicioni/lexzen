@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { appointmentService } from '@/services/appointments'
@@ -43,8 +43,15 @@ export function BookingCalendar() {
   const [mounted, setMounted] = useState(false)
   const [loadingSlots, setLoadingSlots] = useState(false)
   const [confirmedEmail, setConfirmedEmail] = useState("")
+  const formRef = useRef<HTMLDivElement>(null)
 
   const dateLocale = language === "es" ? es : undefined
+
+  useEffect(() => {
+    if (isMobile && step > 1 && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }, [step, isMobile])
 
   const {
     register,
@@ -89,7 +96,7 @@ export function BookingCalendar() {
   const onSubmit = async (data: BookingFormData) => {
     if (!date || !timeSlot) return
 
-    const appointmentDate = formatDate(date, "yyyy-MM-dd") 
+    const appointmentDate = formatDate(date, "yyyy-MM-dd")
     const localHours = timeSlot.getHours().toString().padStart(2, '0')
     const localMinutes = timeSlot.getMinutes().toString().padStart(2, '0')
     const appointmentTime = `${localHours}:${localMinutes}`
@@ -226,12 +233,23 @@ export function BookingCalendar() {
           </Card>
 
           {/* Booking */}
-          <Card className={`${isMobile && step > 1 ? "col-span-full" : ""}`} id="bookingCalendar">
+          <Card className={`${isMobile && step > 1 ? "col-span-full" : ""}`} id="bookingCalendar" ref={formRef}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle>{t("booking.bookYourConsultation")}</CardTitle>
                 {isMobile && step > 1 && (
-                  <Button variant="ghost" size="sm" onClick={() => setStep(step - 1)}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      setStep(step - 1)
+                      if (formRef.current) {
+                        setTimeout(() => {
+                          formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+                        }, 100)
+                      }
+                    }}
+                  >
                     <ChevronLeft className="h-4 w-4 mr-1" />
                     {t("booking.back")}
                   </Button>
@@ -287,24 +305,42 @@ export function BookingCalendar() {
                             <Button
                               key={index}
                               variant="outline"
-                              className={`flex items-center justify-center gap-2 py-5 ${timeSlot && slotTime.toISOString() === timeSlot.toISOString()
-                                ? "border-teal-600 bg-teal-50 text-teal-700"
-                                : ""
-                                }`}
+                              className={`flex items-center justify-center gap-2 py-5 ${
+                                slotTime instanceof Date &&
+                                timeSlot instanceof Date &&
+                                !isNaN(slotTime.getTime()) &&
+                                !isNaN(timeSlot.getTime()) &&
+                                slotTime.toISOString() === timeSlot.toISOString()
+                                  ? "border-teal-600 bg-teal-50 text-teal-700"
+                                  : ""
+                              }`}
                               onClick={() => handleTimeSelect(slotTime)}
                             >
                               <Clock className="h-4 w-4 shrink-0" />
                               {timeString}
                             </Button>
-                          )
+                          );                          
                         })}
                     </div>
                   ) : (
                     <div className="text-center py-8">
                       <p className="text-gray-500">{t("booking.noSlots")}</p>
-                      <Button variant="outline" className="mt-4" onClick={() => setStep(1)}>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => {
+                          setStep(step - 1)
+                          if (formRef.current) {
+                            setTimeout(() => {
+                              formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+                            }, 100)
+                          }
+                        }}
+                      >
+                        <ChevronLeft className="h-4 w-4 mr-1" />
                         {t("booking.chooseAnother")}
                       </Button>
+
                     </div>
                   )}
                 </div>
