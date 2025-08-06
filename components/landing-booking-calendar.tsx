@@ -137,7 +137,7 @@ export function LandingBookingCalendar() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div id="bookingCalendar" className="w-full max-w-4xl mx-auto">
       <Card className="border-2 border-blue-gray/20 shadow-xl" ref={formRef}>
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold text-blue-gray">

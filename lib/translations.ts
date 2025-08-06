@@ -169,7 +169,8 @@ export const translations = {
 
       forNonResidents: "Arraigo (According to the New Immigration Regulations)",
       forNonResidentsDesc: "Comprehensive management for residency applications under Arraigo",
-      forNonResidentsDesc2: "We process all types of rooting contemplated in the current regulations: </br><strong>Social Arraigo, Employment-Based Arraigo, Family Arraigo, Training-Based Arraigo, and Second-Chance Arraigo</strong>, according to the specific conditions and requirements of each case.",
+      forNonResidentsDesc1: "We process all types of arraigo contemplated in the current regulations, according to the specific conditions and requirements of each case:",
+      forNonResidentsDesc2: "<strong> Social Arraigo </br>Socio-labor Arraigo </br>Family Arraigo </br>Socio-educational Arraigo </br>Second Chance Arraigo </br></strong>",
       forNonResidentsItem1: "Profile assessment and determination of the most suitable Arraigo type",
       forNonResidentsItem2: "Review and preparation of required documentation",
       forNonResidentsItem3: "Support in the management of reports",
@@ -188,7 +189,7 @@ export const translations = {
       consultationItem3: "Verification of requirements and documentation",
       consultationItem4: "Customized checklist based on the type of application",
       consultationItem5: "Flexibility to extend the session as needed",
-      priceDescription: "€30/hour · €50/2-hour session",
+      priceDescription: "/hour",
     },
     // About Section
     about: {
@@ -947,7 +948,8 @@ export const translations = {
       // Arraigo
       forNonResidents: "Arraigo (Conforme al Nuevo Reglamento de Extranjería)",
       forNonResidentsDesc: "Gestión completa para solicitudes de residencia por arraigo",
-      forNonResidentsDesc2: "Tramitamos todos los tipos de arraigo contemplados en la normativa actual: </br><strong> Arraigo Social, Arraigo Sociolaboral, Arraigo Familiar, Arraigo Socioformativo y Arraigo de Segunda Oportunidad</strong>, según las condiciones y requisitos específicos de cada caso.",
+      forNonResidentsDesc1: "Tramitamos todos los tipos de arraigo contemplados en la normativa actual, según las condiciones y requisitos específicos de cada caso:",
+      forNonResidentsDesc2: "<strong> Arraigo Social </br>Arraigo Sociolaboral </br>Arraigo Familiar </br>Arraigo Socioformativo </br>Arraigo de Segunda Oportunidad </br></strong>",
       forNonResidentsItem1: "Evaluación del perfil y determinación del tipo de arraigo más adecuado",
       forNonResidentsItem2: "Revisión y preparación de la documentación requerida",
       forNonResidentsItem3: "Apoyo en la gestión de informes",
@@ -967,7 +969,7 @@ export const translations = {
       consultationItem3: "Verificación de requisitos y documentación",
       consultationItem4: "Lista de verificación por tipo de trámite",
       consultationItem5: "Flexibilidad para ampliar la sesión según necesidad",
-      priceDescription: "30 €/hora · 50 €/sesión de 2 horas",
+      priceDescription: "/hora",
 
       //Review of key documents
       otherTitle: "Otros ",
@@ -1132,8 +1134,8 @@ export const translations = {
       scheduleConsultation1: 'Elija su fecha y hora preferida - Seleccione el día y la hora que mejor se adapten a su horario.',
       scheduleConsultation2: 'No se requiere pago por adelantado - Esta es una cita gratuita y sin compromiso.',
       scheduleConsultation3: 'Reciba su confirmación - Recibirá un correo electrónico con el enlace de la reunión.',
-      readyToStart: "¿Listo para Comenzar tu Proceso Legal?",
-      readyToStartDesc: "Da el primer paso hacia la resolución de tus asuntos legales con orientación experta.",
+      readyToStart: "¿Listo para Comenzar?",
+      readyToStartDesc: "Da el primer paso hacia tu residencia en España con orientación experta.",
       contactUs: "Contáctanos",
       scheduleConsultation: "Programar consulta gratuita",
       bookNow: "Reservar",

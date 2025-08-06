@@ -156,9 +156,14 @@ export function ServicesSection() {
 
             <AnimatedSection direction="up" delay={300}>
               <h3 className="text-2xl font-bold my-6">{t("services.residencyTitle")}</h3>
-              <div className="space-y-3">
-                <p className="my-2">{t("services.residencyDesc1")}</p>
-                <p className="my-2">{t("services.residencyDesc2")}</p>
+              <div className="flex flex-col md:flex-row gap-12 justify-between items-center">
+                <div className="space-y-8 w-full">
+                  <p className="my-2">{t("services.residencyDesc1")}</p>
+                  <p className="my-2">{t("services.residencyDesc2")}</p>
+                </div>
+                <div className="flex justify-center items-center w-full">
+                  <img src="legal-counsel.svg" alt="Residency" className="max-w-64 object-cover" />
+                </div>
               </div>
             </AnimatedSection>
 
@@ -435,14 +440,13 @@ export function ServicesSection() {
                     <CardHeader>
                       <CardTitle>{t("services.forNonResidents")}</CardTitle>
                       <CardDescription>{t("services.forNonResidentsDesc")}</CardDescription>
-                      
                     </CardHeader>
 
                     <CardContent>
-                      <p
-                        className="text-md mb-4"
-                        dangerouslySetInnerHTML={{ __html: t("services.forNonResidentsDesc2") }}
-                      />
+                      <div className="mb-4 text-md">
+                        <p>{t("services.forNonResidentsDesc1")}</p>
+                        <p dangerouslySetInnerHTML={{ __html: t("services.forNonResidentsDesc2") }} />
+                      </div>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start gap-2">
                           <svg
@@ -557,7 +561,7 @@ export function ServicesSection() {
                     </CardContent>
 
                     <CardFooter>
-      
+
                       <div className="flex justify-start items-center">
                         <Button
                           className="w-full bg-button-orange hover:bg-button-orange-hover hover-lift"
@@ -663,8 +667,11 @@ export function ServicesSection() {
                           <span>{t("services.consultationItem5")}</span>
                         </li>
                       </ul>
+
                       <div className="mt-4 flex items-center">
-                        <span className="text-xl font-bold ml-2">{t("services.priceDescription")}</span>
+                        <span className="text-sm">{t("general.from")}</span>
+                        <span className="text-2xl font-bold ml-2">30€</span>
+                        <span className="text-sm ml-2">{t("services.priceDescription")}</span>
                       </div>
                     </CardContent>
 
@@ -695,18 +702,22 @@ export function ServicesSection() {
               <div className="grid gap-6">
                 <AnimatedSection direction="up" delay={300} elementType="heading">
                   <h3 className="text-2xl font-bold my-6">{t("services.legalServices")}</h3>
-
-                  <div className="space-y-3 mb-4 text-gray-600">
-                    <p>{t("services.legalServicesDesc1")}</p>
-                    <p>{t("services.legalServicesDesc2")}</p>
-                    <p>{t("services.legalServicesDesc3")}</p>
-                    <p>{t("services.legalServicesDesc4")}</p>
+                  <div className="flex flex-col md:flex-row gap-12 justify-between items-center">
+                    <div className="space-y-3 mb-4 text-gray-600">
+                      <p>{t("services.legalServicesDesc1")}</p>
+                      <p>{t("services.legalServicesDesc2")}</p>
+                      <p>{t("services.legalServicesDesc3")}</p>
+                      <p>{t("services.legalServicesDesc4")}</p>
+                    </div>
+                    <div className="flex justify-center items-center w-full">
+                      <img src="woman-avatar.svg" alt="Residency" className="max-w-64 object-cover" />
+                    </div>
                   </div>
                 </AnimatedSection>
                 <AnimatedSection direction="up" delay={500}>
                   <h4 className="font-bold text-xl my-4">{t("services.howWeHelpTitle")}</h4>
 
-                  <div className="grid gap-6 md:grid-cols-2 lg:text-justify">
+                  <div className="grid gap-x-12 gap-y-6 md:grid-cols-2 lg:text-justify">
                     <ServiceItem
                       icon={<FileText className="h-5 w-5 text-blue-gray" />}
                       title={t("services.howWeHelpP1")}

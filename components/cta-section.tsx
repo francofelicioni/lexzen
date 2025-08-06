@@ -86,7 +86,7 @@ export function CtaSection() {
                                     className="px-8 py-4 text-lg font-semibold bg-white text-blue-gray hover:bg-gray-100"
                                     asChild
                                 >
-                                    <a href="#booking">
+                                    <a href="#bookingCalendar">
                                         {t("cta.bookNow")}
                                         <ArrowRight className="ml-2 h-5 w-5" />
                                     </a>
