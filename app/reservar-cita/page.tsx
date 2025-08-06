@@ -6,7 +6,7 @@ import { AnimatedSection } from "@/components/animated-section"
 import { LandingBookingCalendar } from "@/components/landing-booking-calendar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Clock, Users, Star, ArrowRight } from "lucide-react"
+import { CheckCircle, Clock, Users, Star, ArrowUpRight, ArrowDownRight } from "lucide-react"
 
 export default function LandingPage() {
   const { t, language } = useLanguage()
@@ -52,7 +52,7 @@ export default function LandingPage() {
                   onClick={scrollToBooking}
                 >
                   {t("landing.bookNow")}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowDownRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
                   variant="outline" 
@@ -156,7 +156,7 @@ export default function LandingPage() {
                 onClick={scrollToBooking}
               >
                 {t("landing.bookFreeConsultation")}
-                <ArrowRight className="ml-2 h-6 w-6" />
+                <ArrowDownRight className="ml-2 h-6 w-6" />
               </Button>
             </AnimatedSection>
 
@@ -213,7 +213,7 @@ export default function LandingPage() {
               onClick={scrollToBooking}
             >
               {t("landing.bookNow")}
-              <ArrowRight className="ml-2 h-6 w-6" />
+              <ArrowUpRight className="ml-2 h-6 w-6" />
             </Button>
           </div>
         </div>

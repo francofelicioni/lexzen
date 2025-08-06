@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/language-context";
 import { Button } from "./ui/button";
-import { CheckCircle, Clock, Calendar, ArrowRight } from "lucide-react";
+import { CheckCircle, Clock, Calendar, ArrowDownRight } from "lucide-react";
 
 export function CtaSection() {
     const { t } = useLanguage();
@@ -88,7 +88,7 @@ export function CtaSection() {
                                 >
                                     <a href="#bookingCalendar">
                                         {t("cta.bookNow")}
-                                        <ArrowRight className="ml-2 h-5 w-5" />
+                                        <ArrowDownRight className="ml-2 h-5 w-5" />
                                     </a>
                                 </Button>
                                 <Button 
