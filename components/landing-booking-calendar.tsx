@@ -78,6 +78,16 @@ export function LandingBookingCalendar() {
   const handleTimeSelect = (slot: Date) => {
     setTimeSlot(slot)
     setStep(3)
+    
+    // Meta Pixel StartBooking event - fires when user selects a time slot
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_name: 'Legal Consultation Booking',
+        content_category: 'Legal Services',
+        value: 0, // Free consultation
+        currency: 'EUR'
+      })
+    }
   }
 
   const onSubmit = async (data: BookingFormData) => {

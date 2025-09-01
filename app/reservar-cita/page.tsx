@@ -17,6 +17,15 @@ export default function LandingPage() {
   }
 
   useEffect(() => {
+    // Meta Pixel ViewContent event - fires when user lands on the booking page
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'ViewContent', {
+        content_name: 'Booking Landing Page',
+        content_category: 'Legal Consultation',
+        content_type: 'landing_page'
+      })
+    }
+
     // Auto-scroll to booking section after a short delay for better conversion
     const timer = setTimeout(() => {
       scrollToBooking()

@@ -47,6 +47,17 @@ export const appointmentService = {
       console.error("Supabase insert error:", error)
       throw new Error(error.message)
     }
+
+    // Meta Pixel CompleteRegistration event - fires when appointment is successfully created
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'CompleteRegistration', {
+        content_name: 'Legal Consultation Appointment',
+        content_category: 'Legal Services',
+        value: 0, // Free consultation
+        currency: 'EUR',
+        registration_source: 'landing_page'
+      })
+    }
   },
 
   async checkAvailability(date: string, time: string) {
