@@ -80,7 +80,7 @@ const config = {
         "dark-gray": "#3F3F3F",
         "button-orange": "#D0B19F",
         "button-orange-hover": "#CFAF8D",
-        "hero-blue": "#7BA3BC",
+        "hero-blue": "#7292A6",
         "cta-button": "#9B9FA1",
         "cta-button-hover": "#A7A9AB",
         "contact-section": "#F0F4F6",
