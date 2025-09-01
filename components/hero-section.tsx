@@ -29,7 +29,7 @@ export function HeroSection() {
                                 </Button>
                                 <Button
                                     variant="outline"
-                                    className="w-full sm:w-auto hover-lift hover:border-none"
+                                    className="w-full sm:w-auto hover-lift"
                                     asChild
                                 >
                                     <a href="#booking" className="z-10">{t("hero.scheduleFree")}</a>
