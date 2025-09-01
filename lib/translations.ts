@@ -1092,7 +1092,7 @@ export const translations = {
       whyChooseUs: "¿Por Qué Elegir Nuestros Servicios de Inmigración?",
       whyChooseUsDesc: "Nos especializamos en casos de residencia por arraigo según el nuevo reglamento de extranjería, proporcionando asesoramiento experto durante todo el proceso.",
       benefit1Title: "Consulta Gratuita de 15 Minutos",
-      benefit1Desc: "Obtén orientación inmediata sobre tu caso de residencia por arraigo. Nuestros expertos evaluarán tu situación y explicarán el nuevo reglamento.",
+      benefit1Desc: "Obtén orientación inmediata sobre tu caso de residencia por arraigo. Evaluaremos tu situacion y resolveremos todas tus dudas.",
       benefit2Title: "Gestión especializada en inmigración",
       benefit2Desc: "Tenemos amplia experiencia con el nuevo reglamento de extranjería y procedimientos de residencia por arraigo.",
       benefit3Title: "Servicio 100% Online",

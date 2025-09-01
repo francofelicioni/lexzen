@@ -27,10 +27,10 @@ export default function LandingPage() {
     }
 
     // Auto-scroll to booking section after a short delay for better conversion
-    const timer = setTimeout(() => {
-      scrollToBooking()
-    }, 1000)
-    return () => clearTimeout(timer)
+    // const timer = setTimeout(() => {
+    //   scrollToBooking()
+    // }, 1000)
+    // return () => clearTimeout(timer)
   }, [])
 
   return (
