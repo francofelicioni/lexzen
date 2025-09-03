@@ -1,8 +1,22 @@
 import { useLanguage } from "@/contexts/language-context"
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
 import { Button } from "./ui/button"
 
 export function HeroSection() {
     const { t } = useLanguage()
+    const { trackStartBookingEvent } = useFacebookPixel()
+
+    const handleBookingClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // Track StartBooking event when user clicks the booking CTA
+        trackStartBookingEvent(
+            'Legal Consultation Booking',
+            'Legal Services',
+            0 // Free consultation
+        )
+        
+        // Let the default anchor behavior handle the scroll
+        // The href="#booking" will scroll to the booking section
+    }
 
     return (
         <>
@@ -32,7 +46,7 @@ export function HeroSection() {
                                     className="w-full sm:w-auto hover-lift"
                                     asChild
                                 >
-                                    <a href="#booking" className="z-10">{t("hero.scheduleFree")}</a>
+                                    <a href="#booking" className="z-10" onClick={handleBookingClick}>{t("hero.scheduleFree")}</a>
                                 </Button>
                             </div>
                         </div>

@@ -1,14 +1,6 @@
-import { createClient } from '@supabase/supabase-js'
+import { supabase } from '@/lib/supabase/client'
+import { trackCompleteRegistration } from '@/lib/facebookPixel'
 import type { Database } from '@/types/supabase'
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables')
-}
-
-const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
 
 export interface AppointmentData {
   full_name: string
@@ -49,15 +41,11 @@ export const appointmentService = {
     }
 
     // Meta Pixel CompleteRegistration event - fires when appointment is successfully created
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'CompleteRegistration', {
-        content_name: 'Legal Consultation Appointment',
-        content_category: 'Legal Services',
-        value: 0, // Free consultation
-        currency: 'EUR',
-        registration_source: 'landing_page'
-      })
-    }
+    trackCompleteRegistration(
+      'Legal Consultation Appointment',
+      'Legal Services',
+      0 // Free consultation
+    )
   },
 
   async checkAvailability(date: string, time: string) {

@@ -18,11 +18,13 @@ import { format, addDays, isWeekend, isBefore, addMinutes, formatDate } from "da
 import { es } from "date-fns/locale"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
 import { toast } from "react-hot-toast"
 
 export function LandingBookingCalendar() {
   const { t, language } = useLanguage()
   const isMobile = useMobile()
+  const { trackStartBookingEvent } = useFacebookPixel()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [timeSlot, setTimeSlot] = useState<Date | undefined>(undefined)
@@ -80,14 +82,11 @@ export function LandingBookingCalendar() {
     setStep(3)
     
     // Meta Pixel StartBooking event - fires when user selects a time slot
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'InitiateCheckout', {
-        content_name: 'Legal Consultation Booking',
-        content_category: 'Legal Services',
-        value: 0, // Free consultation
-        currency: 'EUR'
-      })
-    }
+    trackStartBookingEvent(
+      'Legal Consultation Booking',
+      'Legal Services',
+      0 // Free consultation
+    )
   }
 
   const onSubmit = async (data: BookingFormData) => {

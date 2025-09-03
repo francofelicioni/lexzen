@@ -1,15 +1,17 @@
 "use client"
 
-import { useEffect, useRef } from "react"
 import { useLanguage } from "@/contexts/language-context"
-import { AnimatedSection } from "@/components/animated-section"
-import { LandingBookingCalendar } from "@/components/landing-booking-calendar"
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Clock, Users, Star, ArrowUpRight, ArrowDownRight } from "lucide-react"
+import { ArrowDownRight, Clock, Shield, Users, ArrowRight } from "lucide-react"
+import { AnimatedSection } from "@/components/animated-section"
+import { LandingBookingCalendar } from "@/components/landing-booking-calendar"
 
-export default function LandingPage() {
-  const { t, language } = useLanguage()
+export default function ReservarCitaPage() {
+  const { t } = useLanguage()
+  const { trackViewContentEvent } = useFacebookPixel()
   const bookingRef = useRef<HTMLDivElement>(null)
 
   const scrollToBooking = () => {
@@ -18,20 +20,17 @@ export default function LandingPage() {
 
   useEffect(() => {
     // Meta Pixel ViewContent event - fires when user lands on the booking page
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'ViewContent', {
-        content_name: 'Booking Landing Page',
-        content_category: 'Legal Consultation',
-        content_type: 'landing_page'
-      })
-    }
+    trackViewContentEvent(
+      'Booking Landing Page',
+      'Legal Consultation'
+    )
 
     // Auto-scroll to booking section after a short delay for better conversion
     // const timer = setTimeout(() => {
     //   scrollToBooking()
     // }, 1000)
     // return () => clearTimeout(timer)
-  }, [])
+  }, [trackViewContentEvent])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-gray/5 to-teal-50/30">
@@ -130,7 +129,7 @@ export default function LandingPage() {
               <Card className="text-center border-0 shadow-lg">
                 <CardHeader>
                   <div className="mx-auto w-12 h-12 bg-blue-gray/10 rounded-full flex items-center justify-center mb-4">
-                    <Star className="h-6 w-6 text-blue-gray" />
+                    <Shield className="h-6 w-6 text-blue-gray" />
                   </div>
                   <CardTitle className="text-xl">{t("landing.benefit3Title")}</CardTitle>
                 </CardHeader>
@@ -171,15 +170,15 @@ export default function LandingPage() {
 
             <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
+                <Shield className="h-4 w-4 text-green-500" />
                 <span>{t("landing.guarantee1")}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
+                <Shield className="h-4 w-4 text-green-500" />
                 <span>{t("landing.guarantee2")}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
+                <Shield className="h-4 w-4 text-green-500" />
                 <span>{t("landing.guarantee3")}</span>
               </div>
             </div>
@@ -222,7 +221,7 @@ export default function LandingPage() {
               onClick={scrollToBooking}
             >
               {t("landing.bookNow")}
-              <ArrowUpRight className="ml-2 h-6 w-6" />
+              <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
           </div>
         </div>

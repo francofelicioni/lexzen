@@ -1,14 +1,23 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/language-context';
+import { useFacebookPixel } from '@/hooks/use-facebook-pixel';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
 
 const PrivacyPolicy = () => {
-
     const { t } = useLanguage();
+    const { trackViewContentEvent } = useFacebookPixel();
+
+    // Track ViewContent event when page loads
+    useEffect(() => {
+        trackViewContentEvent(
+            'Privacy Policy',
+            'Legal Documents'
+        )
+    }, [trackViewContentEvent]);
 
     return (
         <>

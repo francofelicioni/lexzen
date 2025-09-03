@@ -1,7 +1,12 @@
 'use client'
 
 import { useCallback } from 'react'
-import { isFbqReady } from '@/lib/facebookPixel'
+import { 
+  isFbqReady, 
+  trackViewContent, 
+  trackStartBooking, 
+  trackCompleteRegistration 
+} from '@/lib/facebookPixel'
 
 export function useFacebookPixel() {
   const trackPageView = useCallback(() => {
@@ -40,9 +45,25 @@ export function useFacebookPixel() {
     }
   }, [])
 
+  // Normalized event tracking functions
+  const trackViewContentEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
+    return trackViewContent(contentName, contentCategory, value)
+  }, [])
+
+  const trackStartBookingEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
+    return trackStartBooking(contentName, contentCategory, value)
+  }, [])
+
+  const trackCompleteRegistrationEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
+    return trackCompleteRegistration(contentName, contentCategory, value)
+  }, [])
+
   return {
     trackPageView,
     trackCustomEvent,
+    trackViewContentEvent,
+    trackStartBookingEvent,
+    trackCompleteRegistrationEvent,
     isReady: isFbqReady()
   }
 }

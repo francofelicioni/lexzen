@@ -3,10 +3,20 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { useLanguage } from '@/contexts/language-context';
-import React, { use } from 'react';
+import { useFacebookPixel } from '@/hooks/use-facebook-pixel';
+import React, { useEffect } from 'react';
 
 const TermsOfService = () => {
     const { t } = useLanguage();
+    const { trackViewContentEvent } = useFacebookPixel();
+
+    // Track ViewContent event when page loads
+    useEffect(() => {
+        trackViewContentEvent(
+            'Terms of Service',
+            'Legal Documents'
+        )
+    }, [trackViewContentEvent]);
 
     return (
         <>

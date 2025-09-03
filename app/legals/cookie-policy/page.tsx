@@ -3,10 +3,20 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { useLanguage } from '@/contexts/language-context';
-import React from 'react';
+import { useFacebookPixel } from '@/hooks/use-facebook-pixel';
+import React, { useEffect } from 'react';
 
 const CookiePolicy = () => {
     const { t } = useLanguage()
+    const { trackViewContentEvent } = useFacebookPixel();
+
+    // Track ViewContent event when page loads
+    useEffect(() => {
+        trackViewContentEvent(
+            'Cookie Policy',
+            'Legal Documents'
+        )
+    }, [trackViewContentEvent]);
 
     return (
         <>
