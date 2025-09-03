@@ -8,6 +8,7 @@ import { SafeHydratedThemeProvider } from "@/components/theme-provider-safe"
 import { Toaster } from "react-hot-toast"
 import Script from "next/script"
 import { FacebookPixelTracker } from "@/components/facebook-pixel-tracker"
+import { TestPageViewTracking } from "@/components/test-pageview-tracking"
 
 
 const inter = Inter({
