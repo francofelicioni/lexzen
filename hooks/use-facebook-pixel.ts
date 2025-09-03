@@ -5,7 +5,8 @@ import {
   isFbqReady, 
   trackViewContent, 
   trackStartBooking, 
-  trackCompleteRegistration 
+  trackCompleteRegistration,
+  trackQualifiedLead
 } from '@/lib/facebookPixel'
 
 export function useFacebookPixel() {
@@ -58,12 +59,17 @@ export function useFacebookPixel() {
     return trackCompleteRegistration(contentName, contentCategory, value)
   }, [])
 
+  const trackQualifiedLeadEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
+    return trackQualifiedLead(contentName, contentCategory, value)
+  }, [])
+
   return {
     trackPageView,
     trackCustomEvent,
     trackViewContentEvent,
     trackStartBookingEvent,
     trackCompleteRegistrationEvent,
+    trackQualifiedLeadEvent,
     isReady: isFbqReady()
   }
 }

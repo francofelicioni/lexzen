@@ -100,6 +100,33 @@ export const trackCompleteRegistration = (contentName: string, contentCategory: 
   }
 }
 
+// Client-side fallback QualifiedLead event - fires when UI reaches final confirmation/success state
+export const trackQualifiedLead = (contentName: string, contentCategory: string, value?: number) => {
+  if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+    try {
+      const eventId = generateEventId()
+      const params = {
+        content_name: contentName,
+        content_category: contentCategory,
+        currency: 'EUR',
+        event_id: eventId,
+        lead_quality: 'qualified',
+        ...(value !== undefined && { value })
+      }
+      
+      window.fbq('track', 'QualifiedLead', params)
+      console.log('🔥 QualifiedLead tracked:', params)
+      return eventId
+    } catch (error) {
+      console.error('Error tracking QualifiedLead:', error)
+      return null
+    }
+  } else {
+    console.warn('fbq not available for QualifiedLead tracking')
+    return null
+  }
+}
+
 export const isFbqReady = (): boolean => {
   return typeof window !== 'undefined' && typeof window.fbq === 'function'
 }

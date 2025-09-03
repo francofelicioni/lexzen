@@ -24,7 +24,7 @@ import { toast } from "react-hot-toast"
 export function LandingBookingCalendar() {
   const { t, language } = useLanguage()
   const isMobile = useMobile()
-  const { trackStartBookingEvent } = useFacebookPixel()
+  const { trackStartBookingEvent, trackQualifiedLeadEvent } = useFacebookPixel()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [timeSlot, setTimeSlot] = useState<Date | undefined>(undefined)
@@ -131,6 +131,14 @@ export function LandingBookingCalendar() {
 
       setConfirmedEmail(data.email)
       setShowConfirmation(true)
+      
+      // Meta Pixel QualifiedLead event - fires when UI reaches final confirmation/success state
+      trackQualifiedLeadEvent(
+        'Legal Consultation Appointment',
+        'Legal Services',
+        0 // Free consultation
+      )
+      
       reset()
     } catch (error) {
       console.error("Error creating appointment:", error)
