@@ -12,16 +12,26 @@ import { ServicesSection } from "@/components/services-section"
 import { LegalServiceStructuredData, LocalBusinessStructuredData } from "@/components/structured-data"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { useLanguage } from "@/contexts/language-context"
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
 import { useEffect, useState } from "react"
 
 export default function Home() {
   const { t } = useLanguage()
+  const { trackViewContentEvent } = useFacebookPixel()
   const [isLoaded, setIsLoaded] = useState(false)
 
   // Set isLoaded to true after component mounts for initial animations
   useEffect(() => {
     setIsLoaded(true)
   }, [])
+
+  // Track ViewContent event when page loads
+  useEffect(() => {
+    trackViewContentEvent(
+      'Legal Services Homepage',
+      'Legal Services'
+    )
+  }, [trackViewContentEvent])
 
   return (
     <div className="flex min-h-screen flex-col">

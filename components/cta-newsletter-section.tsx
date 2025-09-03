@@ -1,11 +1,25 @@
 import { useLanguage } from "@/contexts/language-context";
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel";
 import { AnimatedSection } from "./animated-section";
 import { NewsletterForm } from "./newsletter-form";
 import { Button } from "./ui/button";
 
 export function CtaAndNewsletter() {
-
     const { t } = useLanguage();
+    const { trackStartBookingEvent } = useFacebookPixel();
+
+    const handleBookingClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // Track StartBooking event when user clicks the booking CTA
+        trackStartBookingEvent(
+            'Legal Consultation Booking',
+            'Legal Services',
+            0 // Free consultation
+        )
+        
+        // Let the default anchor behavior handle the scroll
+        // The href="#booking" will scroll to the booking section
+    }
+
     return (
         <section className="w-full py-8 md:py-24 bg-blue-gray/10 relative overflow-hidden border border-blue-gray/20">
             <div className="container flex flex-col md:flex-row justify-between items-center lg:items-center px-4 md:px-6 relative space-y-8 md:space-y-0">
@@ -17,7 +31,7 @@ export function CtaAndNewsletter() {
                         </p>
                         <div className="flex flex-col lg:flex-row md:min-[400px] gap-2">
                             <Button className="bg-button-orange text-white hover:bg-legal-accent hover:text-gray-100" asChild>
-                                <a href="#booking">{t("cta.scheduleConsultation")}</a>
+                                <a href="#booking" onClick={handleBookingClick}>{t("cta.scheduleConsultation")}</a>
                             </Button>
                             <Button className="border-gray-600 text-gray-600 hover:bg-blue-gray hover:text-white border bg-white/10" asChild>
                                 <a href="#contact">{t("cta.contactUs")}</a>

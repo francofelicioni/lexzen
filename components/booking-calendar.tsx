@@ -20,6 +20,7 @@ import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
 import { AnimatedSection } from "@/components/animated-section"
 import { toast } from "react-hot-toast"
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
 
 export function BookingCalendar() {
   const [formData, setFormData] = useState({
@@ -34,6 +35,7 @@ export function BookingCalendar() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   const { t, language } = useLanguage()
+  const { trackQualifiedLeadEvent } = useFacebookPixel()
   const isMobile = useMobile()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
@@ -142,6 +144,14 @@ export function BookingCalendar() {
 
       setConfirmedEmail(data.email)
       setShowConfirmation(true)
+      
+      // Meta Pixel QualifiedLead event - fires when UI reaches final confirmation/success state
+      trackQualifiedLeadEvent(
+        'Legal Consultation Appointment',
+        'Legal Services',
+        0 // Free consultation
+      )
+      
       reset()
     } catch (error) {
       console.error("Error creating appointment:", error)

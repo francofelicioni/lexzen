@@ -4,9 +4,11 @@ import { LanguageSelector } from "./language-selector";
 import { MobileNav } from "./mobile-nav";
 import { Button } from "./ui/button";
 import { usePathname, useRouter } from "next/navigation";
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel";
 
 export function Header() {
     const { t } = useLanguage()
+    const { trackStartBookingEvent } = useFacebookPixel()
 
     const router = useRouter();
     const pathname = usePathname();
@@ -21,6 +23,19 @@ export function Header() {
             router.push(`/#${id}`);
         }
     };
+
+    const handleBookingClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // Track StartBooking event when user clicks the booking CTA
+        trackStartBookingEvent(
+            'Legal Consultation Booking',
+            'Legal Services',
+            0 // Free consultation
+        )
+        
+        // Handle the scroll/navigation
+        handleScrollLink("booking")(e);
+    };
+
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" >
             <div className="container flex h-16 items-center justify-between">
@@ -45,7 +60,7 @@ export function Header() {
                 <div className="flex items-center gap-2">
                     <LanguageSelector />
                     <Button className="bg-button-orange hover:bg-button-orange-hover hidden sm:inline-flex">
-                        <a onClick={handleScrollLink("booking")} href="/#booking">{t("nav.bookCall")}</a>
+                        <a onClick={handleBookingClick} href="/#booking">{t("nav.bookCall")}</a>
                     </Button>
                 </div>
             </div>

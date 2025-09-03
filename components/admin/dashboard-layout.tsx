@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BookingRequestsPanel } from "@/components/admin/booking-requests-panel"
 import { AvailabilityManagementPanel } from "@/components/admin/availability-management-panel"
@@ -9,6 +10,15 @@ import { Scale } from "lucide-react"
 
 export function DashboardLayout() {
   const [activeTab, setActiveTab] = useState("requests")
+  const { trackViewContentEvent } = useFacebookPixel()
+
+  // Track ViewContent event when admin dashboard loads
+  useEffect(() => {
+    trackViewContentEvent(
+      'Admin Dashboard',
+      'Admin Tools'
+    )
+  }, [trackViewContentEvent])
 
   return (
     <div className="min-h-screen bg-gray-50">

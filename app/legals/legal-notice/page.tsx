@@ -1,12 +1,22 @@
 "use client"
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/language-context';
+import { useFacebookPixel } from '@/hooks/use-facebook-pixel';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 
 const LegalNotice = () => {
     const { t } = useLanguage();
+    const { trackViewContentEvent } = useFacebookPixel();
+
+    // Track ViewContent event when page loads
+    useEffect(() => {
+        trackViewContentEvent(
+            'Legal Notice',
+            'Legal Documents'
+        )
+    }, [trackViewContentEvent]);
 
     return (
         <>
