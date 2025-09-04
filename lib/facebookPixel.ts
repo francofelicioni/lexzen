@@ -101,6 +101,29 @@ export const trackCompleteRegistration = (value?: number) => {
   }
 }
 
+// Client-side fallback QualifiedLead event - fires immediately after CompleteRegistration succeeds
+export const trackQualifiedLeadFallback = (eventId: string) => {
+  if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+    try {
+      const params = {
+        lead_quality: 'qualified',
+        currency: 'EUR',
+        event_id: eventId
+      }
+      
+      window.fbq('track', 'QualifiedLead', params)
+      console.log('🔥 QualifiedLead fallback tracked:', params)
+      return eventId
+    } catch (error) {
+      console.error('Error tracking QualifiedLead fallback:', error)
+      return null
+    }
+  } else {
+    console.warn('fbq not available for QualifiedLead fallback tracking')
+    return null
+  }
+}
+
 // Lead event - fires after successful Supabase appointments insert (same moment as CompleteRegistration)
 export const trackLead = (value?: number, source?: string) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {

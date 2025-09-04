@@ -38,7 +38,7 @@ export function BookingCalendar() {
   };
   const { t, language } = useLanguage()
   const pathname = usePathname()
-  const { trackViewContentEvent, trackStartBookingEvent, trackCompleteRegistrationEvent, trackLeadEvent, trackQualifiedLeadEvent } = useFacebookPixel()
+  const { trackViewContentEvent, trackStartBookingEvent, trackCompleteRegistrationEvent, trackQualifiedLeadFallbackEvent, trackLeadEvent, trackQualifiedLeadEvent } = useFacebookPixel()
   const isMobile = useMobile()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
@@ -148,8 +148,13 @@ export function BookingCalendar() {
       })
 
       // Track CompleteRegistration and Lead events after successful Supabase insert
-      trackCompleteRegistrationEvent(0) // Free consultation
+      const eventId = trackCompleteRegistrationEvent(0) // Free consultation
       trackLeadEvent(0, source) // Free consultation with source
+      
+      // Fire client-side fallback QualifiedLead immediately after CompleteRegistration succeeds
+      if (eventId) {
+        trackQualifiedLeadFallbackEvent(eventId)
+      }
 
       await fetch("/api/send-confirmation", {
         method: "POST",
