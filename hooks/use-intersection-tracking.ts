@@ -10,13 +10,13 @@ interface UseIntersectionTrackingOptions {
   once?: boolean
 }
 
-export function useIntersectionTracking({
+export function useIntersectionTracking<T extends HTMLElement = HTMLElement>({
   onIntersect,
   threshold = 0.1,
   rootMargin = '0px',
   once = true
 }: UseIntersectionTrackingOptions) {
-  const elementRef = useRef<HTMLElement>(null)
+  const elementRef = useRef<T>(null)
   const hasTracked = useRef(false)
   const pathname = usePathname()
 

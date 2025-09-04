@@ -52,16 +52,16 @@ export function useFacebookPixel() {
     return trackViewContent(contentName, contentCategory, value, source)
   }, [])
 
-  const trackStartBookingEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackStartBooking(contentName, contentCategory, value)
+  const trackStartBookingEvent = useCallback((value?: number) => {
+    return trackStartBooking(value)
   }, [])
 
-  const trackCompleteRegistrationEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackCompleteRegistration(contentName, contentCategory, value)
+  const trackCompleteRegistrationEvent = useCallback((value?: number) => {
+    return trackCompleteRegistration(value)
   }, [])
 
-  const trackLeadEvent = useCallback((contentName: string, contentCategory: string, value?: number, source?: string) => {
-    return trackLead(contentName, contentCategory, value, source)
+  const trackLeadEvent = useCallback((value?: number, source?: string) => {
+    return trackLead(value, source)
   }, [])
 
   const trackQualifiedLeadEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {

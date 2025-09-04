@@ -49,14 +49,14 @@ export const trackViewContent = (contentName: string, contentCategory: string, v
   }
 }
 
-// Normalized StartBooking event - fires when user starts booking (first CTA click)
-export const trackStartBooking = (contentName: string, contentCategory: string, value?: number) => {
+// Normalized StartBooking event - fires on first meaningful interaction in booking flow
+export const trackStartBooking = (value?: number) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
       const eventId = generateEventId()
       const params = {
-        content_name: contentName,
-        content_category: contentCategory,
+        content_name: 'Free 15-min Consultation',
+        content_category: 'Legal Consultation',
         currency: 'EUR',
         event_id: eventId,
         ...(value !== undefined && { value })
@@ -75,14 +75,14 @@ export const trackStartBooking = (contentName: string, contentCategory: string, 
   }
 }
 
-// Normalized CompleteRegistration event - fires after successful booking storage
-export const trackCompleteRegistration = (contentName: string, contentCategory: string, value?: number) => {
+// Normalized CompleteRegistration event - fires after Supabase appointments insert succeeds
+export const trackCompleteRegistration = (value?: number) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
       const eventId = generateEventId()
       const params = {
-        content_name: contentName,
-        content_category: contentCategory,
+        content_name: 'Free 15-min Consultation',
+        content_category: 'Legal Consultation',
         currency: 'EUR',
         event_id: eventId,
         ...(value !== undefined && { value })
@@ -101,14 +101,14 @@ export const trackCompleteRegistration = (contentName: string, contentCategory: 
   }
 }
 
-// Lead event - fires after successful Supabase appointments insert
-export const trackLead = (contentName: string, contentCategory: string, value?: number, source?: string) => {
+// Lead event - fires after successful Supabase appointments insert (same moment as CompleteRegistration)
+export const trackLead = (value?: number, source?: string) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
       const eventId = generateEventId()
       const params = {
-        content_name: contentName,
-        content_category: contentCategory,
+        content_name: 'Free 15-min Consultation',
+        content_category: 'Legal Consultation',
         currency: 'EUR',
         event_id: eventId,
         ...(source && { source }),

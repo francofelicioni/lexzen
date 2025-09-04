@@ -27,7 +27,7 @@ export function LandingBookingCalendar() {
   const { t, language } = useLanguage()
   const isMobile = useMobile()
   const pathname = usePathname()
-  const { trackViewContentEvent, trackStartBookingEvent, trackLeadEvent, trackQualifiedLeadEvent } = useFacebookPixel()
+  const { trackViewContentEvent, trackStartBookingEvent, trackCompleteRegistrationEvent, trackLeadEvent, trackQualifiedLeadEvent } = useFacebookPixel()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [timeSlot, setTimeSlot] = useState<Date | undefined>(undefined)
@@ -43,7 +43,7 @@ export function LandingBookingCalendar() {
   const source = pathname === '/' ? 'home' : 'landing'
 
   // Intersection observer for ViewContent tracking
-  const bookingRef = useIntersectionTracking({
+  const bookingRef = useIntersectionTracking<HTMLDivElement>({
     onIntersect: () => {
       trackViewContentEvent(
         'Booking Widget',
@@ -86,11 +86,7 @@ export function LandingBookingCalendar() {
     if (selectedDate) {
       // Track StartBooking on first meaningful interaction (date selection)
       if (!hasTrackedStartBooking) {
-        trackStartBookingEvent(
-          'Legal Consultation Booking',
-          'Legal Services',
-          0 // Free consultation
-        )
+        trackStartBookingEvent(0) // Free consultation
         setHasTrackedStartBooking(true)
       }
       
@@ -138,13 +134,9 @@ export function LandingBookingCalendar() {
         time: appointmentTime,
       })
 
-      // Track Lead event after successful Supabase insert
-      trackLeadEvent(
-        'Legal Consultation Appointment',
-        'Legal Services',
-        0, // Free consultation
-        source
-      )
+      // Track CompleteRegistration and Lead events after successful Supabase insert
+      trackCompleteRegistrationEvent(0) // Free consultation
+      trackLeadEvent(0, source) // Free consultation with source
 
       await fetch("/api/send-confirmation", {
         method: "POST",

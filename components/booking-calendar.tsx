@@ -38,7 +38,7 @@ export function BookingCalendar() {
   };
   const { t, language } = useLanguage()
   const pathname = usePathname()
-  const { trackViewContentEvent, trackStartBookingEvent, trackLeadEvent, trackQualifiedLeadEvent } = useFacebookPixel()
+  const { trackViewContentEvent, trackStartBookingEvent, trackCompleteRegistrationEvent, trackLeadEvent, trackQualifiedLeadEvent } = useFacebookPixel()
   const isMobile = useMobile()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
@@ -55,7 +55,7 @@ export function BookingCalendar() {
   const source = pathname === '/' ? 'home' : 'landing'
 
   // Intersection observer for ViewContent tracking
-  const bookingRef = useIntersectionTracking({
+  const bookingRef = useIntersectionTracking<HTMLElement>({
     onIntersect: () => {
       trackViewContentEvent(
         'Booking Widget',
@@ -99,11 +99,7 @@ export function BookingCalendar() {
     if (selectedDate) {
       // Track StartBooking on first meaningful interaction (date selection)
       if (!hasTrackedStartBooking) {
-        trackStartBookingEvent(
-          'Legal Consultation Booking',
-          'Legal Services',
-          0 // Free consultation
-        )
+        trackStartBookingEvent(0) // Free consultation
         setHasTrackedStartBooking(true)
       }
       
@@ -151,13 +147,9 @@ export function BookingCalendar() {
         time: appointmentTime,
       })
 
-      // Track Lead event after successful Supabase insert
-      trackLeadEvent(
-        'Legal Consultation Appointment',
-        'Legal Services',
-        0, // Free consultation
-        source
-      )
+      // Track CompleteRegistration and Lead events after successful Supabase insert
+      trackCompleteRegistrationEvent(0) // Free consultation
+      trackLeadEvent(0, source) // Free consultation with source
 
       await fetch("/api/send-confirmation", {
         method: "POST",
