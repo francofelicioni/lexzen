@@ -1,8 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowDownRight, Clock, Shield, Users, ArrowRight } from "lucide-react"
@@ -11,26 +10,11 @@ import { LandingBookingCalendar } from "@/components/landing-booking-calendar"
 
 export default function ReservarCitaPage() {
   const { t } = useLanguage()
-  const { trackViewContentEvent } = useFacebookPixel()
   const bookingRef = useRef<HTMLDivElement>(null)
 
   const scrollToBooking = () => {
     bookingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
-
-  useEffect(() => {
-    // Meta Pixel ViewContent event - fires when user lands on the booking page
-    trackViewContentEvent(
-      'Booking Landing Page',
-      'Legal Consultation'
-    )
-
-    // Auto-scroll to booking section after a short delay for better conversion
-    // const timer = setTimeout(() => {
-    //   scrollToBooking()
-    // }, 1000)
-    // return () => clearTimeout(timer)
-  }, [trackViewContentEvent])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-gray/5 to-teal-50/30">

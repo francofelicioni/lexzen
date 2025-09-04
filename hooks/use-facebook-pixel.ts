@@ -6,6 +6,7 @@ import {
   trackViewContent, 
   trackStartBooking, 
   trackCompleteRegistration,
+  trackLead,
   trackQualifiedLead
 } from '@/lib/facebookPixel'
 
@@ -47,8 +48,8 @@ export function useFacebookPixel() {
   }, [])
 
   // Normalized event tracking functions
-  const trackViewContentEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackViewContent(contentName, contentCategory, value)
+  const trackViewContentEvent = useCallback((contentName: string, contentCategory: string, value?: number, source?: string) => {
+    return trackViewContent(contentName, contentCategory, value, source)
   }, [])
 
   const trackStartBookingEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
@@ -57,6 +58,10 @@ export function useFacebookPixel() {
 
   const trackCompleteRegistrationEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
     return trackCompleteRegistration(contentName, contentCategory, value)
+  }, [])
+
+  const trackLeadEvent = useCallback((contentName: string, contentCategory: string, value?: number, source?: string) => {
+    return trackLead(contentName, contentCategory, value, source)
   }, [])
 
   const trackQualifiedLeadEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
@@ -69,6 +74,7 @@ export function useFacebookPixel() {
     trackViewContentEvent,
     trackStartBookingEvent,
     trackCompleteRegistrationEvent,
+    trackLeadEvent,
     trackQualifiedLeadEvent,
     isReady: isFbqReady()
   }

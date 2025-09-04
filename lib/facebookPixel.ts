@@ -22,8 +22,8 @@ export const pageview = () => {
   }
 }
 
-// Normalized ViewContent event - fires when page opens
-export const trackViewContent = (contentName: string, contentCategory: string, value?: number) => {
+// Normalized ViewContent event - fires when booking widget becomes visible
+export const trackViewContent = (contentName: string, contentCategory: string, value?: number, source?: string) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
       const eventId = generateEventId()
@@ -32,6 +32,7 @@ export const trackViewContent = (contentName: string, contentCategory: string, v
         content_category: contentCategory,
         currency: 'EUR',
         event_id: eventId,
+        ...(source && { source }),
         ...(value !== undefined && { value })
       }
       
@@ -96,6 +97,33 @@ export const trackCompleteRegistration = (contentName: string, contentCategory: 
     }
   } else {
     console.warn('fbq not available for CompleteRegistration tracking')
+    return null
+  }
+}
+
+// Lead event - fires after successful Supabase appointments insert
+export const trackLead = (contentName: string, contentCategory: string, value?: number, source?: string) => {
+  if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+    try {
+      const eventId = generateEventId()
+      const params = {
+        content_name: contentName,
+        content_category: contentCategory,
+        currency: 'EUR',
+        event_id: eventId,
+        ...(source && { source }),
+        ...(value !== undefined && { value })
+      }
+      
+      window.fbq('track', 'Lead', params)
+      console.log('🔥 Lead tracked:', params)
+      return eventId
+    } catch (error) {
+      console.error('Error tracking Lead:', error)
+      return null
+    }
+  } else {
+    console.warn('fbq not available for Lead tracking')
     return null
   }
 }
