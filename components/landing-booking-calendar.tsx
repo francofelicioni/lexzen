@@ -19,12 +19,15 @@ import { es } from "date-fns/locale"
 import { useLanguage } from "@/contexts/language-context"
 import { useMobile } from "@/hooks/use-mobile"
 import { useFacebookPixel } from "@/hooks/use-facebook-pixel"
+import { useIntersectionTracking } from "@/hooks/use-intersection-tracking"
+import { usePathname } from "next/navigation"
 import { toast } from "react-hot-toast"
 
 export function LandingBookingCalendar() {
   const { t, language } = useLanguage()
   const isMobile = useMobile()
-  const { trackStartBookingEvent, trackQualifiedLeadEvent } = useFacebookPixel()
+  const pathname = usePathname()
+  const { trackViewContentEvent, trackStartBookingEvent, trackCompleteRegistrationEvent, trackQualifiedLeadEvent } = useFacebookPixel()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
   const [timeSlot, setTimeSlot] = useState<Date | undefined>(undefined)
@@ -34,6 +37,23 @@ export function LandingBookingCalendar() {
   const [loadingSlots, setLoadingSlots] = useState(false)
   const [confirmedEmail, setConfirmedEmail] = useState("")
   const formRef = useRef<HTMLDivElement>(null)
+
+  // Auto-detect source based on route
+  const source = pathname === '/' ? 'home' : 'landing'
+
+  // Intersection observer for ViewContent tracking
+  const bookingRef = useIntersectionTracking<HTMLDivElement>({
+    onIntersect: () => {
+      trackViewContentEvent(
+        'Booking Widget',
+        'Legal Consultation',
+        0,
+        source
+      )
+    },
+    threshold: 0.1,
+    once: true
+  })
 
   const dateLocale = language === "es" ? es : undefined
 
@@ -63,6 +83,9 @@ export function LandingBookingCalendar() {
     setDate(selectedDate)
     setTimeSlot(undefined)
     if (selectedDate) {
+      // Track StartBooking on first meaningful interaction (date selection)
+      trackStartBookingEvent(0) // Free consultation
+      
       setStep(2)
       setLoadingSlots(true)
       try {
@@ -80,13 +103,6 @@ export function LandingBookingCalendar() {
   const handleTimeSelect = (slot: Date) => {
     setTimeSlot(slot)
     setStep(3)
-    
-    // Meta Pixel StartBooking event - fires when user selects a time slot
-    trackStartBookingEvent(
-      'Legal Consultation Booking',
-      'Legal Services',
-      0 // Free consultation
-    )
   }
 
   const onSubmit = async (data: BookingFormData) => {
@@ -114,6 +130,14 @@ export function LandingBookingCalendar() {
         time: appointmentTime,
       })
 
+      // Track CompleteRegistration and QualifiedLead events after successful Supabase insert
+      const eventId = trackCompleteRegistrationEvent(0) // Free consultation
+      
+      // Fire QualifiedLead immediately after CompleteRegistration succeeds
+      if (eventId) {
+        trackQualifiedLeadEvent(eventId)
+      }
+
       await fetch("/api/send-confirmation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -132,12 +156,6 @@ export function LandingBookingCalendar() {
       setConfirmedEmail(data.email)
       setShowConfirmation(true)
       
-      // Meta Pixel QualifiedLead event - fires when UI reaches final confirmation/success state
-      trackQualifiedLeadEvent(
-        'Legal Consultation Appointment',
-        'Legal Services',
-        0 // Free consultation
-      )
       
       reset()
     } catch (error) {
@@ -154,7 +172,7 @@ export function LandingBookingCalendar() {
   }
 
   return (
-    <div id="bookingCalendar" className="w-full max-w-4xl mx-auto">
+    <div id="bookingCalendar" className="w-full max-w-4xl mx-auto" ref={bookingRef}>
       <Card className="border-2 border-blue-gray/20 shadow-xl" ref={formRef}>
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold text-blue-gray">

@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useCallback, useRef } from 'react'
 import { 
   isFbqReady, 
   trackViewContent, 
@@ -8,6 +8,9 @@ import {
   trackCompleteRegistration,
   trackQualifiedLead
 } from '@/lib/facebookPixel'
+
+// Global flag to ensure StartBooking fires only once per session
+let hasTrackedStartBookingGlobal = false
 
 export function useFacebookPixel() {
   const trackPageView = useCallback(() => {
@@ -47,20 +50,30 @@ export function useFacebookPixel() {
   }, [])
 
   // Normalized event tracking functions
-  const trackViewContentEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackViewContent(contentName, contentCategory, value)
+  const trackViewContentEvent = useCallback((contentName: string, contentCategory: string, value?: number, source?: string) => {
+    return trackViewContent(contentName, contentCategory, value, source)
   }, [])
 
-  const trackStartBookingEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackStartBooking(contentName, contentCategory, value)
+  const trackStartBookingEvent = useCallback((value?: number) => {
+    // Only track StartBooking once per session
+    if (hasTrackedStartBookingGlobal) {
+      console.log('🔥 StartBooking already tracked in this session, skipping')
+      return null
+    }
+    
+    hasTrackedStartBookingGlobal = true
+    console.log('🔥 Tracking StartBooking for the first time in this session')
+    return trackStartBooking(value)
   }, [])
 
-  const trackCompleteRegistrationEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackCompleteRegistration(contentName, contentCategory, value)
+  const trackCompleteRegistrationEvent = useCallback((value?: number) => {
+    return trackCompleteRegistration(value)
   }, [])
 
-  const trackQualifiedLeadEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackQualifiedLead(contentName, contentCategory, value)
+
+
+  const trackQualifiedLeadEvent = useCallback((eventId: string) => {
+    return trackQualifiedLead(eventId)
   }, [])
 
   return {

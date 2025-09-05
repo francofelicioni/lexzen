@@ -22,8 +22,8 @@ export const pageview = () => {
   }
 }
 
-// Normalized ViewContent event - fires when page opens
-export const trackViewContent = (contentName: string, contentCategory: string, value?: number) => {
+// Normalized ViewContent event - fires when booking widget becomes visible
+export const trackViewContent = (contentName: string, contentCategory: string, value?: number, source?: string) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
       const eventId = generateEventId()
@@ -32,6 +32,7 @@ export const trackViewContent = (contentName: string, contentCategory: string, v
         content_category: contentCategory,
         currency: 'EUR',
         event_id: eventId,
+        ...(source && { source }),
         ...(value !== undefined && { value })
       }
       
@@ -48,14 +49,14 @@ export const trackViewContent = (contentName: string, contentCategory: string, v
   }
 }
 
-// Normalized StartBooking event - fires when user starts booking (first CTA click)
-export const trackStartBooking = (contentName: string, contentCategory: string, value?: number) => {
+// Normalized StartBooking event - fires on first meaningful interaction in booking flow
+export const trackStartBooking = (value?: number) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
       const eventId = generateEventId()
       const params = {
-        content_name: contentName,
-        content_category: contentCategory,
+        content_name: 'Free 15-min Consultation',
+        content_category: 'Legal Consultation',
         currency: 'EUR',
         event_id: eventId,
         ...(value !== undefined && { value })
@@ -74,14 +75,14 @@ export const trackStartBooking = (contentName: string, contentCategory: string, 
   }
 }
 
-// Normalized CompleteRegistration event - fires after successful booking storage
-export const trackCompleteRegistration = (contentName: string, contentCategory: string, value?: number) => {
+// Normalized CompleteRegistration event - fires after Supabase appointments insert succeeds
+export const trackCompleteRegistration = (value?: number) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
       const eventId = generateEventId()
       const params = {
-        content_name: contentName,
-        content_category: contentCategory,
+        content_name: 'Free 15-min Consultation',
+        content_category: 'Legal Consultation',
         currency: 'EUR',
         event_id: eventId,
         ...(value !== undefined && { value })
@@ -100,18 +101,16 @@ export const trackCompleteRegistration = (contentName: string, contentCategory: 
   }
 }
 
-// Client-side fallback QualifiedLead event - fires when UI reaches final confirmation/success state
-export const trackQualifiedLead = (contentName: string, contentCategory: string, value?: number) => {
+
+
+// QualifiedLead event - fires with given event_id (reuses existing event ID)
+export const trackQualifiedLead = (eventId: string) => {
   if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
     try {
-      const eventId = generateEventId()
       const params = {
-        content_name: contentName,
-        content_category: contentCategory,
-        currency: 'EUR',
-        event_id: eventId,
         lead_quality: 'qualified',
-        ...(value !== undefined && { value })
+        currency: 'EUR',
+        event_id: eventId
       }
       
       window.fbq('track', 'QualifiedLead', params)
