@@ -38,7 +38,7 @@ export function BookingCalendar() {
   };
   const { t, language } = useLanguage()
   const pathname = usePathname()
-  const { trackViewContentEvent, trackStartBookingEvent, trackCompleteRegistrationEvent, trackQualifiedLeadFallbackEvent, trackLeadEvent, trackQualifiedLeadEvent } = useFacebookPixel()
+  const { trackViewContentEvent, trackStartBookingEvent, trackCompleteRegistrationEvent, trackQualifiedLeadEvent } = useFacebookPixel()
   const isMobile = useMobile()
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [availableSlots, setAvailableSlots] = useState<string[]>([])
@@ -48,7 +48,6 @@ export function BookingCalendar() {
   const [mounted, setMounted] = useState(false)
   const [loadingSlots, setLoadingSlots] = useState(false)
   const [confirmedEmail, setConfirmedEmail] = useState("")
-  const [hasTrackedStartBooking, setHasTrackedStartBooking] = useState(false)
   const formRef = useRef<HTMLDivElement>(null)
 
   // Auto-detect source based on route
@@ -98,10 +97,7 @@ export function BookingCalendar() {
     setTimeSlot(undefined)
     if (selectedDate) {
       // Track StartBooking on first meaningful interaction (date selection)
-      if (!hasTrackedStartBooking) {
-        trackStartBookingEvent(0) // Free consultation
-        setHasTrackedStartBooking(true)
-      }
+      trackStartBookingEvent(0) // Free consultation
       
       setStep(2)
       setLoadingSlots(true)
@@ -147,13 +143,12 @@ export function BookingCalendar() {
         time: appointmentTime,
       })
 
-      // Track CompleteRegistration and Lead events after successful Supabase insert
+      // Track CompleteRegistration and QualifiedLead events after successful Supabase insert
       const eventId = trackCompleteRegistrationEvent(0) // Free consultation
-      trackLeadEvent(0, source) // Free consultation with source
       
-      // Fire client-side fallback QualifiedLead immediately after CompleteRegistration succeeds
+      // Fire QualifiedLead immediately after CompleteRegistration succeeds
       if (eventId) {
-        trackQualifiedLeadFallbackEvent(eventId)
+        trackQualifiedLeadEvent(eventId)
       }
 
       await fetch("/api/send-confirmation", {
@@ -181,12 +176,6 @@ export function BookingCalendar() {
       setConfirmedEmail(data.email)
       setShowConfirmation(true)
       
-      // Meta Pixel QualifiedLead event - fires when UI reaches final confirmation/success state
-      trackQualifiedLeadEvent(
-        'Legal Consultation Appointment',
-        'Legal Services',
-        0 // Free consultation
-      )
       
       reset()
     } catch (error) {

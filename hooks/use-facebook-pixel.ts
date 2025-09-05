@@ -1,15 +1,16 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useCallback, useRef } from 'react'
 import { 
   isFbqReady, 
   trackViewContent, 
   trackStartBooking, 
   trackCompleteRegistration,
-  trackQualifiedLeadFallback,
-  trackLead,
   trackQualifiedLead
 } from '@/lib/facebookPixel'
+
+// Global flag to ensure StartBooking fires only once per session
+let hasTrackedStartBookingGlobal = false
 
 export function useFacebookPixel() {
   const trackPageView = useCallback(() => {
@@ -54,6 +55,14 @@ export function useFacebookPixel() {
   }, [])
 
   const trackStartBookingEvent = useCallback((value?: number) => {
+    // Only track StartBooking once per session
+    if (hasTrackedStartBookingGlobal) {
+      console.log('🔥 StartBooking already tracked in this session, skipping')
+      return null
+    }
+    
+    hasTrackedStartBookingGlobal = true
+    console.log('🔥 Tracking StartBooking for the first time in this session')
     return trackStartBooking(value)
   }, [])
 
@@ -61,16 +70,10 @@ export function useFacebookPixel() {
     return trackCompleteRegistration(value)
   }, [])
 
-  const trackQualifiedLeadFallbackEvent = useCallback((eventId: string) => {
-    return trackQualifiedLeadFallback(eventId)
-  }, [])
 
-  const trackLeadEvent = useCallback((value?: number, source?: string) => {
-    return trackLead(value, source)
-  }, [])
 
-  const trackQualifiedLeadEvent = useCallback((contentName: string, contentCategory: string, value?: number) => {
-    return trackQualifiedLead(contentName, contentCategory, value)
+  const trackQualifiedLeadEvent = useCallback((eventId: string) => {
+    return trackQualifiedLead(eventId)
   }, [])
 
   return {
@@ -79,8 +82,6 @@ export function useFacebookPixel() {
     trackViewContentEvent,
     trackStartBookingEvent,
     trackCompleteRegistrationEvent,
-    trackQualifiedLeadFallbackEvent,
-    trackLeadEvent,
     trackQualifiedLeadEvent,
     isReady: isFbqReady()
   }
